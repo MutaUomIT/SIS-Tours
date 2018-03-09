@@ -8,21 +8,15 @@ import { PackageData } from './../../configFiles/packegeDetails';
 })
 export class PackagesComponent implements OnInit {
 
-  packageImage : String = '';
-
-  package1: any = [];
-  package2: any = [];
-
+  packageDetails;
   constructor() {
   }
 
   ngOnInit() {
-    this.loadPackages();
+    this.packageDetails = PackageData.packageList;
+    console.log(this.packageDetails[0].imagePath+'/'+this.packageDetails[0].backgroundImage);
+
   }
 
-  private loadPackages(){
-    this.package1 = PackageData.packageList[1].imagePath +'/'+ PackageData.packageList[1].backgroundImage;
-    this.package2 = PackageData.packageList[1].imagePath +'/'+ PackageData.packageList[1].backgroundImage;
-  }
 
 }

@@ -1,7 +1,10 @@
 
-  <img [src]="package1" width="200"/>
-
 <br>
+  <ul>
+    <li *ngFor="let p of packageDetails">
+      <img [src]="p.imagePath + '/'+p.backgroundImage" width="200"/>
+    </li>
+  </ul>
 
-  <img [src]="package2" width="200"/>
+
 
