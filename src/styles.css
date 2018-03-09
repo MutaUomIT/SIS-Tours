@@ -1,0 +1,19 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "~bootstrap/dist/css/bootstrap.css";
+
+.goog-te-banner-frame{
+  display: none!important;
+}
+
+.goog-logo-link{
+  display: none;
+}
+
+.goog-te-gadget{
+  visibility: hidden;
+}
+
+.goog-te-gadget > * {
+  visibility:visible;
+}
