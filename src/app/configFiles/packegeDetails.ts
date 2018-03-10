@@ -2,15 +2,73 @@ export class PackageData {
   public static packageList= [
     {
       "id":1,
-      "Name":'Package Number 1',
-      "imagePath":'./assets/images/packageImages/1',
-      "backgroundImage":"main.jpg"
+      "Name":'Package1',
+      "imagePath":'./assets/images/packageImages/2',
+      "backgroundImage":"p2.jpg",
+      "description":"abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz"
     },
     {
       "id":2,
-      "Name":'Package Number 2',
+      "Name":'Package2',
       "imagePath":'./assets/images/packageImages/2',
-      "backgroundImage":"p2.jpg"
+      "backgroundImage":"p2.jpg",
+      "description":"abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz"
+    },
+    {
+      "id":3,
+      "Name":'Package3',
+      "imagePath":'./assets/images/packageImages/2',
+      "backgroundImage":"p2.jpg",
+      "description":"abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz"
+    },
+    {
+      "id":4,
+      "Name":'Package4',
+      "imagePath":'./assets/images/packageImages/2',
+      "backgroundImage":"p2.jpg",
+      "description":"abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz"
+    },
+    {
+      "id":5,
+      "Name":'Package5',
+      "imagePath":'./assets/images/packageImages/2',
+      "backgroundImage":"p2.jpg",
+      "description":"abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz"
+    },
+    {
+      "id":6,
+      "Name":'Package6',
+      "imagePath":'./assets/images/packageImages/2',
+      "backgroundImage":"p2.jpg",
+      "description":"abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz"
+    },
+    {
+      "id":7,
+      "Name":'Package7',
+      "imagePath":'./assets/images/packageImages/2',
+      "backgroundImage":"p2.jpg",
+      "description":"abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz"
+    },
+    {
+      "id":8,
+      "Name":'Package8',
+      "imagePath":'./assets/images/packageImages/2',
+      "backgroundImage":"p2.jpg",
+      "description":"abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz"
+    },
+    {
+      "id":9,
+      "Name":'Package9',
+      "imagePath":'./assets/images/packageImages/2',
+      "backgroundImage":"p2.jpg",
+      "description":"abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz"
+    },
+    {
+      "id":10,
+      "Name":'Package10',
+      "imagePath":'./assets/images/packageImages/2',
+      "backgroundImage":"p2.jpg",
+      "description":"abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz"
     }
   ];
 }
