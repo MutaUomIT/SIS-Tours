@@ -10,6 +10,10 @@ declare var $ :any;
 })
 export class PackagesComponent implements OnInit {
 
+  packageList: any=[];
+
+  constructor() {
+  }
   packageDetails;
   constructor() {}
 
@@ -29,8 +33,11 @@ export class PackagesComponent implements OnInit {
         .end()
         .appendTo('#slideshow');
     },  3000);
+    this.loadPackages();
   }
 
-
+  private loadPackages(){
+    this.packageList = PackageData.packageList;
+  }
 
 }
