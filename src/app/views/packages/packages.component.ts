@@ -11,15 +11,14 @@ declare var $ :any;
 export class PackagesComponent implements OnInit {
 
   packageList: any=[];
-
-  constructor() {
-  }
   packageDetails;
+
   constructor() {}
 
   ngOnInit() {
     this.packageDetails = PackageData.packageList;
     this.initJqueryFunctions();
+    this.loadPackages();
   }
 
   initJqueryFunctions(){
@@ -33,7 +32,7 @@ export class PackagesComponent implements OnInit {
         .end()
         .appendTo('#slideshow');
     },  3000);
-    this.loadPackages();
+
   }
 
   private loadPackages(){
