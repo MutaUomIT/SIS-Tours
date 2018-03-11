@@ -1,3 +1,10 @@
+
+    <div id="slideshow">
+      <div *ngFor="let p of packageDetails">
+        <img [src]="p.imagePath + '/'+p.backgroundImage" width="500"/>
+      </div>
+    </div>
+
 <div class="row">
   <div *ngFor="let p of packageList" class="col-md-4">
     <img [src]="p.imagePath+'/'+p.backgroundImage" width="350"/>

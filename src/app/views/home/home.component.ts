@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-// import {ShopData} from "../../configFiles/shopDetails";
 import {PackageData} from "../../configFiles/packegeDetails";
+declare var jquery:any;
+declare var $ :any;
 
 @Component({
   selector: 'app-home',
@@ -16,5 +17,8 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.initJqueryFunctions();
   }
+
+  initJqueryFunctions(){}
 }

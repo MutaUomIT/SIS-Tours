@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+declare var jquery:any;
+declare var $ :any;
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+
+ constructor() {
+    this.initJqueryFunctions();
+  }
+
+  initJqueryFunctions(){}
 }
