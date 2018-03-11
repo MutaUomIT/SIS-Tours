@@ -1,7 +1,31 @@
-<p>
-  home works!
-  <img [src]="packageImage" width="500"/>
+<div id="slideshow">
+  <div *ngFor="let p of packageDetails">
+    <img [src]="p.imagePath + '/'+p.backgroundImage" width="500"/>
+  </div>
+</div>
 
-  kasun kavinda
-  this is new text
-</p>
+<div class="row">
+  <div *ngFor="let p of packageList" class="col-md-4">
+    <img [src]="p.imagePath+'/'+p.backgroundImage" width="350"/>
+    <p>{{p.id}} <br> {{p.Name}} <br> {{p.description}}</p>
+  </div>
+</div>
+
+<div class="row">
+<div class="col-md-6">
+  <h2>Who we are?</h2>
+  <p>Welcome to SIS Tour Operators! We SIS Tour Operators were in the industry for so many years gaining experience and serving our clients with trust and care. We make sure the happiness, enthusiasm, safety and comfort of our clients through 0% complains. Our concept is to serve client with no extra money or hidden charges. They will only have to bring money for their shopping and personal interest, rest will be looked after from SIS Tour Operators.
+    Our Main Office is situated at Wellawatte, Colombo, and it’s very easy to find. We will be replying our guests within few hours of their enquiries through mails. We strongly believe the trust of our repeating guests and we care our travelers comfort. Our trustworthy team of experts will provide the maximum satisfaction happiness and the comfort of our clients.
+  </p>
+</div>
+  <div class="col-md-6">
+    <h2>WHY SIS TOUR OPERATORS?</h2>
+    <ul>
+      <li>We are on the top among tour operating companies in Sri Lanka</li>
+      <li>We Offer inbound tour packages, Holiday Packages, Honeymoon Packages and wedding packages </li>
+      <li>No hidden Charges, bring money for shopping and personal interests</li>
+      <li>We do appoint a team of professionals to give you maximum happiness, satisfaction and comfort.</li>
+      <li>24/7 , 365 Days Customer Service</li>
+    </ul>
+    </div>
+</div>

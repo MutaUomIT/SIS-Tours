@@ -3,72 +3,65 @@ export class PackageData {
     {
       "id":1,
       "Name":'Package1',
-      "imagePath":'./assets/images/packageImages/2',
-      "backgroundImage":"p2.jpg",
-      "description":"abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz"
+      "imagePath":'./assets/images/packageImages/1',
+      "backgroundImage":"main.jpg",
+      "description":"Descriptions"
     },
     {
       "id":2,
       "Name":'Package2',
       "imagePath":'./assets/images/packageImages/2',
       "backgroundImage":"p2.jpg",
-      "description":"abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz"
+      "description":"Descriptions"
     },
     {
       "id":3,
       "Name":'Package3',
-      "imagePath":'./assets/images/packageImages/2',
-      "backgroundImage":"p2.jpg",
-      "description":"abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz"
+      "imagePath":'./assets/images/packageImages/3',
+      "backgroundImage":"p3.jpg",
+      "description":"Descriptions"
     },
     {
       "id":4,
       "Name":'Package4',
-      "imagePath":'./assets/images/packageImages/2',
-      "backgroundImage":"p2.jpg",
-      "description":"abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz"
+      "imagePath":'./assets/images/packageImages/4',
+      "backgroundImage":"p4.jpg",
+      "description":"Descriptions"
     },
     {
       "id":5,
       "Name":'Package5',
-      "imagePath":'./assets/images/packageImages/2',
-      "backgroundImage":"p2.jpg",
-      "description":"abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz"
+      "imagePath":'./assets/images/packageImages/5',
+      "backgroundImage":"p5.jpg",
+      "description":"Descriptions"
     },
     {
       "id":6,
       "Name":'Package6',
-      "imagePath":'./assets/images/packageImages/2',
-      "backgroundImage":"p2.jpg",
-      "description":"abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz"
+      "imagePath":'./assets/images/packageImages/6',
+      "backgroundImage":"p6.jpg",
+      "description":"Descriptions"
     },
     {
       "id":7,
       "Name":'Package7',
-      "imagePath":'./assets/images/packageImages/2',
-      "backgroundImage":"p2.jpg",
-      "description":"abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz"
+      "imagePath":'./assets/images/packageImages/7',
+      "backgroundImage":"p7.jpg",
+      "description":"Descriptions"
     },
     {
       "id":8,
       "Name":'Package8',
-      "imagePath":'./assets/images/packageImages/2',
-      "backgroundImage":"p2.jpg",
-      "description":"abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz"
+      "imagePath":'./assets/images/packageImages/8',
+      "backgroundImage":"p8.png",
+      "description":"Descriptions"
     },
     {
       "id":9,
       "Name":'Package9',
       "imagePath":'./assets/images/packageImages/2',
       "backgroundImage":"p2.jpg",
-      "description":"abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz"
-    },
-    {
-      "id":10,
-      "Name":'Package10',
-      "imagePath":'./assets/images/packageImages/2',
-      "backgroundImage":"p2.jpg",
-      "description":"abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz"
+      "description":"Descriptions"
     }
   ];
 }

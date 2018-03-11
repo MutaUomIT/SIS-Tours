@@ -10,15 +10,33 @@ declare var $ :any;
 })
 export class HomeComponent implements OnInit {
 
-  packageImage : String = '';
+  packageList: any=[];
+  packageDetails;
 
-  constructor() {
-    this.packageImage = PackageData.packageList[0].imagePath +'/'+ PackageData.packageList[0].backgroundImage;
-  }
+  constructor() {}
 
   ngOnInit() {
+    this.packageDetails = PackageData.packageList;
     this.initJqueryFunctions();
+    this.loadPackages();
   }
 
-  initJqueryFunctions(){}
+  initJqueryFunctions(){
+    $("#slideshow > div:gt(0)").hide();
+
+    setInterval(function() {
+      $('#slideshow > div:first')
+        .fadeOut(1000)
+        .next()
+        .fadeIn(1000)
+        .end()
+        .appendTo('#slideshow');
+    },  3000);
+
+  }
+
+  private loadPackages(){
+    this.packageList = PackageData.packageList;
+  }
+
 }
