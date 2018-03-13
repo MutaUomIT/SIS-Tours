@@ -1,3 +1,7 @@
-<p>
-  contacts works!
-</p>
+<div class="row">
+  <input type="text" placeholder="Email" [(ngModel)]="inquiry.email"/>
+  <input type="text" placeholder="Name" [(ngModel)]="inquiry.name"/>
+  <input type="text" placeholder="Description" [(ngModel)]="inquiry.description"/>
+  <button (click)="sendInquiry()">Send Inquiry</button>
+
+</div>
