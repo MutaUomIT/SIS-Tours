@@ -17,3 +17,7 @@
 .goog-te-gadget > * {
   visibility:visible;
 }
+
+body{
+  color: red;
+}
