@@ -3,6 +3,7 @@ var nodemailer = require('nodemailer');
 var bodyParser = require('body-parser');
 var app = express();
 const PORT = 3000;
+const RECEIVER_EMAIL = 'tharindu199411@gmail.com';
 
 var allowCrossDomain = function(req, res, next) {
     res.header('Access-Control-Allow-Origin', 'http://localhost:4200');
@@ -18,7 +19,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 app.post('/sendMail',function(req,res){
-	
+
 		var transporter = nodemailer.createTransport({
 			service: 'gmail',
 			auth: {
@@ -27,19 +28,19 @@ app.post('/sendMail',function(req,res){
 			}
 		});
 
-	  
+
 	  var mailOptions = {
 		from: 'sistourserver@gmail.com',
-		to: 'tharindu199411@gmail.com',
+		to: RECEIVER_EMAIL,
 		subject: 'Contact Us Requests',
 		html: req.body.mailBody
 	  };
-	  
+
 	  var resObject = {
 		  status : 0,
 		  responseMessage : null,
 	  };
-	  
+
 	  transporter.sendMail(mailOptions, function(error, info){
 		if (error) {
 			if(error.code === 'ECONNECTION'){
@@ -53,7 +54,7 @@ app.post('/sendMail',function(req,res){
 				//res.status(304).json(resObject);
 				res.send(resObject);
 			}
-		 
+
 		} else {
 				resObject.status = 200;
 				resObject.responseMessage = 'Email Successfully sent.';
