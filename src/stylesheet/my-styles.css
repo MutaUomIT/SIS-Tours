@@ -1,1 +1,23 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+body{
+  font-family: 'Roboto', sans-serif;
+}
+
+
+/*package details starts*/
+
+.slider-image{
+  height: 500px;
+
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.package-details-slider .slick-arrow{
+  display: none !important;
+}
+
+/*package details ends*/
 
