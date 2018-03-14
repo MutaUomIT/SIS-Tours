@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
+import { HttpClientModule } from '@angular/common/http';
+
 import { AppComponent } from './app.component';
 import { HomeComponent } from './views/home/home.component';
 import { PackagesComponent } from './views/packages/packages.component';
@@ -9,6 +11,7 @@ import { AboutLankaComponent } from './views/about-lanka/about-lanka.component';
 import { TestimonialsComponent } from './views/testimonials/testimonials.component';
 import { AboutSisComponent } from './views/about-sis/about-sis.component';
 import { ContactsComponent } from './views/contacts/contacts.component';
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -23,7 +26,9 @@ import { ContactsComponent } from './views/contacts/contacts.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

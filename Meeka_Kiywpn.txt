@@ -1,0 +1,5 @@
+1. Aluth Terminal ekak open karapn.
+2.'Node Server' folder eka athulata plyn.
+3.Palaweni paara ethn idn 'npm install' kiyla ghpn.
+4.Eeka iwr unm 'node server.js' kiyla ghla server eka up krpn.
+6.eeka ehemama thiyla aluth terminal ekak arn 'ng serve' kiyla ghl project eka up krpn.
