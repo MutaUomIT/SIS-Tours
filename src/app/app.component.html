@@ -1,37 +1,100 @@
 <div class="container-fluid">
-  <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-    <div class="collapse navbar-collapse container" id="navbarsExampleDefault">
-      <ul class="navbar-nav mr-auto">
+  <div class="row">
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+      <div class="collapse navbar-collapse container" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
 
-        <li class="nav-item" [routerLinkActive]="['active']">
-          <a class="nav-link" [routerLink]="['home']">Home <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item" [routerLinkActive]="['active']">
-          <a class="nav-link"[routerLink]="['packages']">Packages <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item" [routerLinkActive]="['active']">
-          <a class="nav-link"[routerLink]="['leisure']">Leisure <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item" [routerLinkActive]="['active']">
-          <a class="nav-link"[routerLink]="['about-lanka']">Sri Lanka <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item" [routerLinkActive]="['active']">
-          <a class="nav-link"[routerLink]="['testimonials']">Testimonials <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item" [routerLinkActive]="['active']">
-          <a class="nav-link"[routerLink]="['about-us']">About US <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item" [routerLinkActive]="['active']">
-          <a class="nav-link"[routerLink]="['contacts']">Contact US <span class="sr-only">(current)</span></a>
-        </li>
-      </ul>
-      <div id="google_translate_element"></div>
-    </div>
-  </nav>
+          <li class="nav-item" [routerLinkActive]="['active']">
+            <a class="nav-link" [routerLink]="['home']">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item" [routerLinkActive]="['active']">
+            <a class="nav-link"[routerLink]="['packages']">Packages <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item" [routerLinkActive]="['active']">
+            <a class="nav-link"[routerLink]="['leisure']">Leisure <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item" [routerLinkActive]="['active']">
+            <a class="nav-link"[routerLink]="['about-lanka']">Sri Lanka <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item" [routerLinkActive]="['active']">
+            <a class="nav-link"[routerLink]="['testimonials']">Testimonials <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item" [routerLinkActive]="['active']">
+            <a class="nav-link"[routerLink]="['about-us']">About US <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item" [routerLinkActive]="['active']">
+            <a class="nav-link"[routerLink]="['contacts']">Contact US <span class="sr-only">(current)</span></a>
+          </li>
+        </ul>
+        <!--<div id="google_translate_element"></div>-->
+      </div>
+    </nav>
+  </div>
 </div>
 
+<!--my navigation bar start-->
+
+<div class="navbar-blue-top">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-2">
+        <p>FOLLOW US ON :   <span><i class="fa fa-facebook-square" aria-hidden="true"></i></span> <span><i class="fa fa-twitter-square" aria-hidden="true"></i></span> <span><i class="fa fa-google-plus-square" aria-hidden="true"></i></span> <span><i class="fa fa-linkedin-square" aria-hidden="true"></i></span></p>
+      </div>
+      <div class="col-xs-2">
+        <p>HOTLINE : 011 2568799</p>
+      </div>
+      <div class="col-xs-8">
+        <div id="google_translate_element"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+ <nav class="navbar navbar-default">
+
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Brand</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">HOME <span class="sr-only">(current)</span></a></li>
+        <li><a href="#">PACKAGES</a></li>
+        <li><a href="#">LEISURE</a></li>
+        <li><a href="#">SRILANKA</a></li>
+        <li><a href="#">TESTIMONIALS</a></li>
+        <li><a href="#">ABOUT US</a></li>
+        <li><a href="#">CONTACT US</a></li>
+
+      </ul>
+
+      <!--<form class="navbar-form navbar-left">-->
+        <!--<div class="form-group">-->
+          <!--<input type="text" class="form-control" placeholder="Search">-->
+        <!--</div>-->
+        <!--<button type="submit" class="btn btn-default">Submit</button>-->
+      <!--</form>-->
+
+    </div><!-- /.navbar-collapse -->
+  </nav><!-- /.container-fluid -->
+</div>
+
+<!--my navigation bar end-->
+
+
 <div class="container-fluid" style="padding-top: 70px">
-  <router-outlet></router-outlet>
+  <div class="row">
+    <router-outlet></router-outlet>
+  </div>
 </div>
 
 

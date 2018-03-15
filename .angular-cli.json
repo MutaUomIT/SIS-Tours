@@ -24,7 +24,9 @@
         "../src/stylesheet/bootstrap-theme.min.css",
         "../src/stylesheet/my-styles.css",
         "../src/stylesheet/slick.css",
-        "../src/stylesheet/slick-theme.css"
+        "../src/stylesheet/slick-theme.css",
+        "../src/stylesheet/font-awesome.min.css",
+        "../src/stylesheet/animate.css"
       ],
       "scripts": [
         "../src/javascript/jquery-3.3.1.min.js",

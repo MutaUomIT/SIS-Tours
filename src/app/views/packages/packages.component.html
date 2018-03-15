@@ -5,55 +5,68 @@
       <!--</div>-->
     <!--</div>-->
 
-<div class="row">
-  <div *ngFor="let p of packageList" class="col-md-4">
-    <img [src]="p.imagePath+'/'+p.backgroundImage" width="350"/>
-    <p>{{p.id}} <br> {{p.Name}} <br> {{p.description}}</p>
+<!--<div class="">-->
+  <!--<div *ngFor="let p of packageList" class="col-md-4">-->
+    <!--<img [src]="p.imagePath+'/'+p.backgroundImage" width="350"/>-->
+    <!--<p>{{p.id}} <br> {{p.Name}} <br> {{p.description}}</p>-->
+  <!--</div>-->
+<!--</div>-->
+
+<div class="container-fluid package-details-container">
+  <div class="row package-details-upper-row">
+    <div class="col-md-8 no-padding-left">
+      <div class="package-details-slider">
+        <div>
+          <div class="slider-image" style="background-image: url('../assets/images/packageDetailsImages/1.jpg')"></div>
+        </div>
+        <div>
+          <div class="slider-image" style="background-image: url('../assets/images/packageDetailsImages/2.jpg')"></div>
+        </div>
+        <div>
+          <div class="slider-image" style="background-image: url('../assets/images/packageDetailsImages/3.jpg')"></div>
+        </div>
+        <div>
+          <div class="slider-image" style="background-image: url('../assets/images/packageDetailsImages/4.jpg')"></div>
+        </div>
+        <div>
+          <div class="slider-image" style="background-image: url('../assets/images/packageDetailsImages/5.jpg')"></div>
+        </div>
+        <div>
+          <div class="slider-image" style="background-image: url('../assets/images/packageDetailsImages/6.jpg')"></div>
+        </div>
+        <div>
+          <div class="slider-image" style="background-image: url('../assets/images/packageDetailsImages/7.jpg')"></div>
+        </div>
+        <div>
+          <div class="slider-image" style="background-image: url('../assets/images/packageDetailsImages/8.jpg')"></div>
+        </div>
+        <div>
+          <div class="slider-image" style="background-image: url('../assets/images/packageDetailsImages/9.jpg')"></div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 quick-section">
+      <div class="heading text-center">
+        <h3 class="text-uppercase">10 nights 11 days package</h3>
+        <button class="btn btn-success green-button">ENQUIRE NOW</button>
+      </div>
+
+      <ul class="list-inline">
+        <li><span><i class="fa fa-map-marker fa-lg"></i></span>Negombo</li>
+        <li><span><i class="fa fa-map-marker fa-lg"></i></span>Anuradhapura</li>
+        <li><span><i class="fa fa-map-marker fa-lg"></i></span>Plonnaruwa</li>
+        <li><span><i class="fa fa-map-marker fa-lg"></i></span>Sigiriya</li>
+        <li><span><i class="fa fa-map-marker fa-lg"></i></span>Kandy</li>
+        <li><span><i class="fa fa-map-marker fa-lg"></i></span>Nuwaraeliya</li>
+        <li><span><i class="fa fa-map-marker fa-lg"></i></span>Ella</li>
+        <li><span><i class="fa fa-map-marker fa-lg"></i></span>Yala</li>
+        <li><span><i class="fa fa-map-marker fa-lg"></i></span>Colombo</li>
+      </ul>
+    </div>
   </div>
 </div>
 
-<div class="container-fluid package-details-container">
-  <div class="row">
-    <div class="col-md-6">
-      <h3>10 nights 11 days package</h3>
-    </div>
-    <div class="col-md-6">
-      <button class="btn btn-success">ENQUIRE NOW</button>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="package-details-slider">
-      <div>
-        <div class="slider-image" style="background-image: url('../assets/images/packageDetailsImages/1.jpg')"></div>
-      </div>
-      <div>
-        <div class="slider-image" style="background-image: url('../assets/images/packageDetailsImages/2.jpg')"></div>
-      </div>
-      <div>
-        <div class="slider-image" style="background-image: url('../assets/images/packageDetailsImages/3.jpg')"></div>
-      </div>
-      <div>
-        <div class="slider-image" style="background-image: url('../assets/images/packageDetailsImages/4.jpg')"></div>
-      </div>
-      <div>
-        <div class="slider-image" style="background-image: url('../assets/images/packageDetailsImages/5.jpg')"></div>
-      </div>
-      <div>
-        <div class="slider-image" style="background-image: url('../assets/images/packageDetailsImages/6.jpg')"></div>
-      </div>
-      <div>
-        <div class="slider-image" style="background-image: url('../assets/images/packageDetailsImages/7.jpg')"></div>
-      </div>
-      <div>
-        <div class="slider-image" style="background-image: url('../assets/images/packageDetailsImages/8.jpg')"></div>
-      </div>
-      <div>
-        <div class="slider-image" style="background-image: url('../assets/images/packageDetailsImages/9.jpg')"></div>
-      </div>
-    </div>
-  </div>
-
+<div class="container-fluid">
   <div class="row">
     <div class="package-details-tab-section">
 
@@ -62,31 +75,517 @@
         <li role="presentation" class="active"><a data-target="#itinerary" aria-controls="itinerary" role="tab" data-toggle="tab">Itinerary</a></li>
         <li role="presentation"><a data-target="#activities" aria-controls="activities" role="tab" data-toggle="tab">Activities</a></li>
         <li role="presentation"><a data-target="#inclusions" aria-controls="inclusions" role="tab" data-toggle="tab">Inclusions</a></li>
-        <li role="presentation"><a data-target="#otherPackages" aria-controls="otherPackages" role="tab" data-toggle="tab">Other packages</a></li>
       </ul>
-
-      <!-- Tab panes -->
-      <div class="tab-content">
-        <div role="tabpanel" class="tab-pane active" id="itinerary">
-
-          <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-            Button with data-target
-          </button>
-
-          <div class="collapse" id="collapseExample">
-            <div class="well">
-              hbdvhhdbvhd
-            </div>
-          </div>
-
-        </div>
-        <div role="tabpanel" class="tab-pane" id="activities">2</div>
-        <div role="tabpanel" class="tab-pane" id="inclusions">3</div>
-        <div role="tabpanel" class="tab-pane" id="otherPackages">4</div>
-      </div>
 
     </div>
   </div>
+</div>
+
+<div class="container">
+    <div class="row">
+      <!-- Tab panes -->
+      <div class="tab-content">
+        <div role="tabpanel" class="tab-pane active" id="itinerary">
+          <div class="col-md-6">
+            <div class="day-button-wrapper">
+              <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#day1" aria-expanded="false" aria-controls="day1">
+                Day<span class="text-right"><i class="fa fa-angle-double-right fa-4x" aria-hidden="true"></i></span>
+              </button>
+
+              <div class="collapse day-button-collapse" id="day1">
+                <div class="well">
+                  <ul class="list-unstyled">
+                    <li><span><i class="fa fa-hand-o-right" aria-hidden="true"></i></span>Pick up from air port</li>
+                    <li><span><i class="fa fa-hand-o-right" aria-hidden="true"></i></span>Breakfast on the Negombo beach</li>
+                    <li><span><i class="fa fa-hand-o-right" aria-hidden="true"></i></span>Check in to hotel in Negombo</li>
+                    <li><span><i class="fa fa-hand-o-right" aria-hidden="true"></i></span>Enjoy the beauty on the beach</li>
+                    <li><span><i class="fa fa-hand-o-right" aria-hidden="true"></i></span>City tour at Negombo </li>
+                    <li><span><i class="fa fa-hand-o-right" aria-hidden="true"></i></span>Dinner</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="day-button-wrapper">
+              <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#day2" aria-expanded="false" aria-controls="day2">
+                Day<span class="text-right"><i class="fa fa-angle-double-right fa-4x" aria-hidden="true"></i></span>
+              </button>
+
+              <div class="collapse day-button-collapse" id="day2">
+                <div class="well">
+                  <ul class="list-unstyled">
+                    <li><span><i class="fa fa-hand-o-right" aria-hidden="true"></i></span>Pick up from air port</li>
+                    <li><span><i class="fa fa-hand-o-right" aria-hidden="true"></i></span>Breakfast on the Negombo beach</li>
+                    <li><span><i class="fa fa-hand-o-right" aria-hidden="true"></i></span>Check in to hotel in Negombo</li>
+                    <li><span><i class="fa fa-hand-o-right" aria-hidden="true"></i></span>Enjoy the beauty on the beach</li>
+                    <li><span><i class="fa fa-hand-o-right" aria-hidden="true"></i></span>City tour at Negombo </li>
+                    <li><span><i class="fa fa-hand-o-right" aria-hidden="true"></i></span>Dinner</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="day-button-wrapper">
+              <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#day3" aria-expanded="false" aria-controls="day3">
+                Day<span class="text-right"><i class="fa fa-angle-double-right fa-4x" aria-hidden="true"></i></span>
+              </button>
+
+              <div class="collapse day-button-collapse" id="day3">
+                <div class="well">
+                  <ul class="list-unstyled">
+                    <li><span><i class="fa fa-hand-o-right" aria-hidden="true"></i></span>Pick up from air port</li>
+                    <li><span><i class="fa fa-hand-o-right" aria-hidden="true"></i></span>Breakfast on the Negombo beach</li>
+                    <li><span><i class="fa fa-hand-o-right" aria-hidden="true"></i></span>Check in to hotel in Negombo</li>
+                    <li><span><i class="fa fa-hand-o-right" aria-hidden="true"></i></span>Enjoy the beauty on the beach</li>
+                    <li><span><i class="fa fa-hand-o-right" aria-hidden="true"></i></span>City tour at Negombo </li>
+                    <li><span><i class="fa fa-hand-o-right" aria-hidden="true"></i></span>Dinner</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="day-button-wrapper">
+              <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#day4" aria-expanded="false" aria-controls="day4">
+                Day<span class="text-right"><i class="fa fa-angle-double-right fa-4x" aria-hidden="true"></i></span>
+              </button>
+
+              <div class="collapse day-button-collapse" id="day4">
+                <div class="well">
+                  <ul class="list-unstyled">
+                    <li><span><i class="fa fa-hand-o-right" aria-hidden="true"></i></span>Pick up from air port</li>
+                    <li><span><i class="fa fa-hand-o-right" aria-hidden="true"></i></span>Breakfast on the Negombo beach</li>
+                    <li><span><i class="fa fa-hand-o-right" aria-hidden="true"></i></span>Check in to hotel in Negombo</li>
+                    <li><span><i class="fa fa-hand-o-right" aria-hidden="true"></i></span>Enjoy the beauty on the beach</li>
+                    <li><span><i class="fa fa-hand-o-right" aria-hidden="true"></i></span>City tour at Negombo </li>
+                    <li><span><i class="fa fa-hand-o-right" aria-hidden="true"></i></span>Dinner</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="day-button-wrapper">
+              <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#day5" aria-expanded="false" aria-controls="day5">
+                Day<span class="text-right"><i class="fa fa-angle-double-right fa-4x" aria-hidden="true"></i></span>
+              </button>
+
+              <div class="collapse day-button-collapse" id="day5">
+                <div class="well">
+                  <ul class="list-unstyled">
+                    <li><span><i class="fa fa-hand-o-right" aria-hidden="true"></i></span>Pick up from air port</li>
+                    <li><span><i class="fa fa-hand-o-right" aria-hidden="true"></i></span>Breakfast on the Negombo beach</li>
+                    <li><span><i class="fa fa-hand-o-right" aria-hidden="true"></i></span>Check in to hotel in Negombo</li>
+                    <li><span><i class="fa fa-hand-o-right" aria-hidden="true"></i></span>Enjoy the beauty on the beach</li>
+                    <li><span><i class="fa fa-hand-o-right" aria-hidden="true"></i></span>City tour at Negombo </li>
+                    <li><span><i class="fa fa-hand-o-right" aria-hidden="true"></i></span>Dinner</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="day-button-wrapper">
+              <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#day6" aria-expanded="false" aria-controls="day6">
+                Day<span class="text-right"><i class="fa fa-angle-double-right fa-4x" aria-hidden="true"></i></span>
+              </button>
+
+              <div class="collapse day-button-collapse" id="day6">
+                <div class="well">
+                  <ul class="list-unstyled">
+                    <li><span><i class="fa fa-hand-o-right" aria-hidden="true"></i></span>Pick up from air port</li>
+                    <li><span><i class="fa fa-hand-o-right" aria-hidden="true"></i></span>Breakfast on the Negombo beach</li>
+                    <li><span><i class="fa fa-hand-o-right" aria-hidden="true"></i></span>Check in to hotel in Negombo</li>
+                    <li><span><i class="fa fa-hand-o-right" aria-hidden="true"></i></span>Enjoy the beauty on the beach</li>
+                    <li><span><i class="fa fa-hand-o-right" aria-hidden="true"></i></span>City tour at Negombo </li>
+                    <li><span><i class="fa fa-hand-o-right" aria-hidden="true"></i></span>Dinner</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="day-button-wrapper">
+              <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#day7" aria-expanded="false" aria-controls="day7">
+                Day<span class="text-right"><i class="fa fa-angle-double-right fa-4x" aria-hidden="true"></i></span>
+              </button>
+
+              <div class="collapse day-button-collapse" id="day7">
+                <div class="well">
+                  <ul class="list-unstyled">
+                    <li><span><i class="fa fa-hand-o-right" aria-hidden="true"></i></span>Pick up from air port</li>
+                    <li><span><i class="fa fa-hand-o-right" aria-hidden="true"></i></span>Breakfast on the Negombo beach</li>
+                    <li><span><i class="fa fa-hand-o-right" aria-hidden="true"></i></span>Check in to hotel in Negombo</li>
+                    <li><span><i class="fa fa-hand-o-right" aria-hidden="true"></i></span>Enjoy the beauty on the beach</li>
+                    <li><span><i class="fa fa-hand-o-right" aria-hidden="true"></i></span>City tour at Negombo </li>
+                    <li><span><i class="fa fa-hand-o-right" aria-hidden="true"></i></span>Dinner</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="day-button-wrapper">
+              <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#day8" aria-expanded="false" aria-controls="day8">
+                Day<span class="text-right"><i class="fa fa-angle-double-right fa-4x" aria-hidden="true"></i></span>
+              </button>
+
+              <div class="collapse day-button-collapse" id="day8">
+                <div class="well">
+                  <ul class="list-unstyled">
+                    <li><span><i class="fa fa-hand-o-right" aria-hidden="true"></i></span>Pick up from air port</li>
+                    <li><span><i class="fa fa-hand-o-right" aria-hidden="true"></i></span>Breakfast on the Negombo beach</li>
+                    <li><span><i class="fa fa-hand-o-right" aria-hidden="true"></i></span>Check in to hotel in Negombo</li>
+                    <li><span><i class="fa fa-hand-o-right" aria-hidden="true"></i></span>Enjoy the beauty on the beach</li>
+                    <li><span><i class="fa fa-hand-o-right" aria-hidden="true"></i></span>City tour at Negombo </li>
+                    <li><span><i class="fa fa-hand-o-right" aria-hidden="true"></i></span>Dinner</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="day-button-wrapper">
+              <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#day9" aria-expanded="false" aria-controls="day9">
+                Day<span class="text-right"><i class="fa fa-angle-double-right fa-4x" aria-hidden="true"></i></span>
+              </button>
+
+              <div class="collapse day-button-collapse" id="day9">
+                <div class="well">
+                  <ul class="list-unstyled">
+                    <li><span><i class="fa fa-hand-o-right" aria-hidden="true"></i></span>Pick up from air port</li>
+                    <li><span><i class="fa fa-hand-o-right" aria-hidden="true"></i></span>Breakfast on the Negombo beach</li>
+                    <li><span><i class="fa fa-hand-o-right" aria-hidden="true"></i></span>Check in to hotel in Negombo</li>
+                    <li><span><i class="fa fa-hand-o-right" aria-hidden="true"></i></span>Enjoy the beauty on the beach</li>
+                    <li><span><i class="fa fa-hand-o-right" aria-hidden="true"></i></span>City tour at Negombo </li>
+                    <li><span><i class="fa fa-hand-o-right" aria-hidden="true"></i></span>Dinner</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="day-button-wrapper">
+              <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#day10" aria-expanded="false" aria-controls="day10">
+                Day<span class="text-right"><i class="fa fa-angle-double-right fa-4x" aria-hidden="true"></i></span>
+              </button>
+
+              <div class="collapse day-button-collapse" id="day10">
+                <div class="well">
+                  <ul class="list-unstyled">
+                    <li><span><i class="fa fa-hand-o-right" aria-hidden="true"></i></span>Pick up from air port</li>
+                    <li><span><i class="fa fa-hand-o-right" aria-hidden="true"></i></span>Breakfast on the Negombo beach</li>
+                    <li><span><i class="fa fa-hand-o-right" aria-hidden="true"></i></span>Check in to hotel in Negombo</li>
+                    <li><span><i class="fa fa-hand-o-right" aria-hidden="true"></i></span>Enjoy the beauty on the beach</li>
+                    <li><span><i class="fa fa-hand-o-right" aria-hidden="true"></i></span>City tour at Negombo </li>
+                    <li><span><i class="fa fa-hand-o-right" aria-hidden="true"></i></span>Dinner</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="day-button-wrapper">
+              <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#day11" aria-expanded="false" aria-controls="day11">
+                Day<span class="text-right"><i class="fa fa-angle-double-right fa-4x" aria-hidden="true"></i></span>
+              </button>
+
+              <div class="collapse day-button-collapse" id="day11">
+                <div class="well">
+                  <ul class="list-unstyled">
+                    <li><span><i class="fa fa-hand-o-right" aria-hidden="true"></i></span>Pick up from air port</li>
+                    <li><span><i class="fa fa-hand-o-right" aria-hidden="true"></i></span>Breakfast on the Negombo beach</li>
+                    <li><span><i class="fa fa-hand-o-right" aria-hidden="true"></i></span>Check in to hotel in Negombo</li>
+                    <li><span><i class="fa fa-hand-o-right" aria-hidden="true"></i></span>Enjoy the beauty on the beach</li>
+                    <li><span><i class="fa fa-hand-o-right" aria-hidden="true"></i></span>City tour at Negombo </li>
+                    <li><span><i class="fa fa-hand-o-right" aria-hidden="true"></i></span>Dinner</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <div class="col-md-6">
+            <div class="package-images" style="background-image: url('../assets/images/myPackageImages/1.jpg')">
+              <div class="package-text-wrapper text-center">
+                <p class="text-uppercase">5 nights 6 days package</p>
+                <p>Beach package</p>
+              </div>
+              <div class="package-button">
+                <button class="btn btn-success green-button">VIEW MORE</button>
+              </div>
+            </div>
+            <div class="package-images" style="background-image: url('../assets/images/myPackageImages/2.jpg')">
+              <div class="package-text-wrapper text-center">
+                <p class="text-uppercase">4 nights 5 days package</p>
+                <p>Honeymoon on the beach</p>
+              </div>
+              <div class="package-button">
+                <button class="btn btn-success green-button">VIEW MORE</button>
+              </div>
+            </div>
+            <div class="package-images" style="background-image: url('../assets/images/myPackageImages/3.jpg')">
+              <div class="package-text-wrapper text-center">
+                <p class="text-uppercase">6 nights 7 days package</p>
+                <p>Honeymoon package</p>
+              </div>
+              <div class="package-button">
+                <button class="btn btn-success green-button">VIEW MORE</button>
+              </div>
+            </div>
+            <div class="package-images" style="background-image: url('../assets/images/myPackageImages/4.jpg')">
+              <div class="package-text-wrapper text-center">
+                <p class="text-uppercase">6 nights 7 days package</p>
+
+              </div>
+              <div class="package-button">
+                <button class="btn btn-success green-button">VIEW MORE</button>
+              </div>
+            </div>
+            <div class="package-images" style="background-image: url('../assets/images/myPackageImages/5.jpg')">
+              <div class="package-text-wrapper text-center">
+                <p class="text-uppercase">5 nights 6 days package</p>
+
+              </div>
+              <div class="package-button">
+                <button class="btn btn-success green-button">VIEW MORE</button>
+              </div>
+            </div>
+            <div class="package-images" style="background-image: url('../assets/images/myPackageImages/6.jpg')">
+              <div class="package-text-wrapper text-center">
+                <p class="text-uppercase">8 nights 9 days package</p>
+
+              </div>
+              <div class="package-button">
+                <button class="btn btn-success green-button">VIEW MORE</button>
+              </div>
+            </div>
+            <div class="package-images" style="background-image: url('../assets/images/myPackageImages/7.jpg')">
+              <div class="package-text-wrapper text-center">
+                <p class="text-uppercase">9 nights 10 days package</p>
+
+              </div>
+              <div class="package-button">
+                <button class="btn btn-success green-button">VIEW MORE</button>
+              </div>
+            </div>
+
+            <div class="package-images" style="background-color: #0078d7">
+              <div class="package-text-wrapper text-center">
+                <p class="text-uppercase">Need a customized trip?</p>
+
+              </div>
+              <div class="package-button">
+                <button class="btn btn-success green-button">ENQUIRE NOW</button>
+              </div>
+            </div>
+          </div>
+
+
+
+        </div>
+        <div role="tabpanel" class="tab-pane" id="activities">
+          <div class="col-md-6 activity-box">
+            <ul class="list-unstyled">
+              <li><span><i aria-hidden="true" class="fa fa-hand-o-right"></i></span>Negombo City Tour and Shopping</li>
+              <li><span><i aria-hidden="true" class="fa fa-hand-o-right"></i></span>Ruins and temples Anuradhapura</li>
+              <li><span><i aria-hidden="true" class="fa fa-hand-o-right"></i></span>Ruins at Polonnaruwa</li>
+              <li><span><i aria-hidden="true" class="fa fa-hand-o-right"></i></span>Dambulla Cave Temple</li>
+              <li><span><i aria-hidden="true" class="fa fa-hand-o-right"></i></span>Climb Sigiriya Rock</li>
+              <li><span><i aria-hidden="true" class="fa fa-hand-o-right"></i></span>Hiriwadunna village tour</li>
+              <li><span><i aria-hidden="true" class="fa fa-hand-o-right"></i></span>Visit Spice Gardens</li>
+              <li><span><i aria-hidden="true" class="fa fa-hand-o-right"></i></span>Cultural Show</li>
+              <li><span><i aria-hidden="true" class="fa fa-hand-o-right"></i></span>City tour and Shopping at Kandy</li>
+              <li><span><i aria-hidden="true" class="fa fa-hand-o-right"></i></span>Kandy tooth relic temple</li>
+              <li><span><i aria-hidden="true" class="fa fa-hand-o-right"></i></span>Peradeniya botanical gardens</li>
+              <li><span><i aria-hidden="true" class="fa fa-hand-o-right"></i></span>Tea Factory visit</li>
+              <li><span><i aria-hidden="true" class="fa fa-hand-o-right"></i></span>World’s end tour – Horton Plains and Baker’s falls</li>
+              <li><span><i aria-hidden="true" class="fa fa-hand-o-right"></i></span>Visit Gregory’s lake</li>
+              <li><span><i aria-hidden="true" class="fa fa-hand-o-right"></i></span>Visit Victoria Park</li>
+              <li><span><i aria-hidden="true" class="fa fa-hand-o-right"></i></span>Climb Piduruthalagala</li>
+              <li><span><i aria-hidden="true" class="fa fa-hand-o-right"></i></span>Visit Ambewel farm and Strawberry farm</li>
+              <li><span><i aria-hidden="true" class="fa fa-hand-o-right"></i></span>Visit nine arch bridge</li>
+              <li><span><i aria-hidden="true" class="fa fa-hand-o-right"></i></span>Visit Rawana Falls</li>
+              <li><span><i aria-hidden="true" class="fa fa-hand-o-right"></i></span>Visit Little Adam’s peaks</li>
+              <li><span><i aria-hidden="true" class="fa fa-hand-o-right"></i></span>Visit Ella Rock</li>
+              <li><span><i aria-hidden="true" class="fa fa-hand-o-right"></i></span>Safari at Yala</li>
+              <li><span><i aria-hidden="true" class="fa fa-hand-o-right"></i></span>Night out in a Club</li>
+              <li><span><i aria-hidden="true" class="fa fa-hand-o-right"></i></span>City tour and Shopping in Colombo</li>
+
+            </ul>
+          </div>
+          <div class="col-md-6">
+
+            <div class="package-images" style="background-image: url('../assets/images/myPackageImages/1.jpg')">
+              <div class="package-text-wrapper text-center">
+                <p class="text-uppercase">5 nights 6 days package</p>
+                <p>Beach package</p>
+              </div>
+              <div class="package-button">
+                <button class="btn btn-success green-button">VIEW MORE</button>
+              </div>
+            </div>
+            <div class="package-images" style="background-image: url('../assets/images/myPackageImages/2.jpg')">
+              <div class="package-text-wrapper text-center">
+                <p class="text-uppercase">4 nights 5 days package</p>
+                <p>Honeymoon on the beach</p>
+              </div>
+              <div class="package-button">
+                <button class="btn btn-success green-button">VIEW MORE</button>
+              </div>
+            </div>
+            <div class="package-images" style="background-image: url('../assets/images/myPackageImages/3.jpg')">
+              <div class="package-text-wrapper text-center">
+                <p class="text-uppercase">6 nights 7 days package</p>
+                <p>Honeymoon package</p>
+              </div>
+              <div class="package-button">
+                <button class="btn btn-success green-button">VIEW MORE</button>
+              </div>
+            </div>
+            <div class="package-images" style="background-image: url('../assets/images/myPackageImages/4.jpg')">
+              <div class="package-text-wrapper text-center">
+                <p class="text-uppercase">6 nights 7 days package</p>
+
+              </div>
+              <div class="package-button">
+                <button class="btn btn-success green-button">VIEW MORE</button>
+              </div>
+            </div>
+            <div class="package-images" style="background-image: url('../assets/images/myPackageImages/5.jpg')">
+              <div class="package-text-wrapper text-center">
+                <p class="text-uppercase">5 nights 6 days package</p>
+
+              </div>
+              <div class="package-button">
+                <button class="btn btn-success green-button">VIEW MORE</button>
+              </div>
+            </div>
+            <div class="package-images" style="background-image: url('../assets/images/myPackageImages/6.jpg')">
+              <div class="package-text-wrapper text-center">
+                <p class="text-uppercase">8 nights 9 days package</p>
+
+              </div>
+              <div class="package-button">
+                <button class="btn btn-success green-button">VIEW MORE</button>
+              </div>
+            </div>
+            <div class="package-images" style="background-image: url('../assets/images/myPackageImages/7.jpg')">
+              <div class="package-text-wrapper text-center">
+                <p class="text-uppercase">9 nights 10 days package</p>
+
+              </div>
+              <div class="package-button">
+                <button class="btn btn-success green-button">VIEW MORE</button>
+              </div>
+            </div>
+
+            <div class="package-images" style="background-color: #0078d7">
+              <div class="package-text-wrapper text-center">
+                <p class="text-uppercase">Need a customized trip?</p>
+
+              </div>
+              <div class="package-button">
+                <button class="btn btn-success green-button">ENQUIRE NOW</button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <div role="tabpanel" class="tab-pane" id="inclusions">
+
+          <div class="col-md-6 inclusion-box">
+            <ul class="list-unstyled">
+              <li><span><i aria-hidden="true" class="fa fa-hand-o-right"></i></span>Return Air Ticket in Sri Lankan airlines</li>
+              <li><span><i aria-hidden="true" class="fa fa-hand-o-right"></i></span>Airport Pick up and Drop off</li>
+              <li><span><i aria-hidden="true" class="fa fa-hand-o-right"></i></span>Private luxury Vehicle (Air Conditioned)</li>
+              <li><span><i aria-hidden="true" class="fa fa-hand-o-right"></i></span>Fuel and Insurance for the vehicle</li>
+              <li><span><i aria-hidden="true" class="fa fa-hand-o-right"></i></span>Accommodation on Full board and half board basis in Star class luxurious hotels</li>
+              <li><span><i aria-hidden="true" class="fa fa-hand-o-right"></i></span>Extra meals on the way from A class restaurant</li>
+              <li><span><i aria-hidden="true" class="fa fa-hand-o-right"></i></span>Drinking water bottles for entire tour</li>
+              <li><span><i aria-hidden="true" class="fa fa-hand-o-right"></i></span>Private English speaking Guide</li>
+              <li><span><i aria-hidden="true" class="fa fa-hand-o-right"></i></span>Entrance fees </li>
+              <li><span><i aria-hidden="true" class="fa fa-hand-o-right"></i></span>Charges for Safari Jeeps</li>
+            </ul>
+
+            <p class="text-danger"><b>Driver’s and guide’s tips are not included</b></p>
+          </div>
+
+          <div class="col-md-6">
+
+            <div class="package-images" style="background-image: url('../assets/images/myPackageImages/1.jpg')">
+              <div class="package-text-wrapper text-center">
+                <p class="text-uppercase">5 nights 6 days package</p>
+                <p>Beach package</p>
+              </div>
+              <div class="package-button">
+                <button class="btn btn-success green-button">VIEW MORE</button>
+              </div>
+            </div>
+            <div class="package-images" style="background-image: url('../assets/images/myPackageImages/2.jpg')">
+              <div class="package-text-wrapper text-center">
+                <p class="text-uppercase">4 nights 5 days package</p>
+                <p>Honeymoon on the beach</p>
+              </div>
+              <div class="package-button">
+                <button class="btn btn-success green-button">VIEW MORE</button>
+              </div>
+            </div>
+            <div class="package-images" style="background-image: url('../assets/images/myPackageImages/3.jpg')">
+              <div class="package-text-wrapper text-center">
+                <p class="text-uppercase">6 nights 7 days package</p>
+                <p>Honeymoon package</p>
+              </div>
+              <div class="package-button">
+                <button class="btn btn-success green-button">VIEW MORE</button>
+              </div>
+            </div>
+            <div class="package-images" style="background-image: url('../assets/images/myPackageImages/4.jpg')">
+              <div class="package-text-wrapper text-center">
+                <p class="text-uppercase">6 nights 7 days package</p>
+
+              </div>
+              <div class="package-button">
+                <button class="btn btn-success green-button">VIEW MORE</button>
+              </div>
+            </div>
+            <div class="package-images" style="background-image: url('../assets/images/myPackageImages/5.jpg')">
+              <div class="package-text-wrapper text-center">
+                <p class="text-uppercase">5 nights 6 days package</p>
+
+              </div>
+              <div class="package-button">
+                <button class="btn btn-success green-button">VIEW MORE</button>
+              </div>
+            </div>
+            <div class="package-images" style="background-image: url('../assets/images/myPackageImages/6.jpg')">
+              <div class="package-text-wrapper text-center">
+                <p class="text-uppercase">8 nights 9 days package</p>
+
+              </div>
+              <div class="package-button">
+                <button class="btn btn-success green-button">VIEW MORE</button>
+              </div>
+            </div>
+            <div class="package-images" style="background-image: url('../assets/images/myPackageImages/7.jpg')">
+              <div class="package-text-wrapper text-center">
+                <p class="text-uppercase">9 nights 10 days package</p>
+
+              </div>
+              <div class="package-button">
+                <button class="btn btn-success green-button">VIEW MORE</button>
+              </div>
+            </div>
+
+            <div class="package-images" style="background-color: #0078d7">
+              <div class="package-text-wrapper text-center">
+                <p class="text-uppercase">Need a customized trip?</p>
+
+              </div>
+              <div class="package-button">
+                <button class="btn btn-success green-button">ENQUIRE NOW</button>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
 </div>
 
 
