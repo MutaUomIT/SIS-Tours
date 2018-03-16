@@ -77,7 +77,7 @@ body{
   position: absolute;
   right: 0;
   left: 0;
-  z-index: 1;
+  z-index: 9999;
   top: -25px;
 
   background-image: none;
@@ -95,24 +95,40 @@ body{
   border-bottom: 2px solid white;
 }
 
-.custom-navbar .navbar-nav>li>a:hover, .custom-navbar .navbar-nav>li>a:hover:active, .custom-navbar .navbar-nav>li>a:active,
-.custom-navbar .navbar-nav>li>a:active:hover, .custom-navbar .navbar-nav>li>a:focus{
-  color: #0078d7;
-  border-bottom: 2px solid #ffe500;
-  padding-bottom: 0;
-  background-color: white;
-  background-image: none;
+@media (min-width: 768px) {
+  .custom-navbar .navbar-nav>li>a:hover, .custom-navbar .navbar-nav>li>a:hover:active, .custom-navbar .navbar-nav>li>a:active,
+  .custom-navbar .navbar-nav>li>a:active:hover, .custom-navbar .navbar-nav>li>a:focus{
+    color: #0078d7;
+    border-bottom: 2px solid #ffe500;
+    padding-bottom: 0;
+    background-color: white;
+    background-image: none;
 
-  -webkit-transition: border-bottom-color 1s;
-  -moz-transition: border-bottom-color 1s;
-  -ms-transition: border-bottom-color 1s;
-  -o-transition: border-bottom-color 1s;
-  transition: border-bottom-color 1s;
+    -webkit-transition: border-bottom-color 1s;
+    -moz-transition: border-bottom-color 1s;
+    -ms-transition: border-bottom-color 1s;
+    -o-transition: border-bottom-color 1s;
+    transition: border-bottom-color 1s;
 
+  }
+
+  .custom-navbar .navbar-nav>li>a:hover{
+    border-bottom-color: #ffe500;
+  }
 }
 
-.custom-navbar .navbar-nav>li>a:hover{
-  border-bottom-color: #ffe500;
+@media (min-width: 768px) and (max-width: 992px) {
+  .custom-navbar .navbar-nav>li>a{
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+  .custom-navbar .navbar-nav>li>a{
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 }
 
 .custom-navbar .navbar-nav>.active>a, .custom-navbar .navbar-nav>.active>a:focus, .custom-navbar .navbar-nav>.active>a:hover,
@@ -175,8 +191,9 @@ body{
   color: white;
   font-family: Fertigo Pro Regular, serif;
   position: absolute;
+  /*font-size: calc(20px + 7vw);*/
   font-size: 100px;
-  z-index: 9999;
+  z-index: 1;
   border: 5px solid white;
   padding: 5px 40px;
 
@@ -195,6 +212,19 @@ body{
   top: 58%;
   -webkit-transform: translate(-50%, -42%);
   transform: translate(-50%, -42%)
+}
+
+
+@media (max-width: 576px) {
+  .home-slider-row p:nth-child(1){
+    font-size: 50px;
+  }
+
+  .home-slider-row p:nth-child(2){
+    top: 53%;
+    -webkit-transform: translate(-50%, -47%);
+    transform: translate(-50%, -47%)
+  }
 }
 
 .home-slider .slick-dots{
@@ -262,7 +292,7 @@ body{
   /*width: 100%;*/
   position: absolute;
   bottom: -135px;
-  right: -15px;
+  right: 0;
 }
 
 .slider-form{
@@ -286,6 +316,21 @@ body{
 @media(min-width: 1200px){
   .form-container{
     width: 750px;
+  }
+}
+
+@media (max-width: 768px) {
+  .slider-enquire{
+    bottom: -315.5px;
+  }
+
+  .why-sis-row{
+    margin-top: 320px;
+  }
+
+  .home-slider .slick-dots li button:before{
+    left: 0;
+    top: -200px;
   }
 }
 
