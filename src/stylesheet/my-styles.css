@@ -313,6 +313,31 @@ body{
   padding-bottom: 30px;
 }
 
+.service-images{
+  height: 80px;
+  width: 80px;
+  display: inline-block;
+
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+
+}
+
+.service-image-wrapper{
+  display: inline-block;
+  background-color: white;
+  padding: 50px;
+
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+}
+
+.service-image-set-wrapper{
+  background-color: #0078D7;
+}
+
 @media(min-width: 1200px){
   .form-container{
     width: 750px;
@@ -647,4 +672,5 @@ body{
 }
 
 /*package details ends*/
+
 
