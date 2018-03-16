@@ -42,13 +42,93 @@ body{
   outline-offset: 5px;
 }
 
+.custom-form-control{
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+}
+
 /*navbar start*/
 
 .navbar-blue-top{
   background-color: #0078d7;
   color: white;
   height: 60px;
+  padding-top: 8px;
 }
+
+.navbar-container{
+  position: relative;
+}
+
+.custom-navbar{
+  position: absolute;
+  right: 0;
+  left: 0;
+  z-index: 1;
+  top: -25px;
+
+  background-image: none;
+  background-color: white;
+
+
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+
+}
+
+.custom-navbar .navbar-nav>li>a{
+  color: #0078d7;
+  border-bottom: 2px solid white;
+}
+
+.custom-navbar .navbar-nav>li>a:hover, .custom-navbar .navbar-nav>li>a:hover:active, .custom-navbar .navbar-nav>li>a:active,
+.custom-navbar .navbar-nav>li>a:active:hover, .custom-navbar .navbar-nav>li>a:focus{
+  color: #0078d7;
+  border-bottom: 2px solid #ffe500;
+  padding-bottom: 0;
+  background-color: white;
+  background-image: none;
+
+  -webkit-transition: border-bottom-color 1s;
+  -moz-transition: border-bottom-color 1s;
+  -ms-transition: border-bottom-color 1s;
+  -o-transition: border-bottom-color 1s;
+  transition: border-bottom-color 1s;
+
+}
+
+.custom-navbar .navbar-nav>li>a:hover{
+  border-bottom-color: #ffe500;
+}
+
+.custom-navbar .navbar-nav>.active>a, .custom-navbar .navbar-nav>.active>a:focus, .custom-navbar .navbar-nav>.active>a:hover,
+.custom-navbar .navbar-nav > .active > a, .custom-navbar .navbar-nav > .active > a:hover, .custom-navbar .navbar-nav > .active > a:focus{
+  background-color: white;
+  background-image: none;
+  color: #0078d7;
+}
+
+.custom-navbar .navbar-nav>.active>a{
+  background-image: none;
+  background-color: white;
+  box-shadow: none;
+}
+
+.custom-navbar .navbar-brand{
+  padding: 10px 40px;
+}
+
+
+
+@media (min-width: 1200px) {
+  .custom-navbar .navbar-nav li a{
+    padding: 15px 34px;
+  }
+}
+
+
 
 /*navbar end*/
 
@@ -57,6 +137,107 @@ body{
 
 
 /*search end*/
+
+/*home starts*/
+
+.home-slider-image{
+  height: 670px;
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  -webkit-filter: brightness(80%); /* Safari 6.0 - 9.0 */
+  filter: brightness(80%);
+}
+
+.home-slider .slick-prev, .home-slider .slick-next{
+  display: none !important;
+}
+
+.home-slider-row{
+  position: relative;
+}
+
+.home-slider-row p:nth-child(1){
+  color: white;
+  font-family: Fertigo Pro Regular, serif;
+  position: absolute;
+  font-size: 100px;
+  z-index: 9999;
+  border: 5px solid white;
+  padding: 5px 40px;
+
+  left: 50%;
+  top: 45%;
+  -webkit-transform: translate(-50%, -55%);
+  transform: translate(-50%, -55%)
+}
+
+.home-slider-row p:nth-child(2){
+  color: white;
+  position: absolute;
+  z-index: 9999;
+
+  left: 50%;
+  top: 58%;
+  -webkit-transform: translate(-50%, -42%);
+  transform: translate(-50%, -42%)
+}
+
+.home-slider .slick-dots{
+  bottom: 150px;
+}
+
+.home-slider .slick-dots li button:before{
+  font-size: 30px;
+  color: white;
+}
+
+.form-container{
+  position: relative;
+}
+
+.form-container .nav-tabs>li>a{
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+
+  background-color: white;
+}
+
+.form-container .nav-tabs>li.active>a, .form-container .nav-tabs>li a:hover{
+  background-color: #0078d7;
+  color: white;
+}
+
+.form-container .tab-content{
+  background-color: #FFE500;
+  padding: 30px;
+}
+
+.slider-enquire button{
+  width: 100%;
+  height: 74px;
+}
+
+.slider-form{
+  position: absolute;
+  right: 0;
+  left: 0;
+  top: -200px;
+}
+
+@media(min-width: 1200px){
+  .form-container{
+    width: 970px;
+  }
+}
+
+
+
+
+/*home ends*/
 
 /*package details starts*/
 
@@ -132,7 +313,7 @@ body{
 }
 
 .package-details-tab-section ul li a:hover, .package-details-tab-section ul li a:active, .package-details-tab-section ul li a:hover:active,
-.package-details-tab-section ul li a:active:hover, .package-details-tab-section ul li a:focus, .package-details-tab-section .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover,
+.package-details-tab-section ul li a:active:hover, .package-details-tab-section ul li a:focus, .package-details-tab-section .nav-tabs > li.active > a, .package-details-tab-section .nav-tabs > li.active > a:hover,
 .package-details-tab-section .nav-tabs>li.active>a, .package-details-tab-section .nav-tabs>li.active>a:hover{
   background-color: transparent;
   border-color: #0078d7;

@@ -1,33 +1,161 @@
-<div id="slideshow">
-  <div *ngFor="let p of packageDetails">
-    <img [src]="p.imagePath + '/'+p.backgroundImage" width="500"/>
+<!--<div id="slideshow">-->
+  <!--<div *ngFor="let p of packageDetails">-->
+    <!--<img [src]="p.imagePath + '/'+p.backgroundImage" width="500"/>-->
+  <!--</div>-->
+<!--</div>-->
+
+<!--<div class="row">-->
+  <!--<div *ngFor="let p of packageList" class="col-md-4">-->
+    <!--<img [src]="p.imagePath+'/'+p.backgroundImage" width="350"/>-->
+    <!--<p>{{p.id}} <br> {{p.Name}} <br> {{p.description}}</p>-->
+  <!--</div>-->
+<!--</div>-->
+
+<!--<div class="row">-->
+  <!--<div class="col-md-6">-->
+    <!--<h2>Who we are?</h2>-->
+    <!--<p>Welcome to SIS Tour Operators! We SIS Tour Operators were in the industry for so many years gaining experience and serving our clients with trust and care. We make sure the happiness, enthusiasm, safety and comfort of our clients through 0% complains. Our concept is to serve client with no extra money or hidden charges. They will only have to bring money for their shopping and personal interest, rest will be looked after from SIS Tour Operators.-->
+      <!--Our Main Office is situated at Wellawatte, Colombo, and it’s very easy to find. We will be replying our guests within few hours of their enquiries through mails. We strongly believe the trust of our repeating guests and we care our travelers comfort. Our trustworthy team of experts will provide the maximum satisfaction happiness and the comfort of our clients.-->
+    <!--</p>-->
+  <!--</div>-->
+  <!--<div class="col-md-6">-->
+    <!--<h2>WHY SIS TOUR OPERATORS?</h2>-->
+    <!--<ul>-->
+      <!--<li>We are on the top among tour operating companies in Sri Lanka</li>-->
+      <!--<li>We Offer inbound tour packages, Holiday Packages, Honeymoon Packages and wedding packages </li>-->
+      <!--<li>No hidden Charges, bring money for shopping and personal interests</li>-->
+      <!--<li>We do appoint a team of professionals to give you maximum happiness, satisfaction and comfort.</li>-->
+      <!--<li>24/7 , 365 Days Customer Service</li>-->
+    <!--</ul>-->
+  <!--</div>-->
+<!--</div>-->
+
+<!--<div>text</div>-->
+
+<!--my wrapper starts-->
+
+<!--slider start-->
+
+<div class="container-fluid">
+  <div class="row home-slider-row">
+    <p><b>Sri Lanka</b></p>
+    <p>By Sis Tour Operators</p>
+    <div class="home-slider">
+      <div>
+        <div class="home-slider-image" style="background-image: url('../assets/images/homeSlider/1.jpg')"></div>
+      </div>
+      <div>
+        <div class="home-slider-image" style="background-image: url('../assets/images/homeSlider/2.jpg')"></div>
+      </div>
+      <div>
+        <div class="home-slider-image" style="background-image: url('../assets/images/homeSlider/3.jpg')"></div>
+      </div>
+      <div>
+        <div class="home-slider-image" style="background-image: url('../assets/images/homeSlider/4.jpg')"></div>
+      </div>
+    </div>
   </div>
 </div>
 
-<div class="row">
-  <div *ngFor="let p of packageList" class="col-md-4">
-    <img [src]="p.imagePath+'/'+p.backgroundImage" width="350"/>
-    <p>{{p.id}} <br> {{p.Name}} <br> {{p.description}}</p>
+
+<!--slider ends-->
+
+<!--form starts-->
+
+<div class="container form-container">
+  <div class="row">
+
+    <div class="slider-form">
+
+      <!-- Nav tabs -->
+      <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Our Packages</a></li>
+        <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Customized Tour</a></li>
+      </ul>
+
+      <!-- Tab panes -->
+      <div class="tab-content">
+        <div role="tabpanel" class="tab-pane fade in active" id="home">
+
+          <div class="row">
+
+            <div class="col-sm-4">
+              <div class="form-group">
+                  <select class="form-control custom-form-control">
+                    <option>4 NIGHTS 5 DAYS PACKAG - Honeymoon on the beach</option>
+                    <option>5 NIGHTS 6 DAYS PACKAGE - Beach Package</option>
+                    <option>5 NIGHTS 6 DAYS PACKAGE</option>
+                    <option>6 NIGHTS 7 DAYS PACKAGE - Honeymoon Package</option>
+                    <option>6 NIGHTS 7 DAYS PACKAGE</option>
+                    <option>8 NIGHTS 9 DAYS PACKAGE</option>
+                    <option>9 NIGHTS 10 DAYS PACKAGE</option>
+                    <option>10 NIGHTS 11 DAYS PACKAGE</option>
+                  </select>
+              </div>
+            </div>
+
+              <div class="col-sm-4">
+                <div class="form-group">
+                  <label class="sr-only" for="arrivalDate">Arrival Date</label>
+                  <input type="text" class="form-control custom-form-control" id="arrivalDate" placeholder="Arrival Date">
+                </div>
+              </div>
+
+              <div class="col-sm-4">
+                <div class="form-group">
+                  <label class="sr-only" for="yourCountry">Your Country</label>
+                  <input type="text" class="form-control custom-form-control" id="yourCountry" placeholder="Your Country">
+                </div>
+              </div>
+
+              <div class="col-sm-4">
+                <div class="form-group">
+                  <label class="sr-only" for="name">Name</label>
+                  <input type="text" class="form-control custom-form-control" id="name" placeholder="Name">
+                </div>
+              </div>
+
+              <div class="col-sm-4">
+                <div class="form-group">
+                  <label class="sr-only" for="email">Email</label>
+                  <input type="email" class="form-control custom-form-control" id="email" placeholder="Email">
+                </div>
+              </div>
+
+              <div class="col-sm-4">
+                <div class="form-group">
+                  <label class="sr-only" for="mobileNumber">Mobile Number</label>
+                  <input type="text" class="form-control custom-form-control" id="mobileNumber" placeholder="Mobile Number">
+                </div>
+              </div>
+
+            <div class="col-sm-8">
+              <div class="form-group">
+                <textarea class="form-control custom-form-control" rows="3"></textarea>
+              </div>
+            </div>
+
+            <div class="col-sm-4 slider-enquire">
+              <button class="btn btn-success green-button">ENQUIRE</button>
+            </div>
+
+
+
+
+          </div>
+        </div>
+        <div role="tabpanel" class="tab-pane fade" id="profile">...</div>
+      </div>
+
+    </div>
+
+
+
   </div>
 </div>
 
-<div class="row">
-  <div class="col-md-6">
-    <h2>Who we are?</h2>
-    <p>Welcome to SIS Tour Operators! We SIS Tour Operators were in the industry for so many years gaining experience and serving our clients with trust and care. We make sure the happiness, enthusiasm, safety and comfort of our clients through 0% complains. Our concept is to serve client with no extra money or hidden charges. They will only have to bring money for their shopping and personal interest, rest will be looked after from SIS Tour Operators.
-      Our Main Office is situated at Wellawatte, Colombo, and it’s very easy to find. We will be replying our guests within few hours of their enquiries through mails. We strongly believe the trust of our repeating guests and we care our travelers comfort. Our trustworthy team of experts will provide the maximum satisfaction happiness and the comfort of our clients.
-    </p>
-  </div>
-  <div class="col-md-6">
-    <h2>WHY SIS TOUR OPERATORS?</h2>
-    <ul>
-      <li>We are on the top among tour operating companies in Sri Lanka</li>
-      <li>We Offer inbound tour packages, Holiday Packages, Honeymoon Packages and wedding packages </li>
-      <li>No hidden Charges, bring money for shopping and personal interests</li>
-      <li>We do appoint a team of professionals to give you maximum happiness, satisfaction and comfort.</li>
-      <li>24/7 , 365 Days Customer Service</li>
-    </ul>
-  </div>
-</div>
+<!--form ends-->
 
-<div>text</div>
+<!--my wrapper ends-->
+
+
