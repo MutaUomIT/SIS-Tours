@@ -56,12 +56,9 @@
     </div>
   </div>
 </div>
-
-
 <!--slider ends-->
 
 <!--form starts-->
-
 <div class="container form-container">
   <div class="row">
 
@@ -81,53 +78,53 @@
 
             <div class="col-sm-4">
               <div class="form-group form-group-sm">
-                  <select class="form-control custom-form-control">
-                    <option>4 NIGHTS 5 DAYS PACKAG - Honeymoon on the beach</option>
-                    <option>5 NIGHTS 6 DAYS PACKAGE - Beach Package</option>
-                    <option>5 NIGHTS 6 DAYS PACKAGE</option>
-                    <option>6 NIGHTS 7 DAYS PACKAGE - Honeymoon Package</option>
-                    <option>6 NIGHTS 7 DAYS PACKAGE</option>
-                    <option>8 NIGHTS 9 DAYS PACKAGE</option>
-                    <option>9 NIGHTS 10 DAYS PACKAGE</option>
-                    <option>10 NIGHTS 11 DAYS PACKAGE</option>
-                  </select>
+                <select class="form-control custom-form-control">
+                <option>4 NIGHTS 5 DAYS PACKAG - Honeymoon on the beach</option>
+                <option>5 NIGHTS 6 DAYS PACKAGE - Beach Package</option>
+                <option>5 NIGHTS 6 DAYS PACKAGE</option>
+                <option>6 NIGHTS 7 DAYS PACKAGE - Honeymoon Package</option>
+                <option>6 NIGHTS 7 DAYS PACKAGE</option>
+                <option>8 NIGHTS 9 DAYS PACKAGE</option>
+                <option>9 NIGHTS 10 DAYS PACKAGE</option>
+                <option>10 NIGHTS 11 DAYS PACKAGE</option>
+                </select>
               </div>
             </div>
 
-              <div class="col-sm-4">
-                <div class="form-group form-group-sm">
-                  <label class="sr-only" for="arrivalDate">Arrival Date</label>
-                  <input type="text" class="form-control custom-form-control" id="arrivalDate" placeholder="Arrival Date">
-                </div>
+            <div class="col-sm-4">
+              <div class="form-group form-group-sm">
+                <label class="sr-only" for="arrivalDate">Arrival Date</label>
+                <input type="text" class="form-control custom-form-control" id="arrivalDate" placeholder="Arrival Date" [(ngModel)]="inquiry.arrivalDate"/>
               </div>
+            </div>
 
-              <div class="col-sm-4">
-                <div class="form-group form-group-sm">
-                  <label class="sr-only" for="yourCountry">Your Country</label>
-                  <input type="text" class="form-control custom-form-control" id="yourCountry" placeholder="Your Country">
-                </div>
+            <div class="col-sm-4">
+              <div class="form-group form-group-sm">
+                <label class="sr-only" for="yourCountry">Your Country</label>
+                <input type="text" class="form-control custom-form-control" id="yourCountry" placeholder="Your Country" [(ngModel)]="inquiry.country"/>
               </div>
+            </div>
 
-              <div class="col-sm-4">
-                <div class="form-group form-group-sm">
-                  <label class="sr-only" for="name">Name</label>
-                  <input type="text" class="form-control custom-form-control" id="name" placeholder="Name">
-                </div>
+            <div class="col-sm-4">
+              <div class="form-group form-group-sm">
+                <label class="sr-only" for="name">Name</label>
+                <input type="text" class="form-control custom-form-control" id="name" placeholder="Name" [(ngModel)]="inquiry.name"/>
               </div>
+            </div>
 
-              <div class="col-sm-4">
-                <div class="form-group form-group-sm">
-                  <label class="sr-only" for="email">Email</label>
-                  <input type="email" class="form-control custom-form-control" id="email" placeholder="Email">
-                </div>
+            <div class="col-sm-4">
+              <div class="form-group form-group-sm">
+                <label class="sr-only" for="email">Email</label>
+                <input type="email" class="form-control custom-form-control" id="email" placeholder="Email" [(ngModel)]="inquiry.email"/>
               </div>
+            </div>
 
-              <div class="col-sm-4">
-                <div class="form-group form-group-sm">
-                  <label class="sr-only" for="mobileNumber">Mobile Number</label>
-                  <input type="text" class="form-control custom-form-control" id="mobileNumber" placeholder="Mobile Number">
-                </div>
+            <div class="col-sm-4">
+              <div class="form-group form-group-sm">
+                <label class="sr-only" for="mobileNumber">Mobile Number</label>
+                <input type="text" class="form-control custom-form-control" id="mobileNumber" placeholder="Mobile Number" [(ngModel)]="inquiry.mobile"/>
               </div>
+            </div>
 
             <div class="col-sm-12">
               <div class="form-group form-group-sm no-margin-bottom">
@@ -143,7 +140,7 @@
     </div>
 
     <div class="col-sm-6 slider-enquire text-right no-padding-right">
-    <button class="btn btn-success green-button">ENQUIRE</button>
+    <button (click)="sendInquiry()" class="btn btn-success green-button">ENQUIRE</button>
     </div>
 
 
