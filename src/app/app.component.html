@@ -1,37 +1,3 @@
-<div class="container-fluid">
-  <div class="row">
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-      <div class="collapse navbar-collapse container" id="navbarsExampleDefault">
-        <ul class="navbar-nav mr-auto">
-
-          <li class="nav-item" [routerLinkActive]="['active']">
-            <a class="nav-link" [routerLink]="['home']">Home <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item" [routerLinkActive]="['active']">
-            <a class="nav-link"[routerLink]="['packages']">Packages <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item" [routerLinkActive]="['active']">
-            <a class="nav-link"[routerLink]="['leisure']">Leisure <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item" [routerLinkActive]="['active']">
-            <a class="nav-link"[routerLink]="['about-lanka']">Sri Lanka <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item" [routerLinkActive]="['active']">
-            <a class="nav-link"[routerLink]="['testimonials']">Testimonials <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item" [routerLinkActive]="['active']">
-            <a class="nav-link"[routerLink]="['about-us']">About US <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item" [routerLinkActive]="['active']">
-            <a class="nav-link"[routerLink]="['contacts']">Contact US <span class="sr-only">(current)</span></a>
-          </li>
-        </ul>
-        <!--<div id="google_translate_element"></div>-->
-      </div>
-    </nav>
-  </div>
-</div>
-
 <!--my navigation bar start-->
 
 <div class="navbar-blue-top">
@@ -69,13 +35,13 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">HOME <span class="sr-only">(current)</span></a></li>
-        <li><a href="#">PACKAGES</a></li>
-        <li><a href="#">LEISURE</a></li>
-        <li><a href="#">SRILANKA</a></li>
-        <li><a href="#">TESTIMONIALS</a></li>
-        <li><a href="#">ABOUT US</a></li>
-        <li><a href="#">CONTACT US</a></li>
+        <li class="active"><a [routerLink]="['home']">HOME <span class="sr-only">(current)</span></a></li>
+        <li class="active"><a [routerLink]="['packages']">PACKAGES <span class="sr-only">(current)</span></a></li>
+        <li class="active"><a [routerLink]="['leisure']">LEISURE <span class="sr-only">(current)</span></a></li>
+        <li class="active"><a [routerLink]="['about-lanka']">SRILANKA <span class="sr-only">(current)</span></a></li>
+        <li class="active"><a [routerLink]="['testimonials']">TESTIMONIALS <span class="sr-only">(current)</span></a></li>
+        <li class="active"><a [routerLink]="['about-us']">ABOUT US <span class="sr-only">(current)</span></a></li>
+        <li class="active"><a [routerLink]="['contacts']">CONTACT US <span class="sr-only">(current)</span></a></li>
         <li><a href=""><span><i class="fa fa-search" aria-hidden="true"></i></span></a></li>
 
       </ul>

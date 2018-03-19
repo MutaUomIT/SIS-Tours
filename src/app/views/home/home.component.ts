@@ -17,23 +17,39 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.packageDetails = PackageData.packageList;
-    this.initJqueryFunctions();
+    this.homeImageSlider();
+    //this.initJqueryFunctions();
     this.loadPackages();
   }
 
-  initJqueryFunctions(){
-    $("#slideshow > div:gt(0)").hide();
-
-    setInterval(function() {
-      $('#slideshow > div:first')
-        .fadeOut(1000)
-        .next()
-        .fadeIn(1000)
-        .end()
-        .appendTo('#slideshow');
-    },  3000);
-
+  // home slider
+  homeImageSlider() {
+    $(document).ready(function () {
+      $('.home-slider').slick({
+        dots: true,
+        infinite: true,
+        speed: 500,
+        fade: true,
+        cssEase: 'linear',
+        autoplay: true,
+        autoplaySpeed: 2000,
+      });
+    });
   }
+
+  // initJqueryFunctions(){
+  //   $("#slideshow > div:gt(0)").hide();
+  //
+  //   setInterval(function() {
+  //     $('#slideshow > div:first')
+  //       .fadeOut(1000)
+  //       .next()
+  //       .fadeIn(1000)
+  //       .end()
+  //       .appendTo('#slideshow');
+  //   },  3000);
+  //
+  // }
 
   private loadPackages(){
     this.packageList = PackageData.packageList;
