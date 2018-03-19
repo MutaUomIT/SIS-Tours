@@ -17,8 +17,24 @@ export class PackagesComponent implements OnInit {
 
   ngOnInit() {
     this.packageDetails = PackageData.packageList;
+    this.packageImageSlider();
     // this.initJqueryFunctions();
     this.loadPackages();
+  }
+
+  // package Details slider
+  packageImageSlider(){
+  $(document).ready(function () {
+  $('.package-details-slider').slick({
+    dots: true,
+    infinite: true,
+    speed: 500,
+    fade: true,
+    cssEase: 'linear',
+    autoplay: true,
+    autoplaySpeed: 2000,
+      });
+    });
   }
 
   // initJqueryFunctions(){
