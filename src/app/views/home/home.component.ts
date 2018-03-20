@@ -41,6 +41,7 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     this.packageDetails = PackageData.packageList;
     this.homeImageSlider();
+    this.testimonialsSlider();
     //this.initJqueryFunctions();
     this.loadPackages();
   }
@@ -56,6 +57,41 @@ export class HomeComponent implements OnInit {
         cssEase: 'linear',
         autoplay: true,
         autoplaySpeed: 2000,
+      });
+    });
+  }
+
+  //testimonials
+  testimonialsSlider(){
+    $(document).ready(function () {
+      $('.testimonial').slick({
+        infinite: true,
+        slidesToShow: 3,
+        autoplay: true,
+        autoplaySpeed: 2000,
+        dots: false,
+        arrows: true,
+
+        responsive: [
+          {
+            breakpoint: 768,
+            settings: {
+              arrows: false,
+              centerMode: true,
+              centerPadding: '40px',
+              slidesToShow: 2
+            }
+          },
+          {
+            breakpoint: 480,
+            settings: {
+              arrows: false,
+              centerMode: true,
+              centerPadding: '40px',
+              slidesToShow: 1
+            }
+          }
+        ]
       });
     });
   }
@@ -79,38 +115,3 @@ export class HomeComponent implements OnInit {
   }
 
 }
-
-//testimonials
-
-$(document).ready(function () {
-  $('.testimonial').slick({
-    infinite: true,
-    slidesToShow: 3,
-    autoplay: true,
-    autoplaySpeed: 2000,
-    dots: false,
-    arrows: true,
-
-    responsive: [
-      {
-        breakpoint: 768,
-        settings: {
-          arrows: false,
-          centerMode: true,
-          centerPadding: '40px',
-          slidesToShow: 2
-        }
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          arrows: false,
-          centerMode: true,
-          centerPadding: '40px',
-          slidesToShow: 1
-        }
-      }
-    ]
-
-  });
-});
