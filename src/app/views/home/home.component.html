@@ -318,142 +318,139 @@
   </div>
 
   <div class="row">
-<!-- -//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
     <div class="col-md-3 home-packages" *ngFor="let p of packageList">
       <div class="day-label text-center">
         <p><strong>{{p.days}}</strong></p>
         <p>Days</p>
       </div>
-      <div class="home-packages-images home-packages-images-small" style="background-image: url('../assets/images/packageImages/1/1.jpg')">
-        <!--<img [src]="p.imagePath+'/'+p.backgroundImage" width="307" height="246"/>-->
+      <div class="home-packages-images home-packages-images-small" [style.backgroundImage]="'url('+ p.imagePath+'/'+p.backgroundImage +')'">
         <div class="package-text-wrapper text-center">
           <p class="text-uppercase">{{p.mainTopic}}</p>
           <p>{{p.subTopic}}</p>
         </div>
-
-        <div class="package-button">
-          <button class="btn btn-success green-button">TAKE A PEAK</button>
-        </div>
-      </div>
-    </div>
-<!-- -///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
-    <div class="col-md-3 home-packages">
-      <div class="day-label text-center">
-        <p><strong>5</strong></p>
-        <p>Days</p>
-      </div>
-      <div class="home-packages-images home-packages-images-small" style="background-image: url('../assets/images/homePackages/3.jpg')">
-
-        <div class="package-text-wrapper text-center">
-          <p class="text-uppercase">4 NIGHTS 5 DAYS PACKAGE</p>
-          <p>Honeymoon on the beach</p>
-        </div>
-
         <div class="package-button">
           <button class="btn btn-success green-button">TAKE A PEAK</button>
         </div>
       </div>
     </div>
 
-    <div class="col-md-3 home-packages">
+    <!--<div class="col-md-3 home-packages">-->
+      <!--<div class="day-label text-center">-->
+        <!--<p><strong>5</strong></p>-->
+        <!--<p>Days</p>-->
+      <!--</div>-->
+      <!--<div class="home-packages-images home-packages-images-small" style="background-image: url('../assets/images/homePackages/3.jpg')">-->
 
-      <div class="day-label text-center">
-        <p><strong>7</strong></p>
-        <p>Days</p>
-      </div>
-      <div class="home-packages-images home-packages-images-small" style="background-image: url('../assets/images/homePackages/4.jpg')">
+        <!--<div class="package-text-wrapper text-center">-->
+          <!--<p class="text-uppercase">4 NIGHTS 5 DAYS PACKAGE</p>-->
+          <!--<p>Honeymoon on the beach</p>-->
+        <!--</div>-->
 
-        <div class="package-text-wrapper text-center">
-          <p class="text-uppercase">6 NIGHTS 7 DAYS PACKAGE</p>
-          <p>Honeymoon package</p>
-        </div>
+        <!--<div class="package-button">-->
+          <!--<button class="btn btn-success green-button">TAKE A PEAK</button>-->
+        <!--</div>-->
+      <!--</div>-->
+    <!--</div>-->
 
-        <div class="package-button">
-          <button class="btn btn-success green-button">TAKE A PEAK</button>
-        </div>
-      </div>
+    <!--<div class="col-md-3 home-packages">-->
 
-    </div>
+      <!--<div class="day-label text-center">-->
+        <!--<p><strong>7</strong></p>-->
+        <!--<p>Days</p>-->
+      <!--</div>-->
+      <!--<div class="home-packages-images home-packages-images-small" style="background-image: url('../assets/images/homePackages/4.jpg')">-->
 
-    <div class="col-md-3 home-packages">
+        <!--<div class="package-text-wrapper text-center">-->
+          <!--<p class="text-uppercase">6 NIGHTS 7 DAYS PACKAGE</p>-->
+          <!--<p>Honeymoon package</p>-->
+        <!--</div>-->
 
-      <div class="day-label text-center">
-        <p><strong>7</strong></p>
-        <p>Days</p>
-      </div>
-      <div class="home-packages-images home-packages-images-small" style="background-image: url('../assets/images/homePackages/5.jpg')">
+        <!--<div class="package-button">-->
+          <!--<button class="btn btn-success green-button">TAKE A PEAK</button>-->
+        <!--</div>-->
+      <!--</div>-->
 
-        <div class="package-text-wrapper text-center">
-          <p class="text-uppercase">6 NIGHTS 7 DAYS PACKAGE</p>
-          <p></p>
-        </div>
+    <!--</div>-->
 
-        <div class="package-button">
-          <button class="btn btn-success green-button">TAKE A PEAK</button>
-        </div>
-      </div>
+    <!--<div class="col-md-3 home-packages">-->
 
-    </div>
+      <!--<div class="day-label text-center">-->
+        <!--<p><strong>7</strong></p>-->
+        <!--<p>Days</p>-->
+      <!--</div>-->
+      <!--<div class="home-packages-images home-packages-images-small" style="background-image: url('../assets/images/homePackages/5.jpg')">-->
 
-    <div class="col-md-3 home-packages">
+        <!--<div class="package-text-wrapper text-center">-->
+          <!--<p class="text-uppercase">6 NIGHTS 7 DAYS PACKAGE</p>-->
+          <!--<p></p>-->
+        <!--</div>-->
 
-      <div class="day-label text-center">
-        <p><strong>6</strong></p>
-        <p>Days</p>
-      </div>
-      <div class="home-packages-images home-packages-images-small" style="background-image: url('../assets/images/homePackages/6.jpg')">
+        <!--<div class="package-button">-->
+          <!--<button class="btn btn-success green-button">TAKE A PEAK</button>-->
+        <!--</div>-->
+      <!--</div>-->
 
-        <div class="package-text-wrapper text-center">
-          <p class="text-uppercase">5 NIGHTS 6 DAYS PACKAGE</p>
-          <p></p>
-        </div>
+    <!--</div>-->
 
-        <div class="package-button">
-          <button class="btn btn-success green-button">TAKE A PEAK</button>
-        </div>
-      </div>
+    <!--<div class="col-md-3 home-packages">-->
 
-    </div>
+      <!--<div class="day-label text-center">-->
+        <!--<p><strong>6</strong></p>-->
+        <!--<p>Days</p>-->
+      <!--</div>-->
+      <!--<div class="home-packages-images home-packages-images-small" style="background-image: url('../assets/images/homePackages/6.jpg')">-->
 
-    <div class="col-md-3 home-packages">
+        <!--<div class="package-text-wrapper text-center">-->
+          <!--<p class="text-uppercase">5 NIGHTS 6 DAYS PACKAGE</p>-->
+          <!--<p></p>-->
+        <!--</div>-->
 
-      <div class="day-label text-center">
-        <p><strong>9</strong></p>
-        <p>Days</p>
-      </div>
-      <div class="home-packages-images home-packages-images-small" style="background-image: url('../assets/images/homePackages/7.jpg')">
+        <!--<div class="package-button">-->
+          <!--<button class="btn btn-success green-button">TAKE A PEAK</button>-->
+        <!--</div>-->
+      <!--</div>-->
 
-        <div class="package-text-wrapper text-center">
-          <p class="text-uppercase">8 NIGHTS 9 DAYS PACKAGE</p>
-          <p></p>
-        </div>
+    <!--</div>-->
 
-        <div class="package-button">
-          <button class="btn btn-success green-button">TAKE A PEAK</button>
-        </div>
-      </div>
+    <!--<div class="col-md-3 home-packages">-->
 
-    </div>
+      <!--<div class="day-label text-center">-->
+        <!--<p><strong>9</strong></p>-->
+        <!--<p>Days</p>-->
+      <!--</div>-->
+      <!--<div class="home-packages-images home-packages-images-small" style="background-image: url('../assets/images/homePackages/7.jpg')">-->
 
-    <div class="col-md-3 home-packages">
+        <!--<div class="package-text-wrapper text-center">-->
+          <!--<p class="text-uppercase">8 NIGHTS 9 DAYS PACKAGE</p>-->
+          <!--<p></p>-->
+        <!--</div>-->
 
-      <div class="day-label text-center">
-        <p><strong>10</strong></p>
-        <p>Days</p>
-      </div>
-      <div class="home-packages-images home-packages-images-small" style="background-image: url('../assets/images/homePackages/8.jpg')">
+        <!--<div class="package-button">-->
+          <!--<button class="btn btn-success green-button">TAKE A PEAK</button>-->
+        <!--</div>-->
+      <!--</div>-->
 
-        <div class="package-text-wrapper text-center">
-          <p class="text-uppercase">9 NIGHTS 10 DAYS PACKAGE</p>
-          <p></p>
-        </div>
+    <!--</div>-->
 
-        <div class="package-button">
-          <button class="btn btn-success green-button">TAKE A PEAK</button>
-        </div>
-      </div>
+    <!--<div class="col-md-3 home-packages">-->
 
-    </div>
+      <!--<div class="day-label text-center">-->
+        <!--<p><strong>10</strong></p>-->
+        <!--<p>Days</p>-->
+      <!--</div>-->
+      <!--<div class="home-packages-images home-packages-images-small" style="background-image: url('../assets/images/homePackages/8.jpg')">-->
+
+        <!--<div class="package-text-wrapper text-center">-->
+          <!--<p class="text-uppercase">9 NIGHTS 10 DAYS PACKAGE</p>-->
+          <!--<p></p>-->
+        <!--</div>-->
+
+        <!--<div class="package-button">-->
+          <!--<button class="btn btn-success green-button">TAKE A PEAK</button>-->
+        <!--</div>-->
+      <!--</div>-->
+
+    <!--</div>-->
 
     <div class="col-md-3 home-packages">
 
