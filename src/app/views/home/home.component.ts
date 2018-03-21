@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {PackageData} from "../../configFiles/packegeDetails";
+import {TestimonialData} from "../../configFiles/testimonials";
 import { HttpClient } from '@angular/common/http'
 declare var jquery:any;
 declare var $ :any;
@@ -13,6 +14,8 @@ export class HomeComponent implements OnInit {
 
   packageList: any=[];
   packageDetails;
+  testimonialList: any=[];
+  testimonials;
   inquiry : any = {};
 
   constructor(private http: HttpClient) {}
@@ -40,10 +43,12 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.packageDetails = PackageData.packageList;
+    this.testimonials = TestimonialData.testimonialList;
     this.homeImageSlider();
     this.testimonialsSlider();
     //this.initJqueryFunctions();
     this.loadPackages();
+    this.loadTestimonials();
   }
 
   // home slider
@@ -112,6 +117,11 @@ export class HomeComponent implements OnInit {
 
   private loadPackages(){
     this.packageList = PackageData.packageList;
+  }
+
+  private loadTestimonials(){
+    this.testimonialList = TestimonialData.testimonialList;
+    console.log(this.testimonialList);
   }
 
 }
