@@ -1022,4 +1022,66 @@ body{
 
 /*sri lanka ends*/
 
+/*about us starts*/
+
+.about-us-banner{
+  height: 300px;
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  -webkit-filter: brightness(50%);
+  filter: brightness(50%);
+}
+
+.about-us-banner-text h2{
+  color: white;
+  font-family: Fertigo Pro Regular, Serif;
+}
+
+.about-us-banner-text p{
+  color: white;
+}
+
+.about-us-row{
+  position: relative;
+}
+
+.about-us-banner-text{
+  position: absolute;
+  top: 50px;
+  left: 30px;
+  right: 30px;
+}
+
+.about-us-middle{
+  background-color: #282828;
+  color: white;
+  padding-top: 50px;
+  padding-bottom: 40px;
+  margin-top: 20px;
+}
+
+.mission-div{
+  margin-top: 20px;
+  padding: 0 15px;
+}
+
+.vision-div{
+  margin-top: 20px;
+}
+
+@media (min-width: 992px) {
+  .mission-div{
+    border-right: 1px solid #d2d2d2;
+  }
+
+  .about-us-middle .col-md-2:nth-child(n+1):nth-child(-n+4){
+    border-right: 1px solid white;
+  }
+}
+
+/*about us ends*/
+
 
