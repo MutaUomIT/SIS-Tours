@@ -48,6 +48,7 @@
         <!--</div>-->
       </div>
     </div>
+    <br>
     <div class="col-md-4 quick-section">
       <div class="heading text-center">
         <h3 class="text-uppercase">{{packageMoreDetails.mainTopic}}</h3>
@@ -293,64 +294,10 @@
 
           </div>
           <div class="col-md-6">
-            <div class="package-images" style="background-image: url('../assets/images/myPackageImages/1.jpg')">
+            <div class="package-images"  *ngFor="let p of packageList" [style.backgroundImage]="'url('+ p.imagePath+'/'+p.backgroundImage +')'">
               <div class="package-text-wrapper text-center">
-                <p class="text-uppercase">5 nights 6 days package</p>
-                <p>Beach package</p>
-              </div>
-              <div class="package-button">
-                <button class="btn btn-success green-button">VIEW MORE</button>
-              </div>
-            </div>
-            <div class="package-images" style="background-image: url('../assets/images/myPackageImages/2.jpg')">
-              <div class="package-text-wrapper text-center">
-                <p class="text-uppercase">4 nights 5 days package</p>
-                <p>Honeymoon on the beach</p>
-              </div>
-              <div class="package-button">
-                <button class="btn btn-success green-button">VIEW MORE</button>
-              </div>
-            </div>
-            <div class="package-images" style="background-image: url('../assets/images/myPackageImages/3.jpg')">
-              <div class="package-text-wrapper text-center">
-                <p class="text-uppercase">6 nights 7 days package</p>
-                <p>Honeymoon package</p>
-              </div>
-              <div class="package-button">
-                <button class="btn btn-success green-button">VIEW MORE</button>
-              </div>
-            </div>
-            <div class="package-images" style="background-image: url('../assets/images/myPackageImages/4.jpg')">
-              <div class="package-text-wrapper text-center">
-                <p class="text-uppercase">6 nights 7 days package</p>
-
-              </div>
-              <div class="package-button">
-                <button class="btn btn-success green-button">VIEW MORE</button>
-              </div>
-            </div>
-            <div class="package-images" style="background-image: url('../assets/images/myPackageImages/5.jpg')">
-              <div class="package-text-wrapper text-center">
-                <p class="text-uppercase">5 nights 6 days package</p>
-
-              </div>
-              <div class="package-button">
-                <button class="btn btn-success green-button">VIEW MORE</button>
-              </div>
-            </div>
-            <div class="package-images" style="background-image: url('../assets/images/myPackageImages/6.jpg')">
-              <div class="package-text-wrapper text-center">
-                <p class="text-uppercase">8 nights 9 days package</p>
-
-              </div>
-              <div class="package-button">
-                <button class="btn btn-success green-button">VIEW MORE</button>
-              </div>
-            </div>
-            <div class="package-images" style="background-image: url('../assets/images/myPackageImages/7.jpg')">
-              <div class="package-text-wrapper text-center">
-                <p class="text-uppercase">9 nights 10 days package</p>
-
+                <p class="text-uppercase">{{p.mainTopic}}</p>
+                <p>{{p.subTopic}}</p>
               </div>
               <div class="package-button">
                 <button class="btn btn-success green-button">VIEW MORE</button>
@@ -378,65 +325,10 @@
             </ul>
           </div>
           <div class="col-md-6">
-
-            <div class="package-images" style="background-image: url('../assets/images/myPackageImages/1.jpg')">
+            <div class="package-images"  *ngFor="let p of packageList" [style.backgroundImage]="'url('+ p.imagePath+'/'+p.backgroundImage +')'">
               <div class="package-text-wrapper text-center">
-                <p class="text-uppercase">5 nights 6 days package</p>
-                <p>Beach package</p>
-              </div>
-              <div class="package-button">
-                <button class="btn btn-success green-button">VIEW MORE</button>
-              </div>
-            </div>
-            <div class="package-images" style="background-image: url('../assets/images/myPackageImages/2.jpg')">
-              <div class="package-text-wrapper text-center">
-                <p class="text-uppercase">4 nights 5 days package</p>
-                <p>Honeymoon on the beach</p>
-              </div>
-              <div class="package-button">
-                <button class="btn btn-success green-button">VIEW MORE</button>
-              </div>
-            </div>
-            <div class="package-images" style="background-image: url('../assets/images/myPackageImages/3.jpg')">
-              <div class="package-text-wrapper text-center">
-                <p class="text-uppercase">6 nights 7 days package</p>
-                <p>Honeymoon package</p>
-              </div>
-              <div class="package-button">
-                <button class="btn btn-success green-button">VIEW MORE</button>
-              </div>
-            </div>
-            <div class="package-images" style="background-image: url('../assets/images/myPackageImages/4.jpg')">
-              <div class="package-text-wrapper text-center">
-                <p class="text-uppercase">6 nights 7 days package</p>
-
-              </div>
-              <div class="package-button">
-                <button class="btn btn-success green-button">VIEW MORE</button>
-              </div>
-            </div>
-            <div class="package-images" style="background-image: url('../assets/images/myPackageImages/5.jpg')">
-              <div class="package-text-wrapper text-center">
-                <p class="text-uppercase">5 nights 6 days package</p>
-
-              </div>
-              <div class="package-button">
-                <button class="btn btn-success green-button">VIEW MORE</button>
-              </div>
-            </div>
-            <div class="package-images" style="background-image: url('../assets/images/myPackageImages/6.jpg')">
-              <div class="package-text-wrapper text-center">
-                <p class="text-uppercase">8 nights 9 days package</p>
-
-              </div>
-              <div class="package-button">
-                <button class="btn btn-success green-button">VIEW MORE</button>
-              </div>
-            </div>
-            <div class="package-images" style="background-image: url('../assets/images/myPackageImages/7.jpg')">
-              <div class="package-text-wrapper text-center">
-                <p class="text-uppercase">9 nights 10 days package</p>
-
+                <p class="text-uppercase">{{p.mainTopic}}</p>
+                <p>{{p.subTopic}}</p>
               </div>
               <div class="package-button">
                 <button class="btn btn-success green-button">VIEW MORE</button>
@@ -452,7 +344,6 @@
                 <button class="btn btn-success green-button">ENQUIRE NOW</button>
               </div>
             </div>
-
           </div>
         </div>
         <div role="tabpanel" class="tab-pane fade" id="inclusions">
@@ -461,70 +352,14 @@
             <ul class="list-unstyled">
               <li *ngFor="let inclusions of inclusionList"><span><i aria-hidden="true" class="fa fa-hand-o-right"></i></span>{{inclusions}}</li>
             </ul>
-
             <p class="text-danger"><b>Driver’s and guide’s tips are not included</b></p>
           </div>
 
           <div class="col-md-6">
-
-            <div class="package-images" style="background-image: url('../assets/images/myPackageImages/1.jpg')">
+            <div class="package-images"  *ngFor="let p of packageList" [style.backgroundImage]="'url('+ p.imagePath+'/'+p.backgroundImage +')'">
               <div class="package-text-wrapper text-center">
-                <p class="text-uppercase">5 nights 6 days package</p>
-                <p>Beach package</p>
-              </div>
-              <div class="package-button">
-                <button class="btn btn-success green-button">VIEW MORE</button>
-              </div>
-            </div>
-            <div class="package-images" style="background-image: url('../assets/images/myPackageImages/2.jpg')">
-              <div class="package-text-wrapper text-center">
-                <p class="text-uppercase">4 nights 5 days package</p>
-                <p>Honeymoon on the beach</p>
-              </div>
-              <div class="package-button">
-                <button class="btn btn-success green-button">VIEW MORE</button>
-              </div>
-            </div>
-            <div class="package-images" style="background-image: url('../assets/images/myPackageImages/3.jpg')">
-              <div class="package-text-wrapper text-center">
-                <p class="text-uppercase">6 nights 7 days package</p>
-                <p>Honeymoon package</p>
-              </div>
-              <div class="package-button">
-                <button class="btn btn-success green-button">VIEW MORE</button>
-              </div>
-            </div>
-            <div class="package-images" style="background-image: url('../assets/images/myPackageImages/4.jpg')">
-              <div class="package-text-wrapper text-center">
-                <p class="text-uppercase">6 nights 7 days package</p>
-
-              </div>
-              <div class="package-button">
-                <button class="btn btn-success green-button">VIEW MORE</button>
-              </div>
-            </div>
-            <div class="package-images" style="background-image: url('../assets/images/myPackageImages/5.jpg')">
-              <div class="package-text-wrapper text-center">
-                <p class="text-uppercase">5 nights 6 days package</p>
-
-              </div>
-              <div class="package-button">
-                <button class="btn btn-success green-button">VIEW MORE</button>
-              </div>
-            </div>
-            <div class="package-images" style="background-image: url('../assets/images/myPackageImages/6.jpg')">
-              <div class="package-text-wrapper text-center">
-                <p class="text-uppercase">8 nights 9 days package</p>
-
-              </div>
-              <div class="package-button">
-                <button class="btn btn-success green-button">VIEW MORE</button>
-              </div>
-            </div>
-            <div class="package-images" style="background-image: url('../assets/images/myPackageImages/7.jpg')">
-              <div class="package-text-wrapper text-center">
-                <p class="text-uppercase">9 nights 10 days package</p>
-
+                <p class="text-uppercase">{{p.mainTopic}}</p>
+                <p>{{p.subTopic}}</p>
               </div>
               <div class="package-button">
                 <button class="btn btn-success green-button">VIEW MORE</button>
@@ -534,20 +369,15 @@
             <div class="package-images" style="background-color: #0078d7">
               <div class="package-text-wrapper text-center">
                 <p class="text-uppercase">Need a customized trip?</p>
-
               </div>
               <div class="package-button">
                 <button class="btn btn-success green-button">ENQUIRE NOW</button>
               </div>
             </div>
-
           </div>
-
         </div>
-
       </div>
     </div>
-
 </div>
 <!--my wrapper ends-->
 

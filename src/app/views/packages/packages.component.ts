@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { PackageData } from './../../configFiles/packegeDetails';
 import { ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
+
 declare var jquery:any;
 declare var $ :any;
 
@@ -21,7 +23,7 @@ export class PackagesComponent implements OnInit {
   id: number;
   private sub: any;
 
-  constructor(private route: ActivatedRoute) {}
+  constructor(private route: ActivatedRoute, private router:Router) {}
 
   ngOnInit() {
     this.packageDetails = PackageData.packageList;
