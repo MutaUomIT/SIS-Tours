@@ -18,33 +18,34 @@
   <div class="row package-details-upper-row">
     <div class="col-md-8 no-padding-left">
       <div class="package-details-slider">
-        <div>
-          <div class="slider-image" style="background-image: url('../assets/images/packageDetailsImages/1.jpg')"></div>
+        <div *ngFor="let sliderImages of sliderImagesList" >
+          <div class="slider-image" [style.backgroundImage]="'url('+ packageMoreDetails.imagePath+'/'+sliderImages +')'"></div>
         </div>
-        <div>
-          <div class="slider-image" style="background-image: url('../assets/images/packageDetailsImages/2.jpg')"></div>
-        </div>
-        <div>
-          <div class="slider-image" style="background-image: url('../assets/images/packageDetailsImages/3.jpg')"></div>
-        </div>
-        <div>
-          <div class="slider-image" style="background-image: url('../assets/images/packageDetailsImages/4.jpg')"></div>
-        </div>
-        <div>
-          <div class="slider-image" style="background-image: url('../assets/images/packageDetailsImages/5.jpg')"></div>
-        </div>
-        <div>
-          <div class="slider-image" style="background-image: url('../assets/images/packageDetailsImages/6.jpg')"></div>
-        </div>
-        <div>
-          <div class="slider-image" style="background-image: url('../assets/images/packageDetailsImages/7.jpg')"></div>
-        </div>
-        <div>
-          <div class="slider-image" style="background-image: url('../assets/images/packageDetailsImages/8.jpg')"></div>
-        </div>
-        <div>
-          <div class="slider-image" style="background-image: url('../assets/images/packageDetailsImages/9.jpg')"></div>
-        </div>
+
+        <!--<div>-->
+          <!--<div class="slider-image" style="background-image: url('../assets/images/packageImages/8/2.jpg')"></div>-->
+        <!--</div>-->
+        <!--<div>-->
+          <!--<div class="slider-image" style="background-image: url('../assets/images/packageImages/8/3.jpg')"></div>-->
+        <!--</div>-->
+        <!--<div>-->
+          <!--<div class="slider-image" style="background-image: url('../assets/images/packageImages/8/4.jpg')"></div>-->
+        <!--</div>-->
+        <!--<div>-->
+          <!--<div class="slider-image" style="background-image: url('../assets/images/packageImages/8/5.jpg')"></div>-->
+        <!--</div>-->
+        <!--<div>-->
+          <!--<div class="slider-image" style="background-image: url('../assets/images/packageImages/8/6.jpg')"></div>-->
+        <!--</div>-->
+        <!--<div>-->
+          <!--<div class="slider-image" style="background-image: url('../assets/images/packageImages/8/7.jpg')"></div>-->
+        <!--</div>-->
+        <!--<div>-->
+          <!--<div class="slider-image" style="background-image: url('../assets/images/packageImages/8/8.jpg')"></div>-->
+        <!--</div>-->
+        <!--<div>-->
+          <!--<div class="slider-image" style="background-image: url('../assets/images/packageImages/8/9.jpg')"></div>-->
+        <!--</div>-->
       </div>
     </div>
     <div class="col-md-4 quick-section">

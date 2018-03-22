@@ -17,6 +17,7 @@ export class PackagesComponent implements OnInit {
   locationCovered: any=[];
   ativitiesCovered: any=[];
   inclusionList: any=[];
+  sliderImagesList: any=[];
   id: number;
   private sub: any;
 
@@ -60,6 +61,7 @@ export class PackagesComponent implements OnInit {
         this.locationCovered = this.packageMoreDetails.locationCovered;
         this.ativitiesCovered = this.packageMoreDetails.ativitiesCovered;
         this.inclusionList = this.packageMoreDetails.inclusions;
+        this.sliderImagesList = this.packageMoreDetails.sliderImages;
       }
     }
   }
