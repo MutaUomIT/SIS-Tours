@@ -52,9 +52,12 @@ body{
 }
 
 .custom-form-control{
-  -webkit-border-radius: 0;
-  -moz-border-radius: 0;
-  border-radius: 0;
+  -webkit-border-radius: 0 !important;
+  -moz-border-radius: 0 !important;
+  border-radius: 0 !important;
+
+  box-shadow: none !important;
+  font-size: 11px !important;
 }
 
 .home-headings{
@@ -67,6 +70,29 @@ body{
 
 .general-row{
   margin-top: 40px;
+}
+
+.down-arrow{
+  background-color: #60D522;
+  color: white;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  padding-top: 6px;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  top: -25px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+
+
+.down-arrow-wrapper{
+  position: relative;
+  margin-bottom: 20px;
 }
 
 /*navbar start*/
@@ -1084,4 +1110,15 @@ body{
 
 /*about us ends*/
 
+/*contact us start*/
+
+.contact-us-row{
+  background-color: #aadaff;
+}
+
+.contact-us-row iframe{
+  margin-top: 29px;
+}
+
+/*contact us end*/
 

@@ -1,8 +1,54 @@
-<br><br><br><br><br>
-<div class="row">
-  <input type="text" placeholder="Email" [(ngModel)]="inquiry.email"/>
-  <input type="text" placeholder="Name" [(ngModel)]="inquiry.name"/>
-  <input type="text" placeholder="Description" [(ngModel)]="inquiry.description"/>
-  <button (click)="sendInquiry()">Send Inquiry</button>
+<!--<br><br><br><br><br>-->
+<!--<div class="row">-->
+  <!--<input type="text" placeholder="Email" [(ngModel)]="inquiry.email"/>-->
+  <!--<input type="text" placeholder="Name" [(ngModel)]="inquiry.name"/>-->
+  <!--<input type="text" placeholder="Description" [(ngModel)]="inquiry.description"/>-->
+  <!--<button (click)="sendInquiry()">Send Inquiry</button>-->
 
+<!--</div>-->
+
+<div class="container-fluid">
+  <div class="row contact-us-row">
+    <div class="col-md-12 no-padding-left-right">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126743.63162573153!2d79.78616473085114!3d6.9218335283004615!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae253d10f7a7003%3A0x320b2e4d32d3838d!2sColombo!5e0!3m2!1sen!2slk!4v1521692915495" width="100%" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+    </div>
+  </div>
+</div>
+
+<div class="down-arrow-wrapper">
+  <div class="down-arrow">
+    <span><i class="fa fa-angle-double-down fa-3x"></i></span>
+  </div>
+</div>
+
+
+<div class="container">
+  <h2 class="home-headings text-center" style="margin-bottom: 25px">Get in <span class="home-headings-blue">Touch</span></h2>
+  <div class="col-md-4">
+    <div class="form-group">
+      <label class="sr-only" for="name">Your Name</label>
+      <input type="text" class="form-control custom-form-control" id="name" placeholder="Your Name">
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="form-group">
+      <label class="sr-only" for="number">Your Phone Number</label>
+      <input type="text" class="form-control custom-form-control" id="number" placeholder="Your Phone Number">
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="form-group">
+      <label class="sr-only" for="email">Your Email</label>
+      <input type="text" class="form-control custom-form-control" id="email" placeholder="Your Email">
+    </div>
+  </div>
+  <div class="col-md-12">
+    <div class="form-group">
+      <textarea class="form-control custom-form-control" rows="3"></textarea>
+    </div>
+  </div>
+
+  <div class="col-md-12 text-right">
+    <button class="btn btn-success green-button">SUBMIT</button>
+  </div>
 </div>
