@@ -16,6 +16,8 @@ export class HomeComponent implements OnInit {
   packageDetails;
   testimonialList: any=[];
   testimonials;
+  packageMoreDetails: any=[];
+  locationCovered: any=[];
   inquiry : any = {};
 
   constructor(private http: HttpClient) {}
@@ -49,6 +51,7 @@ export class HomeComponent implements OnInit {
     //this.initJqueryFunctions();
     this.loadPackages();
     this.loadTestimonials();
+    this.onClickTakeAPeak(8);
   }
 
   // home slider
@@ -121,7 +124,15 @@ export class HomeComponent implements OnInit {
 
   private loadTestimonials(){
     this.testimonialList = TestimonialData.testimonialList;
-    console.log(this.testimonialList);
   }
 
+  onClickTakeAPeak(id){
+    for(var i = 0;i < this.packageList.length;i++){
+      if(this.packageList[i].id== id){
+        this.packageMoreDetails = this.packageList[i];
+        this.locationCovered = this.packageMoreDetails.locationCovered;
+        console.log( this.locationCovered);
+      }
+    }
+  }
 }

@@ -235,38 +235,32 @@
   </div>
 
   <div class="row">
+
+
+
+    <!--////////////////////////////////////////////////////////////////////////////////-->
+    <div>
     <div class="col-md-6 home-packages">
       <div class="day-label text-center">
-        <p><strong>11</strong></p>
+        <p><strong>{{packageMoreDetails.days}}</strong></p>
         <p>Days</p>
       </div>
-      <div class="home-packages-images home-packages-images-first" style="background-image: url('../assets/images/homePackages/1.jpg')">
+      <div class="home-packages-images home-packages-images-first" [style.backgroundImage]="'url('+ packageMoreDetails.imagePath+'/'+packageMoreDetails.backgroundImage +')'">
 
         <div class="package-text-wrapper text-center">
-          <p class="text-uppercase">10 NIGHTS 11 DAYS PACKAGE</p>
+          <p class="text-uppercase">{{packageMoreDetails.mainTopic}}</p>
           <p></p>
         </div>
 
-        <!--<div class="package-button">-->
-          <!--<button class="btn btn-success green-button">TAKE A PEAK</button>-->
-        <!--</div>-->
       </div>
     </div>
     <div class="col-md-6 no-padding-left-right">
       <div class="col-md-12 quick-section">
         <div class="panel panel-default">
-          <div class="panel-heading">10 NIGHTS 11 DAYS PACKAGE</div>
+          <div class="panel-heading">{{packageMoreDetails.mainTopic}}</div>
           <div class="panel-body">
-            <ul class="list-inline">
-              <li><span><i class="fa fa-map-marker fa-lg"></i></span>Negombo</li>
-              <li><span><i class="fa fa-map-marker fa-lg"></i></span>Anuradhapura</li>
-              <li><span><i class="fa fa-map-marker fa-lg"></i></span>Plonnaruwa</li>
-              <li><span><i class="fa fa-map-marker fa-lg"></i></span>Sigiriya</li>
-              <li><span><i class="fa fa-map-marker fa-lg"></i></span>Kandy</li>
-              <li><span><i class="fa fa-map-marker fa-lg"></i></span>Nuwaraeliya</li>
-              <li><span><i class="fa fa-map-marker fa-lg"></i></span>Ella</li>
-              <li><span><i class="fa fa-map-marker fa-lg"></i></span>Yala</li>
-              <li><span><i class="fa fa-map-marker fa-lg"></i></span>Colombo</li>
+            <ul class="list-inline" *ngFor="let locations of locationCovered">
+              <li><span><i class="fa fa-map-marker fa-lg"></i></span>{{locations}}</li>
             </ul>
 
             <div class="text-right">
@@ -276,6 +270,50 @@
         </div>
       </div>
     </div>
+    </div>
+    <!--////////////////////////////////////////////////////////////////////////////////-->
+
+    <!--<div class="col-md-6 home-packages">-->
+      <!--<div class="day-label text-center">-->
+        <!--<p><strong>11</strong></p>-->
+        <!--<p>Days</p>-->
+      <!--</div>-->
+      <!--<div class="home-packages-images home-packages-images-first" style="background-image: url('../assets/images/homePackages/1.jpg')">-->
+
+        <!--<div class="package-text-wrapper text-center">-->
+          <!--<p class="text-uppercase">10 NIGHTS 11 DAYS PACKAGE</p>-->
+          <!--<p></p>-->
+        <!--</div>-->
+
+        <!--&lt;!&ndash;<div class="package-button">&ndash;&gt;-->
+          <!--&lt;!&ndash;<button class="btn btn-success green-button">TAKE A PEAK</button>&ndash;&gt;-->
+        <!--&lt;!&ndash;</div>&ndash;&gt;-->
+      <!--</div>-->
+    <!--</div>-->
+    <!--<div class="col-md-6 no-padding-left-right">-->
+      <!--<div class="col-md-12 quick-section">-->
+        <!--<div class="panel panel-default">-->
+          <!--<div class="panel-heading">10 NIGHTS 11 DAYS PACKAGE</div>-->
+          <!--<div class="panel-body">-->
+            <!--<ul class="list-inline">-->
+              <!--<li><span><i class="fa fa-map-marker fa-lg"></i></span>Negombo</li>-->
+              <!--<li><span><i class="fa fa-map-marker fa-lg"></i></span>Anuradhapura</li>-->
+              <!--<li><span><i class="fa fa-map-marker fa-lg"></i></span>Plonnaruwa</li>-->
+              <!--<li><span><i class="fa fa-map-marker fa-lg"></i></span>Sigiriya</li>-->
+              <!--<li><span><i class="fa fa-map-marker fa-lg"></i></span>Kandy</li>-->
+              <!--<li><span><i class="fa fa-map-marker fa-lg"></i></span>Nuwaraeliya</li>-->
+              <!--<li><span><i class="fa fa-map-marker fa-lg"></i></span>Ella</li>-->
+              <!--<li><span><i class="fa fa-map-marker fa-lg"></i></span>Yala</li>-->
+              <!--<li><span><i class="fa fa-map-marker fa-lg"></i></span>Colombo</li>-->
+            <!--</ul>-->
+
+            <!--<div class="text-right">-->
+              <!--<button class="btn btn-success green-button">VIEW MORE</button>-->
+            <!--</div>-->
+          <!--</div>-->
+        <!--</div>-->
+      <!--</div>-->
+    <!--</div>-->
 
     <div class="col-md-3 home-packages" *ngFor="let p of packageList">
       <div class="day-label text-center">
@@ -288,7 +326,7 @@
           <p>{{p.subTopic}}</p>
         </div>
         <div class="package-button">
-          <button class="btn btn-success green-button">TAKE A PEAK</button>
+          <button class="btn btn-success green-button" (click)="onClickTakeAPeak(p.id)">TAKE A PEAK</button>
         </div>
       </div>
     </div>
