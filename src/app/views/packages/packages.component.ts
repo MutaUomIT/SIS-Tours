@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PackageData } from './../../configFiles/packegeDetails';
+import { ActivatedRoute } from '@angular/router';
 declare var jquery:any;
 declare var $ :any;
 
@@ -12,14 +13,21 @@ export class PackagesComponent implements OnInit {
 
   packageList: any=[];
   packageDetails;
+  id: number;
+  private sub: any;
 
-  constructor() {}
+  constructor(private route: ActivatedRoute) {}
 
   ngOnInit() {
     this.packageDetails = PackageData.packageList;
     this.packageImageSlider();
-    // this.initJqueryFunctions();
     this.loadPackages();
+
+    this.sub = this.route.params.subscribe(params => {
+      this.id = +params['id']; // (+) converts string 'id' to a number
+    });
+
+    this.onClickViewMore(this.id);
   }
 
   // package Details slider
@@ -37,21 +45,16 @@ export class PackagesComponent implements OnInit {
     });
   }
 
-  // initJqueryFunctions(){
-  //   $("#slideshow > div:gt(0)").hide();
-  //
-  //   setInterval(function() {
-  //     $('#slideshow > div:first')
-  //       .fadeOut(1000)
-  //       .next()
-  //       .fadeIn(1000)
-  //       .end()
-  //       .appendTo('#slideshow');
-  //   },  3000);
-  // }
-
   private loadPackages(){
     this.packageList = PackageData.packageList;
   }
 
+  onClickViewMore(id){
+    for(var i = 0;i < this.packageList.length;i++){
+      if(this.packageList[i].id== id){
+        this.packageMoreDetails = this.packageList[i];
+        this.locationCovered = this.packageMoreDetails.locationCovered;
+      }
+    }
+  }
 }

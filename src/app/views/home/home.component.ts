@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {PackageData} from "../../configFiles/packegeDetails";
 import {TestimonialData} from "../../configFiles/testimonials";
-import { HttpClient } from '@angular/common/http'
+import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 declare var jquery:any;
 declare var $ :any;
 
@@ -20,7 +21,7 @@ export class HomeComponent implements OnInit {
   locationCovered: any=[];
   inquiry : any = {};
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private router:Router) {}
 
   sendInquiry(){
 
@@ -131,8 +132,11 @@ export class HomeComponent implements OnInit {
       if(this.packageList[i].id== id){
         this.packageMoreDetails = this.packageList[i];
         this.locationCovered = this.packageMoreDetails.locationCovered;
-        console.log( this.locationCovered);
       }
     }
   }
+
+onClickViewMore= function (id) {
+  this.router.navigate(['/packages', id]);
+};
 }

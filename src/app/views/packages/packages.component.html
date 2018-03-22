@@ -49,20 +49,12 @@
     </div>
     <div class="col-md-4 quick-section">
       <div class="heading text-center">
-        <h3 class="text-uppercase">10 nights 11 days package</h3>
+        <h3 class="text-uppercase">{{packageMoreDetails.mainTopic}}</h3>
         <button class="btn btn-success green-button">ENQUIRE NOW</button>
       </div>
 
       <ul class="list-inline">
-        <li><span><i class="fa fa-map-marker fa-lg"></i></span>Negombo</li>
-        <li><span><i class="fa fa-map-marker fa-lg"></i></span>Anuradhapura</li>
-        <li><span><i class="fa fa-map-marker fa-lg"></i></span>Plonnaruwa</li>
-        <li><span><i class="fa fa-map-marker fa-lg"></i></span>Sigiriya</li>
-        <li><span><i class="fa fa-map-marker fa-lg"></i></span>Kandy</li>
-        <li><span><i class="fa fa-map-marker fa-lg"></i></span>Nuwaraeliya</li>
-        <li><span><i class="fa fa-map-marker fa-lg"></i></span>Ella</li>
-        <li><span><i class="fa fa-map-marker fa-lg"></i></span>Yala</li>
-        <li><span><i class="fa fa-map-marker fa-lg"></i></span>Colombo</li>
+        <li *ngFor="let locations of locationCovered"><span><i class="fa fa-map-marker fa-lg"></i></span>{{locations}}</li>
       </ul>
     </div>
   </div>
