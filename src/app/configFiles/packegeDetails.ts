@@ -9,7 +9,7 @@ export class PackageData {
       "ativitiesCovered":["Visit Kande Vihare","Visit to Turtle Farm","Visit to Gem Museum","Madu Ganga Tour","Whale and dolphin watching at Mirissa","Visit Coral Gardens","Night out in a Club","City tour and Shopping in Colombo"],
       "inclusions":["Return Air Ticket in Sri Lankan airlines","Airport Pick up and Drop off","Private luxury Vehicle (Air Conditioned)","Fuel and Insurance for the vehicle","Accommodation on Full board and half board basis in Star class luxurious hotels","Extra meals on the way from A class restaurant","Drinking water bottles for entire tour","Private English speaking Guide","Entrance fees","Charges for Safari Jeeps","Charges for Whale and dolphin watching"],
       "imagePath":'../assets/images/packageImages/1',
-      "backgroundImage":"1.jpg"
+      "backgroundImage":"package.jpg"
     },
     {
       "id":2,
@@ -20,7 +20,7 @@ export class PackageData {
       "ativitiesCovered":["Visit Kande Vihare","Visit to Turtle Farm","Visit to Gem Museum","Madu Ganga Tour","Whale and dolphin watching at Mirissa","Yala Safari","Visit Coral Gardens","Visit Tsunami Museum","Night out in a Club","City tour and Shopping in Colombo"],
       "inclusions":["Return Air Ticket in Sri Lankan airlines","Airport Pick up and Drop off","Private luxury Vehicle (Air Conditioned)","Fuel and Insurance for the vehicle","Accommodation on Full board and half board basis in Star class luxurious hotels","Extra meals on the way from A class restaurant","Drinking water bottles for entire tour","Private English speaking Guide","Entrance fees","Charges for Safari Jeeps","Charges for Whale and dolphin watching"],
       "imagePath":'../assets/images/packageImages/2',
-      "backgroundImage":"1.jpg"
+      "backgroundImage":"package.jpg"
     },
     {
       "id":3,
@@ -31,7 +31,7 @@ export class PackageData {
       "ativitiesCovered":["Explore Kalpitiya","Whale watching in Kalpitiya","Safari at Wilpattu","Anuradhapura Ruins","Dambulla Golden cave temple","Climb Sigiriya Rock","Hiriwadunna village tour","Spice gardens","Tooth relic temple","Cultural show","City tour in Kandy","Peradeniya Botanical Gardens","Pinnawala elephant orphanage","Night out in a Club","City tour and Shopping in Negombo"],
       "inclusions":["Return Air Ticket in Sri Lankan airlines","Airport Pick up and Drop off","Private luxury Vehicle (Air Conditioned)","Fuel and Insurance for the vehicle","Accommodation on Full board and half board basis in Star class luxurious hotels","Extra meals on the way from A class restaurant","Drinking water bottles for entire tour","Private English speaking Guide","Entrance fees","Charges for Safari Jeeps","Charges for Whale and dolphin watching"],
       "imagePath":'../assets/images/packageImages/3',
-      "backgroundImage":"1.jpg"
+      "backgroundImage":"package.jpg"
     },
     {
       "id":4,
@@ -42,7 +42,7 @@ export class PackageData {
       "ativitiesCovered":["Pinnawala Elephant orphanage","Cultural Show","Kandy Tooth Relic Temple","City tour and shopping in Kandy","Tea Factory Visit","Gregory’s Lake Visit","Victoria Park Visit","Climb Piduruthalagala","Visit Moon Plains","Spa treatment","Ravana Falls","Nine Arch Bridge","Night out in a Club","City tour and Shopping in Colombo"],
       "inclusions":["Return Air Ticket in Sri Lankan airlines","Airport Pick up and Drop off","Private luxury Vehicle (Air Conditioned)","Fuel and Insurance for the vehicle","Accommodation on Full board and half board basis in Star class luxurious hotels","Extra meals on the way from A class restaurant","Drinking water bottles for entire tour","Private English speaking Guide","Entrance fees","Charges for Safari Jeeps","Charges for Whale watching"],
       "imagePath":'../assets/images/packageImages/4',
-      "backgroundImage":"1.jpg"
+      "backgroundImage":"package.jpg"
     },
     {
       "id":5,
@@ -53,7 +53,7 @@ export class PackageData {
       "ativitiesCovered":["Pinnawala Elephant orphanage","Kandy Tooth Relic Temple","City tour in Kandy","Tea Factory Visit","Visit Victoria Park","Visit Gregory’s Lake","Worlds End – Horton Plains and Baker’s falls","Spa treatment","Climb Piduruthalagala","Yala Safari","Whale watching and Dolphin watching","City tour in Colombo","Night out in a Club","Shopping in Colombo"],
       "inclusions":["Return Air Ticket in Sri Lankan airlines","Airport Pick up and Drop off","Private luxury Vehicle (Air Conditioned)","Fuel and Insurance for the vehicle","Accommodation on Full board and half board basis in Star class luxurious hotels","Extra meals on the way from A class restaurant","Drinking water bottles for entire tour","Private English speaking Guide","Entrance fees","Charges for Safari Jeeps","Charges for Whale watching"],
       "imagePath":'../assets/images/packageImages/5',
-      "backgroundImage":"1.jpg"
+      "backgroundImage":"package.jpg"
     },
     {
       "id":6,
@@ -64,7 +64,7 @@ export class PackageData {
       "ativitiesCovered":["Explore Kalpitiya","Whale watching in Kalpitiya","Safari at Minneriya","Climb Sigiriya Rock","Hiriwadunna village tour","Visit Dambulla cave temple","Safari at Wasgamuwa","Visit Rathna Ella","Visit Sorabora Lake","Visit Maduru Oya","Visit Veddha Village","Safari at Yala","Udawalawa Safari","Night out in a Club","City tour and Shopping in Colombo"],
       "inclusions":["Return Air Ticket in Sri Lankan airlines","Airport Pick up and Drop off","Private luxury Vehicle (Air Conditioned)","Fuel and Insurance for the vehicle","Accommodation on Full board and half board basis in Star class luxurious hotels","Extra meals on the way from A class restaurant","Drinking water bottles for entire tour","Private English speaking Guide","Entrance fees","Charges for Safari Jeeps","Charges for Whale watching"],
       "imagePath":'../assets/images/packageImages/6',
-      "backgroundImage":"1.jpg"
+      "backgroundImage":"package.jpg"
     },
     {
       "id":7,
@@ -75,7 +75,7 @@ export class PackageData {
       "ativitiesCovered":["Pinnawala Elephant Orphanage","Visit Saradiyel Village","Peradeniya Botanical Gardens","Visit Tooth Relic Temple","Cultural Show","City tour and Shopping in Kandy","Spice gardens","Dambulla cave temple","Climb Sigiriya Rock","Safari at Minneriya","Hiriwadunna village tour","Ruins at Polonnaruwa","Pasikuda Beach","Marble Beach","Kinniya Bridge","Koneshwaram Temple","Kanniya Hot Spring Wells","Ruins at Anuradhapura","Ancient city visit Anuradhapura","Climb Mihinthale Rock","Night out in a Club","City tour and Shopping in Negombo"],
       "inclusions":["Return Air Ticket in Sri Lankan airlines","Airport Pick up and Drop off","Private luxury Vehicle (Air Conditioned)","Fuel and Insurance for the vehicle","Accommodation on Full board and half board basis in Star class luxurious hotels","Extra meals on the way from A class restaurant","Drinking water bottles for entire tour","Private English speaking Guide","Entrance fees","Charges for Safari Jeeps"],
       "imagePath":'../assets/images/packageImages/7',
-      "backgroundImage":"1.jpg"
+      "backgroundImage":"package.jpg"
     },
     {
       "id":8,
@@ -86,7 +86,7 @@ export class PackageData {
       "ativitiesCovered":["Negombo City Tour and Shopping","Ruins and temples Anuradhapura","Ruins at Polonnaruwa","Dambulla Cave Temple","Climb Sigiriya Rock","Hiriwadunna village tour","Visit Spice Gardens","Cultural Show","City tour and Shopping at Kandy","Kandy tooth relic temple","Peradeniya botanical gardens","Tea Factory visit","World’s end tour – Horton Plains and Baker’s falls","Visit Gregory’s lake","Visit Victoria Park","Climb Piduruthalagala","Visit Ambewel farm and Strawberry farm","Visit nine arch bridge","Visit Rawana Falls","Visit Little Adam’s peaks","Visit Ella Rock","Safari at Yala","Night out in a Club","City tour and Shopping in Colombo"],
       "inclusions":["Return Air Ticket in Sri Lankan airlines","Airport Pick up and Drop off","Private luxury Vehicle (Air Conditioned)","Fuel and Insurance for the vehicle","Accommodation on Full board and half board basis in Star class luxurious hotels","Extra meals on the way from A class restaurant","Drinking water bottles for entire tour","Private English speaking Guide","Entrance fees","Charges for Safari Jeeps"],
       "imagePath":'../assets/images/packageImages/8',
-      "backgroundImage":"1.jpg"
+      "backgroundImage":"package.jpg"
     }
   ];
 }
