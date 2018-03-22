@@ -259,8 +259,8 @@
         <div class="panel panel-default">
           <div class="panel-heading">{{packageMoreDetails.mainTopic}}</div>
           <div class="panel-body">
-            <ul class="list-inline" *ngFor="let locations of locationCovered">
-              <li><span><i class="fa fa-map-marker fa-lg"></i></span>{{locations}}</li>
+            <ul class="list-inline">
+              <li *ngFor="let locations of locationCovered"><span><i class="fa fa-map-marker fa-lg"></i></span>{{locations}}</li>
             </ul>
 
             <div class="text-right">
