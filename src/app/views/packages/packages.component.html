@@ -373,31 +373,7 @@
         <div role="tabpanel" class="tab-pane fade" id="activities">
           <div class="col-md-6 activity-box">
             <ul class="list-unstyled">
-              <li><span><i aria-hidden="true" class="fa fa-hand-o-right"></i></span>Negombo City Tour and Shopping</li>
-              <li><span><i aria-hidden="true" class="fa fa-hand-o-right"></i></span>Ruins and temples Anuradhapura</li>
-              <li><span><i aria-hidden="true" class="fa fa-hand-o-right"></i></span>Ruins at Polonnaruwa</li>
-              <li><span><i aria-hidden="true" class="fa fa-hand-o-right"></i></span>Dambulla Cave Temple</li>
-              <li><span><i aria-hidden="true" class="fa fa-hand-o-right"></i></span>Climb Sigiriya Rock</li>
-              <li><span><i aria-hidden="true" class="fa fa-hand-o-right"></i></span>Hiriwadunna village tour</li>
-              <li><span><i aria-hidden="true" class="fa fa-hand-o-right"></i></span>Visit Spice Gardens</li>
-              <li><span><i aria-hidden="true" class="fa fa-hand-o-right"></i></span>Cultural Show</li>
-              <li><span><i aria-hidden="true" class="fa fa-hand-o-right"></i></span>City tour and Shopping at Kandy</li>
-              <li><span><i aria-hidden="true" class="fa fa-hand-o-right"></i></span>Kandy tooth relic temple</li>
-              <li><span><i aria-hidden="true" class="fa fa-hand-o-right"></i></span>Peradeniya botanical gardens</li>
-              <li><span><i aria-hidden="true" class="fa fa-hand-o-right"></i></span>Tea Factory visit</li>
-              <li><span><i aria-hidden="true" class="fa fa-hand-o-right"></i></span>World’s end tour – Horton Plains and Baker’s falls</li>
-              <li><span><i aria-hidden="true" class="fa fa-hand-o-right"></i></span>Visit Gregory’s lake</li>
-              <li><span><i aria-hidden="true" class="fa fa-hand-o-right"></i></span>Visit Victoria Park</li>
-              <li><span><i aria-hidden="true" class="fa fa-hand-o-right"></i></span>Climb Piduruthalagala</li>
-              <li><span><i aria-hidden="true" class="fa fa-hand-o-right"></i></span>Visit Ambewel farm and Strawberry farm</li>
-              <li><span><i aria-hidden="true" class="fa fa-hand-o-right"></i></span>Visit nine arch bridge</li>
-              <li><span><i aria-hidden="true" class="fa fa-hand-o-right"></i></span>Visit Rawana Falls</li>
-              <li><span><i aria-hidden="true" class="fa fa-hand-o-right"></i></span>Visit Little Adam’s peaks</li>
-              <li><span><i aria-hidden="true" class="fa fa-hand-o-right"></i></span>Visit Ella Rock</li>
-              <li><span><i aria-hidden="true" class="fa fa-hand-o-right"></i></span>Safari at Yala</li>
-              <li><span><i aria-hidden="true" class="fa fa-hand-o-right"></i></span>Night out in a Club</li>
-              <li><span><i aria-hidden="true" class="fa fa-hand-o-right"></i></span>City tour and Shopping in Colombo</li>
-
+              <li *ngFor="let ativities of ativitiesCovered"><span><i aria-hidden="true" class="fa fa-hand-o-right"></i></span>{{ativities}}</li>
             </ul>
           </div>
           <div class="col-md-6">
@@ -482,16 +458,7 @@
 
           <div class="col-md-6 inclusion-box">
             <ul class="list-unstyled">
-              <li><span><i aria-hidden="true" class="fa fa-hand-o-right"></i></span>Return Air Ticket in Sri Lankan airlines</li>
-              <li><span><i aria-hidden="true" class="fa fa-hand-o-right"></i></span>Airport Pick up and Drop off</li>
-              <li><span><i aria-hidden="true" class="fa fa-hand-o-right"></i></span>Private luxury Vehicle (Air Conditioned)</li>
-              <li><span><i aria-hidden="true" class="fa fa-hand-o-right"></i></span>Fuel and Insurance for the vehicle</li>
-              <li><span><i aria-hidden="true" class="fa fa-hand-o-right"></i></span>Accommodation on Full board and half board basis in Star class luxurious hotels</li>
-              <li><span><i aria-hidden="true" class="fa fa-hand-o-right"></i></span>Extra meals on the way from A class restaurant</li>
-              <li><span><i aria-hidden="true" class="fa fa-hand-o-right"></i></span>Drinking water bottles for entire tour</li>
-              <li><span><i aria-hidden="true" class="fa fa-hand-o-right"></i></span>Private English speaking Guide</li>
-              <li><span><i aria-hidden="true" class="fa fa-hand-o-right"></i></span>Entrance fees </li>
-              <li><span><i aria-hidden="true" class="fa fa-hand-o-right"></i></span>Charges for Safari Jeeps</li>
+              <li *ngFor="let inclusions of inclusionList"><span><i aria-hidden="true" class="fa fa-hand-o-right"></i></span>{{inclusions}}</li>
             </ul>
 
             <p class="text-danger"><b>Driver’s and guide’s tips are not included</b></p>
