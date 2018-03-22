@@ -13,6 +13,10 @@ export class PackagesComponent implements OnInit {
 
   packageList: any=[];
   packageDetails;
+  packageMoreDetails: any=[];
+  locationCovered: any=[];
+  ativitiesCovered: any=[];
+  inclusionList: any=[];
   id: number;
   private sub: any;
 
@@ -54,6 +58,8 @@ export class PackagesComponent implements OnInit {
       if(this.packageList[i].id== id){
         this.packageMoreDetails = this.packageList[i];
         this.locationCovered = this.packageMoreDetails.locationCovered;
+        this.ativitiesCovered = this.packageMoreDetails.ativitiesCovered;
+        this.inclusionList = this.packageMoreDetails.inclusions;
       }
     }
   }
