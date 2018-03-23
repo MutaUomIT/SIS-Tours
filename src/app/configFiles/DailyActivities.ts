@@ -1,23 +1,23 @@
 export class DailyActivities {
   public static DailyActivitiesList = [
     {
-      "id":'1',
+      "id":1,
       "name":'Pick up from air port'
     },
     {
-      "id":'',
+      "id":2,
       "name":'Pick up from air port'
     },
     {
-      "id":'1',
+      "id":3,
       "name":'Pick up from air port'
     },
     {
-      "id":'1',
+      "id":4,
       "name":'Pick up from air port'
     },
     {
-      "id":'1',
+      "id":5,
       "name":'Pick up from air port'
     },
   ]

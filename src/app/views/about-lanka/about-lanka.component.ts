@@ -9,11 +9,37 @@ declare var $ :any;
 })
 export class AboutLankaComponent implements OnInit {
 
+  currentPage : number = 1;
+  older : boolean = false;
+  newer : boolean = true;
+
   constructor() { }
 
   ngOnInit() {
     this.imageZoomEffect();
     this.stringLimitationSetter();
+  }
+
+  loadPrev(){
+
+    if(this.currentPage != 1){
+      this.currentPage = this.currentPage - 1;
+      this.newer = true;
+    }
+    if(this.currentPage == 1){
+      this.older = false;
+    }
+
+  }
+
+  loadNext(){
+    if(this.currentPage != 3){
+      this.currentPage = this.currentPage + 1;
+      this.older = true;
+    }
+    if(this.currentPage == 3){
+      this.newer = false;
+    }
   }
 
   //image zoom effect
