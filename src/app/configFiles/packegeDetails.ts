@@ -10,8 +10,31 @@ export class PackageData {
       "inclusions":["Return Air Ticket in Sri Lankan airlines","Airport Pick up and Drop off","Private luxury Vehicle (Air Conditioned)","Fuel and Insurance for the vehicle","Accommodation on Full board and half board basis in Star class luxurious hotels","Extra meals on the way from A class restaurant","Drinking water bottles for entire tour","Private English speaking Guide","Entrance fees","Charges for Safari Jeeps","Charges for Whale and dolphin watching"],
       "imagePath":'../assets/images/packageImages/1',
       "backgroundImage":"package.jpg",
-      "sliderImages":[""]
+      "sliderImages":[""],
+      "dailyPlans":[
+        {
+          "day":'1',
+          "dailyActivities":["Pick up from air port","Breakfast on the Negombo beach","Check in to Hotel at Bentota","Lunch at Hotel","Visit Kande Vihare, Turtle farm and Gem museum","Dinner"]
+        },
+        {
+          "day":'2',
+          "dailyActivities":["Breakfast at the hotel","Check out to Hikkaduwa","Tour at Madu Ganga","Lunch at Madu Ganga","Check in to the hotel at Hikkaduwa","Experience the beauty of the beach","Dinner"]
+        },
+        {
+          "day":'3',
+          "dailyActivities":["Breakfast at the hotel","Check out to Mirissa","Visit Coral reef","City tour and shopping","Lunch at Hikkaduwa","Check in to the hotel at Mirissa","Dinner"]
+        },
+        {
+          "day":'4',
+          "dailyActivities":["Dolphin and whale watching","Breakfast at hotel","Check out to Colombo","Check in to the hotel at Colombo","Lunch at the hotel","Spa treatment","Dinner and Night out"]
+        },
+        {
+          "day":'5',
+          "dailyActivities":["Breakfast at Hotel","City tour and shopping ","Lunch at the hotel","Check out to Airport","Drop at the Airport"]
+        }
+      ]
     },
+
     {
       "id":2,
       "days":6,
@@ -22,7 +45,33 @@ export class PackageData {
       "inclusions":["Return Air Ticket in Sri Lankan airlines","Airport Pick up and Drop off","Private luxury Vehicle (Air Conditioned)","Fuel and Insurance for the vehicle","Accommodation on Full board and half board basis in Star class luxurious hotels","Extra meals on the way from A class restaurant","Drinking water bottles for entire tour","Private English speaking Guide","Entrance fees","Charges for Safari Jeeps","Charges for Whale and dolphin watching"],
       "imagePath":'../assets/images/packageImages/2',
       "backgroundImage":"package.jpg",
-      "sliderImages":[""]
+      "sliderImages":[""],
+      "dailyPlans":[
+        {
+          "day":'1',
+          "dailyActivities":["Pick up from air port","Breakfast on the Negombo beach","Lunch at Hotel","Visit Kande Vihare, Turtle farm and Gem museum","Dinner"]
+        },
+        {
+          "day":'2',
+          "dailyActivities":["Breakfast at the hotel ","Check out to Mirissa","Tour at Madu Ganga","Lunch at Madu Ganga","Check in to the hotel at Mirissa","Experience the beauty of the beach","Dinner"]
+        },
+        {
+          "day":'3',
+          "dailyActivities":["Whale and dolphin watching","Breakfast at the hotel","Check out to Thissamaharama","Check in to the hotel at Thissamaharama","Lunch at the hotel","Dinner"]
+        },
+        {
+          "day":'4',
+          "dailyActivities":["Breakfast at hotel","Check out to Hikkaduwa","Yala Safari","Lunch on the way","Check in to the hotel at Hikkaduwa","Experience the beauty of the beach","Dinner"]
+        },
+        {
+          "day":'5',
+          "dailyActivities":["Breakfast at Hotel","Visit Coral gardens and Tsunami museum","Lunch at the hotel","Check out to Colombo","Check in to the hotel at Colombo","Night out in a club or Dinner"]
+        },
+        {
+          "day":'6',
+          "dailyActivities":["Breakfast at hotel","City tour and shopping","Lunch at the hotel","Check out to Airport","Drop at the Airport"]
+        }
+        ]
     },
     {
       "id":3,
@@ -34,7 +83,33 @@ export class PackageData {
       "inclusions":["Return Air Ticket in Sri Lankan airlines","Airport Pick up and Drop off","Private luxury Vehicle (Air Conditioned)","Fuel and Insurance for the vehicle","Accommodation on Full board and half board basis in Star class luxurious hotels","Extra meals on the way from A class restaurant","Drinking water bottles for entire tour","Private English speaking Guide","Entrance fees","Charges for Safari Jeeps","Charges for Whale and dolphin watching"],
       "imagePath":'../assets/images/packageImages/3',
       "backgroundImage":"package.jpg",
-      "sliderImages":[""]
+      "sliderImages":[""],
+      "dailyPlans":[
+        {
+          "day":'1',
+          "dailyActivities":["","","","",""]
+        },
+        {
+          "day":'2',
+          "dailyActivities":["","","","",""]
+        },
+        {
+          "day":'3',
+          "dailyActivities":["","","","",""]
+        },
+        {
+          "day":'4',
+          "dailyActivities":["","","","",""]
+        },
+        {
+          "day":'5',
+          "dailyActivities":["","","","",""]
+        },
+        {
+          "day":'6',
+          "dailyActivities":["","","","",""]
+        }
+      ]
     },
     {
       "id":4,
@@ -46,7 +121,37 @@ export class PackageData {
       "inclusions":["Return Air Ticket in Sri Lankan airlines","Airport Pick up and Drop off","Private luxury Vehicle (Air Conditioned)","Fuel and Insurance for the vehicle","Accommodation on Full board and half board basis in Star class luxurious hotels","Extra meals on the way from A class restaurant","Drinking water bottles for entire tour","Private English speaking Guide","Entrance fees","Charges for Safari Jeeps","Charges for Whale watching"],
       "imagePath":'../assets/images/packageImages/4',
       "backgroundImage":"package.jpg",
-      "sliderImages":[""]
+      "sliderImages":[""],
+      "dailyPlans":[
+        {
+          "day":'1',
+          "dailyActivities":["","","","",""]
+        },
+        {
+          "day":'2',
+          "dailyActivities":["","","","",""]
+        },
+        {
+          "day":'3',
+          "dailyActivities":["","","","",""]
+        },
+        {
+          "day":'4',
+          "dailyActivities":["","","","",""]
+        },
+        {
+          "day":'5',
+          "dailyActivities":["","","","",""]
+        },
+        {
+          "day":'6',
+          "dailyActivities":["","","","",""]
+        },
+        {
+          "day":'7',
+          "dailyActivities":["","","","",""]
+        }
+      ]
     },
     {
       "id":5,
@@ -58,7 +163,37 @@ export class PackageData {
       "inclusions":["Return Air Ticket in Sri Lankan airlines","Airport Pick up and Drop off","Private luxury Vehicle (Air Conditioned)","Fuel and Insurance for the vehicle","Accommodation on Full board and half board basis in Star class luxurious hotels","Extra meals on the way from A class restaurant","Drinking water bottles for entire tour","Private English speaking Guide","Entrance fees","Charges for Safari Jeeps","Charges for Whale watching"],
       "imagePath":'../assets/images/packageImages/5',
       "backgroundImage":"package.jpg",
-      "sliderImages":[""]
+      "sliderImages":[""],
+      "dailyPlans":[
+        {
+          "day":'1',
+          "dailyActivities":["","","","",""]
+        },
+        {
+          "day":'2',
+          "dailyActivities":["","","","",""]
+        },
+        {
+          "day":'3',
+          "dailyActivities":["","","","",""]
+        },
+        {
+          "day":'4',
+          "dailyActivities":["","","","",""]
+        },
+        {
+          "day":'5',
+          "dailyActivities":["","","","",""]
+        },
+        {
+          "day":'6',
+          "dailyActivities":["","","","",""]
+        },
+        {
+          "day":'7',
+          "dailyActivities":["","","","",""]
+        }
+      ]
     },
     {
       "id":6,
@@ -70,7 +205,45 @@ export class PackageData {
       "inclusions":["Return Air Ticket in Sri Lankan airlines","Airport Pick up and Drop off","Private luxury Vehicle (Air Conditioned)","Fuel and Insurance for the vehicle","Accommodation on Full board and half board basis in Star class luxurious hotels","Extra meals on the way from A class restaurant","Drinking water bottles for entire tour","Private English speaking Guide","Entrance fees","Charges for Safari Jeeps","Charges for Whale watching"],
       "imagePath":'../assets/images/packageImages/6',
       "backgroundImage":"package.jpg",
-      "sliderImages":[""]
+      "sliderImages":[""],
+      "dailyPlans":[
+        {
+          "day":'1',
+          "dailyActivities":["","","","",""]
+        },
+        {
+          "day":'2',
+          "dailyActivities":["","","","",""]
+        },
+        {
+          "day":'3',
+          "dailyActivities":["","","","",""]
+        },
+        {
+          "day":'4',
+          "dailyActivities":["","","","",""]
+        },
+        {
+          "day":'5',
+          "dailyActivities":["","","","",""]
+        },
+        {
+          "day":'6',
+          "dailyActivities":["","","","",""]
+        },
+        {
+          "day":'7',
+          "dailyActivities":["","","","",""]
+        },
+        {
+          "day":'8',
+          "dailyActivities":["","","","",""]
+        },
+        {
+          "day":'9',
+          "dailyActivities":["","","","",""]
+        }
+      ]
     },
     {
       "id":7,
@@ -82,7 +255,49 @@ export class PackageData {
       "inclusions":["Return Air Ticket in Sri Lankan airlines","Airport Pick up and Drop off","Private luxury Vehicle (Air Conditioned)","Fuel and Insurance for the vehicle","Accommodation on Full board and half board basis in Star class luxurious hotels","Extra meals on the way from A class restaurant","Drinking water bottles for entire tour","Private English speaking Guide","Entrance fees","Charges for Safari Jeeps"],
       "imagePath":'../assets/images/packageImages/7',
       "backgroundImage":"package.jpg",
-      "sliderImages":[""]
+      "sliderImages":[""],
+      "dailyPlans":[
+        {
+          "day":'1',
+          "dailyActivities":["","","","",""]
+        },
+        {
+          "day":'2',
+          "dailyActivities":["","","","",""]
+        },
+        {
+          "day":'3',
+          "dailyActivities":["","","","",""]
+        },
+        {
+          "day":'4',
+          "dailyActivities":["","","","",""]
+        },
+        {
+          "day":'5',
+          "dailyActivities":["","","","",""]
+        },
+        {
+          "day":'6',
+          "dailyActivities":["","","","",""]
+        },
+        {
+          "day":'7',
+          "dailyActivities":["","","","",""]
+        },
+        {
+          "day":'8',
+          "dailyActivities":["","","","",""]
+        },
+        {
+          "day":'9',
+          "dailyActivities":["","","","",""]
+        },
+        {
+          "day":'10',
+          "dailyActivities":["","","","",""]
+        }
+      ]
     },
     {
       "id":8,
@@ -94,6 +309,52 @@ export class PackageData {
       "inclusions":["Return Air Ticket in Sri Lankan airlines","Airport Pick up and Drop off","Private luxury Vehicle (Air Conditioned)","Fuel and Insurance for the vehicle","Accommodation on Full board and half board basis in Star class luxurious hotels","Extra meals on the way from A class restaurant","Drinking water bottles for entire tour","Private English speaking Guide","Entrance fees","Charges for Safari Jeeps"],
       "imagePath":'../assets/images/packageImages/8',
       "backgroundImage":"package.jpg",
+      "dailyPlans":[
+        {
+          "day":'1',
+          "dailyActivities":["","","","",""]
+        },
+        {
+          "day":'2',
+          "dailyActivities":["","","","",""]
+        },
+        {
+          "day":'3',
+          "dailyActivities":["","","","",""]
+        },
+        {
+          "day":'4',
+          "dailyActivities":["","","","",""]
+        },
+        {
+          "day":'5',
+          "dailyActivities":["","","","",""]
+        },
+        {
+          "day":'6',
+          "dailyActivities":["","","","",""]
+        },
+        {
+          "day":'7',
+          "dailyActivities":["","","","",""]
+        },
+        {
+          "day":'8',
+          "dailyActivities":["","","","",""]
+        },
+        {
+          "day":'9',
+          "dailyActivities":["","","","",""]
+        },
+        {
+          "day":'10',
+          "dailyActivities":["","","","",""]
+        },
+        {
+          "day":'11',
+          "dailyActivities":["","","","",""]
+        }
+      ],
       "sliderImages":["1.jpg","2.jpg","3.jpg","4.jpg","5.jpg","6.jpg","7.jpg","8.jpg","9.jpg",]
     }
   ];
