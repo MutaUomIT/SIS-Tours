@@ -1,37 +1,108 @@
-<div class="container">
-  <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-    <div class="collapse navbar-collapse container" id="navbarsExampleDefault">
-      <ul class="navbar-nav mr-auto">
+<!--my navigation bar start-->
 
-        <li class="nav-item" [routerLinkActive]="['active']">
-          <a class="nav-link" [routerLink]="['home']">Home <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item" [routerLinkActive]="['active']">
-          <a class="nav-link"[routerLink]="['packages']">Packages <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item" [routerLinkActive]="['active']">
-          <a class="nav-link"[routerLink]="['leisure']">Leisure <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item" [routerLinkActive]="['active']">
-          <a class="nav-link"[routerLink]="['about-lanka']">Sri Lanka <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item" [routerLinkActive]="['active']">
-          <a class="nav-link"[routerLink]="['testimonials']">Testimonials <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item" [routerLinkActive]="['active']">
-          <a class="nav-link"[routerLink]="['about-us']">About US <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item" [routerLinkActive]="['active']">
-          <a class="nav-link"[routerLink]="['contacts']">Contact US <span class="sr-only">(current)</span></a>
-        </li>
-      </ul>
-      <div id="google_translate_element"></div>
+<div class="navbar-blue-top">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-3 no-padding-left">
+        <p><span class="hidden-xs">FOLLOW US ON :</span> <span><i class="fa fa-facebook-square" aria-hidden="true"></i></span> <span><i class="fa fa-twitter-square" aria-hidden="true"></i></span> <span><i class="fa fa-google-plus-square" aria-hidden="true"></i></span> <span><i class="fa fa-linkedin-square" aria-hidden="true"></i></span></p>
+      </div>
+      <div class="col-xs-3">
+        <p class="text-nowrap"><span class="hidden-xs">HOTLINE :</span> 011 2568799</p>
+      </div>
+      <div class="col-xs-6 text-right no-padding-right">
+        <div id="google_translate_element"></div>
+      </div>
     </div>
-  </nav>
+  </div>
 </div>
 
-<div class="container" style="padding-top: 70px">
-  <router-outlet></router-outlet>
+<div class="container navbar-container">
+ <nav class="navbar navbar-default custom-navbar">
+
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Wikimedia-logo.png" alt="logo" width="30">
+      </a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a [routerLink]="['home']">HOME <span class="sr-only">(current)</span></a></li>
+        <li class="active"><a [routerLink]="['packages/8']">PACKAGES <span class="sr-only">(current)</span></a></li>
+        <li class="active"><a [routerLink]="['leisure']">LEISURE <span class="sr-only">(current)</span></a></li>
+        <li class="active"><a [routerLink]="['about-lanka']">SRILANKA <span class="sr-only">(current)</span></a></li>
+        <li class="active"><a [routerLink]="['testimonials']">TESTIMONIALS <span class="sr-only">(current)</span></a></li>
+        <li class="active"><a [routerLink]="['about-us']">ABOUT US <span class="sr-only">(current)</span></a></li>
+        <li class="active"><a [routerLink]="['contacts']">CONTACT US <span class="sr-only">(current)</span></a></li>
+        <li><a href=""><span><i class="fa fa-search" aria-hidden="true"></i></span></a></li>
+
+      </ul>
+
+      <!--<form class="navbar-form navbar-left">-->
+        <!--<div class="form-group">-->
+          <!--<input type="text" class="form-control" placeholder="Search">-->
+        <!--</div>-->
+        <!--<button type="submit" class="btn btn-default">Submit</button>-->
+      <!--</form>-->
+
+    </div><!-- /.navbar-collapse -->
+  </nav><!-- /.container-fluid -->
 </div>
+
+<!--my navigation bar end-->
+
+
+<div class="container-fluid">
+  <div class="row">
+    <router-outlet></router-outlet>
+  </div>
+</div>
+
+<!--footer start-->
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="up-strip text-center">
+      <div class="footer-social-icons">
+        <div>
+          <a href=""><span><i class="fa fa-facebook"></i></span></a>
+        </div>
+        <div>
+          <a href=""><span><i class="fa fa-google-plus"></i></span></a>
+        </div>
+        <div>
+          <a href=""><span><i class="fa fa-twitter"></i></span></a>
+        </div>
+        <div>
+          <a href=""><span><i class="fa fa-linkedin"></i></span></a>
+        </div>
+      </div>
+
+      <div class="footer-links">
+        <a href="" class="text-uppercase">home |</a>
+        <a href="" class="text-uppercase">PACKAGES |</a>
+        <a href="" class="text-uppercase">LEISURE |</a>
+        <a href="" class="text-uppercase">SRI LANKA |</a>
+        <a href="" class="text-uppercase">ABOUT US |</a>
+        <a href="" class="text-uppercase">CONTACT US</a>
+      </div>
+    </div>
+
+    <div class="bottom-strip text-right">
+      <p>Copyright © 2018 Sis Tour Operators</p>
+    </div>
+
+  </div>
+</div>
+
+<!--footer end-->
 
 

@@ -1,33 +1,436 @@
-<div id="slideshow">
-  <div *ngFor="let p of packageDetails">
-    <img [src]="p.imagePath + '/'+p.backgroundImage" width="500"/>
+<!--<div id="slideshow">-->
+  <!--<div *ngFor="let p of packageDetails">-->
+    <!--<img [src]="p.imagePath + '/'+p.backgroundImage" width="500"/>-->
+  <!--</div>-->
+<!--</div>-->
+
+<!--<div class="row">-->
+  <!--<div *ngFor="let p of packageList" class="col-md-4">-->
+    <!--<img [src]="p.imagePath+'/'+p.backgroundImage" width="350"/>-->
+    <!--<p>{{p.id}} <br> {{p.Name}} <br> {{p.description}}</p>-->
+  <!--</div>-->
+<!--</div>-->
+
+<!--<div class="row">-->
+  <!--<div class="col-md-6">-->
+    <!--<h2>Who we are?</h2>-->
+    <!--<p>Welcome to SIS Tour Operators! We SIS Tour Operators were in the industry for so many years gaining experience and serving our clients with trust and care. We make sure the happiness, enthusiasm, safety and comfort of our clients through 0% complains. Our concept is to serve client with no extra money or hidden charges. They will only have to bring money for their shopping and personal interest, rest will be looked after from SIS Tour Operators.-->
+      <!--Our Main Office is situated at Wellawatte, Colombo, and it’s very easy to find. We will be replying our guests within few hours of their enquiries through mails. We strongly believe the trust of our repeating guests and we care our travelers comfort. Our trustworthy team of experts will provide the maximum satisfaction happiness and the comfort of our clients.-->
+    <!--</p>-->
+  <!--</div>-->
+  <!--<div class="col-md-6">-->
+    <!--<h2>WHY SIS TOUR OPERATORS?</h2>-->
+    <!--<ul>-->
+      <!--<li>We are on the top among tour operating companies in Sri Lanka</li>-->
+      <!--<li>We Offer inbound tour packages, Holiday Packages, Honeymoon Packages and wedding packages </li>-->
+      <!--<li>No hidden Charges, bring money for shopping and personal interests</li>-->
+      <!--<li>We do appoint a team of professionals to give you maximum happiness, satisfaction and comfort.</li>-->
+      <!--<li>24/7 , 365 Days Customer Service</li>-->
+    <!--</ul>-->
+  <!--</div>-->
+<!--</div>-->
+
+<!--<div>text</div>-->
+
+<!--my wrapper starts-->
+
+<!--slider start-->
+
+<div class="container-fluid">
+  <div class="row home-slider-row">
+    <p class="text-nowrap"><b>Sri Lanka</b></p>
+    <p>By Sis Tour Operators</p>
+    <div class="home-slider">
+      <div>
+        <div class="home-slider-image" style="background-image: url('../assets/images/homeSlider/1.jpg')"></div>
+      </div>
+      <div>
+        <div class="home-slider-image" style="background-image: url('../assets/images/homeSlider/2.jpg')"></div>
+      </div>
+      <div>
+        <div class="home-slider-image" style="background-image: url('../assets/images/homeSlider/3.jpg')"></div>
+      </div>
+      <div>
+        <div class="home-slider-image" style="background-image: url('../assets/images/homeSlider/4.jpg')"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--slider ends-->
+
+<!--form starts-->
+<div class="container form-container">
+  <div class="row">
+
+    <div class="slider-form">
+
+      <!-- Nav tabs -->
+      <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Our Packages</a></li>
+        <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Customized Tour</a></li>
+      </ul>
+
+      <!-- Tab panes -->
+      <div class="tab-content">
+        <div role="tabpanel" class="tab-pane fade in active" id="home">
+
+          <div class="row">
+
+            <div class="col-sm-4">
+              <div class="form-group">
+                <select class="form-control custom-form-control">
+                <option>4 NIGHTS 5 DAYS PACKAG - Honeymoon on the beach</option>
+                <option>5 NIGHTS 6 DAYS PACKAGE - Beach Package</option>
+                <option>5 NIGHTS 6 DAYS PACKAGE</option>
+                <option>6 NIGHTS 7 DAYS PACKAGE - Honeymoon Package</option>
+                <option>6 NIGHTS 7 DAYS PACKAGE</option>
+                <option>8 NIGHTS 9 DAYS PACKAGE</option>
+                <option>9 NIGHTS 10 DAYS PACKAGE</option>
+                <option>10 NIGHTS 11 DAYS PACKAGE</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="col-sm-4">
+              <div class="form-group">
+                <label class="sr-only" for="arrivalDate">Arrival Date</label>
+                <input type="text" class="form-control custom-form-control" id="arrivalDate" placeholder="Arrival Date" [(ngModel)]="inquiry.arrivalDate"/>
+              </div>
+            </div>
+
+            <div class="col-sm-4">
+              <div class="form-group">
+                <label class="sr-only" for="yourCountry">Your Country</label>
+                <input type="text" class="form-control custom-form-control" id="yourCountry" placeholder="Your Country" [(ngModel)]="inquiry.country"/>
+              </div>
+            </div>
+
+            <div class="col-sm-4">
+              <div class="form-group">
+                <label class="sr-only" for="name">Name</label>
+                <input type="text" class="form-control custom-form-control" id="name" placeholder="Name" [(ngModel)]="inquiry.name"/>
+              </div>
+            </div>
+
+            <div class="col-sm-4">
+              <div class="form-group">
+                <label class="sr-only" for="email">Email</label>
+                <input type="email" class="form-control custom-form-control" id="email" placeholder="Email" [(ngModel)]="inquiry.email"/>
+              </div>
+            </div>
+
+            <div class="col-sm-4">
+              <div class="form-group">
+                <label class="sr-only" for="mobileNumber">Mobile Number</label>
+                <input type="text" class="form-control custom-form-control" id="mobileNumber" placeholder="Mobile Number" [(ngModel)]="inquiry.mobile"/>
+              </div>
+            </div>
+
+            <div class="col-sm-12">
+              <div class="form-group">
+                <textarea class="form-control custom-form-control" rows="3"></textarea>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div role="tabpanel" class="tab-pane fade" id="profile">
+
+          <div class="col-sm-4">
+            <div class="form-group">
+              <select class="form-control custom-form-control">
+                <option>1 Day</option>
+                <option>2 Day</option>
+                <option>3 Day</option>
+                <option>4 Day</option>
+                <option>5 Day</option>
+                <option>6 Day</option>
+                <option>7 Day</option>
+                <option>8 Day</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="sr-only" for="arrivalDate1">Arrival Date</label>
+              <input type="text" class="form-control custom-form-control" id="arrivalDate1" placeholder="Arrival Date">
+            </div>
+          </div>
+
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="sr-only" for="yourCountry1">Your Country</label>
+              <input type="text" class="form-control custom-form-control" id="yourCountry1" placeholder="Your Country">
+            </div>
+          </div>
+
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="sr-only" for="name1">Name</label>
+              <input type="text" class="form-control custom-form-control" id="name1" placeholder="Name">
+            </div>
+          </div>
+
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="sr-only" for="email1">Email</label>
+              <input type="email" class="form-control custom-form-control" id="email1" placeholder="Email">
+            </div>
+          </div>
+
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="sr-only" for="mobileNumber1">Mobile Number</label>
+              <input type="text" class="form-control custom-form-control" id="mobileNumber1" placeholder="Mobile Number">
+            </div>
+          </div>
+
+          <div class="col-sm-12">
+            <div class="form-group">
+              <textarea class="form-control custom-form-control" rows="3"></textarea>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+    <div class="col-sm-6 slider-enquire text-right no-padding-right">
+    <button (click)="sendInquiry()" class="btn btn-success green-button">ENQUIRE</button>
+    </div>
+
+
+
   </div>
 </div>
 
-<div class="row">
-  <div *ngFor="let p of packageList" class="col-md-4">
-    <img [src]="p.imagePath+'/'+p.backgroundImage" width="350"/>
-    <p>{{p.id}} <br> {{p.Name}} <br> {{p.description}}</p>
+<!--form ends-->
+
+<!--why sis operators starts-->
+
+<div class="container-fluid why-sis-container">
+  <div class="row why-sis-row">
+    <h2 class="home-headings text-center">Discover <span class="home-headings-blue">Sis Tour Operators</span></h2>
+
+    <p class="text-center">Welcome to SIS Tour Operators! We SIS Tour Operators were in the industry for so many years gaining experience and serving our clients with trust and care.
+      We make sure the happiness, enthusiasm, safety and comfort of our clients through 0% complains. Our concept is to serve client with no extra money or hidden charges.
+      They will only have to bring money for their shopping and personal interest, rest will be looked after from SIS Tour Operators.  </p>
+
+    <p class="text-center">Our Main Office is situated at Wellawatte, Colombo, and it’s very easy to find. We will be replying our guests within few hours of their enquiries through mails. We strongly
+      believe the trust of our repeating guests and we care our travelers comfort. Our trustworthy team of experts will provide the maximum satisfaction happiness and the
+      comfort of our clients.</p>
   </div>
 </div>
 
-<div class="row">
-  <div class="col-md-6">
-    <h2>Who we are?</h2>
-    <p>Welcome to SIS Tour Operators! We SIS Tour Operators were in the industry for so many years gaining experience and serving our clients with trust and care. We make sure the happiness, enthusiasm, safety and comfort of our clients through 0% complains. Our concept is to serve client with no extra money or hidden charges. They will only have to bring money for their shopping and personal interest, rest will be looked after from SIS Tour Operators.
-      Our Main Office is situated at Wellawatte, Colombo, and it’s very easy to find. We will be replying our guests within few hours of their enquiries through mails. We strongly believe the trust of our repeating guests and we care our travelers comfort. Our trustworthy team of experts will provide the maximum satisfaction happiness and the comfort of our clients.
-    </p>
+<!--why sis operators ends-->
+
+<!--tour packages start-->
+
+<div class="container-fluid home-package-container">
+  <div class="row">
+    <h2 class="home-headings text-center" style="margin-bottom: 25px">Tour <span class="home-headings-blue">Packages</span></h2>
   </div>
-  <div class="col-md-6">
-    <h2>WHY SIS TOUR OPERATORS?</h2>
-    <ul>
-      <li>We are on the top among tour operating companies in Sri Lanka</li>
-      <li>We Offer inbound tour packages, Holiday Packages, Honeymoon Packages and wedding packages </li>
-      <li>No hidden Charges, bring money for shopping and personal interests</li>
-      <li>We do appoint a team of professionals to give you maximum happiness, satisfaction and comfort.</li>
-      <li>24/7 , 365 Days Customer Service</li>
-    </ul>
+
+  <div class="row">
+
+
+
+    <!--////////////////////////////////////////////////////////////////////////////////-->
+    <div>
+    <div class="col-md-6 home-packages">
+      <div class="day-label text-center">
+        <p><strong>{{packageMoreDetails.days}}</strong></p>
+        <p>Days</p>
+      </div>
+      <div class="home-packages-images home-packages-images-first" [style.backgroundImage]="'url('+ packageMoreDetails.imagePath+'/'+packageMoreDetails.backgroundImage +')'">
+
+        <div class="package-text-wrapper text-center">
+          <p class="text-uppercase">{{packageMoreDetails.mainTopic}}</p>
+          <p></p>
+        </div>
+
+      </div>
+    </div>
+    <div class="col-md-6 no-padding-left-right">
+      <div class="col-md-12 quick-section">
+        <div class="panel panel-default">
+          <div class="panel-heading">{{packageMoreDetails.mainTopic}}</div>
+          <div class="panel-body">
+            <ul class="list-inline">
+              <li *ngFor="let locations of locationCovered"><span><i class="fa fa-map-marker fa-lg"></i></span>{{locations}}</li>
+            </ul>
+
+            <div class="text-right">
+                <button type="button" class="btn btn-success green-button" (click)="onClickViewMore(packageMoreDetails.id)">VIEW MORE</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <!--////////////////////////////////////////////////////////////////////////////////-->
+
+    <!--<div class="col-md-6 home-packages">-->
+      <!--<div class="day-label text-center">-->
+        <!--<p><strong>11</strong></p>-->
+        <!--<p>Days</p>-->
+      <!--</div>-->
+      <!--<div class="home-packages-images home-packages-images-first" style="background-image: url('../assets/images/homePackages/1.jpg')">-->
+
+        <!--<div class="package-text-wrapper text-center">-->
+          <!--<p class="text-uppercase">10 NIGHTS 11 DAYS PACKAGE</p>-->
+          <!--<p></p>-->
+        <!--</div>-->
+
+        <!--&lt;!&ndash;<div class="package-button">&ndash;&gt;-->
+          <!--&lt;!&ndash;<button class="btn btn-success green-button">TAKE A PEAK</button>&ndash;&gt;-->
+        <!--&lt;!&ndash;</div>&ndash;&gt;-->
+      <!--</div>-->
+    <!--</div>-->
+    <!--<div class="col-md-6 no-padding-left-right">-->
+      <!--<div class="col-md-12 quick-section">-->
+        <!--<div class="panel panel-default">-->
+          <!--<div class="panel-heading">10 NIGHTS 11 DAYS PACKAGE</div>-->
+          <!--<div class="panel-body">-->
+            <!--<ul class="list-inline">-->
+              <!--<li><span><i class="fa fa-map-marker fa-lg"></i></span>Negombo</li>-->
+              <!--<li><span><i class="fa fa-map-marker fa-lg"></i></span>Anuradhapura</li>-->
+              <!--<li><span><i class="fa fa-map-marker fa-lg"></i></span>Plonnaruwa</li>-->
+              <!--<li><span><i class="fa fa-map-marker fa-lg"></i></span>Sigiriya</li>-->
+              <!--<li><span><i class="fa fa-map-marker fa-lg"></i></span>Kandy</li>-->
+              <!--<li><span><i class="fa fa-map-marker fa-lg"></i></span>Nuwaraeliya</li>-->
+              <!--<li><span><i class="fa fa-map-marker fa-lg"></i></span>Ella</li>-->
+              <!--<li><span><i class="fa fa-map-marker fa-lg"></i></span>Yala</li>-->
+              <!--<li><span><i class="fa fa-map-marker fa-lg"></i></span>Colombo</li>-->
+            <!--</ul>-->
+
+            <!--<div class="text-right">-->
+              <!--<button class="btn btn-success green-button">VIEW MORE</button>-->
+            <!--</div>-->
+          <!--</div>-->
+        <!--</div>-->
+      <!--</div>-->
+    <!--</div>-->
+
+    <div class="col-md-3 home-packages" *ngFor="let p of packageList">
+      <div class="day-label text-center">
+        <p><strong>{{p.days}}</strong></p>
+        <p>Days</p>
+      </div>
+      <div class="home-packages-images home-packages-images-small" [style.backgroundImage]="'url('+ p.imagePath+'/'+p.backgroundImage +')'">
+        <div class="package-text-wrapper text-center">
+          <p class="text-uppercase">{{p.mainTopic}}</p>
+          <p>{{p.subTopic}}</p>
+        </div>
+        <div class="package-button">
+          <button class="btn btn-success green-button" (click)="onClickTakeAPeak(p.id)">TAKE A PEAK</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-3 home-packages">
+      <div class="home-packages-images-small" style="background-color: #0078D7">
+        <div class="custom-package-text-wrapper text-center">
+          <p class="text-uppercase">Customized trip</p>
+        </div>
+
+        <div class="custom-package-button text-center">
+          <button class="btn btn-success green-button">ENQUIRE</button>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 
-<div>text</div>
+<!--tour packages end-->
+
+<div class="text-center">
+  <button class="btn btn-success green-button">VIEW MORE</button>
+</div>
+
+<!--services start-->
+
+<div class="container-fluid service-container">
+  <div class="row">
+
+    <div>
+      <h2 class="home-headings text-center">Our <span class="home-headings-blue">Services</span></h2>
+    </div>
+    <div class="service-image-set-wrapper text-center">
+      <div class="service-block">
+        <div class="service-image-wrapper">
+          <div class="service-images" style="background-image: url('../assets/images/services/hotel.svg')"></div>
+        </div>
+        <p>Hotel Reservations</p>
+      </div>
+
+      <div class="service-block">
+        <div class="service-image-wrapper">
+          <div class="service-images" style="background-image: url('../assets/images/services/tour.svg')"></div>
+        </div>
+        <p>Tour Packages</p>
+      </div>
+
+      <div class="service-block">
+        <div class="service-image-wrapper">
+          <div class="service-images" style="background-image: url('../assets/images/services/ticket.svg')"></div>
+        </div>
+        <p>Air Tickets</p>
+      </div>
+
+      <div class="service-block">
+        <div class="service-image-wrapper">
+          <div class="service-images" style="background-image: url('../assets/images/services/event.svg')"></div>
+        </div>
+        <p>Event Management</p>
+      </div>
+
+      <div class="service-block">
+        <div class="service-image-wrapper">
+          <div class="service-images" style="background-image: url('../assets/images/services/transport.svg')"></div>
+        </div>
+        <p>Transport services</p>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!--services end-->
+
+<!--testimonial start-->
+
+<div class="container-fluid">
+  <div class="row">
+
+    <div>
+      <h2 class="home-headings text-center">Our <span class="home-headings-blue">Clients</span> Says</h2>
+    </div>
+
+    <div class="testimonial" >
+
+      <div *ngFor="let t of testimonials">
+        <div class="testimonial-box text-center">
+          <div><span><i class="fa fa-quote-left fa-5x"></i></span></div>
+          <p><em>{{t.feedback}}</em></p>
+        </div>
+        <div class="pro-pic" [style.backgroundImage]="'url('+ t.imagePath+'/'+t.clientImage +')'"></div>
+
+        <div class="pro-pic-description">
+          <p><strong>{{t.name}}</strong></p>
+          <p><small>{{t.city}}, {{t.country}}</small></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--testimonial end-->
+
+
+<!--my wrapper ends-->
+
+

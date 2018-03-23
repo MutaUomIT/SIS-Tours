@@ -19,9 +19,21 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
       "styles": [
-        "styles.css"
+        "styles.css",
+        "../src/stylesheet/bootstrap.min.css",
+        "../src/stylesheet/bootstrap-theme.min.css",
+        "../src/stylesheet/my-styles.css",
+        "../src/stylesheet/slick.css",
+        "../src/stylesheet/slick-theme.css",
+        "../src/stylesheet/font-awesome.min.css",
+        "../src/stylesheet/animate.css"
       ],
-      "scripts": ["../node_modules/jquery/dist/jquery.min.js"],
+      "scripts": [
+        "../src/javascript/jquery-3.3.1.min.js",
+        "../src/javascript/bootstrap.min.js",
+      "../src/javascript/my-javascript.js",
+      "../src/javascript/slick.min.js"
+      ],
       "environmentSource": "environments/environment.ts",
       "environments": {
         "dev": "environments/environment.ts",

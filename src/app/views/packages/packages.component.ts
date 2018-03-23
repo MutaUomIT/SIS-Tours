@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { PackageData } from './../../configFiles/packegeDetails';
+import { ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
+
 declare var jquery:any;
 declare var $ :any;
 
@@ -12,30 +15,56 @@ export class PackagesComponent implements OnInit {
 
   packageList: any=[];
   packageDetails;
+  packageMoreDetails: any=[];
+  locationCovered: any=[];
+  ativitiesCovered: any=[];
+  inclusionList: any=[];
+  sliderImagesList: any=[];
+  id: number;
+  private sub: any;
 
-  constructor() {}
+  constructor(private route: ActivatedRoute, private router:Router) {}
 
   ngOnInit() {
     this.packageDetails = PackageData.packageList;
-    // this.initJqueryFunctions();
+    this.packageImageSlider();
     this.loadPackages();
+
+    this.sub = this.route.params.subscribe(params => {
+      this.id = +params['id']; // (+) converts string 'id' to a number
+    });
+
+    this.onClickViewMore(this.id);
   }
 
-  // initJqueryFunctions(){
-  //   $("#slideshow > div:gt(0)").hide();
-  //
-  //   setInterval(function() {
-  //     $('#slideshow > div:first')
-  //       .fadeOut(1000)
-  //       .next()
-  //       .fadeIn(1000)
-  //       .end()
-  //       .appendTo('#slideshow');
-  //   },  3000);
-  // }
+  // package Details slider
+  packageImageSlider(){
+  $(document).ready(function () {
+  $('.package-details-slider').slick({
+    dots: true,
+    infinite: true,
+    speed: 500,
+    fade: true,
+    cssEase: 'linear',
+    autoplay: true,
+    autoplaySpeed: 2000,
+      });
+    });
+  }
 
   private loadPackages(){
     this.packageList = PackageData.packageList;
   }
 
+  onClickViewMore(id){
+    for(var i = 0;i < this.packageList.length;i++){
+      if(this.packageList[i].id== id){
+        this.packageMoreDetails = this.packageList[i];
+        this.locationCovered = this.packageMoreDetails.locationCovered;
+        this.ativitiesCovered = this.packageMoreDetails.ativitiesCovered;
+        this.inclusionList = this.packageMoreDetails.inclusions;
+        this.sliderImagesList = this.packageMoreDetails.sliderImages;
+      }
+    }
+  }
 }

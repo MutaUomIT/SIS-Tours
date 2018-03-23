@@ -5,22 +5,381 @@
       <!--</div>-->
     <!--</div>-->
 
-<div class="row">
-  <div *ngFor="let p of packageList" class="col-md-4">
-    <img [src]="p.imagePath+'/'+p.backgroundImage" width="350"/>
-    <p>{{p.id}} <br> {{p.Name}} <br> {{p.description}}</p>
+<!--<div class="">-->
+  <!--<div *ngFor="let p of packageList" class="col-md-4">-->
+    <!--<img [src]="p.imagePath+'/'+p.backgroundImage" width="350"/>-->
+    <!--<p>{{p.id}} <br> {{p.Name}} <br> {{p.description}}</p>-->
+  <!--</div>-->
+<!--</div>-->
+
+
+<!--my wrapper starts-->
+<div class="container-fluid package-details-container">
+  <div class="row package-details-upper-row">
+    <div class="col-md-8 no-padding-left">
+      <div class="package-details-slider">
+        <div *ngFor="let sliderImages of sliderImagesList" >
+          <div class="slider-image" [style.backgroundImage]="'url('+ packageMoreDetails.imagePath+'/'+sliderImages +')'"></div>
+        </div>
+
+        <!--<div>-->
+          <!--<div class="slider-image" style="background-image: url('../assets/images/packageImages/8/2.jpg')"></div>-->
+        <!--</div>-->
+        <!--<div>-->
+          <!--<div class="slider-image" style="background-image: url('../assets/images/packageImages/8/3.jpg')"></div>-->
+        <!--</div>-->
+        <!--<div>-->
+          <!--<div class="slider-image" style="background-image: url('../assets/images/packageImages/8/4.jpg')"></div>-->
+        <!--</div>-->
+        <!--<div>-->
+          <!--<div class="slider-image" style="background-image: url('../assets/images/packageImages/8/5.jpg')"></div>-->
+        <!--</div>-->
+        <!--<div>-->
+          <!--<div class="slider-image" style="background-image: url('../assets/images/packageImages/8/6.jpg')"></div>-->
+        <!--</div>-->
+        <!--<div>-->
+          <!--<div class="slider-image" style="background-image: url('../assets/images/packageImages/8/7.jpg')"></div>-->
+        <!--</div>-->
+        <!--<div>-->
+          <!--<div class="slider-image" style="background-image: url('../assets/images/packageImages/8/8.jpg')"></div>-->
+        <!--</div>-->
+        <!--<div>-->
+          <!--<div class="slider-image" style="background-image: url('../assets/images/packageImages/8/9.jpg')"></div>-->
+        <!--</div>-->
+      </div>
+    </div>
+    <br>
+    <div class="col-md-4 quick-section">
+      <div class="heading text-center">
+        <h3 class="text-uppercase">{{packageMoreDetails.mainTopic}}</h3>
+        <button class="btn btn-success green-button">ENQUIRE NOW</button>
+      </div>
+
+      <ul class="list-inline">
+        <li *ngFor="let locations of locationCovered"><span><i class="fa fa-map-marker fa-lg"></i></span>{{locations}}</li>
+      </ul>
+    </div>
   </div>
 </div>
 
 <div class="container-fluid">
   <div class="row">
-    <div class="col-md-6">
-      <h1>10 nights 11 days package</h1>
-    </div>
-    <div class="col-md-6">
+    <div class="package-details-tab-section">
+
+      <!-- Nav tabs -->
+      <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active"><a data-target="#itinerary" aria-controls="itinerary" role="tab" data-toggle="tab">Itinerary</a></li>
+        <li role="presentation"><a data-target="#activities" aria-controls="activities" role="tab" data-toggle="tab">Activities</a></li>
+        <li role="presentation"><a data-target="#inclusions" aria-controls="inclusions" role="tab" data-toggle="tab">Inclusions</a></li>
+      </ul>
 
     </div>
   </div>
 </div>
+
+<div class="container">
+    <div class="row">
+      <!-- Tab panes -->
+      <div class="tab-content">
+        <div role="tabpanel" class="tab-pane fade in active" id="itinerary">
+          <div class="col-md-6">
+            <div class="day-button-wrapper">
+              <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#day1" aria-expanded="false" aria-controls="day1">
+                Day<span class="text-right"><i class="fa fa-angle-double-right fa-4x" aria-hidden="true"></i></span>
+              </button>
+
+              <div class="collapse day-button-collapse" id="day1">
+                <div class="well">
+                  <ul class="list-unstyled">
+                    <li><span><i class="fa fa-hand-o-right" aria-hidden="true"></i></span>Pick up from air port</li>
+                    <li><span><i class="fa fa-hand-o-right" aria-hidden="true"></i></span>Breakfast on the Negombo beach</li>
+                    <li><span><i class="fa fa-hand-o-right" aria-hidden="true"></i></span>Check in to hotel in Negombo</li>
+                    <li><span><i class="fa fa-hand-o-right" aria-hidden="true"></i></span>Enjoy the beauty on the beach</li>
+                    <li><span><i class="fa fa-hand-o-right" aria-hidden="true"></i></span>City tour at Negombo </li>
+                    <li><span><i class="fa fa-hand-o-right" aria-hidden="true"></i></span>Dinner</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="day-button-wrapper">
+              <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#day2" aria-expanded="false" aria-controls="day2">
+                Day<span class="text-right"><i class="fa fa-angle-double-right fa-4x" aria-hidden="true"></i></span>
+              </button>
+
+              <div class="collapse day-button-collapse" id="day2">
+                <div class="well">
+                  <ul class="list-unstyled">
+                    <li><span><i class="fa fa-hand-o-right" aria-hidden="true"></i></span>Pick up from air port</li>
+                    <li><span><i class="fa fa-hand-o-right" aria-hidden="true"></i></span>Breakfast on the Negombo beach</li>
+                    <li><span><i class="fa fa-hand-o-right" aria-hidden="true"></i></span>Check in to hotel in Negombo</li>
+                    <li><span><i class="fa fa-hand-o-right" aria-hidden="true"></i></span>Enjoy the beauty on the beach</li>
+                    <li><span><i class="fa fa-hand-o-right" aria-hidden="true"></i></span>City tour at Negombo </li>
+                    <li><span><i class="fa fa-hand-o-right" aria-hidden="true"></i></span>Dinner</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="day-button-wrapper">
+              <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#day3" aria-expanded="false" aria-controls="day3">
+                Day<span class="text-right"><i class="fa fa-angle-double-right fa-4x" aria-hidden="true"></i></span>
+              </button>
+
+              <div class="collapse day-button-collapse" id="day3">
+                <div class="well">
+                  <ul class="list-unstyled">
+                    <li><span><i class="fa fa-hand-o-right" aria-hidden="true"></i></span>Pick up from air port</li>
+                    <li><span><i class="fa fa-hand-o-right" aria-hidden="true"></i></span>Breakfast on the Negombo beach</li>
+                    <li><span><i class="fa fa-hand-o-right" aria-hidden="true"></i></span>Check in to hotel in Negombo</li>
+                    <li><span><i class="fa fa-hand-o-right" aria-hidden="true"></i></span>Enjoy the beauty on the beach</li>
+                    <li><span><i class="fa fa-hand-o-right" aria-hidden="true"></i></span>City tour at Negombo </li>
+                    <li><span><i class="fa fa-hand-o-right" aria-hidden="true"></i></span>Dinner</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="day-button-wrapper">
+              <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#day4" aria-expanded="false" aria-controls="day4">
+                Day<span class="text-right"><i class="fa fa-angle-double-right fa-4x" aria-hidden="true"></i></span>
+              </button>
+
+              <div class="collapse day-button-collapse" id="day4">
+                <div class="well">
+                  <ul class="list-unstyled">
+                    <li><span><i class="fa fa-hand-o-right" aria-hidden="true"></i></span>Pick up from air port</li>
+                    <li><span><i class="fa fa-hand-o-right" aria-hidden="true"></i></span>Breakfast on the Negombo beach</li>
+                    <li><span><i class="fa fa-hand-o-right" aria-hidden="true"></i></span>Check in to hotel in Negombo</li>
+                    <li><span><i class="fa fa-hand-o-right" aria-hidden="true"></i></span>Enjoy the beauty on the beach</li>
+                    <li><span><i class="fa fa-hand-o-right" aria-hidden="true"></i></span>City tour at Negombo </li>
+                    <li><span><i class="fa fa-hand-o-right" aria-hidden="true"></i></span>Dinner</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="day-button-wrapper">
+              <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#day5" aria-expanded="false" aria-controls="day5">
+                Day<span class="text-right"><i class="fa fa-angle-double-right fa-4x" aria-hidden="true"></i></span>
+              </button>
+
+              <div class="collapse day-button-collapse" id="day5">
+                <div class="well">
+                  <ul class="list-unstyled">
+                    <li><span><i class="fa fa-hand-o-right" aria-hidden="true"></i></span>Pick up from air port</li>
+                    <li><span><i class="fa fa-hand-o-right" aria-hidden="true"></i></span>Breakfast on the Negombo beach</li>
+                    <li><span><i class="fa fa-hand-o-right" aria-hidden="true"></i></span>Check in to hotel in Negombo</li>
+                    <li><span><i class="fa fa-hand-o-right" aria-hidden="true"></i></span>Enjoy the beauty on the beach</li>
+                    <li><span><i class="fa fa-hand-o-right" aria-hidden="true"></i></span>City tour at Negombo </li>
+                    <li><span><i class="fa fa-hand-o-right" aria-hidden="true"></i></span>Dinner</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="day-button-wrapper">
+              <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#day6" aria-expanded="false" aria-controls="day6">
+                Day<span class="text-right"><i class="fa fa-angle-double-right fa-4x" aria-hidden="true"></i></span>
+              </button>
+
+              <div class="collapse day-button-collapse" id="day6">
+                <div class="well">
+                  <ul class="list-unstyled">
+                    <li><span><i class="fa fa-hand-o-right" aria-hidden="true"></i></span>Pick up from air port</li>
+                    <li><span><i class="fa fa-hand-o-right" aria-hidden="true"></i></span>Breakfast on the Negombo beach</li>
+                    <li><span><i class="fa fa-hand-o-right" aria-hidden="true"></i></span>Check in to hotel in Negombo</li>
+                    <li><span><i class="fa fa-hand-o-right" aria-hidden="true"></i></span>Enjoy the beauty on the beach</li>
+                    <li><span><i class="fa fa-hand-o-right" aria-hidden="true"></i></span>City tour at Negombo </li>
+                    <li><span><i class="fa fa-hand-o-right" aria-hidden="true"></i></span>Dinner</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="day-button-wrapper">
+              <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#day7" aria-expanded="false" aria-controls="day7">
+                Day<span class="text-right"><i class="fa fa-angle-double-right fa-4x" aria-hidden="true"></i></span>
+              </button>
+
+              <div class="collapse day-button-collapse" id="day7">
+                <div class="well">
+                  <ul class="list-unstyled">
+                    <li><span><i class="fa fa-hand-o-right" aria-hidden="true"></i></span>Pick up from air port</li>
+                    <li><span><i class="fa fa-hand-o-right" aria-hidden="true"></i></span>Breakfast on the Negombo beach</li>
+                    <li><span><i class="fa fa-hand-o-right" aria-hidden="true"></i></span>Check in to hotel in Negombo</li>
+                    <li><span><i class="fa fa-hand-o-right" aria-hidden="true"></i></span>Enjoy the beauty on the beach</li>
+                    <li><span><i class="fa fa-hand-o-right" aria-hidden="true"></i></span>City tour at Negombo </li>
+                    <li><span><i class="fa fa-hand-o-right" aria-hidden="true"></i></span>Dinner</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="day-button-wrapper">
+              <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#day8" aria-expanded="false" aria-controls="day8">
+                Day<span class="text-right"><i class="fa fa-angle-double-right fa-4x" aria-hidden="true"></i></span>
+              </button>
+
+              <div class="collapse day-button-collapse" id="day8">
+                <div class="well">
+                  <ul class="list-unstyled">
+                    <li><span><i class="fa fa-hand-o-right" aria-hidden="true"></i></span>Pick up from air port</li>
+                    <li><span><i class="fa fa-hand-o-right" aria-hidden="true"></i></span>Breakfast on the Negombo beach</li>
+                    <li><span><i class="fa fa-hand-o-right" aria-hidden="true"></i></span>Check in to hotel in Negombo</li>
+                    <li><span><i class="fa fa-hand-o-right" aria-hidden="true"></i></span>Enjoy the beauty on the beach</li>
+                    <li><span><i class="fa fa-hand-o-right" aria-hidden="true"></i></span>City tour at Negombo </li>
+                    <li><span><i class="fa fa-hand-o-right" aria-hidden="true"></i></span>Dinner</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="day-button-wrapper">
+              <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#day9" aria-expanded="false" aria-controls="day9">
+                Day<span class="text-right"><i class="fa fa-angle-double-right fa-4x" aria-hidden="true"></i></span>
+              </button>
+
+              <div class="collapse day-button-collapse" id="day9">
+                <div class="well">
+                  <ul class="list-unstyled">
+                    <li><span><i class="fa fa-hand-o-right" aria-hidden="true"></i></span>Pick up from air port</li>
+                    <li><span><i class="fa fa-hand-o-right" aria-hidden="true"></i></span>Breakfast on the Negombo beach</li>
+                    <li><span><i class="fa fa-hand-o-right" aria-hidden="true"></i></span>Check in to hotel in Negombo</li>
+                    <li><span><i class="fa fa-hand-o-right" aria-hidden="true"></i></span>Enjoy the beauty on the beach</li>
+                    <li><span><i class="fa fa-hand-o-right" aria-hidden="true"></i></span>City tour at Negombo </li>
+                    <li><span><i class="fa fa-hand-o-right" aria-hidden="true"></i></span>Dinner</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="day-button-wrapper">
+              <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#day10" aria-expanded="false" aria-controls="day10">
+                Day<span class="text-right"><i class="fa fa-angle-double-right fa-4x" aria-hidden="true"></i></span>
+              </button>
+
+              <div class="collapse day-button-collapse" id="day10">
+                <div class="well">
+                  <ul class="list-unstyled">
+                    <li><span><i class="fa fa-hand-o-right" aria-hidden="true"></i></span>Pick up from air port</li>
+                    <li><span><i class="fa fa-hand-o-right" aria-hidden="true"></i></span>Breakfast on the Negombo beach</li>
+                    <li><span><i class="fa fa-hand-o-right" aria-hidden="true"></i></span>Check in to hotel in Negombo</li>
+                    <li><span><i class="fa fa-hand-o-right" aria-hidden="true"></i></span>Enjoy the beauty on the beach</li>
+                    <li><span><i class="fa fa-hand-o-right" aria-hidden="true"></i></span>City tour at Negombo </li>
+                    <li><span><i class="fa fa-hand-o-right" aria-hidden="true"></i></span>Dinner</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="day-button-wrapper">
+              <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#day11" aria-expanded="false" aria-controls="day11">
+                Day<span class="text-right"><i class="fa fa-angle-double-right fa-4x" aria-hidden="true"></i></span>
+              </button>
+
+              <div class="collapse day-button-collapse" id="day11">
+                <div class="well">
+                  <ul class="list-unstyled">
+                    <li><span><i class="fa fa-hand-o-right" aria-hidden="true"></i></span>Pick up from air port</li>
+                    <li><span><i class="fa fa-hand-o-right" aria-hidden="true"></i></span>Breakfast on the Negombo beach</li>
+                    <li><span><i class="fa fa-hand-o-right" aria-hidden="true"></i></span>Check in to hotel in Negombo</li>
+                    <li><span><i class="fa fa-hand-o-right" aria-hidden="true"></i></span>Enjoy the beauty on the beach</li>
+                    <li><span><i class="fa fa-hand-o-right" aria-hidden="true"></i></span>City tour at Negombo </li>
+                    <li><span><i class="fa fa-hand-o-right" aria-hidden="true"></i></span>Dinner</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <div class="col-md-6">
+            <div class="package-images"  *ngFor="let p of packageList" [style.backgroundImage]="'url('+ p.imagePath+'/'+p.backgroundImage +')'">
+              <div class="package-text-wrapper text-center">
+                <p class="text-uppercase">{{p.mainTopic}}</p>
+                <p>{{p.subTopic}}</p>
+              </div>
+              <div class="package-button">
+                <button class="btn btn-success green-button">VIEW MORE</button>
+              </div>
+            </div>
+
+            <div class="package-images" style="background-color: #0078d7">
+              <div class="package-text-wrapper text-center">
+                <p class="text-uppercase">Need a customized trip?</p>
+
+              </div>
+              <div class="package-button">
+                <button class="btn btn-success green-button">ENQUIRE NOW</button>
+              </div>
+            </div>
+          </div>
+
+
+
+        </div>
+        <div role="tabpanel" class="tab-pane fade" id="activities">
+          <div class="col-md-6 activity-box">
+            <ul class="list-unstyled">
+              <li *ngFor="let ativities of ativitiesCovered"><span><i aria-hidden="true" class="fa fa-hand-o-right"></i></span>{{ativities}}</li>
+            </ul>
+          </div>
+          <div class="col-md-6">
+            <div class="package-images"  *ngFor="let p of packageList" [style.backgroundImage]="'url('+ p.imagePath+'/'+p.backgroundImage +')'">
+              <div class="package-text-wrapper text-center">
+                <p class="text-uppercase">{{p.mainTopic}}</p>
+                <p>{{p.subTopic}}</p>
+              </div>
+              <div class="package-button">
+                <button class="btn btn-success green-button">VIEW MORE</button>
+              </div>
+            </div>
+
+            <div class="package-images" style="background-color: #0078d7">
+              <div class="package-text-wrapper text-center">
+                <p class="text-uppercase">Need a customized trip?</p>
+
+              </div>
+              <div class="package-button">
+                <button class="btn btn-success green-button">ENQUIRE NOW</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div role="tabpanel" class="tab-pane fade" id="inclusions">
+
+          <div class="col-md-6 inclusion-box">
+            <ul class="list-unstyled">
+              <li *ngFor="let inclusions of inclusionList"><span><i aria-hidden="true" class="fa fa-hand-o-right"></i></span>{{inclusions}}</li>
+            </ul>
+            <p class="text-danger"><b>Driver’s and guide’s tips are not included</b></p>
+          </div>
+
+          <div class="col-md-6">
+            <div class="package-images"  *ngFor="let p of packageList" [style.backgroundImage]="'url('+ p.imagePath+'/'+p.backgroundImage +')'">
+              <div class="package-text-wrapper text-center">
+                <p class="text-uppercase">{{p.mainTopic}}</p>
+                <p>{{p.subTopic}}</p>
+              </div>
+              <div class="package-button">
+                <button class="btn btn-success green-button">VIEW MORE</button>
+              </div>
+            </div>
+
+            <div class="package-images" style="background-color: #0078d7">
+              <div class="package-text-wrapper text-center">
+                <p class="text-uppercase">Need a customized trip?</p>
+              </div>
+              <div class="package-button">
+                <button class="btn btn-success green-button">ENQUIRE NOW</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+<!--my wrapper ends-->
+
 
 
