@@ -112,7 +112,7 @@ body{
   position: absolute;
   right: 0;
   left: 0;
-  z-index: 9999;
+  z-index: 9998;
   top: -25px;
 
   background-image: none;
@@ -177,6 +177,17 @@ body{
   background-image: none;
   background-color: white;
   box-shadow: none;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin-left: 25px;
+  margin-right: 25px;
+}
+
+.openBtn a{
+  padding-left: 15px !important;
+  padding-right: 15px !important;
+  margin-left: 15px !important;
+  margin-right: 15px !important;
 }
 
 .custom-navbar .navbar-brand{
@@ -197,7 +208,65 @@ body{
 
 /*search start*/
 
+.openBtn{
+  cursor: pointer;
+}
 
+.overlay {
+  height: 100%;
+  width: 100%;
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0, 0.9);
+}
+
+.overlay-content {
+  position: relative;
+  top: 46%;
+  width: 80%;
+  text-align: center;
+  margin-top: 30px;
+  margin: auto;
+}
+
+.overlay .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+  cursor: pointer;
+  color: white;
+}
+
+.overlay .closebtn:hover {
+  color: #ccc;
+}
+
+.overlay input[type=text] {
+  padding: 15px;
+  font-size: 17px;
+  border: none;
+  float: left;
+  width: 80%;
+  background: white;
+}
+
+.overlay input[type=text]:hover {
+  background: #f1f1f1;
+}
+
+.overlay button {
+  float: left;
+  width: 20%;
+  padding: 15px;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
 
 /*search end*/
 
@@ -241,7 +310,7 @@ body{
 .home-slider-row p:nth-child(2){
   color: white;
   position: absolute;
-  z-index: 9999;
+  z-index: 9998;
 
   left: 50%;
   top: 58%;
@@ -263,7 +332,7 @@ body{
 }
 
 .home-slider .slick-dots{
-  z-index: 9999;
+  z-index: 9998;
 }
 
 .home-slider .slick-dots li button:before{
