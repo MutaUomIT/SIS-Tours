@@ -194,15 +194,11 @@ body{
   padding: 10px 40px;
 }
 
-
-
 @media (min-width: 1200px) {
   .custom-navbar .navbar-nav li a{
     padding: 15px 34px;
   }
 }
-
-
 
 /*navbar end*/
 
