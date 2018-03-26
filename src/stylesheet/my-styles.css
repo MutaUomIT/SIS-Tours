@@ -104,6 +104,15 @@ body{
   padding-top: 8px;
 }
 
+.navbar-blue-top a{
+  color: white;
+}
+
+.navbar-blue-top a:hover, .navbar-blue-top a:active, .navbar-blue-top a:hover:active, .navbar-blue-top a:active:hover,
+.navbar-blue-top a:focus{
+  color: #FFE500;
+}
+
 .navbar-container{
   position: relative;
 }
@@ -815,6 +824,10 @@ body{
   padding-left: 70px;
 }
 
+.day-button-wrapper button span:nth-child(2){
+  display: none;
+}
+
 .day-button-wrapper button i{
   position: absolute;
   right: 5px;
@@ -991,6 +1004,10 @@ body{
   margin-top: 5px;
 }
 
+.package-row{
+  margin-bottom: 15px;
+}
+
 /*package details ends*/
 
 /*footer starts*/
@@ -1005,8 +1022,8 @@ body{
   text-decoration: none;
 }
 
-.up-strip a:hover, .up-strip a:active, .up-strip a:hover:active, .up-strip a:active:hover, .up-strip a:focus{
-  color: #337ab7;
+.footer-links a:hover, .footer-links a:active, .footer-links a:hover:active, .footer-links a:active:hover, .footer-links a:focus{
+  color: #FFE500;
 }
 
 .footer-social-icons>div{
@@ -1023,8 +1040,8 @@ body{
 }
 
 .footer-social-icons>div{
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   display: inline-block;
 
   -webkit-border-radius: 50%;
@@ -1032,7 +1049,7 @@ body{
   border-radius: 50%;
 
   background-color: #0078D7;
-  line-height: 50px;
+  line-height: 41px;
 
 }
 
