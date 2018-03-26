@@ -807,6 +807,14 @@ body{
   left: 0;
 }
 
+.package-main{
+  background-color: #0078D7;
+}
+
+.package-main h2{
+  margin-top: 10px;
+}
+
 .package-text-wrapper p{
   margin-bottom: 0;
 }
