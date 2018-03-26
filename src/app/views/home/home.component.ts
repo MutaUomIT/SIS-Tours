@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {PackageData} from "../../configFiles/packegeDetails";
 import {TestimonialData} from "../../configFiles/testimonials";
 import { HttpClient } from '@angular/common/http';
-import { Router } from '@angular/router';
+import {Router, NavigationEnd} from '@angular/router';
 declare var jquery:any;
 declare var $ :any;
 
@@ -21,7 +21,21 @@ export class HomeComponent implements OnInit {
   locationCovered: any=[];
   inquiry : any = {};
 
-  constructor(private http: HttpClient, private router:Router) {}
+  constructor(private http: HttpClient, private router:Router) {
+    router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {
+
+        const tree = router.parseUrl(router.url);
+        if (tree.fragment) {
+          const element = document.querySelector("#" + tree.fragment);
+          if (element) {
+            element.scrollIntoView(true);
+            // element.scrollIntoView({behavior: "smooth", block: "start", inline: "start"});
+          }
+        }
+      }
+    });
+  }
 
   sendInquiry(){
 
@@ -68,6 +82,11 @@ export class HomeComponent implements OnInit {
         autoplaySpeed: 2000,
       });
     });
+  }
+
+  goTo(location: string): void {
+    window.location.hash = '';
+    window.location.hash = location;
   }
 
   //testimonials
@@ -136,7 +155,7 @@ export class HomeComponent implements OnInit {
     }
   }
 
-onClickViewMore= function (id) {
-  this.router.navigate(['/packages', id]);
-};
+  onClickViewMore= function (id) {
+    this.router.navigate(['/packages', id]);
+  };
 }
