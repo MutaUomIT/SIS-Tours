@@ -23,18 +23,19 @@ export class PackagesComponent implements OnInit {
   id: number;
   private sub: any;
 
-  constructor(private route: ActivatedRoute, private router:Router) {}
+  constructor(private route: ActivatedRoute, private router:Router ) {}
 
   ngOnInit() {
     this.packageDetails = PackageData.packageList;
     this.packageImageSlider();
-    this.loadPackages();
+    this.getPackageList();
+    window.scroll(0,0);
 
     this.sub = this.route.params.subscribe(params => {
       this.id = +params['id']; // (+) converts string 'id' to a number
     });
 
-    this.onClickViewMore(this.id);
+    this.loadPackageDetails(this.id);
   }
 
   // package Details slider
@@ -52,11 +53,16 @@ export class PackagesComponent implements OnInit {
     });
   }
 
-  private loadPackages(){
+  private viewMoreOnPackage(id){
+    this.router.navigateByUrl('/packages', {skipLocationChange : true}).then(()=>
+    this.router.navigate(["packages",id]));
+  }
+
+  private getPackageList(){
     this.packageList = PackageData.packageList;
   }
 
-  onClickViewMore(id){
+  loadPackageDetails(id){
     for(var i = 0;i < this.packageList.length;i++){
       if(this.packageList[i].id== id){
         this.packageMoreDetails = this.packageList[i];
