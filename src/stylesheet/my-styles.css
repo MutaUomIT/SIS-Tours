@@ -735,7 +735,6 @@ body{
   position: absolute;
   content: counter(ol-counter);
   counter-increment: ol-counter;
-
 }
 
 .day-button-wrapper:nth-child(n+10) button::before{
