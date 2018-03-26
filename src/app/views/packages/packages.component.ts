@@ -36,6 +36,7 @@ export class PackagesComponent implements OnInit {
     });
 
     this.loadPackageDetails(this.id);
+
   }
 
   // package Details slider
@@ -74,3 +75,19 @@ export class PackagesComponent implements OnInit {
     }
   }
 }
+
+// arrow function
+
+$(document).ready(function () {
+  $('.day-button-wrapper button span:nth-child(1)').click(function () {
+    $(this).hide('fast');
+    $(this).siblings().show('fast');
+  });
+
+  $('.day-button-wrapper button span:nth-child(2)').click(function () {
+    $(this).hide('fast');
+    $(this).siblings().show('fast');
+  });
+
+});
+

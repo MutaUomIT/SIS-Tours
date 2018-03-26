@@ -104,6 +104,15 @@ body{
   padding-top: 8px;
 }
 
+.navbar-blue-top a{
+  color: white;
+}
+
+.navbar-blue-top a:hover, .navbar-blue-top a:active, .navbar-blue-top a:hover:active, .navbar-blue-top a:active:hover,
+.navbar-blue-top a:focus{
+  color: #FFE500;
+}
+
 .navbar-container{
   position: relative;
 }
@@ -815,6 +824,10 @@ body{
   padding-left: 70px;
 }
 
+.day-button-wrapper button span:nth-child(2){
+  display: none;
+}
+
 .day-button-wrapper button i{
   position: absolute;
   right: 5px;
@@ -989,6 +1002,10 @@ body{
 
 .activity-box ul li, .inclusion-box ul li{
   margin-top: 5px;
+}
+
+.package-row{
+  margin-bottom: 15px;
 }
 
 /*package details ends*/
