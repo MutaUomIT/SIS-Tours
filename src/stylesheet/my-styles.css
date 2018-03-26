@@ -1113,11 +1113,16 @@ body{
 /*contact us start*/
 
 .contact-us-row{
-  background-color: #aadaff;
+  /*background-color: #aadaff;*/
+  margin-top: -30px;
 }
 
 .contact-us-row iframe{
   margin-top: 29px;
+}
+
+.contact-us-middle{
+  margin-top: 15px;
 }
 
 /*contact us end*/
