@@ -738,6 +738,10 @@ body{
 
 }
 
+.day-button-wrapper:nth-child(n+10) button::before{
+  left: 26px;
+}
+
 .day-button-wrapper button{
   position: relative;
   text-align: left;
