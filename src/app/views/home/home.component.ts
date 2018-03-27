@@ -63,7 +63,6 @@ export class HomeComponent implements OnInit {
     this.testimonials = TestimonialData.testimonialList;
     this.homeImageSlider();
     this.testimonialsSlider();
-    //this.initJqueryFunctions();
     this.loadPackages();
     this.loadTestimonials();
     this.onClickTakeAPeak(8);
@@ -124,22 +123,12 @@ export class HomeComponent implements OnInit {
     });
   }
 
-  // initJqueryFunctions(){
-  //   $("#slideshow > div:gt(0)").hide();
-  //
-  //   setInterval(function() {
-  //     $('#slideshow > div:first')
-  //       .fadeOut(1000)
-  //       .next()
-  //       .fadeIn(1000)
-  //       .end()
-  //       .appendTo('#slideshow');
-  //   },  3000);
-  //
-  // }
-
   private loadPackages(){
-    this.packageList = PackageData.packageList;
+    // this.packageList = PackageData.packageList;
+
+    this.packageList = PackageData.packageList.filter(function(item){
+      return item.id === 1 || item.id === 3 || item.id === 4 || item.id === 4 || item.id === 6 || item.id === 8  ;
+    });
   }
 
   private loadTestimonials(){
@@ -159,7 +148,6 @@ export class HomeComponent implements OnInit {
     this.router.navigate(['/packages', id]);
   };
   onClickMorePackages= function () {
-    console.log("SSS");
     this.router.navigate(['/package-list']);
   };
 }
