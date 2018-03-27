@@ -39,7 +39,7 @@ export class PackagesComponent implements OnInit {
     });
 
     this.loadPackageDetails(this.id);
-
+    this.arrowFunction();
   }
 
   // package Details slider
@@ -87,24 +87,23 @@ export class PackagesComponent implements OnInit {
       }
     }
   }
+  // arrow function
+  arrowFunction()
+  {
+    $(document).ready(function () {
+      $('.day-button-wrapper button').click(function () {
+        $(this).children('span:nth-child(1)').hide('fast');
+        $(this).children('span:nth-child(2)').show('fast');
+
+        $(this).parent().addClass('active')
+      });
+
+      $('.day-button-wrapper.active>button').click(function () {
+        $(this).children('span:nth-child(2)').hide('fast');
+        $(this).children('span:nth-child(1)').show('fast');
+      });
+    });
+  }
 }
 
-// arrow function
-
-$(document).ready(function () {
-  $('.day-button-wrapper button').click(function () {
-    $(this).children('span:nth-child(1)').hide('fast');
-    $(this).children('span:nth-child(2)').show('fast');
-
-    $(this).parent().addClass('active')
-  });
-
-  $('.day-button-wrapper.active>button').click(function () {
-
-    console.log("xxxx");
-
-    $(this).children('span:nth-child(2)').hide('fast');
-    $(this).children('span:nth-child(1)').show('fast');
-  });
-});
 

@@ -22,7 +22,7 @@
         <div class="modal-content">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title" id="myModalLabe2">4 NIGHTS 5 DAYS PACKAG - Honeymoon on the beach</h4>
+            <h4 class="modal-title" id="myModalLabe2">{{packageMoreDetails.mainTopic}} - {{packageMoreDetails.subTopic}}</h4>
           </div>
           <div class="modal-body">
 
@@ -32,7 +32,7 @@
                 <div class="form-group">
                   <select class="form-control custom-form-control">
 
-                    <option disabled selected>4 NIGHTS 5 DAYS PACKAG - Honeymoon on the beach</option>
+                    <option disabled selected>{{packageMoreDetails.mainTopic}} - {{packageMoreDetails.subTopic}}</option>
 
                   </select>
                 </div>
@@ -185,30 +185,6 @@
           <div class="slider-image" [style.backgroundImage]="'url('+ packageMoreDetails.imagePath+'/'+sliderImages +')'"></div>
         </div>
 
-        <!--<div>-->
-          <!--<div class="slider-image" style="background-image: url('../assets/images/packageImages/8/2.jpg')"></div>-->
-        <!--</div>-->
-        <!--<div>-->
-          <!--<div class="slider-image" style="background-image: url('../assets/images/packageImages/8/3.jpg')"></div>-->
-        <!--</div>-->
-        <!--<div>-->
-          <!--<div class="slider-image" style="background-image: url('../assets/images/packageImages/8/4.jpg')"></div>-->
-        <!--</div>-->
-        <!--<div>-->
-          <!--<div class="slider-image" style="background-image: url('../assets/images/packageImages/8/5.jpg')"></div>-->
-        <!--</div>-->
-        <!--<div>-->
-          <!--<div class="slider-image" style="background-image: url('../assets/images/packageImages/8/6.jpg')"></div>-->
-        <!--</div>-->
-        <!--<div>-->
-          <!--<div class="slider-image" style="background-image: url('../assets/images/packageImages/8/7.jpg')"></div>-->
-        <!--</div>-->
-        <!--<div>-->
-          <!--<div class="slider-image" style="background-image: url('../assets/images/packageImages/8/8.jpg')"></div>-->
-        <!--</div>-->
-        <!--<div>-->
-          <!--<div class="slider-image" style="background-image: url('../assets/images/packageImages/8/9.jpg')"></div>-->
-        <!--</div>-->
       </div>
     </div>
     <br>
@@ -279,7 +255,7 @@
 
               </div>
               <div class="package-button">
-                <button class="btn btn-success green-button" data-toggle="modal" data-target="#packageModal">ENQUIRE NOW</button>
+                <button class="btn btn-success green-button" data-toggle="modal" data-target="#packageModal" (click)="loadPackageDetails(p.id)">ENQUIRE NOW</button>
               </div>
             </div>
 
