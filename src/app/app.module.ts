@@ -12,6 +12,7 @@ import { TestimonialsComponent } from './views/testimonials/testimonials.compone
 import { AboutSisComponent } from './views/about-sis/about-sis.component';
 import { ContactsComponent } from './views/contacts/contacts.component';
 import {FormsModule} from "@angular/forms";
+import { PackageListComponent } from './views/packages/package-list/package-list.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import {FormsModule} from "@angular/forms";
     AboutLankaComponent,
     TestimonialsComponent,
     AboutSisComponent,
-    ContactsComponent
+    ContactsComponent,
+    PackageListComponent
   ],
   imports: [
     BrowserModule,

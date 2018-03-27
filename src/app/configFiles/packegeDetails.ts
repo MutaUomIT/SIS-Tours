@@ -13,6 +13,7 @@ export class PackageData {
       "sliderImages":[""],
       "activityListId":1
     },
+
     {
       "id":2,
       "days":6,

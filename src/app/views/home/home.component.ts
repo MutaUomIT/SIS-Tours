@@ -167,4 +167,8 @@ export class HomeComponent implements OnInit {
   onClickViewMore= function (id) {
     this.router.navigate(['/packages', id]);
   };
+  onClickMorePackages= function () {
+    console.log("SSS");
+    this.router.navigate(['/package-list']);
+  };
 }
