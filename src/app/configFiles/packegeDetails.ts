@@ -95,7 +95,7 @@ export class PackageData {
     {
       "id":8,
       "days":11,
-      "mainTopic":'9 NIGHTS 10 DAYS PACKAGE',
+      "mainTopic":'10 NIGHTS 11 DAYS PACKAGE',
       "subTopic":'Negambo, Anuradhapura, ...',
       "locationCovered":["Negombo","Anuradhapura","Polonnaruwa","Sigiriya","Kandy","Nuwaraeliya","Ella","Yala","Colombo"],
       "ativitiesCovered":["Negombo City Tour and Shopping","Ruins and temples Anuradhapura","Ruins at Polonnaruwa","Dambulla Cave Temple","Climb Sigiriya Rock","Hiriwadunna village tour","Visit Spice Gardens","Cultural Show","City tour and Shopping at Kandy","Kandy tooth relic temple","Peradeniya botanical gardens","Tea Factory visit","World’s end tour – Horton Plains and Baker’s falls","Visit Gregory’s lake","Visit Victoria Park","Climb Piduruthalagala","Visit Ambewel farm and Strawberry farm","Visit nine arch bridge","Visit Rawana Falls","Visit Little Adam’s peaks","Visit Ella Rock","Safari at Yala","Night out in a Club","City tour and Shopping in Colombo"],
