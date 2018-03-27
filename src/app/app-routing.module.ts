@@ -7,10 +7,12 @@ import {AboutLankaComponent} from "./views/about-lanka/about-lanka.component";
 import {TestimonialsComponent} from "./views/testimonials/testimonials.component";
 import {AboutSisComponent} from "./views/about-sis/about-sis.component";
 import {ContactsComponent} from "./views/contacts/contacts.component";
+import { PackageListComponent } from './views/packages/package-list/package-list.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'packages/:id', component: PackagesComponent },
+  { path: 'package-list', component: PackageListComponent },
   { path: 'leisure', component: LeisureComponent },
   { path: 'about-lanka', component: AboutLankaComponent },
   { path: 'testimonials', component: TestimonialsComponent },
