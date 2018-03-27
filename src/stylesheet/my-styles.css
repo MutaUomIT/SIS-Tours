@@ -118,20 +118,31 @@ body{
 }
 
 .custom-navbar{
-  position: absolute;
-  right: 0;
-  left: 0;
+
   z-index: 9998;
-  top: -25px;
+  position: fixed;
+  top: 35px;
+  width: 1169px;
+
+  left: 50%;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
 
   background-image: none;
   background-color: white;
-
 
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
   border-radius: 0;
 
+}
+
+.affix {
+  top: 0;
+  /*width: 100%;*/
+  z-index: 9998 !important;
 }
 
 .custom-navbar .navbar-nav>li>a{
@@ -166,12 +177,27 @@ body{
     padding-left: 5px;
     padding-right: 5px;
   }
+
+  .custom-navbar{
+    width: 750px;
+  }
+
 }
 
 @media (min-width: 992px) and (max-width: 1200px) {
   .custom-navbar .navbar-nav>li>a{
     padding-left: 20px;
     padding-right: 20px;
+  }
+
+  .custom-navbar{
+    width: 970px;
+  }
+}
+
+@media (max-width: 768px){
+  .custom-navbar{
+    width: 100%;
   }
 }
 
@@ -318,7 +344,7 @@ body{
 .home-slider-row p:nth-child(2){
   color: white;
   position: absolute;
-  z-index: 9998;
+  z-index: 9997;
 
   left: 50%;
   top: 58%;
@@ -340,7 +366,7 @@ body{
 }
 
 .home-slider .slick-dots{
-  z-index: 9998;
+  z-index: 9997;
 }
 
 .home-slider .slick-dots li button:before{
@@ -1223,3 +1249,28 @@ body{
 
 /*contact us end*/
 
+/*alert starts*/
+
+.my-alert{
+  position: fixed;
+  top: 0;
+  z-index: 9998;
+  text-align: center;
+  padding: 16px;
+  width: 500px;
+
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+
+@media (max-width:768px) {
+  .my-alert{
+    width: 100%;
+  }
+}
+
+/*alert ends*/
