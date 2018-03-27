@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { PackageData } from './../../configFiles/packegeDetails';
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
+
+import { PackageData } from './../../configFiles/packegeDetails';
+import { DailyActivities } from './../../configFiles/DailyActivities';
 
 declare var jquery:any;
 declare var $ :any;
@@ -20,6 +22,7 @@ export class PackagesComponent implements OnInit {
   ativitiesCovered: any=[];
   inclusionList: any=[];
   sliderImagesList: any=[];
+  dayWiseActivityList : any=[];
   id: number;
   private sub: any;
 
@@ -63,6 +66,15 @@ export class PackagesComponent implements OnInit {
     this.packageList = PackageData.packageList;
   }
 
+  private getActivityList(id){
+
+    for(var i = 0;i < DailyActivities.activityList.length;i++){
+      if(id === DailyActivities.activityList[i].id){
+        this.dayWiseActivityList = DailyActivities.activityList[i].dayWiseActivities;
+      }
+    }
+  }
+
   loadPackageDetails(id){
     for(var i = 0;i < this.packageList.length;i++){
       if(this.packageList[i].id== id){
@@ -71,6 +83,7 @@ export class PackagesComponent implements OnInit {
         this.ativitiesCovered = this.packageMoreDetails.ativitiesCovered;
         this.inclusionList = this.packageMoreDetails.inclusions;
         this.sliderImagesList = this.packageMoreDetails.sliderImages;
+        this.getActivityList(this.packageMoreDetails.activityListId);
       }
     }
   }

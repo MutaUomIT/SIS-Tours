@@ -34,6 +34,89 @@
 
 <!--my wrapper starts-->
 
+<!--modal starts-->
+
+<!-- Modal -->
+<div class="modal fade" id="homeModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Customized Trip</h4>
+      </div>
+      <div class="modal-body">
+
+        <div class="row">
+
+          <div class="col-sm-4">
+            <div class="form-group">
+              <select class="form-control custom-form-control">
+                <option disabled selected hidden>Tour Duration</option>
+                <option>1 Day</option>
+                <option>2 Day</option>
+                <option>3 Day</option>
+                <option>4 Day</option>
+                <option>5 Day</option>
+                <option>6 Day</option>
+                <option>7 Day</option>
+                <option>8 Day</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="sr-only" for="arrivalDate1">Arrival Date</label>
+              <input type="text" class="form-control custom-form-control" id="arrivalDate2" placeholder="Arrival Date">
+            </div>
+          </div>
+
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="sr-only" for="yourCountry1">Your Country</label>
+              <input type="text" class="form-control custom-form-control" id="yourCountry2" placeholder="Your Country">
+            </div>
+          </div>
+
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="sr-only" for="name1">Name</label>
+              <input type="text" class="form-control custom-form-control" id="name2" placeholder="Name">
+            </div>
+          </div>
+
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="sr-only" for="email1">Email</label>
+              <input type="email" class="form-control custom-form-control" id="email2" placeholder="Email">
+            </div>
+          </div>
+
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="sr-only" for="mobileNumber1">Mobile Number</label>
+              <input type="text" class="form-control custom-form-control" id="mobileNumber2" placeholder="Mobile Number">
+            </div>
+          </div>
+
+          <div class="col-sm-12">
+            <div class="form-group">
+              <textarea class="form-control custom-form-control" rows="3"></textarea>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default green-button white-button" data-dismiss="modal">CLOSE</button>
+        <button type="button" class="btn btn-primary green-button">ENQUIRE</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--modal ends-->
 <!--alert starts-->
 
 <div class="alert alert-success my-alert" role="alert">Well done! You successfully sent the enquiry</div>
@@ -85,16 +168,9 @@
 
             <div class="col-sm-4">
               <div class="form-group">
-                <select class="form-control custom-form-control">
-                <option disabled selected hidden>Select Your Package</option>
-                <option>4 NIGHTS 5 DAYS PACKAG - Honeymoon on the beach</option>
-                <option>5 NIGHTS 6 DAYS PACKAGE - Beach Package</option>
-                <option>5 NIGHTS 6 DAYS PACKAGE</option>
-                <option>6 NIGHTS 7 DAYS PACKAGE - Honeymoon Package</option>
-                <option>6 NIGHTS 7 DAYS PACKAGE</option>
-                <option>8 NIGHTS 9 DAYS PACKAGE</option>
-                <option>9 NIGHTS 10 DAYS PACKAGE</option>
-                <option>10 NIGHTS 11 DAYS PACKAGE</option>
+                <select class="form-control custom-form-control" [(ngModel)]="inquiry.package">
+                  <option value="default" disabled>--- SELECT PACKAGE ---</option>
+                  <option value="{{package.mainTopic}} - {{package.subTopic}}" *ngFor="let package of packageList">{{package.mainTopic}} - {{package.subTopic}}</option>
                 </select>
               </div>
             </div>
@@ -136,7 +212,7 @@
 
             <div class="col-sm-12">
               <div class="form-group">
-                <textarea class="form-control custom-form-control" rows="3"></textarea>
+                <textarea class="form-control custom-form-control" rows="3" [(ngModel)]="inquiry.message"></textarea>
               </div>
             </div>
 
@@ -208,7 +284,7 @@
     </div>
 
     <div class="col-sm-6 slider-enquire text-right no-padding-right">
-    <button (click)="sendInquiry()" class="btn btn-success green-button">ENQUIRE</button>
+      <button (click)="sendInquiry()" class="btn btn-success green-button">ENQUIRE</button>
     </div>
 
 
@@ -244,37 +320,41 @@
   </div>
 
   <div class="row">
+
+
+
+    <!--////////////////////////////////////////////////////////////////////////////////-->
     <div>
-    <div class="col-md-6 home-packages">
-      <div class="day-label text-center">
-        <p><strong>{{packageMoreDetails.days}}</strong></p>
-        <p>Days</p>
-      </div>
-      <div class="home-packages-images home-packages-images-first" [style.backgroundImage]="'url('+ packageMoreDetails.imagePath+'/'+packageMoreDetails.backgroundImage +')'">
+      <div class="col-md-6 home-packages">
+        <div class="day-label text-center">
+          <p><strong>{{packageMoreDetails.days}}</strong></p>
+          <p>Days</p>
+        </div>
+        <div class="home-packages-images home-packages-images-first" [style.backgroundImage]="'url('+ packageMoreDetails.imagePath+'/'+packageMoreDetails.backgroundImage +')'">
 
         <div class="package-text-wrapper text-center package-main">
           <h2 class="text-uppercase">{{packageMoreDetails.mainTopic}}</h2>
           <p></p>
         </div>
 
+        </div>
       </div>
-    </div>
-    <div class="col-md-6 no-padding-left-right">
-      <div class="col-md-12 quick-section">
-        <div class="panel panel-default">
-          <div class="panel-heading">{{packageMoreDetails.mainTopic}}</div>
-          <div class="panel-body">
-            <ul class="list-inline">
-              <li *ngFor="let locations of locationCovered"><span><i class="fa fa-map-marker fa-lg"></i></span>{{locations}}</li>
-            </ul>
+      <div class="col-md-6 no-padding-left-right">
+        <div class="col-md-12 quick-section">
+          <div class="panel panel-default">
+            <div class="panel-heading">{{packageMoreDetails.mainTopic}}</div>
+            <div class="panel-body">
+              <ul class="list-inline">
+                <li *ngFor="let locations of locationCovered"><span><i class="fa fa-map-marker fa-lg"></i></span>{{locations}}</li>
+              </ul>
 
-            <div class="text-right">
+              <div class="text-right">
                 <button type="button" class="btn btn-success green-button" (click)="onClickViewMore(packageMoreDetails.id)">VIEW MORE</button>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
     </div>
 
     <div class="col-md-3 home-packages" *ngFor="let p of packageList">
@@ -300,7 +380,7 @@
         </div>
 
         <div class="custom-package-button text-center">
-          <button class="btn btn-success green-button">ENQUIRE</button>
+          <button class="btn btn-success green-button" data-toggle="modal" data-target="#homeModal">ENQUIRE</button>
         </div>
       </div>
     </div>
