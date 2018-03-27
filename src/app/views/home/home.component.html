@@ -168,16 +168,9 @@
 
             <div class="col-sm-4">
               <div class="form-group">
-                <select class="form-control custom-form-control">
-                <option disabled selected hidden>Select Your Package</option>
-                <option>4 NIGHTS 5 DAYS PACKAG - Honeymoon on the beach</option>
-                <option>5 NIGHTS 6 DAYS PACKAGE - Beach Package</option>
-                <option>5 NIGHTS 6 DAYS PACKAGE</option>
-                <option>6 NIGHTS 7 DAYS PACKAGE - Honeymoon Package</option>
-                <option>6 NIGHTS 7 DAYS PACKAGE</option>
-                <option>8 NIGHTS 9 DAYS PACKAGE</option>
-                <option>9 NIGHTS 10 DAYS PACKAGE</option>
-                <option>10 NIGHTS 11 DAYS PACKAGE</option>
+                <select class="form-control custom-form-control" [(ngModel)]="inquiry.package">
+                  <option value="default" disabled>--- SELECT PACKAGE ---</option>
+                  <option value="{{package.mainTopic}} - {{package.subTopic}}" *ngFor="let package of packageList">{{package.mainTopic}} - {{package.subTopic}}</option>
                 </select>
               </div>
             </div>
@@ -219,7 +212,7 @@
 
             <div class="col-sm-12">
               <div class="form-group">
-                <textarea class="form-control custom-form-control" rows="3"></textarea>
+                <textarea class="form-control custom-form-control" rows="3" [(ngModel)]="inquiry.message"></textarea>
               </div>
             </div>
 
@@ -291,7 +284,7 @@
     </div>
 
     <div class="col-sm-6 slider-enquire text-right no-padding-right">
-    <button (click)="sendInquiry()" class="btn btn-success green-button">ENQUIRE</button>
+      <button (click)="sendInquiry()" class="btn btn-success green-button">ENQUIRE</button>
     </div>
 
 
@@ -332,36 +325,36 @@
 
     <!--////////////////////////////////////////////////////////////////////////////////-->
     <div>
-    <div class="col-md-6 home-packages">
-      <div class="day-label text-center">
-        <p><strong>{{packageMoreDetails.days}}</strong></p>
-        <p>Days</p>
-      </div>
-      <div class="home-packages-images home-packages-images-first" [style.backgroundImage]="'url('+ packageMoreDetails.imagePath+'/'+packageMoreDetails.backgroundImage +')'">
+      <div class="col-md-6 home-packages">
+        <div class="day-label text-center">
+          <p><strong>{{packageMoreDetails.days}}</strong></p>
+          <p>Days</p>
+        </div>
+        <div class="home-packages-images home-packages-images-first" [style.backgroundImage]="'url('+ packageMoreDetails.imagePath+'/'+packageMoreDetails.backgroundImage +')'">
 
         <div class="package-text-wrapper text-center package-main">
           <h2 class="text-uppercase">{{packageMoreDetails.mainTopic}}</h2>
           <p></p>
         </div>
 
+        </div>
       </div>
-    </div>
-    <div class="col-md-6 no-padding-left-right">
-      <div class="col-md-12 quick-section">
-        <div class="panel panel-default">
-          <div class="panel-heading">{{packageMoreDetails.mainTopic}}</div>
-          <div class="panel-body">
-            <ul class="list-inline">
-              <li *ngFor="let locations of locationCovered"><span><i class="fa fa-map-marker fa-lg"></i></span>{{locations}}</li>
-            </ul>
+      <div class="col-md-6 no-padding-left-right">
+        <div class="col-md-12 quick-section">
+          <div class="panel panel-default">
+            <div class="panel-heading">{{packageMoreDetails.mainTopic}}</div>
+            <div class="panel-body">
+              <ul class="list-inline">
+                <li *ngFor="let locations of locationCovered"><span><i class="fa fa-map-marker fa-lg"></i></span>{{locations}}</li>
+              </ul>
 
-            <div class="text-right">
+              <div class="text-right">
                 <button type="button" class="btn btn-success green-button" (click)="onClickViewMore(packageMoreDetails.id)">VIEW MORE</button>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
     </div>
     <!--////////////////////////////////////////////////////////////////////////////////-->
 

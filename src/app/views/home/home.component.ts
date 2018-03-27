@@ -3,6 +3,8 @@ import {PackageData} from "../../configFiles/packegeDetails";
 import {TestimonialData} from "../../configFiles/testimonials";
 import { HttpClient } from '@angular/common/http';
 import {Router, NavigationEnd} from '@angular/router';
+// import {window} from "@angular/platform-browser/src/browser/tools/browser";
+
 declare var jquery:any;
 declare var $ :any;
 
@@ -22,19 +24,19 @@ export class HomeComponent implements OnInit {
   inquiry : any = {};
 
   constructor(private http: HttpClient, private router:Router) {
+
     router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
-
         const tree = router.parseUrl(router.url);
         if (tree.fragment) {
           const element = document.querySelector("#" + tree.fragment);
           if (element) {
             element.scrollIntoView(true);
-            // element.scrollIntoView({behavior: "smooth", block: "start", inline: "start"});
           }
         }
       }
     });
+
   }
 
   sendInquiry(){
@@ -59,14 +61,14 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.inquiry.package = 'default';
     this.packageDetails = PackageData.packageList;
     this.testimonials = TestimonialData.testimonialList;
     this.homeImageSlider();
     this.testimonialsSlider();
-    //this.initJqueryFunctions();
     this.loadPackages();
     this.loadTestimonials();
-    this.onClickTakeAPeak(8);
+    this.loadInitialSelectedPackage(8);
   }
 
   // home slider
@@ -82,11 +84,6 @@ export class HomeComponent implements OnInit {
         autoplaySpeed: 2000,
       });
     });
-  }
-
-  goTo(location: string): void {
-    window.location.hash = '';
-    window.location.hash = location;
   }
 
   //testimonials
@@ -146,11 +143,23 @@ export class HomeComponent implements OnInit {
     this.testimonialList = TestimonialData.testimonialList;
   }
 
-  onClickTakeAPeak(id){
+  private loadInitialSelectedPackage(id){
     for(var i = 0;i < this.packageList.length;i++){
       if(this.packageList[i].id== id){
         this.packageMoreDetails = this.packageList[i];
         this.locationCovered = this.packageMoreDetails.locationCovered;
+      }
+    }
+  }
+
+  private onClickTakeAPeak(id){
+    console.log("Adoo")
+    for(var i = 0;i < this.packageList.length;i++){
+      if(this.packageList[i].id== id){
+        this.packageMoreDetails = this.packageList[i];
+        this.locationCovered = this.packageMoreDetails.locationCovered;
+        const element = document.querySelector("#packages");
+        element.scrollIntoView({behavior: "smooth", block: "start", inline: "start"});
       }
     }
   }
