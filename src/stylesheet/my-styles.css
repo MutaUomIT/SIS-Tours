@@ -51,6 +51,19 @@ body{
   outline-offset: 5px;
 }
 
+.white-button{
+  background-color: #6c757d;
+  border-color: #6c757d;
+}
+
+.white-button:hover, .white-button:active:hover, .white-button:hover:active, .white-button:focus{
+  background-color: #1d2124;
+  border-color: #1d2124;
+
+  outline: 1px solid #1d2124;
+  outline-offset: 5px;
+}
+
 .custom-form-control{
   -webkit-border-radius: 0 !important;
   -moz-border-radius: 0 !important;
@@ -1274,3 +1287,17 @@ body{
 }
 
 /*alert ends*/
+
+/*modal star*/
+
+#homeModal, #packageModal, #packageUpperModal{
+  top: 80px;
+}
+
+#homeModal .modal-content, #packageModal .modal-content, #packageUpperModal .modal-content{
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+}
+
+/*modal end*/
