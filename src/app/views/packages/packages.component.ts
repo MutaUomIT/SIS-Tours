@@ -95,10 +95,13 @@ export class PackagesComponent implements OnInit {
         $(this).children('span:nth-child(1)').hide('fast');
         $(this).children('span:nth-child(2)').show('fast');
 
-        $(this).parent().addClass('active')
+        $(this).parent().addClass('active');
       });
 
-      $('.day-button-wrapper.active>button').click(function () {
+      $('.day-button-wrapper.active button').click(function () {
+
+        console.log("dscdcd");
+
         $(this).children('span:nth-child(2)').hide('fast');
         $(this).children('span:nth-child(1)').show('fast');
       });
