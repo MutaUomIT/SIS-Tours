@@ -1193,8 +1193,8 @@ body{
   background-repeat: no-repeat;
   background-size: cover;
 
-  -webkit-filter: brightness(50%);
-  filter: brightness(50%);
+  -webkit-filter: brightness(60%);
+  filter: brightness(60%);
 }
 
 .about-us-banner-text h2{
@@ -1291,14 +1291,46 @@ body{
 
 /*modal star*/
 
-#homeModal, #packageModal, #packageUpperModal{
+#homeModal, #packageModal, #packageUpperModal, #morePackageUpperModal{
   top: 80px;
+  z-index: 9999;
 }
 
-#homeModal .modal-content, #packageModal .modal-content, #packageUpperModal .modal-content{
+#homeModal .modal-content, #packageModal .modal-content, #packageUpperModal .modal-content, #morePackageUpperModal .modal-content{
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
   border-radius: 0;
 }
 
+.modal-backdrop{
+  z-index: 9998;
+}
+
+.modal-content{
+  z-index: 9999;
+}
+
 /*modal end*/
+
+/*more packages start*/
+
+.more-packages-row{
+  margin-top: 30px;
+}
+
+.more-packages-header{
+  font-family: Fertigo Pro Regular, Serif;
+  color: white;
+  font-size: 70px;
+  padding-top: 15px;
+  margin-top: 0;
+  margin-bottom: 015px;
+}
+
+.more-packages-sub-header {
+  color: white;
+  font-size: 15px;
+  letter-spacing: 10px;
+}
+
+/*more packages ends*/
