@@ -16,6 +16,7 @@ declare var $ :any;
 export class PackagesComponent implements OnInit {
 
   packageList: any=[];
+  packageList2: any=[];
   packageDetails;
   packageMoreDetails: any=[];
   locationCovered: any=[];
@@ -25,6 +26,10 @@ export class PackagesComponent implements OnInit {
   dayWiseActivityList : any=[];
   id: number;
   private sub: any;
+
+  packageItem : number = 1;
+  lessPackage : boolean = false;
+  morePackage : boolean = true;
 
   constructor(private route: ActivatedRoute, private router:Router ) {}
 
@@ -64,6 +69,9 @@ export class PackagesComponent implements OnInit {
 
   private getPackageList(){
     this.packageList = PackageData.packageList;
+    this.packageList2 = PackageData.packageList.filter(function(item){
+      return item.id === 1 || item.id === 2 || item.id === 3;
+    });
   }
 
   private getActivityList(id){
@@ -87,6 +95,28 @@ export class PackagesComponent implements OnInit {
       }
     }
   }
+
+  //show less package list
+  onClickMorePackages(){
+    if(this.packageItem != 2){
+      this.packageItem = this.packageItem + 1;
+      this.lessPackage = true;
+    }
+    if(this.packageItem == 2){
+      this.morePackage = false;
+    }
+  }
+  //show more package list
+  onClickLessPackages(){
+    if(this.packageItem == 2){
+      this.packageItem = this.packageItem - 1;
+      this.lessPackage = true;
+    }
+    if(this.packageItem != 2){
+      this.morePackage = false;
+    }
+  }
+
   // arrow function
   arrowFunction()
   {
@@ -99,8 +129,6 @@ export class PackagesComponent implements OnInit {
       });
 
       $('.day-button-wrapper.active button').click(function () {
-
-        console.log("dscdcd");
 
         $(this).children('span:nth-child(2)').hide('fast');
         $(this).children('span:nth-child(1)').show('fast');

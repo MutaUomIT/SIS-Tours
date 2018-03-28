@@ -1,18 +1,3 @@
-
-    <!--<div id="slideshow">-->
-      <!--<div *ngFor="let p of packageDetails">-->
-        <!--<img [src]="p.imagePath + '/'+p.backgroundImage" width="500"/>-->
-      <!--</div>-->
-    <!--</div>-->
-
-<!--<div class="">-->
-  <!--<div *ngFor="let p of packageList" class="col-md-4">-->
-    <!--<img [src]="p.imagePath+'/'+p.backgroundImage" width="350"/>-->
-    <!--<p>{{p.id}} <br> {{p.Name}} <br> {{p.description}}</p>-->
-  <!--</div>-->
-<!--</div>-->
-
-
 <!--my wrapper starts-->
 
     <!--alert starts-->
@@ -244,9 +229,11 @@
                 </div>
               </div>
             </div>
-
           </div>
-          <div class="col-md-6">
+
+          <!--3 packages and custom package show-->
+          <div [hidden]="packageItem != 2">
+          <div class="col-md-6" >
             <div class="package-images"  *ngFor="let p of packageList" [style.backgroundImage]="'url('+ p.imagePath+'/'+p.backgroundImage +')'">
               <div class="package-text-wrapper text-center">
                 <p class="text-uppercase">{{p.mainTopic}}</p>
@@ -256,54 +243,103 @@
                 <button class="btn btn-success green-button" (click)="viewMoreOnPackage(p.id)">VIEW MORE</button>
               </div>
             </div>
-
             <div class="package-images" style="background-color: #0078d7">
               <div class="package-text-wrapper text-center">
                 <p class="text-uppercase">Need a customized trip?</p>
-
               </div>
               <div class="package-button">
                 <button class="btn btn-success green-button" data-toggle="modal" data-target="#packageModal" (click)="loadPackageDetails(p.id)">ENQUIRE NOW</button>
               </div>
             </div>
-
             <div class="text-center" style="margin-top: 15px">
-              <button class="btn btn-success green-button">VIEW MORE</button>
+              <button class="btn btn-success green-button" (click)="onClickLessPackages()">LESS PACKAGES</button>
+            </div>
+          </div>
+            </div>
+
+          <!--all packages list show-->
+          <div [hidden]="packageItem == 2">
+            <div class="col-md-6" >
+              <div class="package-images"  *ngFor="let p2 of packageList2" [style.backgroundImage]="'url('+ p2.imagePath+'/'+p2.backgroundImage +')'">
+                <div class="package-text-wrapper text-center">
+                  <p class="text-uppercase">{{p2.mainTopic}}</p>
+                  <p>{{p2.subTopic}}</p>
+                </div>
+                <div class="package-button">
+                  <button class="btn btn-success green-button" (click)="viewMoreOnPackage(p2.id)">VIEW MORE</button>
+                </div>
+              </div>
+              <div class="package-images" style="background-color: #0078d7">
+                <div class="package-text-wrapper text-center">
+                  <p class="text-uppercase">Need a customized trip?</p>
+                </div>
+                <div class="package-button">
+                  <button class="btn btn-success green-button" data-toggle="modal" data-target="#packageModal" (click)="loadPackageDetails(p2.id)">ENQUIRE NOW</button>
+                </div>
+              </div>
+              <div class="text-center" style="margin-top: 15px">
+                <button class="btn btn-success green-button" (click)="onClickMorePackages()">MORE PACKAGES</button>
+              </div>
             </div>
           </div>
 
-
-
         </div>
+
         <div role="tabpanel" class="tab-pane fade" id="activities">
           <div class="col-md-6 activity-box">
             <ul class="list-unstyled">
               <li *ngFor="let ativities of ativitiesCovered"><span><i aria-hidden="true" class="fa fa-hand-o-right"></i></span>{{ativities}}</li>
             </ul>
           </div>
-          <div class="col-md-6">
-            <div class="package-images"  *ngFor="let p of packageList" [style.backgroundImage]="'url('+ p.imagePath+'/'+p.backgroundImage +')'">
-              <div class="package-text-wrapper text-center">
-                <p class="text-uppercase">{{p.mainTopic}}</p>
-                <p>{{p.subTopic}}</p>
+          <!--3 packages and custom package show-->
+          <div [hidden]="packageItem != 2">
+            <div class="col-md-6" >
+              <div class="package-images"  *ngFor="let p of packageList" [style.backgroundImage]="'url('+ p.imagePath+'/'+p.backgroundImage +')'">
+                <div class="package-text-wrapper text-center">
+                  <p class="text-uppercase">{{p.mainTopic}}</p>
+                  <p>{{p.subTopic}}</p>
+                </div>
+                <div class="package-button">
+                  <button class="btn btn-success green-button" (click)="viewMoreOnPackage(p.id)">VIEW MORE</button>
+                </div>
               </div>
-              <div class="package-button">
-                <button class="btn btn-success green-button" (click)="viewMoreOnPackage(p.id)">VIEW MORE</button>
+              <div class="package-images" style="background-color: #0078d7">
+                <div class="package-text-wrapper text-center">
+                  <p class="text-uppercase">Need a customized trip?</p>
+                </div>
+                <div class="package-button">
+                  <button class="btn btn-success green-button" data-toggle="modal" data-target="#packageModal" (click)="loadPackageDetails(p.id)">ENQUIRE NOW</button>
+                </div>
+              </div>
+              <div class="text-center" style="margin-top: 15px">
+                <button class="btn btn-success green-button" (click)="onClickLessPackages()">LESS PACKAGES</button>
               </div>
             </div>
+          </div>
 
-            <div class="package-images" style="background-color: #0078d7">
-              <div class="package-text-wrapper text-center">
-                <p class="text-uppercase">Need a customized trip?</p>
-
+          <!--all packages list show-->
+          <div [hidden]="packageItem == 2">
+            <div class="col-md-6" >
+              <div class="package-images"  *ngFor="let p2 of packageList2" [style.backgroundImage]="'url('+ p2.imagePath+'/'+p2.backgroundImage +')'">
+                <div class="package-text-wrapper text-center">
+                  <p class="text-uppercase">{{p2.mainTopic}}</p>
+                  <p>{{p2.subTopic}}</p>
+                </div>
+                <div class="package-button">
+                  <button class="btn btn-success green-button" (click)="viewMoreOnPackage(p2.id)">VIEW MORE</button>
+                </div>
               </div>
-              <div class="package-button">
-                <button class="btn btn-success green-button">ENQUIRE NOW</button>
+              <div class="package-images" style="background-color: #0078d7">
+                <div class="package-text-wrapper text-center">
+                  <p class="text-uppercase">Need a customized trip?</p>
+                </div>
+                <div class="package-button">
+                  <button class="btn btn-success green-button" data-toggle="modal" data-target="#packageModal" (click)="loadPackageDetails(p2.id)">ENQUIRE NOW</button>
+                </div>
               </div>
-            </div>
-
-            <div class="text-center" style="margin-top: 15px">
-              <button class="btn btn-success green-button">VIEW MORE</button>
+              <div class="text-center" style="margin-top: 15px">
+                <button class="btn btn-success green-button" (click)="onClickMorePackages()">MORE PACKAGES</button>
+              </div>
             </div>
           </div>
         </div>
@@ -316,30 +352,58 @@
             <p class="text-danger"><b>Driver’s and guide’s tips are not included</b></p>
           </div>
 
-          <div class="col-md-6">
-            <div class="package-images"  *ngFor="let p of packageList" [style.backgroundImage]="'url('+ p.imagePath+'/'+p.backgroundImage +')'">
-              <div class="package-text-wrapper text-center">
-                <p class="text-uppercase">{{p.mainTopic}}</p>
-                <p>{{p.subTopic}}</p>
+          <!--3 packages and custom package show-->
+          <div [hidden]="packageItem != 2">
+            <div class="col-md-6" >
+              <div class="package-images"  *ngFor="let p of packageList" [style.backgroundImage]="'url('+ p.imagePath+'/'+p.backgroundImage +')'">
+                <div class="package-text-wrapper text-center">
+                  <p class="text-uppercase">{{p.mainTopic}}</p>
+                  <p>{{p.subTopic}}</p>
+                </div>
+                <div class="package-button">
+                  <button class="btn btn-success green-button" (click)="viewMoreOnPackage(p.id)">VIEW MORE</button>
+                </div>
               </div>
-              <div class="package-button">
-                <button class="btn btn-success green-button" (click)="viewMoreOnPackage(p.id)">VIEW MORE</button>
+              <div class="package-images" style="background-color: #0078d7">
+                <div class="package-text-wrapper text-center">
+                  <p class="text-uppercase">Need a customized trip?</p>
+                </div>
+                <div class="package-button">
+                  <button class="btn btn-success green-button" data-toggle="modal" data-target="#packageModal" (click)="loadPackageDetails(p.id)">ENQUIRE NOW</button>
+                </div>
               </div>
-            </div>
-
-            <div class="package-images" style="background-color: #0078d7">
-              <div class="package-text-wrapper text-center">
-                <p class="text-uppercase">Need a customized trip?</p>
+              <div class="text-center" style="margin-top: 15px">
+                <button class="btn btn-success green-button" (click)="onClickLessPackages()">LESS PACKAGES</button>
               </div>
-              <div class="package-button">
-                <button class="btn btn-success green-button">ENQUIRE NOW</button>
-              </div>
-            </div>
-
-            <div class="text-center" style="margin-top: 15px">
-              <button class="btn btn-success green-button">VIEW MORE</button>
             </div>
           </div>
+
+          <!--all packages list show-->
+          <div [hidden]="packageItem == 2">
+            <div class="col-md-6" >
+              <div class="package-images"  *ngFor="let p2 of packageList2" [style.backgroundImage]="'url('+ p2.imagePath+'/'+p2.backgroundImage +')'">
+                <div class="package-text-wrapper text-center">
+                  <p class="text-uppercase">{{p2.mainTopic}}</p>
+                  <p>{{p2.subTopic}}</p>
+                </div>
+                <div class="package-button">
+                  <button class="btn btn-success green-button" (click)="viewMoreOnPackage(p2.id)">VIEW MORE</button>
+                </div>
+              </div>
+              <div class="package-images" style="background-color: #0078d7">
+                <div class="package-text-wrapper text-center">
+                  <p class="text-uppercase">Need a customized trip?</p>
+                </div>
+                <div class="package-button">
+                  <button class="btn btn-success green-button" data-toggle="modal" data-target="#packageModal" (click)="loadPackageDetails(p2.id)">ENQUIRE NOW</button>
+                </div>
+              </div>
+              <div class="text-center" style="margin-top: 15px">
+                <button class="btn btn-success green-button" (click)="onClickMorePackages()">MORE PACKAGES</button>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     </div>

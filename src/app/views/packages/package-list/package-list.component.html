@@ -7,77 +7,82 @@
 
 <!--upper modal star-->
 
-<div class="modal fade" id="morePackageUpperModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabe2">4 NIGHTS 5 DAYS PACKAGE</h4>
-      </div>
-      <div class="modal-body">
+<div class="modal fade" id="homeModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<div class="modal-dialog" role="document">
+  <div class="modal-content">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <h4 class="modal-title" id="myModalLabel">Customized Trip</h4>
+    </div>
+    <div class="modal-body">
 
-        <div class="row">
+      <div class="row">
 
-          <div class="col-sm-4">
-            <div class="form-group">
-              <select class="form-control custom-form-control" disabled>
-
-                <option disabled selected>4 NIGHTS 5 DAYS PACKAGE</option>
-
-              </select>
-            </div>
+        <div class="col-sm-4">
+          <div class="form-group">
+            <select class="form-control custom-form-control">
+              <option disabled selected hidden>Tour Duration</option>
+              <option>1 Day</option>
+              <option>2 Day</option>
+              <option>3 Day</option>
+              <option>4 Day</option>
+              <option>5 Day</option>
+              <option>6 Day</option>
+              <option>7 Day</option>
+              <option>8 Day</option>
+            </select>
           </div>
+        </div>
 
-          <div class="col-sm-4">
-            <div class="form-group">
-              <label class="sr-only" for="arrivalDate3">Arrival Date</label>
-              <input type="text" class="form-control custom-form-control" id="arrivalDate3" placeholder="Arrival Date">
-            </div>
+        <div class="col-sm-4">
+          <div class="form-group">
+            <label class="sr-only" for="arrivalDate3">Arrival Date</label>
+            <input type="text" class="form-control custom-form-control" id="arrivalDate3" placeholder="Arrival Date">
           </div>
+        </div>
 
-          <div class="col-sm-4">
-            <div class="form-group">
-              <label class="sr-only" for="yourCountry3">Your Country</label>
-              <input type="text" class="form-control custom-form-control" id="yourCountry3" placeholder="Your Country">
-            </div>
+        <div class="col-sm-4">
+          <div class="form-group">
+            <label class="sr-only" for="yourCountry3">Your Country</label>
+            <input type="text" class="form-control custom-form-control" id="yourCountry3" placeholder="Your Country">
           </div>
+        </div>
 
-          <div class="col-sm-4">
-            <div class="form-group">
-              <label class="sr-only" for="name3">Name</label>
-              <input type="text" class="form-control custom-form-control" id="name3" placeholder="Name">
-            </div>
+        <div class="col-sm-4">
+          <div class="form-group">
+            <label class="sr-only" for="name3">Name</label>
+            <input type="text" class="form-control custom-form-control" id="name3" placeholder="Name">
           </div>
+        </div>
 
-          <div class="col-sm-4">
-            <div class="form-group">
-              <label class="sr-only" for="email3">Email</label>
-              <input type="email" class="form-control custom-form-control" id="email3" placeholder="Email">
-            </div>
+        <div class="col-sm-4">
+          <div class="form-group">
+            <label class="sr-only" for="email3">Email</label>
+            <input type="email" class="form-control custom-form-control" id="email3" placeholder="Email">
           </div>
+        </div>
 
-          <div class="col-sm-4">
-            <div class="form-group">
-              <label class="sr-only" for="mobileNumber3">Mobile Number</label>
-              <input type="text" class="form-control custom-form-control" id="mobileNumber3" placeholder="Mobile Number">
-            </div>
+        <div class="col-sm-4">
+          <div class="form-group">
+            <label class="sr-only" for="mobileNumber3">Mobile Number</label>
+            <input type="text" class="form-control custom-form-control" id="mobileNumber3" placeholder="Mobile Number">
           </div>
+        </div>
 
-          <div class="col-sm-12">
-            <div class="form-group">
-              <textarea class="form-control custom-form-control" rows="3"></textarea>
-            </div>
+        <div class="col-sm-12">
+          <div class="form-group">
+            <textarea class="form-control custom-form-control" rows="3"></textarea>
           </div>
-
         </div>
 
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default green-button white-button" data-dismiss="modal">CLOSE</button>
-        <button type="button" class="btn btn-primary green-button">ENQUIRE</button>
-      </div>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-default green-button white-button" data-dismiss="modal">CLOSE</button>
+      <button type="button" class="btn btn-primary green-button">ENQUIRE</button>
     </div>
   </div>
+</div>
 </div>
 
 <!--upper modal ends-->
@@ -93,85 +98,33 @@
   </div>
 
   <div class="row more-packages-row">
-    <div class="col-md-3 home-packages">
+    <div class="col-md-3 home-packages" *ngFor="let p of packageList">
       <div class="day-label text-center">
-        <p><strong>9</strong></p>
+        <p><strong>{{p.days}}</strong></p>
         <p>Days</p>
       </div>
-      <div class="home-packages-images home-packages-images-small" style="background-image: url('../assets/images/packageImages/1/package.jpg')">
+      <div class="home-packages-images home-packages-images-small" [style.backgroundImage]="'url('+ p.imagePath+'/'+p.backgroundImage +')'">
         <div class="package-text-wrapper text-center">
-          <p class="text-uppercase">4 NIGHTS 5 DAYS PACKAGE</p>
-          <p>Honeymoon on the beach</p>
+          <p class="text-uppercase">{{p.mainTopic}}</p>
+          <p>{{p.subTopic}}</p>
         </div>
         <div class="package-button">
-          <button class="btn btn-success green-button" data-toggle="modal" data-target="#morePackageUpperModal">ENQUIRE</button>
+          <button class="btn btn-success green-button" (click)="onClickViewMore(p.id)">VIEW MORE</button>
         </div>
       </div>
     </div>
 
     <div class="col-md-3 home-packages">
-      <div class="day-label text-center">
-        <p><strong>9</strong></p>
-        <p>Days</p>
-      </div>
-      <div class="home-packages-images home-packages-images-small" style="background-image: url('../assets/images/packageImages/1/package.jpg')">
-        <div class="package-text-wrapper text-center">
-          <p class="text-uppercase">4 NIGHTS 5 DAYS PACKAGE</p>
-          <p>Honeymoon on the beach</p>
+      <div class="home-packages-images-small" style="background-color: #0078D7">
+        <div class="custom-package-text-wrapper text-center">
+          <p class="text-uppercase">Customized trip</p>
         </div>
-        <div class="package-button">
-          <button class="btn btn-success green-button" data-toggle="modal" data-target="#morePackageUpperModal">ENQUIRE</button>
+        <div class="custom-package-button text-center">
+          <button class="btn btn-success green-button" data-toggle="modal" data-target="#homeModal">ENQUIRE</button>
         </div>
       </div>
     </div>
 
-    <div class="col-md-3 home-packages">
-      <div class="day-label text-center">
-        <p><strong>9</strong></p>
-        <p>Days</p>
-      </div>
-      <div class="home-packages-images home-packages-images-small" style="background-image: url('../assets/images/packageImages/1/package.jpg')">
-        <div class="package-text-wrapper text-center">
-          <p class="text-uppercase">4 NIGHTS 5 DAYS PACKAGE</p>
-          <p>Honeymoon on the beach</p>
-        </div>
-        <div class="package-button">
-          <button class="btn btn-success green-button" data-toggle="modal" data-target="#morePackageUpperModal">ENQUIRE</button>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-md-3 home-packages">
-      <div class="day-label text-center">
-        <p><strong>9</strong></p>
-        <p>Days</p>
-      </div>
-      <div class="home-packages-images home-packages-images-small" style="background-image: url('../assets/images/packageImages/1/package.jpg')">
-        <div class="package-text-wrapper text-center">
-          <p class="text-uppercase">4 NIGHTS 5 DAYS PACKAGE</p>
-          <p>Honeymoon on the beach</p>
-        </div>
-        <div class="package-button">
-          <button class="btn btn-success green-button" data-toggle="modal" data-target="#morePackageUpperModal">ENQUIRE</button>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-md-3 home-packages">
-      <div class="day-label text-center">
-        <p><strong>9</strong></p>
-        <p>Days</p>
-      </div>
-      <div class="home-packages-images home-packages-images-small" style="background-image: url('../assets/images/packageImages/1/package.jpg')">
-        <div class="package-text-wrapper text-center">
-          <p class="text-uppercase">4 NIGHTS 5 DAYS PACKAGE</p>
-          <p>Honeymoon on the beach</p>
-        </div>
-        <div class="package-button">
-          <button class="btn btn-success green-button" data-toggle="modal" data-target="#morePackageUpperModal">ENQUIRE</button>
-        </div>
-      </div>
-    </div>
   </div>
 </div>
 

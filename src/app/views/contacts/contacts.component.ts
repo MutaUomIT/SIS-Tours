@@ -37,6 +37,7 @@ export class ContactsComponent implements OnInit {
 
   ngOnInit() {
     this.initJqueryFunctions();
+    window.scroll(0,0);
   }
 
   initJqueryFunctions(){}
