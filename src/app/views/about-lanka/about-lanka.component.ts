@@ -16,6 +16,7 @@ export class AboutLankaComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    window.scroll(0,0);
     this.imageZoomEffect();
     this.stringLimitationSetter();
   }

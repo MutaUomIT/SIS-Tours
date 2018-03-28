@@ -29,6 +29,7 @@ export class HomeComponent implements OnInit {
       if (event instanceof NavigationEnd) {
         const tree = router.parseUrl(router.url);
         if (tree.fragment) {
+          console.log(tree.fragment);
           const element = document.querySelector("#" + tree.fragment);
           if (element) {
             element.scrollIntoView(true);
@@ -143,7 +144,6 @@ export class HomeComponent implements OnInit {
   }
 
   private onClickTakeAPeak(id){
-    console.log("Adoo")
     for(var i = 0;i < this.packageList.length;i++){
       if(this.packageList[i].id== id){
         this.packageMoreDetails = this.packageList[i];
