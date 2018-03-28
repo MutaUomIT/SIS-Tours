@@ -1254,7 +1254,9 @@ body{
 }
 
 .contact-us-row iframe{
-  margin-top: 29px;
+  /*margin-top: 29px;*/
+
+  margin-top: 59px;
 }
 
 .contact-us-middle{
@@ -1334,3 +1336,7 @@ body{
 }
 
 /*more packages ends*/
+
+.place-card .place-card-large{
+  padding: 50px;
+}
