@@ -19,7 +19,6 @@ export class PackageListComponent implements OnInit {
   }
   private getPackageList(){
     this.packageList = PackageData.packageList;
-    console.log(this.packageList);
   }
 
   onClickViewMore= function (id) {

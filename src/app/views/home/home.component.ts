@@ -29,7 +29,6 @@ export class HomeComponent implements OnInit {
       if (event instanceof NavigationEnd) {
         const tree = router.parseUrl(router.url);
         if (tree.fragment) {
-          console.log(tree.fragment);
           const element = document.querySelector("#" + tree.fragment);
           if (element) {
             element.scrollIntoView(true);
