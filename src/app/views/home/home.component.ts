@@ -3,6 +3,7 @@ import {PackageData} from "../../configFiles/packegeDetails";
 import {TestimonialData} from "../../configFiles/testimonials";
 import { HttpClient } from '@angular/common/http';
 import {Router, NavigationEnd} from '@angular/router';
+import {CountryList} from "../../configFiles/countryList";
 // import {window} from "@angular/platform-browser/src/browser/tools/browser";
 
 declare var jquery:any;
@@ -22,6 +23,7 @@ export class HomeComponent implements OnInit {
   packageMoreDetails: any=[];
   locationCovered: any=[];
   inquiry : any = {};
+  countryList : any = [];
 
   constructor(private http: HttpClient, private router:Router) {
 
@@ -37,6 +39,18 @@ export class HomeComponent implements OnInit {
       }
     });
 
+  }
+
+  ngOnInit() {
+    this.inquiry.package = '';
+    this.countryList = CountryList.countryListWithPhoneCode;
+    this.packageDetails = PackageData.packageList;
+    this.testimonials = TestimonialData.testimonialList;
+    this.homeImageSlider();
+    this.testimonialsSlider();
+    this.loadPackages();
+    this.loadTestimonials();
+    this.loadInitialSelectedPackage(8);
   }
 
   sendInquiry(){
@@ -58,17 +72,6 @@ export class HomeComponent implements OnInit {
           alert("Error occured");
         }
       );
-  }
-
-  ngOnInit() {
-    this.inquiry.package = 'default';
-    this.packageDetails = PackageData.packageList;
-    this.testimonials = TestimonialData.testimonialList;
-    this.homeImageSlider();
-    this.testimonialsSlider();
-    this.loadPackages();
-    this.loadTestimonials();
-    this.loadInitialSelectedPackage(8);
   }
 
   // home slider

@@ -119,8 +119,8 @@
 <!--modal ends-->
 <!--alert starts-->
 
-<div class="alert alert-success my-alert" role="alert">Well done! You successfully sent the enquiry</div>
-<div class="alert alert-danger my-alert" role="alert">Oh snap! Try again</div>
+<div class="alert alert-success my-alert" role="alert" hidden>Well done! You successfully sent the enquiry</div>
+<div class="alert alert-danger my-alert" role="alert" hidden>Oh snap! Try again</div>
 
 <!--alert ends-->
 
@@ -169,7 +169,7 @@
             <div class="col-sm-4">
               <div class="form-group">
                 <select class="form-control custom-form-control" [(ngModel)]="inquiry.package">
-                  <option value="default" disabled>--- SELECT PACKAGE ---</option>
+                  <option value="" disabled>SELECT A PACKAGE</option>
                   <option value="{{package.mainTopic}} - {{package.subTopic}}" *ngFor="let package of packageList">{{package.mainTopic}} - {{package.subTopic}}</option>
                 </select>
               </div>
@@ -184,8 +184,13 @@
 
             <div class="col-sm-4">
               <div class="form-group">
-                <label class="sr-only" for="yourCountry">Your Country</label>
-                <input type="text" class="form-control custom-form-control" id="yourCountry" placeholder="Your Country" [(ngModel)]="inquiry.country"/>
+                <label class="sr-only">Your Country</label>
+                <ng-select (click)="ado()"
+                          [items]="countryList"
+                           bindLabel="name"
+                           placeholder="Select your Country"
+                           [(ngModel)]="inquiry.country">
+                </ng-select>
               </div>
             </div>
 
@@ -206,7 +211,16 @@
             <div class="col-sm-4">
               <div class="form-group">
                 <label class="sr-only" for="mobileNumber">Mobile Number</label>
-                <input type="text" class="form-control custom-form-control" id="mobileNumber" placeholder="Mobile Number" [(ngModel)]="inquiry.mobile"/>
+                <div class="row">
+                  <div class="col-sm-4">
+                    <input class="form-control custom-form-control" disabled style="padding-right: 0px;margin-right: 0px" placeholder="Code">
+                  </div>
+                  <div class="col-sm-8">
+                    <input type="number" class="form-control custom-form-control" id="mobileNumber" [disabled]="inquiry.country == null" placeholder="Mobile Number" [(ngModel)]="inquiry.mobile"/>
+                  </div>
+                </div>
+
+
               </div>
             </div>
 

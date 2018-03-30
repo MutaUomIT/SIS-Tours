@@ -13,6 +13,7 @@ import { AboutSisComponent } from './views/about-sis/about-sis.component';
 import { ContactsComponent } from './views/contacts/contacts.component';
 import {FormsModule} from "@angular/forms";
 import { PackageListComponent } from './views/packages/package-list/package-list.component';
+import {NgSelectModule, NG_SELECT_DEFAULT_CONFIG} from "@ng-select/ng-select";
 
 @NgModule({
   declarations: [
@@ -30,9 +31,17 @@ import { PackageListComponent } from './views/packages/package-list/package-list
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    NgSelectModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: NG_SELECT_DEFAULT_CONFIG,
+      useValue: {
+        notFoundText: 'Custom not found'
+      }
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
