@@ -28,11 +28,10 @@ app.post('/sendMail',function(req,res){
 			}
 		});
 
-
 	  var mailOptions = {
 		from: 'sistourserver@gmail.com',
 		to: RECEIVER_EMAIL,
-		subject: 'Contact Us Requests',
+		subject: req.body.subject,
 		html: req.body.mailBody
 	  };
 

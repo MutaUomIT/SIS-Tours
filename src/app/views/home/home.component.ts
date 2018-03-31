@@ -1,10 +1,12 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit , ViewChild} from '@angular/core';
 import {PackageData} from "../../configFiles/packegeDetails";
 import {TestimonialData} from "../../configFiles/testimonials";
 import { HttpClient } from '@angular/common/http';
 import {Router, NavigationEnd} from '@angular/router';
 import {CountryList} from "../../configFiles/countryList";
-// import {window} from "@angular/platform-browser/src/browser/tools/browser";
+import { NgForm } from '@angular/forms';
+import {MailSendingService} from '../../services/mail-sending.service';
+import {MsgPopupService} from '../../services/msg-popup.service';
 
 declare var jquery:any;
 declare var $ :any;
@@ -16,16 +18,22 @@ declare var $ :any;
 })
 export class HomeComponent implements OnInit {
 
+  @ViewChild('f') inquiryForm : NgForm
+  @ViewChild('f2') inquiryFormCustom : NgForm
+
   packageList: any=[];
+  allPackageList: any=[];
   packageDetails;
   testimonialList: any=[];
   testimonials;
   packageMoreDetails: any=[];
   locationCovered: any=[];
-  inquiry : any = {};
   countryList : any = [];
+  selectedCountry : any;
+  defaultPackage = "default";
+  
 
-  constructor(private http: HttpClient, private router:Router) {
+  constructor(private http: HttpClient, private router:Router , private mailSender : MailSendingService ,private msgPopup : MsgPopupService) {
 
     router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
@@ -41,91 +49,121 @@ export class HomeComponent implements OnInit {
 
   }
 
+  setCountryCode(type,obj){
+
+    if(type === 'our'){
+
+      if(obj===null){
+        this.inquiryForm.form.patchValue({code:''});
+        this.inquiryForm.form.patchValue({mobile:''});
+      }else{
+        this.inquiryForm.form.patchValue({code: obj.code})
+       }
+
+    }else if(type === 'custom'){
+
+      if(obj===null){
+        this.inquiryFormCustom.form.patchValue({code2:''});
+        this.inquiryFormCustom.form.patchValue({mobile2:''});
+      }else{
+        this.inquiryFormCustom.form.patchValue({code2: obj.code})
+       }
+    }
+
+  }
+
+  resetForm(){
+    this.inquiryForm.reset();
+    this.inquiryForm.form.patchValue({package:'default'})
+  }
+
   ngOnInit() {
-    this.inquiry.package = '';
     this.countryList = CountryList.countryListWithPhoneCode;
     this.packageDetails = PackageData.packageList;
     this.testimonials = TestimonialData.testimonialList;
-    this.homeImageSlider();
-    this.testimonialsSlider();
+    this.initJqueryFuctions();
     this.loadPackages();
     this.loadTestimonials();
     this.loadInitialSelectedPackage(8);
   }
 
-  sendInquiry(){
-
-    var emailHtml = {
-      mailBody : '<p><bold>Package :</bold>'+this.inquiry.package+'</p><br/><p><bold>ArrivalDate :</bold>'+this.inquiry.arrivalDate+'</p><br/><p><bold>Country :</bold>'+this.inquiry.country+'</p><br/><p><bold>Name :</bold>'+this.inquiry.name+'</p><br/><p><bold>Mobile :</bold>'+this.inquiry.mobile+'</p><br/><p><bold>Email :</bold><a href='+this.inquiry.email+'>'+this.inquiry.email+'</a></p><br/><p><bold>Message :</bold></p><br/>'+this.inquiry.message
+  private sendInquiryWithExistingPackages(){
+    var mailObject = {
+      subject : '',
+      mailBody : ''
     };
 
-    this.http.post('http://localhost:3000/sendMail', emailHtml)
-      .subscribe(
-        (res : any) => {
-          if(res.status==200){
-            alert(res.responseMessage);
-          }else{
-            alert(res.responseMessage);
-          }
-        },
-        err => {
-          alert("Error occured");
-        }
-      );
+    var inquiry = {
+      package :  this.inquiryForm.value.package,
+      arrivalDate : this.inquiryForm.value.arrivalDate,
+      email : this.inquiryForm.value.email,
+      name : this.inquiryForm.value.name,
+      country : this.inquiryForm.value.country.name,
+      mobile :  this.inquiryForm.value.country.code +' '+ parseInt(this.inquiryForm.value.mobile),
+      message :  this.inquiryForm.value.message
+      }
+
+    mailObject.subject = "Inquiry from selected package";
+    mailObject.mailBody ='<p><bold>Package :</bold>'+inquiry.package+'</p><br/><p><bold>ArrivalDate :</bold>'+inquiry.arrivalDate+
+    '</p><br/><p><bold>Country :</bold>'+inquiry.country+'</p><br/><p><bold>Name :</bold>'+inquiry.name+'</p><br/><p><bold>Mobile :</bold>'+inquiry.mobile+
+    '</p><br/><p><bold>Email :</bold><a href='+inquiry.email+'>'+inquiry.email+'</a></p><br/><p><bold>Message :</bold></p><br/>'+inquiry.message;
+  
+    this.mailSender.sendMail(mailObject);
+  
   }
 
-  // home slider
-  homeImageSlider() {
-    $(document).ready(function () {
-      $('.home-slider').slick({
-        dots: true,
-        infinite: true,
-        speed: 500,
-        fade: true,
-        cssEase: 'linear',
-        autoplay: true,
-        autoplaySpeed: 2000,
-      });
-    });
+  private sendInquiryWithCustomizePackages(){
+    var mailObject = {
+      subject : '',
+      mailBody : ''
+    };
+
+    var inquiryCustom = {
+      duration :  this.inquiryFormCustom.value.duration,
+      arrivalDate : this.inquiryFormCustom.value.arrivalDate2,
+      email : this.inquiryFormCustom.value.email2,
+      name : this.inquiryFormCustom.value.name2,
+      country : this.inquiryFormCustom.value.country2.name,
+      mobile :  this.inquiryFormCustom.value.country2.code +' '+ parseInt(this.inquiryFormCustom.value.mobile2),
+      message :  this.inquiryFormCustom.value.message2
+      }
+
+    mailObject.subject = "Inquiry from Customize package";
+    mailObject.mailBody ='<p><bold>Tour Duration :</bold>'+inquiryCustom.duration+'</p><br/><p><bold>ArrivalDate :</bold>'+inquiryCustom.arrivalDate+
+    '</p><br/><p><bold>Country :</bold>'+inquiryCustom.country+'</p><br/><p><bold>Name :</bold>'+inquiryCustom.name+'</p><br/><p><bold>Mobile :</bold>'+inquiryCustom.mobile+
+    '</p><br/><p><bold>Email :</bold><a href='+inquiryCustom.email+'>'+inquiryCustom.email+'</a></p><br/><p><bold>Message :</bold></p><br/>'+inquiryCustom.message;
+  
+    this.mailSender.sendMail(mailObject);
   }
 
-  //testimonials
-  testimonialsSlider(){
-    $(document).ready(function () {
-      $('.testimonial').slick({
-        infinite: true,
-        slidesToShow: 3,
-        autoplay: true,
-        autoplaySpeed: 2000,
-        dots: false,
-        arrows: true,
+  onSubmit(formName){
 
-        responsive: [
-          {
-            breakpoint: 768,
-            settings: {
-              arrows: false,
-              centerMode: true,
-              centerPadding: '40px',
-              slidesToShow: 2
-            }
-          },
-          {
-            breakpoint: 480,
-            settings: {
-              arrows: false,
-              centerMode: true,
-              centerPadding: '40px',
-              slidesToShow: 1
-            }
-          }
-        ]
-      });
-    });
+    if(formName ==='our'){
+      if(this.inquiryForm.valid){
+        this.sendInquiryWithExistingPackages();
+      }else{
+        this.msgPopup.broadcastMessagePopupEventEmitter({
+          type : 'error',
+          msg : "Please fill Valid Data"
+        });
+      }
+     
+    }else if(formName ==='custom'){
+
+      if(this.inquiryFormCustom.valid){
+        this.sendInquiryWithCustomizePackages();
+      }else{
+        this.msgPopup.broadcastMessagePopupEventEmitter({
+          type : 'error',
+          msg : "Please fill Valid Data"
+        });
+       }
+  }
+  
   }
 
-  private loadPackages(){
-    // this.packageList = PackageData.packageList;
+   private loadPackages(){
+    this.allPackageList = PackageData.packageList;
 
     this.packageList = PackageData.packageList.filter(function(item){
       return item.id === 1 || item.id === 3 || item.id === 4 || item.id === 4 || item.id === 6 || item.id === 8  ;
@@ -159,7 +197,54 @@ export class HomeComponent implements OnInit {
   onClickViewMore= function (id) {
     this.router.navigate(['/packages', id]);
   };
+
   onClickMorePackages= function () {
     this.router.navigate(['/package-list']);
   };
+
+  initJqueryFuctions(){
+
+    //testominols slider
+    $(document).ready(function () {
+      $('.testimonial').slick({
+        infinite: true,
+        slidesToShow: 3,
+        autoplay: true,
+        autoplaySpeed: 2000,
+        dots: false,
+        arrows: true,
+
+        responsive: [
+          {
+            breakpoint: 768,
+            settings: {
+              arrows: false,
+              centerMode: true,
+              centerPadding: '40px',
+              slidesToShow: 2
+            }
+          },
+          {
+            breakpoint: 480,
+            settings: {
+              arrows: false,
+              centerMode: true,
+              centerPadding: '40px',
+              slidesToShow: 1
+            }
+          }
+        ]});});
+
+        $(document).ready(function () {
+          $('.home-slider').slick({
+            dots: true,
+            infinite: true,
+            speed: 500,
+            fade: true,
+            cssEase: 'linear',
+            autoplay: true,
+            autoplaySpeed: 2000,
+          });});
+  
+      }
 }

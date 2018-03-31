@@ -14,6 +14,8 @@ import { ContactsComponent } from './views/contacts/contacts.component';
 import {FormsModule} from "@angular/forms";
 import { PackageListComponent } from './views/packages/package-list/package-list.component';
 import {NgSelectModule, NG_SELECT_DEFAULT_CONFIG} from "@ng-select/ng-select";
+import { MailSendingService } from './services/mail-sending.service';
+import { MsgPopupService } from './services/msg-popup.service';
 
 @NgModule({
   declarations: [
@@ -35,6 +37,8 @@ import {NgSelectModule, NG_SELECT_DEFAULT_CONFIG} from "@ng-select/ng-select";
     NgSelectModule
   ],
   providers: [
+    MailSendingService,
+    MsgPopupService,
     {
       provide: NG_SELECT_DEFAULT_CONFIG,
       useValue: {

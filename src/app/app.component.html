@@ -75,6 +75,9 @@
   </nav><!-- /.container-fluid -->
 </div>
 
+<div class="alert alert-success my-alert" role="alert" *ngIf="msgObj.msgSuccess">{{msgObj.msg}}</div>
+<div class="alert alert-danger my-alert" role="alert" *ngIf="msgObj.msgError">{{msgObj.msg}}</div>
+
 <!--my navigation bar end-->
 
 

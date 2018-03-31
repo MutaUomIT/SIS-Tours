@@ -19,5 +19,12 @@
   visibility:visible;
 }
 
+input.ng-invalid.ng-touched {
+  border: 1px solid red;
+}
 
+.error-message {
+  font-size: 10px;
+  color: red;
+}
 
