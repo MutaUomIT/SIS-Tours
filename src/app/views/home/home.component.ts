@@ -72,9 +72,15 @@ export class HomeComponent implements OnInit {
 
   }
 
-  resetForm(){
-    this.inquiryForm.reset();
-    this.inquiryForm.form.patchValue({package:'default'})
+  resetForm(type){
+    if(type === 'custom'){
+      this.inquiryFormCustom.reset();
+      this.inquiryFormCustom.form.patchValue({duration:''})
+    }else if(type === 'our'){
+      this.inquiryForm.reset();
+      this.inquiryForm.form.patchValue({package:'default'})
+    }
+
   }
 
   ngOnInit() {
@@ -108,7 +114,11 @@ export class HomeComponent implements OnInit {
     '</p><br/><p><bold>Country :</bold>'+inquiry.country+'</p><br/><p><bold>Name :</bold>'+inquiry.name+'</p><br/><p><bold>Mobile :</bold>'+inquiry.mobile+
     '</p><br/><p><bold>Email :</bold><a href='+inquiry.email+'>'+inquiry.email+'</a></p><br/><p><bold>Message :</bold></p><br/>'+inquiry.message;
   
-    this.mailSender.sendMail(mailObject);
+    this.mailSender.sendMail(mailObject).then((res : any)=>{
+      if(res.status === 200){
+        this.resetForm('our');
+      }
+    });
   
   }
 
@@ -133,7 +143,11 @@ export class HomeComponent implements OnInit {
     '</p><br/><p><bold>Country :</bold>'+inquiryCustom.country+'</p><br/><p><bold>Name :</bold>'+inquiryCustom.name+'</p><br/><p><bold>Mobile :</bold>'+inquiryCustom.mobile+
     '</p><br/><p><bold>Email :</bold><a href='+inquiryCustom.email+'>'+inquiryCustom.email+'</a></p><br/><p><bold>Message :</bold></p><br/>'+inquiryCustom.message;
   
-    this.mailSender.sendMail(mailObject);
+    this.mailSender.sendMail(mailObject).then((res : any)=>{
+      if(res.status === 200){
+        this.resetForm('custom');
+      }
+    });
   }
 
   onSubmit(formName){
