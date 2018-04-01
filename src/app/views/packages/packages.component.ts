@@ -26,6 +26,8 @@ export class PackagesComponent implements OnInit {
   dayWiseActivityList : any=[];
   id: number;
   private sub: any;
+  p : any;
+  p2 : any;
 
   packageItem : number = 1;
   lessPackage : boolean = false;

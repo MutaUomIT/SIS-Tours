@@ -30,6 +30,7 @@ export class HomeComponent implements OnInit {
   locationCovered: any=[];
   countryList : any = [];
   selectedCountry : any;
+  selectedCountry2 : any;
   defaultPackage = "default";
   
 

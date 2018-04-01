@@ -28,3 +28,4 @@ hs_err_pid*
 site/
 
 node_modules
+dist
