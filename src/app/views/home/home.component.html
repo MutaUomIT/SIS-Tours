@@ -1,43 +1,7 @@
-<!--<div id="slideshow">-->
-  <!--<div *ngFor="let p of packageDetails">-->
-    <!--<img [src]="p.imagePath + '/'+p.backgroundImage" width="500"/>-->
-  <!--</div>-->
-<!--</div>-->
-
-<!--<div class="row">-->
-  <!--<div *ngFor="let p of packageList" class="col-md-4">-->
-    <!--<img [src]="p.imagePath+'/'+p.backgroundImage" width="350"/>-->
-    <!--<p>{{p.id}} <br> {{p.Name}} <br> {{p.description}}</p>-->
-  <!--</div>-->
-<!--</div>-->
-
-<!--<div class="row">-->
-  <!--<div class="col-md-6">-->
-    <!--<h2>Who we are?</h2>-->
-    <!--<p>Welcome to SIS Tour Operators! We SIS Tour Operators were in the industry for so many years gaining experience and serving our clients with trust and care. We make sure the happiness, enthusiasm, safety and comfort of our clients through 0% complains. Our concept is to serve client with no extra money or hidden charges. They will only have to bring money for their shopping and personal interest, rest will be looked after from SIS Tour Operators.-->
-      <!--Our Main Office is situated at Wellawatte, Colombo, and it’s very easy to find. We will be replying our guests within few hours of their enquiries through mails. We strongly believe the trust of our repeating guests and we care our travelers comfort. Our trustworthy team of experts will provide the maximum satisfaction happiness and the comfort of our clients.-->
-    <!--</p>-->
-  <!--</div>-->
-  <!--<div class="col-md-6">-->
-    <!--<h2>WHY SIS TOUR OPERATORS?</h2>-->
-    <!--<ul>-->
-      <!--<li>We are on the top among tour operating companies in Sri Lanka</li>-->
-      <!--<li>We Offer inbound tour packages, Holiday Packages, Honeymoon Packages and wedding packages </li>-->
-      <!--<li>No hidden Charges, bring money for shopping and personal interests</li>-->
-      <!--<li>We do appoint a team of professionals to give you maximum happiness, satisfaction and comfort.</li>-->
-      <!--<li>24/7 , 365 Days Customer Service</li>-->
-    <!--</ul>-->
-  <!--</div>-->
-<!--</div>-->
-
-<!--<div>text</div>-->
-
-<!--my wrapper starts-->
-
-<!--modal starts-->
-
 <!-- Modal -->
-<div class="modal fade" id="homeModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+
+<div class="modal fade" id="homeModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+     xmlns="http://www.w3.org/1999/html">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -64,38 +28,44 @@
             </div>
           </div>
 
-          <div class="col-sm-4">
-            <div class="form-group">
+          <div class="col-sm-4 modal-date-input">
+            <div class="form-group" >
               <label class="sr-only" for="arrivalDate1">Arrival Date</label>
-              <input type="text" class="form-control custom-form-control" id="arrivalDate2" placeholder="Arrival Date">
+              <input readonly type="text" class="form-control custom-form-control" id="arrivalDate1"
+                     placeholder="Arrival Date"
+                     [minDate]="minDate"
+                     #dp="bsDatepicker"
+                     bsDatepicker [(bsValue)]="date1" value="{{ date1 | date:'yyyy-MM-dd' }}"
+                     [(ngModel)] = "dateArrival1" name="arrivalDate1" #arrivalDate1="ngModel"
+                     required/>
             </div>
           </div>
 
           <div class="col-sm-4">
             <div class="form-group">
               <label class="sr-only" for="yourCountry1">Your Country</label>
-              <input type="text" class="form-control custom-form-control" id="yourCountry2" placeholder="Your Country">
+              <input type="text" class="form-control custom-form-control" id="yourCountry1" placeholder="Your Country">
             </div>
           </div>
 
           <div class="col-sm-4">
             <div class="form-group">
               <label class="sr-only" for="name1">Name</label>
-              <input type="text" class="form-control custom-form-control" id="name2" placeholder="Name">
+              <input type="text" class="form-control custom-form-control" id="name1" placeholder="Name">
             </div>
           </div>
 
           <div class="col-sm-4">
             <div class="form-group">
               <label class="sr-only" for="email1">Email</label>
-              <input type="email" class="form-control custom-form-control" id="email2" placeholder="Email">
+              <input type="email" class="form-control custom-form-control" id="email1" placeholder="Email">
             </div>
           </div>
 
           <div class="col-sm-4">
             <div class="form-group">
               <label class="sr-only" for="mobileNumber1">Mobile Number</label>
-              <input type="text" class="form-control custom-form-control" id="mobileNumber2" placeholder="Mobile Number">
+              <input type="text" class="form-control custom-form-control" id="mobileNumber1" placeholder="Mobile Number">
             </div>
           </div>
 
@@ -119,7 +89,6 @@
 <!--modal ends-->
 
 <!--slider start-->
-
 <div class="container-fluid">
   <div class="row home-slider-row">
     <p class="text-nowrap"><b>Sri Lanka</b></p>
@@ -185,7 +154,7 @@
                            placeholder="Arrival Date"
                            [minDate]="minDate"
                            #dp="bsDatepicker"
-                           bsDatepicker [(bsValue)]="newVar" value="{{ newVar | date:'yyyy-MM-dd' }}"
+                           bsDatepicker [(bsValue)]="dateForm" value="{{ dateForm | date:'yyyy-MM-dd' }}"
                            [(ngModel)] = "dateArrival" name="arrivalDate" #arrivalDate="ngModel"
                            required/>
                   </div>
@@ -273,14 +242,16 @@
                   </div>
                 </div>
 
-                <div class="col-sm-4">
+                <div class="col-sm-4 modal-date-input">
                     <div class="form-group">
-                      <label class="sr-only" for="arrivalDate">Arrival Date</label>
-                      <input type="text" class="form-control custom-form-control" id="arrivalDate2"
-                      placeholder="Arrival Date"
-                      ngModel
-                      name="arrivalDate2"
-                      required />
+                      <label class="sr-only" for="arrivalDate2">Arrival Date</label>
+                      <input readonly type="text" class="form-control custom-form-control" id="arrivalDate2"
+                             placeholder="Arrival Date"
+                             [minDate]="minDate"
+                             #dp="bsDatepicker"
+                             bsDatepicker [(bsValue)]="date2" value="{{ date2 | date:'yyyy-MM-dd' }}"
+                             [(ngModel)] = "dateArrival2" name="arrivalDate2" #arrivalDate2="ngModel"
+                             required/>
                     </div>
                   </div>
 

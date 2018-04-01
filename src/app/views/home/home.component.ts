@@ -33,10 +33,15 @@ export class HomeComponent implements OnInit {
   selectedCountry : any;
   defaultPackage = "default";
 
-  newVar: Date = new Date();
+  dateForm: Date = new Date();
+  date1: Date = new Date();
+  date2: Date = new Date();
   private _bsValue : Date;
   minDate = new Date();
   dateArrival : any;
+  dateArrival1 : any;
+  dateArrival2 : any;
+
 
   constructor(private datePipe: DatePipe,private http: HttpClient, private router:Router , private mailSender : MailSendingService ,private msgPopup : MsgPopupService) {
 
