@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import {PackageData} from "../../../configFiles/packegeDetails";
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-package-list',
@@ -11,7 +12,11 @@ export class PackageListComponent implements OnInit {
 
   packageList: any=[];
 
-  constructor( private router:Router) { }
+  newVar: Date = new Date();
+  minDate = new Date();
+  dateArrival : any;
+
+  constructor(private datePipe: DatePipe,private router:Router) { }
 
   ngOnInit() {
     this.getPackageList();

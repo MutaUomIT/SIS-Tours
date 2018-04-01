@@ -7,6 +7,7 @@ import {CountryList} from "../../configFiles/countryList";
 import { NgForm } from '@angular/forms';
 import {MailSendingService} from '../../services/mail-sending.service';
 import {MsgPopupService} from '../../services/msg-popup.service';
+import { DatePipe } from '@angular/common';
 
 declare var jquery:any;
 declare var $ :any;
@@ -32,9 +33,18 @@ export class HomeComponent implements OnInit {
   selectedCountry : any;
   selectedCountry2 : any;
   defaultPackage = "default";
-  
 
-  constructor(private http: HttpClient, private router:Router , private mailSender : MailSendingService ,private msgPopup : MsgPopupService) {
+  dateForm: Date = new Date();
+  date1: Date = new Date();
+  date2: Date = new Date();
+  private _bsValue : Date;
+  minDate = new Date();
+  dateArrival : any;
+  dateArrival1 : any;
+  dateArrival2 : any;
+
+
+  constructor(private datePipe: DatePipe,private http: HttpClient, private router:Router , private mailSender : MailSendingService ,private msgPopup : MsgPopupService) {
 
     router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
@@ -48,6 +58,10 @@ export class HomeComponent implements OnInit {
       }
     });
 
+  }
+
+  get bsValue(): Date {
+    return this._bsValue;
   }
 
   setCountryCode(type,obj){
@@ -114,13 +128,13 @@ export class HomeComponent implements OnInit {
     mailObject.mailBody ='<p><bold>Package :</bold>'+inquiry.package+'</p><br/><p><bold>ArrivalDate :</bold>'+inquiry.arrivalDate+
     '</p><br/><p><bold>Country :</bold>'+inquiry.country+'</p><br/><p><bold>Name :</bold>'+inquiry.name+'</p><br/><p><bold>Mobile :</bold>'+inquiry.mobile+
     '</p><br/><p><bold>Email :</bold><a href='+inquiry.email+'>'+inquiry.email+'</a></p><br/><p><bold>Message :</bold></p><br/>'+inquiry.message;
-  
+
     this.mailSender.sendMail(mailObject).then((res : any)=>{
       if(res.status === 200){
         this.resetForm('our');
       }
     });
-  
+
   }
 
   private sendInquiryWithCustomizePackages(){
@@ -143,7 +157,7 @@ export class HomeComponent implements OnInit {
     mailObject.mailBody ='<p><bold>Tour Duration :</bold>'+inquiryCustom.duration+'</p><br/><p><bold>ArrivalDate :</bold>'+inquiryCustom.arrivalDate+
     '</p><br/><p><bold>Country :</bold>'+inquiryCustom.country+'</p><br/><p><bold>Name :</bold>'+inquiryCustom.name+'</p><br/><p><bold>Mobile :</bold>'+inquiryCustom.mobile+
     '</p><br/><p><bold>Email :</bold><a href='+inquiryCustom.email+'>'+inquiryCustom.email+'</a></p><br/><p><bold>Message :</bold></p><br/>'+inquiryCustom.message;
-  
+
     this.mailSender.sendMail(mailObject).then((res : any)=>{
       if(res.status === 200){
         this.resetForm('custom');
@@ -162,7 +176,7 @@ export class HomeComponent implements OnInit {
           msg : "Please fill Valid Data"
         });
       }
-     
+
     }else if(formName ==='custom'){
 
       if(this.inquiryFormCustom.valid){
@@ -174,7 +188,7 @@ export class HomeComponent implements OnInit {
         });
        }
   }
-  
+
   }
 
    private loadPackages(){
@@ -260,6 +274,6 @@ export class HomeComponent implements OnInit {
             autoplay: true,
             autoplaySpeed: 2000,
           });});
-  
+
       }
 }

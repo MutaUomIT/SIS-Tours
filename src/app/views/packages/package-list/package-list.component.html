@@ -34,10 +34,22 @@
             </div>
           </div>
 
-          <div class="col-sm-4">
-            <div class="form-group">
+          <!--<div class="col-sm-4">-->
+            <!--<div class="form-group">-->
+              <!--<label class="sr-only" for="arrivalDate3">Arrival Date</label>-->
+              <!--<input type="text" class="form-control custom-form-control" id="arrivalDate3" placeholder="Arrival Date">-->
+            <!--</div>-->
+          <!--</div>-->
+          <div class="col-sm-4 modal-date-input">
+            <div class="form-group" >
               <label class="sr-only" for="arrivalDate3">Arrival Date</label>
-              <input type="text" class="form-control custom-form-control" id="arrivalDate3" placeholder="Arrival Date">
+              <input readonly type="text" class="form-control custom-form-control" id="arrivalDate3"
+                     placeholder="Arrival Date"
+                     [minDate]="minDate"
+                     #dp="bsDatepicker"
+                     bsDatepicker value="{{ newVar | date:'yyyy-MM-dd' }}"
+                     [(ngModel)] = "dateArrival" name="arrivalDate3" #arrivalDate3="ngModel"
+                     required/>
             </div>
           </div>
 
