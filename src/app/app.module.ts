@@ -16,6 +16,9 @@ import { PackageListComponent } from './views/packages/package-list/package-list
 import {NgSelectModule, NG_SELECT_DEFAULT_CONFIG} from "@ng-select/ng-select";
 import { MailSendingService } from './services/mail-sending.service';
 import { MsgPopupService } from './services/msg-popup.service';
+import { CommonModule, DatePipe } from '@angular/common';
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+
 
 @NgModule({
   declarations: [
@@ -30,13 +33,16 @@ import { MsgPopupService } from './services/msg-popup.service';
     PackageListComponent
   ],
   imports: [
+    CommonModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    NgSelectModule
+    NgSelectModule,
+    BsDatepickerModule.forRoot()
   ],
   providers: [
+    DatePipe,
     MailSendingService,
     MsgPopupService,
     {
