@@ -26,7 +26,8 @@
         "../src/stylesheet/slick.css",
         "../src/stylesheet/slick-theme.css",
         "../src/stylesheet/font-awesome.min.css",
-        "../src/stylesheet/animate.css"
+        "../src/stylesheet/animate.css",
+        "../node_modules/ngx-bootstrap/datepicker/bs-datepicker.css"
       ],
       "scripts": [
         "../src/javascript/jquery-3.3.1.min.js",
