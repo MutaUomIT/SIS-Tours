@@ -1350,6 +1350,6 @@ body{
 }
 
 bs-datepicker-container, bs-daterangepicker-container{
-  z-index: 9999;
+  z-index: 9999 !important;
 }
 
