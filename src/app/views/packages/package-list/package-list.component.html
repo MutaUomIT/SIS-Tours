@@ -47,7 +47,7 @@
                      placeholder="Arrival Date"
                      [minDate]="minDate"
                      #dp="bsDatepicker"
-                     bsDatepicker value="{{ newVar | date:'yyyy-MM-dd' }}"
+                     bsDatepicker [(bsValue)]="arrivalDate" value="{{ arrivalDate | date:'yyyy-MM-dd' }}"
                      [(ngModel)] = "dateArrival" name="arrivalDate3" #arrivalDate3="ngModel"
                      required/>
             </div>

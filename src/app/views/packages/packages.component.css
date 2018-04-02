@@ -14,3 +14,7 @@
   right: 10px;
   bottom: 10px;
 }
+
+.modal-date-input .form-control[readonly]{
+  background-color: white;
+}

@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 
 import { PackageData } from './../../configFiles/packegeDetails';
 import { DailyActivities } from './../../configFiles/DailyActivities';
+import { DatePipe } from '@angular/common';
 
 declare var jquery:any;
 declare var $ :any;
@@ -33,7 +34,13 @@ export class PackagesComponent implements OnInit {
   lessPackage : boolean = false;
   morePackage : boolean = true;
 
-  constructor(private route: ActivatedRoute, private router:Router ) {}
+  DateArrive: Date = new Date();
+  DateArrive2: Date = new Date();
+  minDate = new Date();
+  dateArrival : any;
+  dateArrival2 : any;
+
+  constructor(private datePipe: DatePipe, private route: ActivatedRoute, private router:Router ) {}
 
   ngOnInit() {
     this.packageDetails = PackageData.packageList;

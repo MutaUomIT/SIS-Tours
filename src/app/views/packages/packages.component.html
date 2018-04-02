@@ -30,10 +30,16 @@
                 </div>
               </div>
 
-              <div class="col-sm-4">
+              <div class="col-sm-4 modal-date-input">
                 <div class="form-group">
-                  <label class="sr-only" for="arrivalDate2">Arrival Date</label>
-                  <input type="text" class="form-control custom-form-control" id="arrivalDate3" placeholder="Arrival Date">
+                  <label class="sr-only" for="arrivalDate">Arrival Date</label>
+                  <input readonly type="text" class="form-control custom-form-control" id="arrivalDate"
+                         placeholder="Arrival Date"
+                         [minDate]="minDate"
+                         #dp="bsDatepicker"
+                         bsDatepicker [(bsValue)]="DateArrive" value="{{ DateArrive | date:'yyyy-MM-dd' }}"
+                         [(ngModel)] = "dateArrival" name="arrivalDate" #arrivalDate="ngModel"
+                         required/>
                 </div>
               </div>
 
@@ -115,10 +121,16 @@
                 </div>
               </div>
 
-              <div class="col-sm-4">
+              <div class="col-sm-4 modal-date-input">
                 <div class="form-group">
                   <label class="sr-only" for="arrivalDate2">Arrival Date</label>
-                  <input type="text" class="form-control custom-form-control" id="arrivalDate2" placeholder="Arrival Date">
+                  <input readonly type="text" class="form-control custom-form-control" id="arrivalDate2"
+                         placeholder="Arrival Date"
+                         [minDate]="minDate"
+                         #dp="bsDatepicker"
+                         bsDatepicker [(bsValue)]="DateArrive2" value="{{ DateArrive2 | date:'yyyy-MM-dd' }}"
+                         [(ngModel)] = "dateArrival2" name="arrivalDate2" #arrivalDate2="ngModel"
+                         required/>
                 </div>
               </div>
 
