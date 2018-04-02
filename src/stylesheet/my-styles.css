@@ -1348,3 +1348,8 @@ body{
 .place-card .place-card-large{
   padding: 50px;
 }
+
+bs-datepicker-container, bs-daterangepicker-container{
+  z-index: 9999;
+}
+
