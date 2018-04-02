@@ -58,3 +58,16 @@ export class AppComponent {
 
       }
 }
+
+//
+// $(document).ready(function () {
+//   $('.navbar-nav .openBtn').click(function () {
+//     $('.overlay').css("display", "block");
+//   })
+//
+//   $('.overlay .closebtn').click(function () {
+//     $('.overlay').css("display", "none");
+//   })
+//
+// });
+//
