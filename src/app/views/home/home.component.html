@@ -126,10 +126,10 @@
       <div class="tab-content">
         <div role="tabpanel" class="tab-pane fade in active" id="home">
 
-        <div class="row">
+
 
           <form (ngSubmit)="onSubmit('our')" #f="ngForm">
-
+            <div class="row">
               <div class="col-sm-3">
                   <div class="form-group">
 
@@ -242,13 +242,12 @@
                   </div>
                 </div>
 
-                <div class="col-sm-6">
-                    <button type="submit" class="btn btn-success green-button">submit</button>
-                  </div>
+
+        </div>
+            <div class="col-sm-12 text-right home-form-button">
+              <button type="submit" class="btn btn-success green-button">submit</button>
+            </div>
           </form>
-
-
-       </div>
 
         </div>
 
@@ -368,10 +367,12 @@
                       <span class="error-message" *ngIf="!message2.valid && message2.touched">Max character length is 500.</span>
                     </div>
                   </div>
-                <div class="col-sm-6">
-                    <button type="submit" class="btn btn-success green-button">submit</button>
-                  </div>
 
+
+            </div>
+
+            <div class="col-sm-12 text-right home-form-button">
+              <button type="submit" class="btn btn-success green-button">submit</button>
             </div>
           </form>
       </div>
