@@ -43,22 +43,23 @@
 
           <div class="col-sm-3">
             <div class="form-group">
-              <label class="sr-only" for="yourCountry1">Your Country</label>
-              <input type="text" class="form-control custom-form-control" id="yourCountry1" placeholder="Your Country">
-            </div>
-          </div>
-
-          <div class="col-sm-3">
-            <div class="form-group">
               <label class="sr-only" for="name1">Name</label>
               <input type="text" class="form-control custom-form-control" id="name1" placeholder="Your Name">
             </div>
           </div>
 
+
           <div class="col-sm-3">
             <div class="form-group">
               <label class="sr-only" for="email1">Email</label>
               <input type="email" class="form-control custom-form-control" id="email1" placeholder="Email">
+            </div>
+          </div>
+
+          <div class="col-sm-3" style="clear: both">
+            <div class="form-group">
+              <label class="sr-only" for="yourCountry1">Your Country</label>
+              <input type="text" class="form-control custom-form-control" id="yourCountry1" placeholder="Your Country">
             </div>
           </div>
 
@@ -182,7 +183,22 @@
                   </div>
                 </div>
 
-                <div class="col-sm-3">
+              <div class="col-sm-3">
+                <div class="form-group">
+                  <label class="sr-only" for="name">Name</label>
+                  <input type="text" class="form-control custom-form-control" id="name" placeholder="Your Name" ngModel name="name" required/>
+                </div>
+              </div>
+
+              <div class="col-sm-3">
+                <div class="form-group">
+                  <label class="sr-only" for="email">Email</label>
+                  <input type="email" class="form-control custom-form-control" id="email" placeholder="Email" ngModel name="email" required email #email="ngModel"/>
+                  <span class="error-message" *ngIf="!email.valid && email.touched">Invalid Email Address.</span>
+                </div>
+              </div>
+
+                <div class="col-sm-3" style="clear: both">
                   <div class="form-group select-form-group">
                     <label class="sr-only">Your Country</label>
                     <ng-select (change)="setCountryCode('our',selectedCountry)"
@@ -196,22 +212,8 @@
                   </div>
                 </div>
 
-                <div class="col-sm-3">
-                  <div class="form-group">
-                    <label class="sr-only" for="name">Name</label>
-                    <input type="text" class="form-control custom-form-control" id="name" placeholder="Your Name" ngModel name="name" required/>
-                  </div>
-                </div>
 
-                <div class="col-sm-3" style="clear: both">
-                  <div class="form-group">
-                    <label class="sr-only" for="email">Email</label>
-                    <input type="email" class="form-control custom-form-control" id="email" placeholder="Email" ngModel name="email" required email #email="ngModel"/>
-                    <span class="error-message" *ngIf="!email.valid && email.touched">Invalid Email Address.</span>
-                  </div>
-                </div>
-
-            <div class="col-sm-3">
+              <div class="col-sm-3">
               <div class="form-group">
 
 
@@ -308,6 +310,21 @@
                     </div>
                   </div>
 
+              <div class="col-sm-3">
+                <div class="form-group">
+                  <label class="sr-only" for="name">Name</label>
+                  <input type="text" class="form-control custom-form-control" id="name2" placeholder="Your Name" ngModel name="name2" required/>
+                </div>
+              </div>
+
+              <div class="col-sm-3">
+                <div class="form-group">
+                  <label class="sr-only" for="email">Email</label>
+                  <input type="email" class="form-control custom-form-control" id="email2" placeholder="Email" ngModel name="email2" required email #email2="ngModel"/>
+                  <span class="error-message" *ngIf="!email2.valid && email2.touched">Invalid Email Address.</span>
+                </div>
+              </div>
+
                   <div class="col-sm-3">
                     <div class="form-group select-form-group">
                       <label class="sr-only">Your Country</label>
@@ -322,22 +339,7 @@
                     </div>
                   </div>
 
-                  <div class="col-sm-3">
-                    <div class="form-group">
-                      <label class="sr-only" for="name">Name</label>
-                      <input type="text" class="form-control custom-form-control" id="name2" placeholder="Your Name" ngModel name="name2" required/>
-                    </div>
-                  </div>
-
-                  <div class="col-sm-3" style="clear: both">
-                    <div class="form-group">
-                      <label class="sr-only" for="email">Email</label>
-                      <input type="email" class="form-control custom-form-control" id="email2" placeholder="Email" ngModel name="email2" required email #email2="ngModel"/>
-                      <span class="error-message" *ngIf="!email2.valid && email2.touched">Invalid Email Address.</span>
-                    </div>
-                  </div>
-
-                  <div class="col-sm-3">
+                <div class="col-sm-3">
                     <div class="form-group">
 
 
