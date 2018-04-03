@@ -51,7 +51,7 @@
           <div class="col-sm-4">
             <div class="form-group">
               <label class="sr-only" for="name1">Name</label>
-              <input type="text" class="form-control custom-form-control" id="name1" placeholder="Name">
+              <input type="text" class="form-control custom-form-control" id="name1" placeholder="Your Name">
             </div>
           </div>
 
@@ -71,7 +71,7 @@
 
           <div class="col-sm-12">
             <div class="form-group">
-              <textarea class="form-control custom-form-control" rows="3"></textarea>
+              <textarea class="form-control custom-form-control" rows="3" placeholder="More Details"></textarea>
             </div>
           </div>
 
@@ -176,7 +176,7 @@
                 <div class="col-sm-4">
                   <div class="form-group">
                     <label class="sr-only" for="name">Name</label>
-                    <input type="text" class="form-control custom-form-control" id="name" placeholder="Name" ngModel name="name" required/>
+                    <input type="text" class="form-control custom-form-control" id="name" placeholder="Your Name" ngModel name="name" required/>
                   </div>
                 </div>
 
@@ -207,7 +207,7 @@
 
                 <div class="col-sm-12">
                   <div class="form-group">
-                    <textarea class="form-control custom-form-control" rows="3" ngModel name="message" maxlength="500" #message="ngModel"></textarea>
+                    <textarea class="form-control custom-form-control" rows="3" ngModel name="message" maxlength="500" #message="ngModel" placeholder="More Details"></textarea>
                     <span class="error-message" *ngIf="!message.valid && mobile.touched">Max character length is 500.</span>
                   </div>
                 </div>
@@ -271,7 +271,7 @@
                   <div class="col-sm-4">
                     <div class="form-group">
                       <label class="sr-only" for="name">Name</label>
-                      <input type="text" class="form-control custom-form-control" id="name2" placeholder="Name" ngModel name="name2" required/>
+                      <input type="text" class="form-control custom-form-control" id="name2" placeholder="Your Name" ngModel name="name2" required/>
                     </div>
                   </div>
 
@@ -302,7 +302,7 @@
 
                   <div class="col-sm-12">
                     <div class="form-group">
-                      <textarea class="form-control custom-form-control" rows="3" ngModel name="message2" maxlength="500" #message2="ngModel"></textarea>
+                      <textarea class="form-control custom-form-control" rows="3" ngModel name="message2" maxlength="500" #message2="ngModel" placeholder="More Details"></textarea>
                       <span class="error-message" *ngIf="!message2.valid && message2.touched">Max character length is 500.</span>
                     </div>
                   </div>
