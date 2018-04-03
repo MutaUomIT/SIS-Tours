@@ -65,16 +65,16 @@
 
           <div class="col-sm-3">
             <div class="form-group">
-
-
-              <div class="input-group">
-                <span class="input-group-addon custom-form-control" id="basic-addon2" disabled>+94</span>
-                <input type="text" class="form-control custom-form-control" id="mobileNumber"
-                       placeholder="Mobile Number" aria-describedby="basic-addon1">
+              <label class="sr-only" for="mobileNumber">Mobile Number</label>
+              <div class="row">
+                <div class="col-xs-4 no-padding-right">
+                  <input class="form-control custom-form-control" disabled style="padding-right: 0px" placeholder="Code">
+                </div>
+                <div class="col-xs-8 no-padding-left">
+                  <input type="text" class="form-control custom-form-control" placeholder="Mobile Number" />
+                </div>
               </div>
-
               <span class="error-message">Invalid Phone Number.</span>
-
             </div>
           </div>
 
@@ -214,37 +214,38 @@
 
 
               <div class="col-sm-3">
-              <div class="form-group">
-
-
-              <div class="input-group">
-                <span class="input-group-addon custom-form-control" id="basic-addon1" ngModel name="code" disabled>+94</span>
-                <input type="text" class="form-control custom-form-control" id="mobileNumber" pattern="[0-9]{9,10}" [disabled]="selectedCountry == null" maxlength="10"
-                       placeholder="Mobile Number" ngModel name="mobile" #mobile="ngModel" required aria-describedby="basic-addon1">
-
+                <div class="form-group">
+                    <label class="sr-only" for="mobileNumber">Mobile Number</label>
+                    <div class="row">
+                      <div class="col-xs-4 no-padding-right">
+                        <input class="form-control custom-form-control" disabled style="padding-right: 0px" placeholder="Code" ngModel name="code">
+                      </div>
+                      <div class="col-xs-8 no-padding-left">
+                        <input type="text" class="form-control custom-form-control"
+                               id="mobileNumber" pattern="[0-9]{9,10}" [disabled]="selectedCountry == null" maxlength="10"
+                               placeholder="Mobile Number" ngModel name="mobile" #mobile="ngModel" required/>
+                      </div>
+                    </div>
+                  <span class="error-message" *ngIf="!mobile.valid && mobile.touched">Invalid Phone Number.</span>
+                  </div>
               </div>
-                <span class="error-message" *ngIf="!mobile.valid && mobile.touched">Invalid Phone Number.</span>
 
-              </div>
+              <!--<div class="form-group">-->
 
-            </div>
 
-                <!--<div class="col-sm-3">-->
-                  <!--<div class="form-group">-->
-                    <!--<label class="sr-only" for="mobileNumber">Mobile Number</label>-->
-                    <!--<div class="row">-->
-                      <!--<div class="col-sm-4">-->
-                        <!--<input class="form-control custom-form-control" disabled style="padding-right: 0px" placeholder="Code" ngModel name="code">-->
-                      <!--</div>-->
-                      <!--<div class="col-sm-8">-->
-                        <!--<input type="text" class="form-control custom-form-control"-->
-                        <!--id="mobileNumber" pattern="[0-9]{9,10}" [disabled]="selectedCountry == null" maxlength="10"-->
-                        <!--placeholder="Mobile Number" ngModel name="mobile" #mobile="ngModel" required/>-->
-                        <!--<span class="error-message" *ngIf="!mobile.valid && mobile.touched">Invalid Phone Number.</span>-->
-                      <!--</div>-->
-                    <!--</div>-->
-                  <!--</div>-->
-                <!--</div>-->
+              <!--<div class="input-group">-->
+                <!--<span class="input-group-addon custom-form-control" id="basic-addon1" ngModel name="code" disabled>+94</span>-->
+                <!--<input type="text" class="form-control custom-form-control" id="mobileNumber" pattern="[0-9]{9,10}" [disabled]="selectedCountry == null" maxlength="10"-->
+                       <!--placeholder="Mobile Number" ngModel name="mobile" #mobile="ngModel" required aria-describedby="basic-addon1">-->
+
+              <!--</div>-->
+                <!--<span class="error-message" *ngIf="!mobile.valid && mobile.touched">Invalid Phone Number.</span>-->
+
+              <!--</div>-->
+
+
+
+
 
             <div class="col-sm-3">
               <div class="form-group">
@@ -317,7 +318,7 @@
                 </div>
               </div>
 
-              <div class="col-sm-3">
+              <div class="col-sm-3" >
                 <div class="form-group">
                   <label class="sr-only" for="email">Email</label>
                   <input type="email" class="form-control custom-form-control" id="email2" placeholder="Email" ngModel name="email2" required email #email2="ngModel"/>
@@ -340,38 +341,41 @@
                   </div>
 
                 <div class="col-sm-3">
-                    <div class="form-group">
 
-
-                    <div class="input-group">
-                      <span class="input-group-addon custom-form-control" id="basic-addon1" ngModel name="code2" disabled>+94</span>
-                      <input type="text" class="form-control custom-form-control" id="mobileNumber" pattern="[0-9]{9,10}" [disabled]="selectedCountry2 == null" maxlength="10"
-                             placeholder="Mobile Number" ngModel name="mobile2" #mobile2="ngModel" required aria-describedby="basic-addon1">
-
+                  <div class="form-group">
+                    <label class="sr-only" for="mobileNumber">Mobile Number</label>
+                    <div class="row">
+                      <div class="col-xs-4 no-padding-right">
+                        <input class="form-control custom-form-control" disabled placeholder="Code" ngModel name="code2">
+                      </div>
+                      <div class="col-xs-8 no-padding-left">
+                        <input type="text" class="form-control custom-form-control"
+                               id="mobileNumber" pattern="[0-9]{9,10}" [disabled]="selectedCountry2 == null" maxlength="10"
+                               placeholder="Mobile Number" ngModel name="mobile2" #mobile2="ngModel" required/>
+                      </div>
                     </div>
-                      <span class="error-message" *ngIf="!mobile2.valid && mobile2.touched">Invalid Phone Number.</span>
-
-                    </div>
-
+                    <span class="error-message" *ngIf="!mobile2.valid && mobile2.touched">Invalid Phone Number.</span>
                   </div>
+                </div>
 
 
 
-                    <!--<div class="form-group">-->
-                      <!--<label class="sr-only" for="mobileNumber">Mobile Number</label>-->
-                      <!--<div class="row">-->
-                        <!--<div class="col-sm-4 no-padding-right">-->
-                          <!--<input class="form-control custom-form-control" disabled placeholder="Code" ngModel name="code2">-->
-                        <!--</div>-->
-                        <!--<div class="col-sm-8">-->
-                          <!--<input type="text" class="form-control custom-form-control"-->
-                          <!--id="mobileNumber" pattern="[0-9]{9,10}" [disabled]="selectedCountry2 == null" maxlength="10"-->
-                          <!--placeholder="Mobile Number" ngModel name="mobile2" #mobile2="ngModel" required/>-->
-                          <!--<span class="error-message" *ngIf="!mobile2.valid && mobile2.touched">Invalid Phone Number.</span>-->
-                        <!--</div>-->
+
+                  <!--<div class="form-group">-->
+                      <!--<div class="input-group">-->
+                      <!--<span class="input-group-addon custom-form-control" id="basic-addon1" ngModel name="code2" disabled>+94</span>-->
+                      <!--<input type="text" class="form-control custom-form-control" id="mobileNumber" pattern="[0-9]{9,10}" [disabled]="selectedCountry2 == null" maxlength="10"-->
+                             <!--placeholder="Mobile Number" ngModel name="mobile2" #mobile2="ngModel" required aria-describedby="basic-addon1">-->
                       <!--</div>-->
+                      <!--<span class="error-message" *ngIf="!mobile2.valid && mobile2.touched">Invalid Phone Number.</span>-->
                     <!--</div>-->
-                  <!--</div>-->
+
+
+
+
+
+
+
 
                   <div class="col-sm-3">
                     <div class="form-group">
