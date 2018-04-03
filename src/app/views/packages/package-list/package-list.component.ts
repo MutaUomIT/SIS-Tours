@@ -12,7 +12,7 @@ export class PackageListComponent implements OnInit {
 
   packageList: any=[];
 
-  newVar: Date = new Date();
+  arrivalDate: Date = new Date();
   minDate = new Date();
   dateArrival : any;
 

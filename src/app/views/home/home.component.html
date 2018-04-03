@@ -51,7 +51,7 @@
           <div class="col-sm-4">
             <div class="form-group">
               <label class="sr-only" for="name1">Name</label>
-              <input type="text" class="form-control custom-form-control" id="name1" placeholder="Name">
+              <input type="text" class="form-control custom-form-control" id="name1" placeholder="Your Name">
             </div>
           </div>
 
@@ -71,7 +71,7 @@
 
           <div class="col-sm-12">
             <div class="form-group">
-              <textarea class="form-control custom-form-control" rows="3"></textarea>
+              <textarea class="form-control custom-form-control" rows="3" placeholder="More Details"></textarea>
             </div>
           </div>
 
@@ -176,7 +176,7 @@
                 <div class="col-sm-4">
                   <div class="form-group">
                     <label class="sr-only" for="name">Name</label>
-                    <input type="text" class="form-control custom-form-control" id="name" placeholder="Name" ngModel name="name" required/>
+                    <input type="text" class="form-control custom-form-control" id="name" placeholder="Your Name" ngModel name="name" required/>
                   </div>
                 </div>
 
@@ -207,7 +207,7 @@
 
                 <div class="col-sm-12">
                   <div class="form-group">
-                    <textarea class="form-control custom-form-control" rows="3" ngModel name="message" maxlength="500" #message="ngModel"></textarea>
+                    <textarea class="form-control custom-form-control" rows="3" ngModel name="message" maxlength="500" #message="ngModel" placeholder="More Details"></textarea>
                     <span class="error-message" *ngIf="!message.valid && mobile.touched">Max character length is 500.</span>
                   </div>
                 </div>
@@ -226,7 +226,8 @@
         <div role="tabpanel" class="tab-pane fade" id="profile">
 
           <form (ngSubmit)="onSubmit('custom')" #f2="ngForm">
-              <div class="col-sm-4">
+            <div class="row">
+              <div class="col-sm-3">
                   <div class="form-group">
                     <select class="form-control custom-form-control" ngModel name="duration">
                       <option value="" disabled selected hidden>Tour Duration</option>
@@ -242,7 +243,7 @@
                   </div>
                 </div>
 
-                <div class="col-sm-4 modal-date-input">
+                <div class="col-sm-3 modal-date-input">
                     <div class="form-group">
                       <label class="sr-only" for="arrivalDate2">Arrival Date</label>
                       <input readonly type="text" class="form-control custom-form-control" id="arrivalDate2"
@@ -255,27 +256,28 @@
                     </div>
                   </div>
 
-                  <div class="col-sm-4">
-                    <div class="form-group">
+                  <div class="col-sm-3">
+                    <div class="form-group select-form-group">
                       <label class="sr-only">Your Country</label>
                       <ng-select (change)="setCountryCode('custom',selectedCountry2)"
                                 [items]="countryList"
                                  bindLabel="name"
                                  placeholder="Select your Country"
                                  [(ngModel)] = "selectedCountry2"
-                                name="country2">
+                                name="country2"
+                      class="custom-form-control">
                       </ng-select>
                     </div>
                   </div>
 
-                  <div class="col-sm-4">
+                  <div class="col-sm-3">
                     <div class="form-group">
                       <label class="sr-only" for="name">Name</label>
-                      <input type="text" class="form-control custom-form-control" id="name2" placeholder="Name" ngModel name="name2" required/>
+                      <input type="text" class="form-control custom-form-control" id="name2" placeholder="Your Name" ngModel name="name2" required/>
                     </div>
                   </div>
 
-                  <div class="col-sm-4">
+                  <div class="col-sm-3" style="clear: both">
                     <div class="form-group">
                       <label class="sr-only" for="email">Email</label>
                       <input type="email" class="form-control custom-form-control" id="email2" placeholder="Email" ngModel name="email2" required email #email2="ngModel"/>
@@ -283,32 +285,59 @@
                     </div>
                   </div>
 
-                  <div class="col-sm-4">
+                  <div class="col-sm-3">
+
+
+                    <div class="input-group">
+                      <span class="input-group-addon custom-form-control" id="basic-addon1" ngModel name="code2" disabled>+</span>
+                      <input type="text" class="form-control custom-form-control" id="mobileNumber" pattern="[0-9]{9,10}" [disabled]="selectedCountry2 == null" maxlength="10"
+                             placeholder="Mobile Number" ngModel name="mobile2" #mobile2="ngModel" required aria-describedby="basic-addon1">
+                      <span class="error-message" *ngIf="!mobile2.valid && mobile2.touched">Invalid Phone Number.</span>
+                    </div>
+
+
+
+                    <!--<div class="form-group">-->
+                      <!--<label class="sr-only" for="mobileNumber">Mobile Number</label>-->
+                      <!--<div class="row">-->
+                        <!--<div class="col-sm-4 no-padding-right">-->
+                          <!--<input class="form-control custom-form-control" disabled placeholder="Code" ngModel name="code2">-->
+                        <!--</div>-->
+                        <!--<div class="col-sm-8">-->
+                          <!--<input type="text" class="form-control custom-form-control"-->
+                          <!--id="mobileNumber" pattern="[0-9]{9,10}" [disabled]="selectedCountry2 == null" maxlength="10"-->
+                          <!--placeholder="Mobile Number" ngModel name="mobile2" #mobile2="ngModel" required/>-->
+                          <!--<span class="error-message" *ngIf="!mobile2.valid && mobile2.touched">Invalid Phone Number.</span>-->
+                        <!--</div>-->
+                      <!--</div>-->
+                    <!--</div>-->
+                  <!--</div>-->
+
+                  <div class="col-sm-3">
                     <div class="form-group">
-                      <label class="sr-only" for="mobileNumber">Mobile Number</label>
-                      <div class="row">
-                        <div class="col-sm-4">
-                          <input class="form-control custom-form-control" disabled style="padding-right: 0px" placeholder="Code" ngModel name="code2">
-                        </div>
-                        <div class="col-sm-8">
-                          <input type="text" class="form-control custom-form-control"
-                          id="mobileNumber" pattern="[0-9]{9,10}" [disabled]="selectedCountry2 == null" maxlength="10"
-                          placeholder="Mobile Number" ngModel name="mobile2" #mobile2="ngModel" required/>
-                          <span class="error-message" *ngIf="!mobile2.valid && mobile2.touched">Invalid Phone Number.</span>
-                        </div>
-                      </div>
+                      <label class="sr-only" for="adult">adult</label>
+                      <input type="number" class="form-control custom-form-control" id="adult" placeholder="Adult"/>
                     </div>
                   </div>
 
+            <div class="col-sm-3">
+              <div class="form-group">
+                <label class="sr-only" for="children">children</label>
+                <input type="number" class="form-control custom-form-control" id="children" placeholder="Children"/>
+              </div>
+            </div>
+
                   <div class="col-sm-12">
                     <div class="form-group">
-                      <textarea class="form-control custom-form-control" rows="3" ngModel name="message2" maxlength="500" #message2="ngModel"></textarea>
+                      <textarea class="form-control custom-form-control" rows="3" ngModel name="message2" maxlength="500" #message2="ngModel" placeholder="More Details"></textarea>
                       <span class="error-message" *ngIf="!message2.valid && message2.touched">Max character length is 500.</span>
                     </div>
                   </div>
                 <div class="col-sm-6">
                     <button type="submit" class="btn btn-success green-button">submit</button>
                   </div>
+
+            </div>
           </form>
       </div>
       </div>

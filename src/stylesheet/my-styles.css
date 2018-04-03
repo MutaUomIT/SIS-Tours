@@ -108,6 +108,12 @@ body{
   margin-bottom: 20px;
 }
 
+.select-form-group .ng-control{
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+}
+
 /*navbar start*/
 
 .navbar-blue-top{
@@ -1348,3 +1354,8 @@ body{
 .place-card .place-card-large{
   padding: 50px;
 }
+
+bs-datepicker-container, bs-daterangepicker-container{
+  z-index: 9999 !important;
+}
+
