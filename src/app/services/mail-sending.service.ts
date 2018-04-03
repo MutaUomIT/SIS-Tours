@@ -1,18 +1,25 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import {MsgPopupService} from './msg-popup.service'
+import {MsgPopupService} from './msg-popup.service';
 import { reject } from 'q';
+
+import {AppConfig} from '../configFiles/app.config';
 
 @Injectable()
 export class MailSendingService {
+
+  serverConfig : any = {};
  
-  constructor(private http: HttpClient ,private msgPopup : MsgPopupService) { }
+  constructor(private http: HttpClient ,private msgPopup : MsgPopupService) {
+    this.serverConfig = AppConfig.mailServerConfiguration;
+   }
 
   sendMail(htmlObj:any){
 
 
     return new Promise(resolve => {
-      this.http.post('http://localhost:3000/sendMail', htmlObj).subscribe((res : any) => {
+      var url = 'http://'+this.serverConfig.IP_ADDRESS + ':' + this.serverConfig.PORT + '/sendMail'
+      this.http.post(url, htmlObj).subscribe((res : any) => {
         if(res.status==200){
           this.msgPopup.broadcastMessagePopupEventEmitter({
             type : 'success',
