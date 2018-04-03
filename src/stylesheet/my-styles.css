@@ -71,6 +71,8 @@ body{
 
   box-shadow: none !important;
   font-size: 11px !important;
+
+  font-family: 'Roboto', sans-serif;
 }
 
 .home-headings{
@@ -117,6 +119,14 @@ body{
 .error-message{
   position: absolute;
 }
+
+@media (min-width: 768px){
+  .modal-dialog {
+    width: 800px;
+}
+}
+
+
 
 /*navbar start*/
 
