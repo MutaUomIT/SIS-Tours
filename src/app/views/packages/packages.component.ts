@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
-
+import {CountryList} from "../../configFiles/countryList";
 import { PackageData } from './../../configFiles/packegeDetails';
 import { DailyActivities } from './../../configFiles/DailyActivities';
 import { DatePipe } from '@angular/common';
+import { NgForm } from '@angular/forms';
 
 declare var jquery:any;
 declare var $ :any;
@@ -15,6 +16,9 @@ declare var $ :any;
   styleUrls: ['./packages.component.css']
 })
 export class PackagesComponent implements OnInit {
+
+  @ViewChild('f') inquiryForm : NgForm
+  @ViewChild('f2') inquiryForm2 : NgForm
 
   packageList: any=[];
   packageList2: any=[];
@@ -39,10 +43,14 @@ export class PackagesComponent implements OnInit {
   minDate = new Date();
   dateArrival : any;
   dateArrival2 : any;
+  countryList : any = [];
+  selectedCountry : any;
+  selectedCountry2 : any;
 
   constructor(private datePipe: DatePipe, private route: ActivatedRoute, private router:Router ) {}
 
   ngOnInit() {
+    this.countryList = CountryList.countryListWithPhoneCode;
     this.packageDetails = PackageData.packageList;
     this.packageImageSlider();
     this.getPackageList();
@@ -54,6 +62,34 @@ export class PackagesComponent implements OnInit {
 
     this.loadPackageDetails(this.id);
 
+  }
+
+  setCountryCode(type,obj){
+    if(type === 'fullDescribed'){
+      if(obj===null){
+        this.inquiryForm.form.patchValue({code:''});
+        this.inquiryForm.form.patchValue({mobile:''});
+      }else{
+        this.inquiryForm.form.patchValue({code: obj.code})
+      }
+    }else if(type === 'lessDescribed'){
+      if(obj===null){
+        this.inquiryForm2.form.patchValue({code2:''});
+        this.inquiryForm2.form.patchValue({mobile2:''});
+      }else{
+        this.inquiryForm2.form.patchValue({code2: obj.code})
+      }
+    }
+  }
+
+  resetForm(type){
+    if(type === 'fullDescribed'){
+      this.inquiryForm.reset();
+      this.inquiryForm.form.patchValue({package:'default'})
+    }else if(type === 'lessDescribed'){
+      this.inquiryForm2.reset();
+      this.inquiryForm2.form.patchValue({package:'default'})
+    }
   }
 
   // package Details slider

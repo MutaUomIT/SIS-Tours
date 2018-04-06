@@ -105,12 +105,13 @@
       </div>
 
       <div class="footer-links">
-        <a href="" class="text-uppercase">home |</a>
-        <a href="" class="text-uppercase">PACKAGES |</a>
-        <a href="" class="text-uppercase">LEISURE |</a>
-        <a href="" class="text-uppercase">SRI LANKA |</a>
-        <a href="" class="text-uppercase">ABOUT US |</a>
-        <a href="" class="text-uppercase">CONTACT US</a>
+        <a [routerLink]="['home']" class="text-uppercase">HOME |</a>
+        <a [routerLink]="['home']" fragment="packages" class="text-uppercase">PACKAGES |</a>
+        <a [routerLink]="['leisure']" class="text-uppercase">LEISURE |</a>
+        <a [routerLink]="['about-lanka']" class="text-uppercase">SRI LANKA |</a>
+        <a [routerLink]="['home']" fragment="testimonials" class="text-uppercase">TESTIMONIALS |</a>
+        <a [routerLink]="['about-us']" class="text-uppercase">ABOUT US |</a>
+        <a [routerLink]="['contacts']" class="text-uppercase">CONTACT US |</a>
       </div>
     </div>
 
