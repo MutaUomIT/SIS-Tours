@@ -71,6 +71,8 @@ body{
 
   box-shadow: none !important;
   font-size: 11px !important;
+
+  font-family: 'Roboto', sans-serif;
 }
 
 .home-headings{
@@ -113,6 +115,18 @@ body{
   -moz-border-radius: 0;
   border-radius: 0;
 }
+
+.error-message{
+  position: absolute;
+}
+
+@media (min-width: 768px){
+  .modal-dialog {
+    width: 800px;
+}
+}
+
+
 
 /*navbar start*/
 
@@ -442,7 +456,7 @@ body{
   background-color: #FFE500;
   padding: 30px;
   border: 1px solid #FFE500;
-  height: 216px;
+  height: 223px;
 }
 
 .slider-form .nav-tabs{
@@ -697,9 +711,14 @@ body{
   text-decoration: inherit;
 }
 
+.home-form-button button{
+  margin-right: -46px;
+  margin-top: 17px;
+}
+
 @media(min-width: 1200px){
   .form-container{
-    width: 750px;
+    width: 850px;
   }
 }
 
@@ -709,7 +728,7 @@ body{
   }
 
   .why-sis-row{
-    margin-top: 320px;
+    margin-top: 430px;
   }
 
   .home-slider .slick-dots li button:before{
@@ -730,7 +749,7 @@ body{
 
 @media (max-width: 768px) {
   .form-container .tab-content{
-    height: 397px;
+    height: 517px;
   }
 }
 

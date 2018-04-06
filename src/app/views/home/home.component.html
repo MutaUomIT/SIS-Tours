@@ -12,7 +12,7 @@
 
         <div class="row">
 
-          <div class="col-sm-4">
+          <div class="col-sm-3">
             <div class="form-group">
               <select class="form-control custom-form-control">
                 <option disabled selected hidden>Tour Duration</option>
@@ -28,7 +28,7 @@
             </div>
           </div>
 
-          <div class="col-sm-4 modal-date-input">
+          <div class="col-sm-3 modal-date-input">
             <div class="form-group" >
               <label class="sr-only" for="arrivalDate1">Arrival Date</label>
               <input readonly type="text" class="form-control custom-form-control" id="arrivalDate1"
@@ -41,31 +41,54 @@
             </div>
           </div>
 
-          <div class="col-sm-4">
-            <div class="form-group">
-              <label class="sr-only" for="yourCountry1">Your Country</label>
-              <input type="text" class="form-control custom-form-control" id="yourCountry1" placeholder="Your Country">
-            </div>
-          </div>
-
-          <div class="col-sm-4">
+          <div class="col-sm-3">
             <div class="form-group">
               <label class="sr-only" for="name1">Name</label>
               <input type="text" class="form-control custom-form-control" id="name1" placeholder="Your Name">
             </div>
           </div>
 
-          <div class="col-sm-4">
+
+          <div class="col-sm-3">
             <div class="form-group">
               <label class="sr-only" for="email1">Email</label>
               <input type="email" class="form-control custom-form-control" id="email1" placeholder="Email">
             </div>
           </div>
 
-          <div class="col-sm-4">
+          <div class="col-sm-3" style="clear: both">
             <div class="form-group">
-              <label class="sr-only" for="mobileNumber1">Mobile Number</label>
-              <input type="text" class="form-control custom-form-control" id="mobileNumber1" placeholder="Mobile Number">
+              <label class="sr-only" for="yourCountry1">Your Country</label>
+              <input type="text" class="form-control custom-form-control" id="yourCountry1" placeholder="Your Country">
+            </div>
+          </div>
+
+          <div class="col-sm-3">
+            <div class="form-group">
+              <label class="sr-only" for="mobileNumber">Mobile Number</label>
+              <div class="row">
+                <div class="col-xs-4 no-padding-right">
+                  <input class="form-control custom-form-control" disabled style="padding-right: 0px" placeholder="Code">
+                </div>
+                <div class="col-xs-8 no-padding-left">
+                  <input type="text" class="form-control custom-form-control" placeholder="Mobile Number" />
+                </div>
+              </div>
+              <span class="error-message">Invalid Phone Number.</span>
+            </div>
+          </div>
+
+          <div class="col-sm-3">
+            <div class="form-group">
+              <label class="sr-only" for="adult">adult</label>
+              <input type="number" class="form-control custom-form-control" min="0" id="adult" placeholder="No of Adult"/>
+            </div>
+          </div>
+
+          <div class="col-sm-3">
+            <div class="form-group">
+              <label class="sr-only" for="children">children</label>
+              <input type="number" class="form-control custom-form-control" min="0" id="children" placeholder="No of Children"/>
             </div>
           </div>
 
@@ -126,11 +149,11 @@
       <div class="tab-content">
         <div role="tabpanel" class="tab-pane fade in active" id="home">
 
-        <div class="row">
+
 
           <form (ngSubmit)="onSubmit('our')" #f="ngForm">
-
-              <div class="col-sm-4">
+            <div class="row">
+              <div class="col-sm-3">
                   <div class="form-group">
 
                     <select class="form-control custom-form-control" [(ngModel)]="defaultPackage" name="package" required>
@@ -141,7 +164,7 @@
                   </div>
                 </div>
 
-                <div class="col-sm-4 modal-date-input">
+                <div class="col-sm-3 modal-date-input">
                   <div class="form-group" >
                     <label class="sr-only" for="arrivalDate">Arrival Date</label>
                     <!--<input type="text" class="form-control custom-form-control" id="arrivalDate"-->
@@ -160,50 +183,83 @@
                   </div>
                 </div>
 
-                <div class="col-sm-4">
-                  <div class="form-group">
+              <div class="col-sm-3">
+                <div class="form-group">
+                  <label class="sr-only" for="name">Name</label>
+                  <input type="text" class="form-control custom-form-control" id="name" placeholder="Your Name" ngModel name="name" required/>
+                </div>
+              </div>
+
+              <div class="col-sm-3">
+                <div class="form-group">
+                  <label class="sr-only" for="email">Email</label>
+                  <input type="email" class="form-control custom-form-control" id="email" placeholder="Email" ngModel name="email" required email #email="ngModel"/>
+                  <span class="error-message" *ngIf="!email.valid && email.touched">Invalid Email Address.</span>
+                </div>
+              </div>
+
+                <div class="col-sm-3" style="clear: both">
+                  <div class="form-group select-form-group">
                     <label class="sr-only">Your Country</label>
                     <ng-select (change)="setCountryCode('our',selectedCountry)"
                               [items]="countryList"
                                bindLabel="name"
                                placeholder="Select your Country"
                                [(ngModel)] = "selectedCountry"
-                              name="country">
+                              name="country"
+                    class="custom-form-control">
                     </ng-select>
                   </div>
                 </div>
 
-                <div class="col-sm-4">
-                  <div class="form-group">
-                    <label class="sr-only" for="name">Name</label>
-                    <input type="text" class="form-control custom-form-control" id="name" placeholder="Your Name" ngModel name="name" required/>
-                  </div>
-                </div>
 
-                <div class="col-sm-4">
-                  <div class="form-group">
-                    <label class="sr-only" for="email">Email</label>
-                    <input type="email" class="form-control custom-form-control" id="email" placeholder="Email" ngModel name="email" required email #email="ngModel"/>
-                    <span class="error-message" *ngIf="!email.valid && email.touched">Invalid Email Address.</span>
-                  </div>
-                </div>
-
-                <div class="col-sm-4">
-                  <div class="form-group">
+              <div class="col-sm-3">
+                <div class="form-group">
                     <label class="sr-only" for="mobileNumber">Mobile Number</label>
                     <div class="row">
-                      <div class="col-sm-4">
+                      <div class="col-xs-4 no-padding-right">
                         <input class="form-control custom-form-control" disabled style="padding-right: 0px" placeholder="Code" ngModel name="code">
                       </div>
-                      <div class="col-sm-8">
+                      <div class="col-xs-8 no-padding-left">
                         <input type="text" class="form-control custom-form-control"
-                        id="mobileNumber" pattern="[0-9]{9,10}" [disabled]="selectedCountry == null" maxlength="10"
-                        placeholder="Mobile Number" ngModel name="mobile" #mobile="ngModel" required/>
-                        <span class="error-message" *ngIf="!mobile.valid && mobile.touched">Invalid Phone Number.</span>
+                               id="mobileNumber" pattern="[0-9]{9,10}" [disabled]="selectedCountry == null" maxlength="10"
+                               placeholder="Mobile Number" ngModel name="mobile" #mobile="ngModel" required/>
                       </div>
                     </div>
+                  <span class="error-message" *ngIf="!mobile.valid && mobile.touched">Invalid Phone Number.</span>
                   </div>
-                </div>
+              </div>
+
+              <!--<div class="form-group">-->
+
+
+              <!--<div class="input-group">-->
+                <!--<span class="input-group-addon custom-form-control" id="basic-addon1" ngModel name="code" disabled>+94</span>-->
+                <!--<input type="text" class="form-control custom-form-control" id="mobileNumber" pattern="[0-9]{9,10}" [disabled]="selectedCountry == null" maxlength="10"-->
+                       <!--placeholder="Mobile Number" ngModel name="mobile" #mobile="ngModel" required aria-describedby="basic-addon1">-->
+
+              <!--</div>-->
+                <!--<span class="error-message" *ngIf="!mobile.valid && mobile.touched">Invalid Phone Number.</span>-->
+
+              <!--</div>-->
+
+
+
+
+
+            <div class="col-sm-3">
+              <div class="form-group">
+                <label class="sr-only" for="adult">adult</label>
+                <input type="number" class="form-control custom-form-control" min="0" id="adult" placeholder="No of Adult"/>
+              </div>
+            </div>
+
+            <div class="col-sm-3">
+              <div class="form-group">
+                <label class="sr-only" for="children">children</label>
+                <input type="number" class="form-control custom-form-control" min="0" id="children" placeholder="No of Children"/>
+              </div>
+            </div>
 
                 <div class="col-sm-12">
                   <div class="form-group">
@@ -212,13 +268,12 @@
                   </div>
                 </div>
 
-                <div class="col-sm-6">
-                    <button type="submit" class="btn btn-success green-button">submit</button>
-                  </div>
+
+        </div>
+            <div class="col-sm-12 text-right home-form-button">
+              <button type="submit" class="btn btn-success green-button">submit</button>
+            </div>
           </form>
-
-
-       </div>
 
         </div>
 
@@ -256,6 +311,21 @@
                     </div>
                   </div>
 
+              <div class="col-sm-3">
+                <div class="form-group">
+                  <label class="sr-only" for="name">Name</label>
+                  <input type="text" class="form-control custom-form-control" id="name2" placeholder="Your Name" ngModel name="name2" required/>
+                </div>
+              </div>
+
+              <div class="col-sm-3" >
+                <div class="form-group">
+                  <label class="sr-only" for="email">Email</label>
+                  <input type="email" class="form-control custom-form-control" id="email2" placeholder="Email" ngModel name="email2" required email #email2="ngModel"/>
+                  <span class="error-message" *ngIf="!email2.valid && email2.touched">Invalid Email Address.</span>
+                </div>
+              </div>
+
                   <div class="col-sm-3">
                     <div class="form-group select-form-group">
                       <label class="sr-only">Your Country</label>
@@ -270,60 +340,54 @@
                     </div>
                   </div>
 
-                  <div class="col-sm-3">
-                    <div class="form-group">
-                      <label class="sr-only" for="name">Name</label>
-                      <input type="text" class="form-control custom-form-control" id="name2" placeholder="Your Name" ngModel name="name2" required/>
+                <div class="col-sm-3">
+
+                  <div class="form-group">
+                    <label class="sr-only" for="mobileNumber">Mobile Number</label>
+                    <div class="row">
+                      <div class="col-xs-4 no-padding-right">
+                        <input class="form-control custom-form-control" disabled placeholder="Code" ngModel name="code2">
+                      </div>
+                      <div class="col-xs-8 no-padding-left">
+                        <input type="text" class="form-control custom-form-control"
+                               id="mobileNumber" pattern="[0-9]{9,10}" [disabled]="selectedCountry2 == null" maxlength="10"
+                               placeholder="Mobile Number" ngModel name="mobile2" #mobile2="ngModel" required/>
+                      </div>
                     </div>
+                    <span class="error-message" *ngIf="!mobile2.valid && mobile2.touched">Invalid Phone Number.</span>
                   </div>
-
-                  <div class="col-sm-3" style="clear: both">
-                    <div class="form-group">
-                      <label class="sr-only" for="email">Email</label>
-                      <input type="email" class="form-control custom-form-control" id="email2" placeholder="Email" ngModel name="email2" required email #email2="ngModel"/>
-                      <span class="error-message" *ngIf="!email2.valid && email2.touched">Invalid Email Address.</span>
-                    </div>
-                  </div>
-
-                  <div class="col-sm-3">
-
-
-                    <div class="input-group">
-                      <span class="input-group-addon custom-form-control" id="basic-addon1" ngModel name="code2" disabled>+</span>
-                      <input type="text" class="form-control custom-form-control" id="mobileNumber" pattern="[0-9]{9,10}" [disabled]="selectedCountry2 == null" maxlength="10"
-                             placeholder="Mobile Number" ngModel name="mobile2" #mobile2="ngModel" required aria-describedby="basic-addon1">
-                      <span class="error-message" *ngIf="!mobile2.valid && mobile2.touched">Invalid Phone Number.</span>
-                    </div>
+                </div>
 
 
 
-                    <!--<div class="form-group">-->
-                      <!--<label class="sr-only" for="mobileNumber">Mobile Number</label>-->
-                      <!--<div class="row">-->
-                        <!--<div class="col-sm-4 no-padding-right">-->
-                          <!--<input class="form-control custom-form-control" disabled placeholder="Code" ngModel name="code2">-->
-                        <!--</div>-->
-                        <!--<div class="col-sm-8">-->
-                          <!--<input type="text" class="form-control custom-form-control"-->
-                          <!--id="mobileNumber" pattern="[0-9]{9,10}" [disabled]="selectedCountry2 == null" maxlength="10"-->
-                          <!--placeholder="Mobile Number" ngModel name="mobile2" #mobile2="ngModel" required/>-->
-                          <!--<span class="error-message" *ngIf="!mobile2.valid && mobile2.touched">Invalid Phone Number.</span>-->
-                        <!--</div>-->
+
+                  <!--<div class="form-group">-->
+                      <!--<div class="input-group">-->
+                      <!--<span class="input-group-addon custom-form-control" id="basic-addon1" ngModel name="code2" disabled>+94</span>-->
+                      <!--<input type="text" class="form-control custom-form-control" id="mobileNumber" pattern="[0-9]{9,10}" [disabled]="selectedCountry2 == null" maxlength="10"-->
+                             <!--placeholder="Mobile Number" ngModel name="mobile2" #mobile2="ngModel" required aria-describedby="basic-addon1">-->
                       <!--</div>-->
+                      <!--<span class="error-message" *ngIf="!mobile2.valid && mobile2.touched">Invalid Phone Number.</span>-->
                     <!--</div>-->
-                  <!--</div>-->
+
+
+
+
+
+
+
 
                   <div class="col-sm-3">
                     <div class="form-group">
                       <label class="sr-only" for="adult">adult</label>
-                      <input type="number" class="form-control custom-form-control" id="adult" placeholder="Adult"/>
+                      <input type="number" class="form-control custom-form-control" min="0" id="adult" placeholder="No of Adult"/>
                     </div>
                   </div>
 
             <div class="col-sm-3">
               <div class="form-group">
                 <label class="sr-only" for="children">children</label>
-                <input type="number" class="form-control custom-form-control" id="children" placeholder="Children"/>
+                <input type="number" class="form-control custom-form-control" min="0" id="children" placeholder="No of Children"/>
               </div>
             </div>
 
@@ -333,10 +397,12 @@
                       <span class="error-message" *ngIf="!message2.valid && message2.touched">Max character length is 500.</span>
                     </div>
                   </div>
-                <div class="col-sm-6">
-                    <button type="submit" class="btn btn-success green-button">submit</button>
-                  </div>
 
+
+            </div>
+
+            <div class="col-sm-12 text-right home-form-button">
+              <button type="submit" class="btn btn-success green-button">submit</button>
             </div>
           </form>
       </div>
@@ -350,7 +416,7 @@
 
 <!--why sis operators starts-->
 
-<div class="container-fluid why-sis-container">
+<div class="container-fluid why-sis-container wow bounceInUp">
   <div class="row why-sis-row">
     <h2 class="home-headings text-center">Discover <span class="home-headings-blue">Sis Tour Operators</span></h2>
 
@@ -368,7 +434,7 @@
 
 <!--tour packages start-->
 
-<div class="container-fluid home-package-container" id="packages">
+<div class="container-fluid home-package-container wow bounceInUp" id="packages">
   <div class="row">
     <h2 class="home-headings text-center" style="margin-bottom: 25px">Tour <span class="home-headings-blue">Packages</span></h2>
   </div>

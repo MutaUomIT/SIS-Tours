@@ -275,5 +275,12 @@ export class HomeComponent implements OnInit {
             autoplaySpeed: 2000,
           });});
 
-      }
+         $(document).ready(function(){
+            new WOW().init();
+          });
+
+
+  }
+
+
 }
