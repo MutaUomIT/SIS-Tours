@@ -8,6 +8,8 @@
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <h4 class="modal-title" id="myModalLabel">Customized Trip</h4>
       </div>
+      <form class="modal-body" (ngSubmit)="onSubmit('modal')" #f1="ngForm">
+
       <div class="modal-body">
 
         <div class="row">
@@ -56,39 +58,68 @@
             </div>
           </div>
 
+          <!--<div class="col-sm-3" style="clear: both">-->
+            <!--<div class="form-group">-->
+              <!--<label class="sr-only" for="yourCountry1">Your Country</label>-->
+              <!--<input type="text" class="form-control custom-form-control" id="yourCountry1" placeholder="Your Country">-->
+            <!--</div>-->
+          <!--</div>-->
           <div class="col-sm-3" style="clear: both">
-            <div class="form-group">
-              <label class="sr-only" for="yourCountry1">Your Country</label>
-              <input type="text" class="form-control custom-form-control" id="yourCountry1" placeholder="Your Country">
+            <div class="form-group select-form-group">
+              <label class="sr-only">Your Country</label>
+              <ng-select (change)="setCountryCode('modal',selectedCountry1)"
+                         [items]="countryList"
+                         bindLabel="name"
+                         placeholder="Select your Country"
+                         [(ngModel)] = "selectedCountry1"
+                         name="country1"
+                         class="custom-form-control">
+              </ng-select>
             </div>
           </div>
 
+          <!--<div class="col-sm-3">-->
+            <!--<div class="form-group">-->
+              <!--<label class="sr-only" for="mobileNumber">Mobile Number</label>-->
+              <!--<div class="row">-->
+                <!--<div class="col-xs-4 no-padding-right">-->
+                  <!--<input class="form-control custom-form-control" disabled style="padding-right: 0px" placeholder="Code">-->
+                <!--</div>-->
+                <!--<div class="col-xs-8 no-padding-left">-->
+                  <!--<input type="text" class="form-control custom-form-control" placeholder="Mobile Number" />-->
+                <!--</div>-->
+              <!--</div>-->
+              <!--<span class="error-message">Invalid Phone Number.</span>-->
+            <!--</div>-->
+          <!--</div>-->
           <div class="col-sm-3">
             <div class="form-group">
-              <label class="sr-only" for="mobileNumber">Mobile Number</label>
+              <label class="sr-only" for="mobileNumber1">Mobile Number</label>
               <div class="row">
                 <div class="col-xs-4 no-padding-right">
-                  <input class="form-control custom-form-control" disabled style="padding-right: 0px" placeholder="Code">
+                  <input class="form-control custom-form-control" disabled style="padding-right: 0px" placeholder="Code" ngModel name="code1">
                 </div>
                 <div class="col-xs-8 no-padding-left">
-                  <input type="text" class="form-control custom-form-control" placeholder="Mobile Number" />
+                  <input type="text" class="form-control custom-form-control"
+                         id="mobileNumber1" pattern="[0-9]{9,10}" [disabled]="selectedCountry1 == null" maxlength="10"
+                         placeholder="Mobile Number" ngModel name="mobile1" #mobile1="ngModel" required/>
                 </div>
               </div>
-              <span class="error-message">Invalid Phone Number.</span>
+              <span class="error-message" *ngIf="!mobile1.valid && mobile1.touched">Invalid Phone Number.</span>
             </div>
           </div>
 
           <div class="col-sm-3">
             <div class="form-group">
-              <label class="sr-only" for="adult">adult</label>
-              <input type="number" class="form-control custom-form-control" min="0" id="adult" placeholder="No of Adult"/>
+              <label class="sr-only" for="adult1">adult</label>
+              <input type="number" class="form-control custom-form-control" min="0" id="adult1" placeholder="No of Adult"/>
             </div>
           </div>
 
           <div class="col-sm-3">
             <div class="form-group">
-              <label class="sr-only" for="children">children</label>
-              <input type="number" class="form-control custom-form-control" min="0" id="children" placeholder="No of Children"/>
+              <label class="sr-only" for="children1">children</label>
+              <input type="number" class="form-control custom-form-control" min="0" id="children1" placeholder="No of Children"/>
             </div>
           </div>
 
@@ -105,6 +136,7 @@
         <button type="button" class="btn btn-default green-button white-button" data-dismiss="modal">CLOSE</button>
         <button type="button" class="btn btn-primary green-button">ENQUIRE</button>
       </div>
+        </form>
     </div>
   </div>
 </div>
@@ -343,14 +375,14 @@
                 <div class="col-sm-3">
 
                   <div class="form-group">
-                    <label class="sr-only" for="mobileNumber">Mobile Number</label>
+                    <label class="sr-only" for="mobileNumber2">Mobile Number</label>
                     <div class="row">
                       <div class="col-xs-4 no-padding-right">
                         <input class="form-control custom-form-control" disabled placeholder="Code" ngModel name="code2">
                       </div>
                       <div class="col-xs-8 no-padding-left">
                         <input type="text" class="form-control custom-form-control"
-                               id="mobileNumber" pattern="[0-9]{9,10}" [disabled]="selectedCountry2 == null" maxlength="10"
+                               id="mobileNumber2" pattern="[0-9]{9,10}" [disabled]="selectedCountry2 == null" maxlength="10"
                                placeholder="Mobile Number" ngModel name="mobile2" #mobile2="ngModel" required/>
                       </div>
                     </div>
@@ -379,15 +411,15 @@
 
                   <div class="col-sm-3">
                     <div class="form-group">
-                      <label class="sr-only" for="adult">adult</label>
-                      <input type="number" class="form-control custom-form-control" min="0" id="adult" placeholder="No of Adult"/>
+                      <label class="sr-only" for="adult2">adult</label>
+                      <input type="number" class="form-control custom-form-control" min="0" id="adult2" placeholder="No of Adult"/>
                     </div>
                   </div>
 
             <div class="col-sm-3">
               <div class="form-group">
-                <label class="sr-only" for="children">children</label>
-                <input type="number" class="form-control custom-form-control" min="0" id="children" placeholder="No of Children"/>
+                <label class="sr-only" for="children2">children</label>
+                <input type="number" class="form-control custom-form-control" min="0" id="children2" placeholder="No of Children"/>
               </div>
             </div>
 

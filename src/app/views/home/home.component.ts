@@ -21,6 +21,7 @@ export class HomeComponent implements OnInit {
 
   @ViewChild('f') inquiryForm : NgForm
   @ViewChild('f2') inquiryFormCustom : NgForm
+  @ViewChild('f1') inquiryFormModal : NgForm
 
   packageList: any=[];
   allPackageList: any=[];
@@ -31,6 +32,7 @@ export class HomeComponent implements OnInit {
   locationCovered: any=[];
   countryList : any = [];
   selectedCountry : any;
+  selectedCountry1 : any;
   selectedCountry2 : any;
   defaultPackage = "default";
 
@@ -60,12 +62,21 @@ export class HomeComponent implements OnInit {
 
   }
 
+  ngOnInit() {
+    this.countryList = CountryList.countryListWithPhoneCode;
+    this.packageDetails = PackageData.packageList;
+    this.testimonials = TestimonialData.testimonialList;
+    this.initJqueryFuctions();
+    this.loadPackages();
+    this.loadTestimonials();
+    this.loadInitialSelectedPackage(8);
+  }
+
   get bsValue(): Date {
     return this._bsValue;
   }
 
   setCountryCode(type,obj){
-
     if(type === 'our'){
 
       if(obj===null){
@@ -83,8 +94,15 @@ export class HomeComponent implements OnInit {
       }else{
         this.inquiryFormCustom.form.patchValue({code2: obj.code})
        }
-    }
+    }else if(type === 'modal'){
 
+      if(obj===null){
+        this.inquiryFormModal.form.patchValue({code1:''});
+        this.inquiryFormModal.form.patchValue({mobile1:''});
+      }else{
+        this.inquiryFormModal.form.patchValue({code1: obj.code})
+      }
+    }
   }
 
   resetForm(type){
@@ -94,18 +112,10 @@ export class HomeComponent implements OnInit {
     }else if(type === 'our'){
       this.inquiryForm.reset();
       this.inquiryForm.form.patchValue({package:'default'})
+    }else if(type === 'modal'){
+      this.inquiryFormModal.reset();
+      this.inquiryFormModal.form.patchValue({package:'default'})
     }
-
-  }
-
-  ngOnInit() {
-    this.countryList = CountryList.countryListWithPhoneCode;
-    this.packageDetails = PackageData.packageList;
-    this.testimonials = TestimonialData.testimonialList;
-    this.initJqueryFuctions();
-    this.loadPackages();
-    this.loadTestimonials();
-    this.loadInitialSelectedPackage(8);
   }
 
   private sendInquiryWithExistingPackages(){
@@ -276,11 +286,7 @@ export class HomeComponent implements OnInit {
           });});
 
          $(document).ready(function(){
-            new WOW().init();
+           new WOW().init();
           });
-
-
   }
-
-
 }
