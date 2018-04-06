@@ -1,120 +1,15 @@
 <!-- Modal -->
 
-<div class="modal fade" id="homeModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-     xmlns="http://www.w3.org/1999/html">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Customized Trip</h4>
-      </div>
-      <div class="modal-body">
-
-        <div class="row">
-
-          <div class="col-sm-3">
-            <div class="form-group">
-              <select class="form-control custom-form-control">
-                <option disabled selected hidden>Tour Duration</option>
-                <option>1 Day</option>
-                <option>2 Day</option>
-                <option>3 Day</option>
-                <option>4 Day</option>
-                <option>5 Day</option>
-                <option>6 Day</option>
-                <option>7 Day</option>
-                <option>8 Day</option>
-              </select>
-            </div>
-          </div>
-
-          <div class="col-sm-3 modal-date-input">
-            <div class="form-group" >
-              <label class="sr-only" for="arrivalDate1">Arrival Date</label>
-              <input readonly type="text" class="form-control custom-form-control" id="arrivalDate1"
-                     placeholder="Arrival Date"
-                     [minDate]="minDate"
-                     #dp="bsDatepicker"
-                     bsDatepicker [(bsValue)]="date1" value="{{ date1 | date:'yyyy-MM-dd' }}"
-                     [(ngModel)] = "dateArrival1" name="arrivalDate1" #arrivalDate1="ngModel"
-                     required/>
-            </div>
-          </div>
-
-          <div class="col-sm-3">
-            <div class="form-group">
-              <label class="sr-only" for="name1">Name</label>
-              <input type="text" class="form-control custom-form-control" id="name1" placeholder="Your Name">
-            </div>
-          </div>
-
-
-          <div class="col-sm-3">
-            <div class="form-group">
-              <label class="sr-only" for="email1">Email</label>
-              <input type="email" class="form-control custom-form-control" id="email1" placeholder="Email">
-            </div>
-          </div>
-
-          <div class="col-sm-3" style="clear: both">
-            <div class="form-group">
-              <label class="sr-only" for="yourCountry1">Your Country</label>
-              <input type="text" class="form-control custom-form-control" id="yourCountry1" placeholder="Your Country">
-            </div>
-          </div>
-
-          <div class="col-sm-3">
-            <div class="form-group">
-              <label class="sr-only" for="mobileNumber">Mobile Number</label>
-              <div class="row">
-                <div class="col-xs-4 no-padding-right">
-                  <input class="form-control custom-form-control" disabled style="padding-right: 0px" placeholder="Code">
-                </div>
-                <div class="col-xs-8 no-padding-left">
-                  <input type="text" class="form-control custom-form-control" placeholder="Mobile Number" />
-                </div>
-              </div>
-              <span class="error-message">Invalid Phone Number.</span>
-            </div>
-          </div>
-
-          <div class="col-sm-3">
-            <div class="form-group">
-              <label class="sr-only" for="adult">adult</label>
-              <input type="number" class="form-control custom-form-control" min="0" id="adult" placeholder="No of Adult"/>
-            </div>
-          </div>
-
-          <div class="col-sm-3">
-            <div class="form-group">
-              <label class="sr-only" for="children">children</label>
-              <input type="number" class="form-control custom-form-control" min="0" id="children" placeholder="No of Children"/>
-            </div>
-          </div>
-
-          <div class="col-sm-12">
-            <div class="form-group">
-              <textarea class="form-control custom-form-control" rows="3" placeholder="More Details"></textarea>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default green-button white-button" data-dismiss="modal">CLOSE</button>
-        <button type="button" class="btn btn-primary green-button">ENQUIRE</button>
-      </div>
-    </div>
-  </div>
-</div>
+<app-send-inquiry></app-send-inquiry>
 
 <!--modal ends-->
 
 <!--slider start-->
 <div class="container-fluid">
   <div class="row home-slider-row">
-    <p class="text-nowrap"><b>Sri Lanka</b></p>
+    <p class="text-nowrap">
+      <b>Sri Lanka</b>
+    </p>
     <p>By Sis Tour Operators</p>
     <div class="home-slider">
       <div>
@@ -141,8 +36,12 @@
 
       <!-- Nav tabs -->
       <ul class="nav nav-tabs" role="tablist">
-        <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Our Packages</a></li>
-        <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Customized Tour</a></li>
+        <li role="presentation" class="active">
+          <a href="#home" aria-controls="home" role="tab" data-toggle="tab">Our Packages</a>
+        </li>
+        <li role="presentation">
+          <a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Customized Tour</a>
+        </li>
       </ul>
 
       <!-- Tab panes -->
@@ -154,34 +53,30 @@
           <form (ngSubmit)="onSubmit('our')" #f="ngForm">
             <div class="row">
               <div class="col-sm-3">
-                  <div class="form-group">
+                <div class="form-group">
 
-                    <select class="form-control custom-form-control" [(ngModel)]="defaultPackage" name="package" required>
+                  <select class="form-control custom-form-control" [(ngModel)]="defaultPackage" name="package" required>
 
-                      <option value="default" disabled>SELECT A PACKAGE</option>
-                      <option value="{{package.mainTopic}} - {{package.subTopic}}" *ngFor="let package of allPackageList">{{package.mainTopic}} - {{package.subTopic}}</option>
-                    </select>
-                  </div>
+                    <option value="default" disabled>SELECT A PACKAGE</option>
+                    <option value="{{package.mainTopic}} - {{package.subTopic}}" *ngFor="let package of allPackageList">{{package.mainTopic}} - {{package.subTopic}}</option>
+                  </select>
                 </div>
+              </div>
 
-                <div class="col-sm-3 modal-date-input">
-                  <div class="form-group" >
-                    <label class="sr-only" for="arrivalDate">Arrival Date</label>
-                    <!--<input type="text" class="form-control custom-form-control" id="arrivalDate"-->
-                    <!--placeholder="Arrival Date"-->
-                    <!--ngModel-->
-                    <!--name="arrivalDate"-->
-                    <!--required />-->
+              <div class="col-sm-3 modal-date-input">
+                <div class="form-group">
+                  <label class="sr-only" for="arrivalDate">Arrival Date</label>
+                  <!--<input type="text" class="form-control custom-form-control" id="arrivalDate"-->
+                  <!--placeholder="Arrival Date"-->
+                  <!--ngModel-->
+                  <!--name="arrivalDate"-->
+                  <!--required />-->
 
-                    <input readonly type="text" class="form-control custom-form-control" id="arrivalDate"
-                           placeholder="Arrival Date"
-                           [minDate]="minDate"
-                           #dp="bsDatepicker"
-                           bsDatepicker [(bsValue)]="dateForm" value="{{ dateForm | date:'yyyy-MM-dd' }}"
-                           [(ngModel)] = "dateArrival" name="arrivalDate" #arrivalDate="ngModel"
-                           required/>
-                  </div>
+                  <input readonly type="text" class="form-control custom-form-control" id="arrivalDate" placeholder="Arrival Date" [minDate]="minDate"
+                    #dp="bsDatepicker" bsDatepicker [(bsValue)]="dateForm" value="{{ dateForm | date:'yyyy-MM-dd' }}" [(ngModel)]="dateArrival"
+                    name="arrivalDate" #arrivalDate="ngModel" required/>
                 </div>
+              </div>
 
               <div class="col-sm-3">
                 <div class="form-group">
@@ -193,53 +88,48 @@
               <div class="col-sm-3">
                 <div class="form-group">
                   <label class="sr-only" for="email">Email</label>
-                  <input type="email" class="form-control custom-form-control" id="email" placeholder="Email" ngModel name="email" required email #email="ngModel"/>
+                  <input type="email" class="form-control custom-form-control" id="email" placeholder="Email" ngModel name="email" required
+                    email #email="ngModel" />
                   <span class="error-message" *ngIf="!email.valid && email.touched">Invalid Email Address.</span>
                 </div>
               </div>
 
-                <div class="col-sm-3" style="clear: both">
-                  <div class="form-group select-form-group">
-                    <label class="sr-only">Your Country</label>
-                    <ng-select (change)="setCountryCode('our',selectedCountry)"
-                              [items]="countryList"
-                               bindLabel="name"
-                               placeholder="Select your Country"
-                               [(ngModel)] = "selectedCountry"
-                              name="country"
-                    class="custom-form-control">
-                    </ng-select>
-                  </div>
+              <div class="col-sm-3" style="clear: both">
+                <div class="form-group select-form-group">
+                  <label class="sr-only">Your Country</label>
+                  <ng-select (change)="setCountryCode('our',selectedCountry)" [items]="countryList" bindLabel="name" placeholder="Select your Country"
+                    [(ngModel)]="selectedCountry" name="country" class="custom-form-control">
+                  </ng-select>
                 </div>
+              </div>
 
 
               <div class="col-sm-3">
                 <div class="form-group">
-                    <label class="sr-only" for="mobileNumber">Mobile Number</label>
-                    <div class="row">
-                      <div class="col-xs-4 no-padding-right">
-                        <input class="form-control custom-form-control" disabled style="padding-right: 0px" placeholder="Code" ngModel name="code">
-                      </div>
-                      <div class="col-xs-8 no-padding-left">
-                        <input type="text" class="form-control custom-form-control"
-                               id="mobileNumber" pattern="[0-9]{9,10}" [disabled]="selectedCountry == null" maxlength="10"
-                               placeholder="Mobile Number" ngModel name="mobile" #mobile="ngModel" required/>
-                      </div>
+                  <label class="sr-only" for="mobileNumber">Mobile Number</label>
+                  <div class="row">
+                    <div class="col-xs-4 no-padding-right">
+                      <input class="form-control custom-form-control" disabled style="padding-right: 0px" placeholder="Code" ngModel name="code">
                     </div>
-                  <span class="error-message" *ngIf="!mobile.valid && mobile.touched">Invalid Phone Number.</span>
+                    <div class="col-xs-8 no-padding-left">
+                      <input type="text" class="form-control custom-form-control" id="mobileNumber" pattern="[0-9]{9,10}" [disabled]="selectedCountry == null"
+                        maxlength="10" placeholder="Mobile Number" ngModel name="mobile" #mobile="ngModel" required/>
+                    </div>
                   </div>
+                  <span class="error-message" *ngIf="!mobile.valid && mobile.touched">Invalid Phone Number.</span>
+                </div>
               </div>
 
               <!--<div class="form-group">-->
 
 
               <!--<div class="input-group">-->
-                <!--<span class="input-group-addon custom-form-control" id="basic-addon1" ngModel name="code" disabled>+94</span>-->
-                <!--<input type="text" class="form-control custom-form-control" id="mobileNumber" pattern="[0-9]{9,10}" [disabled]="selectedCountry == null" maxlength="10"-->
-                       <!--placeholder="Mobile Number" ngModel name="mobile" #mobile="ngModel" required aria-describedby="basic-addon1">-->
+              <!--<span class="input-group-addon custom-form-control" id="basic-addon1" ngModel name="code" disabled>+94</span>-->
+              <!--<input type="text" class="form-control custom-form-control" id="mobileNumber" pattern="[0-9]{9,10}" [disabled]="selectedCountry == null" maxlength="10"-->
+              <!--placeholder="Mobile Number" ngModel name="mobile" #mobile="ngModel" required aria-describedby="basic-addon1">-->
 
               <!--</div>-->
-                <!--<span class="error-message" *ngIf="!mobile.valid && mobile.touched">Invalid Phone Number.</span>-->
+              <!--<span class="error-message" *ngIf="!mobile.valid && mobile.touched">Invalid Phone Number.</span>-->
 
               <!--</div>-->
 
@@ -247,29 +137,29 @@
 
 
 
-            <div class="col-sm-3">
-              <div class="form-group">
-                <label class="sr-only" for="adult">adult</label>
-                <input type="number" class="form-control custom-form-control" min="0" id="adult" placeholder="No of Adult"/>
-              </div>
-            </div>
-
-            <div class="col-sm-3">
-              <div class="form-group">
-                <label class="sr-only" for="children">children</label>
-                <input type="number" class="form-control custom-form-control" min="0" id="children" placeholder="No of Children"/>
-              </div>
-            </div>
-
-                <div class="col-sm-12">
-                  <div class="form-group">
-                    <textarea class="form-control custom-form-control" rows="3" ngModel name="message" maxlength="500" #message="ngModel" placeholder="More Details"></textarea>
-                    <span class="error-message" *ngIf="!message.valid && mobile.touched">Max character length is 500.</span>
-                  </div>
+              <div class="col-sm-3">
+                <div class="form-group">
+                  <label class="sr-only" for="adult">adult</label>
+                  <input type="number" class="form-control custom-form-control" min="0" id="adult" placeholder="No of Adult" />
                 </div>
+              </div>
+
+              <div class="col-sm-3">
+                <div class="form-group">
+                  <label class="sr-only" for="children">children</label>
+                  <input type="number" class="form-control custom-form-control" min="0" id="children" placeholder="No of Children" />
+                </div>
+              </div>
+
+              <div class="col-sm-12">
+                <div class="form-group">
+                  <textarea class="form-control custom-form-control" rows="3" ngModel name="message" maxlength="500" #message="ngModel" placeholder="More Details"></textarea>
+                  <span class="error-message" *ngIf="!message.valid && mobile.touched">Max character length is 500.</span>
+                </div>
+              </div>
 
 
-        </div>
+            </div>
             <div class="col-sm-12 text-right home-form-button">
               <button type="submit" class="btn btn-success green-button">submit</button>
             </div>
@@ -283,33 +173,29 @@
           <form (ngSubmit)="onSubmit('custom')" #f2="ngForm">
             <div class="row">
               <div class="col-sm-3">
-                  <div class="form-group">
-                    <select class="form-control custom-form-control" ngModel name="duration">
-                      <option value="" disabled selected hidden>Tour Duration</option>
-                      <option>1 Day</option>
-                      <option>2 Day</option>
-                      <option>3 Day</option>
-                      <option>4 Day</option>
-                      <option>5 Day</option>
-                      <option>6 Day</option>
-                      <option>7 Day</option>
-                      <option>8 Day</option>
-                    </select>
-                  </div>
+                <div class="form-group">
+                  <select class="form-control custom-form-control" ngModel name="duration">
+                    <option value="" disabled selected hidden>Tour Duration</option>
+                    <option>1 Day</option>
+                    <option>2 Day</option>
+                    <option>3 Day</option>
+                    <option>4 Day</option>
+                    <option>5 Day</option>
+                    <option>6 Day</option>
+                    <option>7 Day</option>
+                    <option>8 Day</option>
+                  </select>
                 </div>
+              </div>
 
-                <div class="col-sm-3 modal-date-input">
-                    <div class="form-group">
-                      <label class="sr-only" for="arrivalDate2">Arrival Date</label>
-                      <input readonly type="text" class="form-control custom-form-control" id="arrivalDate2"
-                             placeholder="Arrival Date"
-                             [minDate]="minDate"
-                             #dp="bsDatepicker"
-                             bsDatepicker [(bsValue)]="date2" value="{{ date2 | date:'yyyy-MM-dd' }}"
-                             [(ngModel)] = "dateArrival2" name="arrivalDate2" #arrivalDate2="ngModel"
-                             required/>
-                    </div>
-                  </div>
+              <div class="col-sm-3 modal-date-input">
+                <div class="form-group">
+                  <label class="sr-only" for="arrivalDate2">Arrival Date</label>
+                  <input readonly type="text" class="form-control custom-form-control" id="arrivalDate2" placeholder="Arrival Date" [minDate]="minDate"
+                    #dp="bsDatepicker" bsDatepicker [(bsValue)]="date2" value="{{ date2 | date:'yyyy-MM-dd' }}" [(ngModel)]="dateArrival2"
+                    name="arrivalDate2" #arrivalDate2="ngModel" required/>
+                </div>
+              </div>
 
               <div class="col-sm-3">
                 <div class="form-group">
@@ -318,85 +204,64 @@
                 </div>
               </div>
 
-              <div class="col-sm-3" >
+              <div class="col-sm-3">
                 <div class="form-group">
                   <label class="sr-only" for="email">Email</label>
-                  <input type="email" class="form-control custom-form-control" id="email2" placeholder="Email" ngModel name="email2" required email #email2="ngModel"/>
+                  <input type="email" class="form-control custom-form-control" id="email2" placeholder="Email" ngModel name="email2" required
+                    email #email2="ngModel" />
                   <span class="error-message" *ngIf="!email2.valid && email2.touched">Invalid Email Address.</span>
                 </div>
               </div>
 
-                  <div class="col-sm-3">
-                    <div class="form-group select-form-group">
-                      <label class="sr-only">Your Country</label>
-                      <ng-select (change)="setCountryCode('custom',selectedCountry2)"
-                                [items]="countryList"
-                                 bindLabel="name"
-                                 placeholder="Select your Country"
-                                 [(ngModel)] = "selectedCountry2"
-                                name="country2"
-                      class="custom-form-control">
-                      </ng-select>
-                    </div>
-                  </div>
-
-                <div class="col-sm-3">
-
-                  <div class="form-group">
-                    <label class="sr-only" for="mobileNumber">Mobile Number</label>
-                    <div class="row">
-                      <div class="col-xs-4 no-padding-right">
-                        <input class="form-control custom-form-control" disabled placeholder="Code" ngModel name="code2">
-                      </div>
-                      <div class="col-xs-8 no-padding-left">
-                        <input type="text" class="form-control custom-form-control"
-                               id="mobileNumber" pattern="[0-9]{9,10}" [disabled]="selectedCountry2 == null" maxlength="10"
-                               placeholder="Mobile Number" ngModel name="mobile2" #mobile2="ngModel" required/>
-                      </div>
-                    </div>
-                    <span class="error-message" *ngIf="!mobile2.valid && mobile2.touched">Invalid Phone Number.</span>
-                  </div>
+              <div class="col-sm-3">
+                <div class="form-group select-form-group">
+                  <label class="sr-only">Your Country</label>
+                  <ng-select (change)="setCountryCode('custom',selectedCountry2)" [items]="countryList" bindLabel="name" placeholder="Select your Country"
+                    [(ngModel)]="selectedCountry2" name="country2" class="custom-form-control">
+                  </ng-select>
                 </div>
-
-
-
-
-                  <!--<div class="form-group">-->
-                      <!--<div class="input-group">-->
-                      <!--<span class="input-group-addon custom-form-control" id="basic-addon1" ngModel name="code2" disabled>+94</span>-->
-                      <!--<input type="text" class="form-control custom-form-control" id="mobileNumber" pattern="[0-9]{9,10}" [disabled]="selectedCountry2 == null" maxlength="10"-->
-                             <!--placeholder="Mobile Number" ngModel name="mobile2" #mobile2="ngModel" required aria-describedby="basic-addon1">-->
-                      <!--</div>-->
-                      <!--<span class="error-message" *ngIf="!mobile2.valid && mobile2.touched">Invalid Phone Number.</span>-->
-                    <!--</div>-->
-
-
-
-
-
-
-
-
-                  <div class="col-sm-3">
-                    <div class="form-group">
-                      <label class="sr-only" for="adult">adult</label>
-                      <input type="number" class="form-control custom-form-control" min="0" id="adult" placeholder="No of Adult"/>
-                    </div>
-                  </div>
-
-            <div class="col-sm-3">
-              <div class="form-group">
-                <label class="sr-only" for="children">children</label>
-                <input type="number" class="form-control custom-form-control" min="0" id="children" placeholder="No of Children"/>
               </div>
-            </div>
 
-                  <div class="col-sm-12">
-                    <div class="form-group">
-                      <textarea class="form-control custom-form-control" rows="3" ngModel name="message2" maxlength="500" #message2="ngModel" placeholder="More Details"></textarea>
-                      <span class="error-message" *ngIf="!message2.valid && message2.touched">Max character length is 500.</span>
+              <div class="col-sm-3">
+
+                <div class="form-group">
+                  <label class="sr-only" for="mobileNumber">Mobile Number</label>
+                  <div class="row">
+                    <div class="col-xs-4 no-padding-right">
+                      <input class="form-control custom-form-control" disabled placeholder="Code" ngModel name="code2">
+                    </div>
+                    <div class="col-xs-8 no-padding-left">
+                      <input type="text" class="form-control custom-form-control" id="mobileNumber" pattern="[0-9]{9,10}" [disabled]="selectedCountry2 == null"
+                        maxlength="10" placeholder="Mobile Number" ngModel name="mobile2" #mobile2="ngModel" required/>
                     </div>
                   </div>
+                  <span class="error-message" *ngIf="!mobile2.valid && mobile2.touched">Invalid Phone Number.</span>
+                </div>
+              </div>
+
+
+              <div class="col-sm-3">
+                <div class="form-group">
+                  <label class="sr-only" for="adult">adult</label>
+                  <input type="number" class="form-control custom-form-control" min="0" name="adults" ngModel id="adult" placeholder="No of Adult"
+                  />
+                </div>
+              </div>
+
+              <div class="col-sm-3">
+                <div class="form-group">
+                  <label class="sr-only" for="children">children</label>
+                  <input type="number" class="form-control custom-form-control" min="0" id="children" name="children" ngModel placeholder="No of Children"
+                  />
+                </div>
+              </div>
+
+              <div class="col-sm-12">
+                <div class="form-group">
+                  <textarea class="form-control custom-form-control" rows="3" ngModel name="message2" maxlength="500" #message2="ngModel" placeholder="More Details"></textarea>
+                  <span class="error-message" *ngIf="!message2.valid && message2.touched">Max character length is 500.</span>
+                </div>
+              </div>
 
 
             </div>
@@ -405,7 +270,7 @@
               <button type="submit" class="btn btn-success green-button">submit</button>
             </div>
           </form>
-      </div>
+        </div>
       </div>
 
     </div>
@@ -418,15 +283,18 @@
 
 <div class="container-fluid why-sis-container wow bounceInUp">
   <div class="row why-sis-row">
-    <h2 class="home-headings text-center">Discover <span class="home-headings-blue">Sis Tour Operators</span></h2>
+    <h2 class="home-headings text-center">Discover
+      <span class="home-headings-blue">Sis Tour Operators</span>
+    </h2>
 
-    <p class="text-center">Welcome to SIS Tour Operators! We SIS Tour Operators were in the industry for so many years gaining experience and serving our clients with trust and care.
-      We make sure the happiness, enthusiasm, safety and comfort of our clients through 0% complains. Our concept is to serve client with no extra money or hidden charges.
-      They will only have to bring money for their shopping and personal interest, rest will be looked after from SIS Tour Operators.  </p>
+    <p class="text-center">Welcome to SIS Tour Operators! We SIS Tour Operators were in the industry for so many years gaining experience and serving
+      our clients with trust and care. We make sure the happiness, enthusiasm, safety and comfort of our clients through
+      0% complains. Our concept is to serve client with no extra money or hidden charges. They will only have to bring money
+      for their shopping and personal interest, rest will be looked after from SIS Tour Operators. </p>
 
-    <p class="text-center">Our Main Office is situated at Wellawatte, Colombo, and it’s very easy to find. We will be replying our guests within few hours of their enquiries through mails. We strongly
-      believe the trust of our repeating guests and we care our travelers comfort. Our trustworthy team of experts will provide the maximum satisfaction happiness and the
-      comfort of our clients.</p>
+    <p class="text-center">Our Main Office is situated at Wellawatte, Colombo, and it’s very easy to find. We will be replying our guests within
+      few hours of their enquiries through mails. We strongly believe the trust of our repeating guests and we care our travelers
+      comfort. Our trustworthy team of experts will provide the maximum satisfaction happiness and the comfort of our clients.</p>
   </div>
 </div>
 
@@ -436,22 +304,26 @@
 
 <div class="container-fluid home-package-container wow bounceInUp" id="packages">
   <div class="row">
-    <h2 class="home-headings text-center" style="margin-bottom: 25px">Tour <span class="home-headings-blue">Packages</span></h2>
+    <h2 class="home-headings text-center" style="margin-bottom: 25px">Tour
+      <span class="home-headings-blue">Packages</span>
+    </h2>
   </div>
 
   <div class="row">
     <div>
       <div class="col-md-6 home-packages">
         <div class="day-label text-center">
-          <p><strong>{{packageMoreDetails.days}}</strong></p>
+          <p>
+            <strong>{{packageMoreDetails.days}}</strong>
+          </p>
           <p>Days</p>
         </div>
         <div class="home-packages-images home-packages-images-first" [style.backgroundImage]="'url('+ packageMoreDetails.imagePath+'/'+packageMoreDetails.backgroundImage +')'">
 
-        <div class="package-text-wrapper text-center package-main">
-          <h2 class="text-uppercase">{{packageMoreDetails.mainTopic}}</h2>
-          <p></p>
-        </div>
+          <div class="package-text-wrapper text-center package-main">
+            <h2 class="text-uppercase">{{packageMoreDetails.mainTopic}}</h2>
+            <p></p>
+          </div>
 
         </div>
       </div>
@@ -461,7 +333,10 @@
             <div class="panel-heading">{{packageMoreDetails.mainTopic}}</div>
             <div class="panel-body">
               <ul class="list-inline">
-                <li *ngFor="let locations of locationCovered"><span><i class="fa fa-map-marker fa-lg"></i></span>{{locations}}</li>
+                <li *ngFor="let locations of locationCovered">
+                  <span>
+                    <i class="fa fa-map-marker fa-lg"></i>
+                  </span>{{locations}}</li>
               </ul>
 
               <div class="text-right">
@@ -475,7 +350,9 @@
 
     <div class="col-md-3 home-packages" *ngFor="let p of packageList">
       <div class="day-label text-center">
-        <p><strong>{{p.days}}</strong></p>
+        <p>
+          <strong>{{p.days}}</strong>
+        </p>
         <p>Days</p>
       </div>
       <div class="home-packages-images home-packages-images-small" [style.backgroundImage]="'url('+ p.imagePath+'/'+p.backgroundImage +')'">
@@ -515,7 +392,9 @@
   <div class="row">
 
     <div>
-      <h2 class="home-headings text-center">Our <span class="home-headings-blue">Services</span></h2>
+      <h2 class="home-headings text-center">Our
+        <span class="home-headings-blue">Services</span>
+      </h2>
     </div>
     <div class="service-image-set-wrapper text-center">
       <div class="service-block">
@@ -565,21 +444,32 @@
   <div class="row">
 
     <div>
-      <h2 class="home-headings text-center">Our <span class="home-headings-blue">Clients</span> Says</h2>
+      <h2 class="home-headings text-center">Our
+        <span class="home-headings-blue">Clients</span> Says</h2>
     </div>
 
     <div class="testimonial">
 
       <div *ngFor="let t of testimonials">
         <div class="testimonial-box text-center">
-          <div><span><i class="fa fa-quote-left fa-5x"></i></span></div>
-          <p><em>{{t.feedback}}</em></p>
+          <div>
+            <span>
+              <i class="fa fa-quote-left fa-5x"></i>
+            </span>
+          </div>
+          <p>
+            <em>{{t.feedback}}</em>
+          </p>
         </div>
         <div class="pro-pic" [style.backgroundImage]="'url('+ t.imagePath+'/'+t.clientImage +')'"></div>
 
         <div class="pro-pic-description">
-          <p><strong>{{t.name}}</strong></p>
-          <p><small>{{t.city}}, {{t.country}}</small></p>
+          <p>
+            <strong>{{t.name}}</strong>
+          </p>
+          <p>
+            <small>{{t.city}}, {{t.country}}</small>
+          </p>
         </div>
       </div>
     </div>
@@ -590,5 +480,3 @@
 
 
 <!--my wrapper ends-->
-
-
