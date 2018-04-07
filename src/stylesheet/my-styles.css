@@ -1298,6 +1298,11 @@ body{
 
 /*contact us end*/
 
+.wait-modal{
+  z-index : 20001!important;
+  text-align: center!important;
+}
+
 /*alert starts*/
 
 .my-alert{

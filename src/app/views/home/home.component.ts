@@ -23,7 +23,7 @@ export class HomeComponent implements OnInit {
 
   @ViewChild('f') inquiryForm: NgForm
   @ViewChild('f2') inquiryFormCustom: NgForm
-  @ViewChild('f3') inquiryFormModal: NgForm
+  // @ViewChild('f3') inquiryFormModal: NgForm
 
   packageList: any = [];
   allPackageList: any = [];
@@ -45,6 +45,7 @@ export class HomeComponent implements OnInit {
   dateArrival: any;
   dateArrival1: any;
   dateArrival2: any;
+  
   modalConfig : any = {
     title : "Customized Trip",
     isDurationWise : true,

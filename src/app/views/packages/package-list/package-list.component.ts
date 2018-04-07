@@ -22,6 +22,12 @@ export class PackageListComponent implements OnInit {
   countryList : any = [];
   selectedCountry : any;
 
+  modalConfig : any = {
+    title : "Customized Trip",
+    isDurationWise : true,
+    selectedPackage : null
+  }
+
   constructor(private datePipe: DatePipe,private router:Router) { }
 
   ngOnInit() {
@@ -38,13 +44,6 @@ export class PackageListComponent implements OnInit {
       }else{
         this.inquiryForm.form.patchValue({code: obj.code})
       }
-    }
-  }
-
-  resetForm(type){
-    if(type === 'lessDescribed'){
-      this.inquiryForm.reset();
-      this.inquiryForm.form.patchValue({package:'default'})
     }
   }
 
