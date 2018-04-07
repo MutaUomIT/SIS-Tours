@@ -312,9 +312,9 @@ export class HomeComponent implements OnInit {
       });
     });
 
-    // $(document).ready(function () {
-    //   wow.init();
-    // });
+    $(document).ready(function () {
+      wow.init();
+    });
 
 
   }
