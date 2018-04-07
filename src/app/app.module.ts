@@ -11,13 +11,15 @@ import { AboutLankaComponent } from './views/about-lanka/about-lanka.component';
 import { TestimonialsComponent } from './views/testimonials/testimonials.component';
 import { AboutSisComponent } from './views/about-sis/about-sis.component';
 import { ContactsComponent } from './views/contacts/contacts.component';
-import {FormsModule} from "@angular/forms";
+import { FormsModule } from "@angular/forms";
 import { PackageListComponent } from './views/packages/package-list/package-list.component';
-import {NgSelectModule, NG_SELECT_DEFAULT_CONFIG} from "@ng-select/ng-select";
+import { NgSelectModule, NG_SELECT_DEFAULT_CONFIG } from "@ng-select/ng-select";
 import { MailSendingService } from './services/mail-sending.service';
 import { MsgPopupService } from './services/msg-popup.service';
 import { CommonModule, DatePipe } from '@angular/common';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import { SendInquiryComponent } from './views/send-inquiry/send-inquiry.component';
+
 
 
 @NgModule({
@@ -30,7 +32,8 @@ import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
     TestimonialsComponent,
     AboutSisComponent,
     ContactsComponent,
-    PackageListComponent
+    PackageListComponent,
+    SendInquiryComponent
   ],
   imports: [
     CommonModule,
