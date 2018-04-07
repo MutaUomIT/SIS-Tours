@@ -3,9 +3,9 @@
 @import "~bootstrap/dist/css/bootstrap.css";
 @import "~@ng-select/ng-select/themes/default.theme.css";
 
-.goog-te-banner-frame{
-  display: none!important;
-}
+/*.goog-te-banner-frame{*/
+  /*display: none!important;*/
+/*}*/
 
 .goog-logo-link{
   display: none;
