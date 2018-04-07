@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, Input } from '@angular/core';
 import { CountryList } from "../../configFiles/countryList";
 import { NgForm } from '@angular/forms';
 import { MailSendingService } from '../../services/mail-sending.service';
@@ -13,6 +13,8 @@ import { DatePipe } from '@angular/common';
 export class SendInquiryComponent implements OnInit {
 
   @ViewChild('f') inquiryFormModal: NgForm
+
+  @Input() modalConfig: any;
 
   countryList: any = [];
 
@@ -34,7 +36,8 @@ export class SendInquiryComponent implements OnInit {
       var dataPipe = new DatePipe("en-US");
 
       var inquiryInModal = {
-        duration: this.inquiryFormModal.value.duration,
+        duration: null,
+        selectedPackage: null,
         arrivalDate: dataPipe.transform(this.inquiryFormModal.value.arrivalDate, 'dd-MM-yyyy'),
         email: this.inquiryFormModal.value.email,
         name: this.inquiryFormModal.value.name,
@@ -44,6 +47,12 @@ export class SendInquiryComponent implements OnInit {
         children: this.inquiryFormModal.value.children,
         adults: this.inquiryFormModal.value.adults
       }
+      if (this.modalConfig.isDurationWise) {
+        inquiryInModal.duration = this.inquiryFormModal.value.duration;
+      } else {
+        inquiryInModal.selectedPackage = this.modalConfig.selectedPackage
+      }
+
       this.sendInquiryWithCustomizePackages(inquiryInModal);
     } else {
       this.msgPopup.broadcastMessagePopupEventEmitter({
@@ -65,17 +74,36 @@ export class SendInquiryComponent implements OnInit {
   }
 
   private sendInquiryWithCustomizePackages(inquiryCustom) {
+
+    var packageDetails = {
+      title: null,
+      selectedOption: null
+    }
+
     var mailObject = {
       subject: '',
       mailBody: ''
     };
 
-    mailObject.subject = "Inquiry from Customize package";
-    mailObject.mailBody = '<p><bold>Tour Duration :</bold>' + inquiryCustom.duration + '</p><br/><p><bold>ArrivalDate :</bold>' + inquiryCustom.arrivalDate +
-      '</p><br/><p><bold>Country :</bold>' + inquiryCustom.country + '</p><br/><p><bold>Name :</bold>' + inquiryCustom.name + '</p><br/><p><bold>Mobile :</bold>'
-      + inquiryCustom.mobile +
-      '</p><br/><p><bold>Email :</bold><a href=' + inquiryCustom.email + '>' + inquiryCustom.email + '</a></p><br/><p><bold>No of adults :</bold>' + inquiryCustom.adults +
-      '</p></br><p><bold>No of children :</bold>' + inquiryCustom.children + '</p></br><p><bold>Message :</bold></p><br/>' + inquiryCustom.message;
+    if (inquiryCustom.duration != null) {
+      packageDetails.title = "Tour Duration";
+      packageDetails.selectedOption = inquiryCustom.duration;
+    } else if (inquiryCustom.selectedPackage != null) {
+      packageDetails.title = "Selected Package";
+      packageDetails.selectedOption = inquiryCustom.selectedPackage;
+    }
+
+    mailObject.subject = "Inquiry Details";
+    mailObject.mailBody =
+      '<p><bold>' + packageDetails.title + ' :</bold>' + packageDetails.selectedOption +
+      '</p><br/><p><bold>ArrivalDate :</bold>' + inquiryCustom.arrivalDate +
+      '</p><br/><p><bold>Country :</bold>' + inquiryCustom.country +
+      '</p><br/><p><bold>Name :</bold>' + inquiryCustom.name +
+      '</p><br/><p><bold>Mobile :</bold>' + inquiryCustom.mobile +
+      '</p><br/><p><bold>Email :</bold><a href=' + inquiryCustom.email + '>' + inquiryCustom.email +
+      '</a></p><br/><p><bold>No of adults :</bold>' + inquiryCustom.adults +
+      '</p></br><p><bold>No of children :</bold>' + inquiryCustom.children +
+      '</p></br><p><bold>Message :</bold></p><br/>' + inquiryCustom.message;
 
     this.mailSender.sendMail(mailObject).then((res: any) => {
       if (res.status === 200) {
@@ -88,6 +116,4 @@ export class SendInquiryComponent implements OnInit {
     this.inquiryFormModal.reset();
     this.inquiryFormModal.form.patchValue({ duration: '' })
   }
-
-
 }

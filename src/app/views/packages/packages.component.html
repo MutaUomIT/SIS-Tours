@@ -1,291 +1,16 @@
 <!--my wrapper starts-->
 
-    <!--upper modal star-->
+<!--upper modal star-->
 
-    <div class="modal fade" id="packageUpperModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title" id="myModalLabe2">{{packageMoreDetails.mainTopic}} - {{packageMoreDetails.subTopic}}</h4>
-          </div>
-          <form class="modal-body" (ngSubmit)="onSubmit('fullDescribed')" #f="ngForm">
+<app-send-inquiry [modalConfig]="modalConfig"></app-send-inquiry>
 
-          <div class="modal-body">
-
-            <div class="row">
-
-              <div class="col-sm-3">
-                <div class="form-group">
-                  <select class="form-control custom-form-control" disabled>
-
-                    <option disabled selected>{{packageMoreDetails.mainTopic}} - {{packageMoreDetails.subTopic}}</option>
-
-                  </select>
-                </div>
-              </div>
-
-              <div class="col-sm-3 modal-date-input">
-                <div class="form-group">
-                  <label class="sr-only" for="arrivalDate">Arrival Date</label>
-                  <input readonly type="text" class="form-control custom-form-control" id="arrivalDate"
-                         placeholder="Arrival Date"
-                         [minDate]="minDate"
-                         #dp="bsDatepicker"
-                         bsDatepicker [(bsValue)]="DateArrive" value="{{ DateArrive | date:'yyyy-MM-dd' }}"
-                         [(ngModel)] = "dateArrival" name="arrivalDate" #arrivalDate="ngModel"
-                         required/>
-                </div>
-              </div>
-
-              <div class="col-sm-3">
-                <div class="form-group">
-                  <label class="sr-only" for="name2">Name</label>
-                  <input type="text" class="form-control custom-form-control" id="name3" placeholder="Your Name">
-                </div>
-              </div>
-
-              <div class="col-sm-3">
-                <div class="form-group">
-                  <label class="sr-only" for="email2">Email</label>
-                  <input type="email" class="form-control custom-form-control" id="email3" placeholder="Email">
-                </div>
-              </div>
-
-              <!--<div class="col-sm-3">-->
-                <!--<div class="form-group">-->
-                  <!--<label class="sr-only" for="yourCountry2">Your Country</label>-->
-                  <!--<input type="text" class="form-control custom-form-control" id="yourCountry3" placeholder="Your Country">-->
-                <!--</div>-->
-              <!--</div>-->
-              <div class="col-sm-3" style="clear: both">
-                <div class="form-group select-form-group">
-                  <label class="sr-only">Your Country</label>
-                  <ng-select (change)="setCountryCode('fullDescribed',selectedCountry)"
-                             [items]="countryList"
-                             bindLabel="name"
-                             placeholder="Select your Country"
-                             [(ngModel)] = "selectedCountry"
-                             name="country"
-                             class="custom-form-control">
-                  </ng-select>
-                </div>
-              </div>
-
-              <!--<div class="col-sm-3">-->
-                <!--<div class="form-group">-->
-                  <!--<label class="sr-only" for="mobileNumber">Mobile Number</label>-->
-                  <!--<div class="row">-->
-                    <!--<div class="col-xs-4 no-padding-right">-->
-                      <!--<input class="form-control custom-form-control" disabled style="padding-right: 0px" placeholder="Code">-->
-                    <!--</div>-->
-                    <!--<div class="col-xs-8 no-padding-left">-->
-                      <!--<input type="text" class="form-control custom-form-control" placeholder="Mobile Number" />-->
-                    <!--</div>-->
-                  <!--</div>-->
-                  <!--<span class="error-message">Invalid Phone Number.</span>-->
-                <!--</div>-->
-              <!--</div>-->
-              <div class="col-sm-3">
-                <div class="form-group">
-                  <label class="sr-only" for="mobileNumber">Mobile Number</label>
-                  <div class="row">
-                    <div class="col-xs-4 no-padding-right">
-                      <input class="form-control custom-form-control" disabled style="padding-right: 0px" placeholder="Code" ngModel name="code">
-                    </div>
-                    <div class="col-xs-8 no-padding-left">
-                      <input type="text" class="form-control custom-form-control"
-                             id="mobileNumber" pattern="[0-9]{9,10}" [disabled]="selectedCountry == null" maxlength="10"
-                             placeholder="Mobile Number" ngModel name="mobile" #mobile="ngModel" required/>
-                    </div>
-                  </div>
-                  <span class="error-message" *ngIf="!mobile.valid && mobile.touched">Invalid Phone Number.</span>
-                </div>
-              </div>
-
-              <div class="col-sm-3">
-                <div class="form-group">
-                  <label class="sr-only" for="adult">adult</label>
-                  <input type="number" class="form-control custom-form-control" min="0" id="adult" placeholder="No of Adult"/>
-                </div>
-              </div>
-
-              <div class="col-sm-3">
-                <div class="form-group">
-                  <label class="sr-only" for="children">children</label>
-                  <input type="number" class="form-control custom-form-control" min="0" id="children" placeholder="No of Children"/>
-                </div>
-              </div>
-
-              <div class="col-sm-12">
-                <div class="form-group">
-                  <textarea class="form-control custom-form-control" rows="3" placeholder="More Details"></textarea>
-                </div>
-              </div>
-
-            </div>
-
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-default green-button white-button" data-dismiss="modal">CLOSE</button>
-            <button type="button" class="btn btn-primary green-button">ENQUIRE</button>
-          </div>
-            </form>
-        </div>
-      </div>
-    </div>
-
-    <!--upper modal ends-->
-
-
-    <!--modal starts-->
-
-    <!-- Modal -->
-    <div class="modal fade" id="packageModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title" id="myModalLabel">Customized Trip</h4>
-          </div>
-          <form class="modal-body" (ngSubmit)="onSubmit('lessDescribed')" #f2="ngForm">
-
-          <div class="modal-body">
-
-            <div class="row">
-
-              <div class="col-sm-3">
-                <div class="form-group">
-                  <select class="form-control custom-form-control">
-                    <option disabled selected hidden>Tour Duration</option>
-                    <option>1 Day</option>
-                    <option>2 Day</option>
-                    <option>3 Day</option>
-                    <option>4 Day</option>
-                    <option>5 Day</option>
-                    <option>6 Day</option>
-                    <option>7 Day</option>
-                    <option>8 Day</option>
-                  </select>
-                </div>
-              </div>
-
-              <div class="col-sm-3 modal-date-input">
-                <div class="form-group">
-                  <label class="sr-only" for="arrivalDate2">Arrival Date</label>
-                  <input readonly type="text" class="form-control custom-form-control" id="arrivalDate2"
-                         placeholder="Arrival Date"
-                         [minDate]="minDate"
-                         #dp="bsDatepicker"
-                         bsDatepicker [(bsValue)]="DateArrive2" value="{{ DateArrive2 | date:'yyyy-MM-dd' }}"
-                         [(ngModel)] = "dateArrival2" name="arrivalDate2" #arrivalDate2="ngModel"
-                         required/>
-                </div>
-              </div>
-
-              <div class="col-sm-3">
-                <div class="form-group">
-                  <label class="sr-only" for="name2">Name</label>
-                  <input type="text" class="form-control custom-form-control" id="name2" placeholder="Your Name">
-                </div>
-              </div>
-
-              <div class="col-sm-3">
-                <div class="form-group">
-                  <label class="sr-only" for="email2">Email</label>
-                  <input type="email" class="form-control custom-form-control" id="email2" placeholder="Email">
-                </div>
-              </div>
-
-              <!--<div class="col-sm-3">-->
-                <!--<div class="form-group">-->
-                  <!--<label class="sr-only" for="yourCountry2">Your Country</label>-->
-                  <!--<input type="text" class="form-control custom-form-control" id="yourCountry2" placeholder="Your Country">-->
-                <!--</div>-->
-              <!--</div>-->
-              <div class="col-sm-3" style="clear: both">
-                <div class="form-group select-form-group">
-                  <label class="sr-only">Your Country</label>
-                  <ng-select (change)="setCountryCode('lessDescribed',selectedCountry2)"
-                             [items]="countryList"
-                             bindLabel="name"
-                             placeholder="Select your Country"
-                             [(ngModel)] = "selectedCountry2"
-                             name="country2"
-                             class="custom-form-control">
-                  </ng-select>
-                </div>
-              </div>
-
-              <!--<div class="col-sm-3">-->
-                <!--<div class="form-group">-->
-                  <!--<label class="sr-only" for="mobileNumber">Mobile Number</label>-->
-                  <!--<div class="row">-->
-                    <!--<div class="col-xs-4 no-padding-right">-->
-                      <!--<input class="form-control custom-form-control" disabled style="padding-right: 0px" placeholder="Code">-->
-                    <!--</div>-->
-                    <!--<div class="col-xs-8 no-padding-left">-->
-                      <!--<input type="text" class="form-control custom-form-control" placeholder="Mobile Number" />-->
-                    <!--</div>-->
-                  <!--</div>-->
-                  <!--<span class="error-message">Invalid Phone Number.</span>-->
-                <!--</div>-->
-              <!--</div>-->
-              <div class="col-sm-3">
-                <div class="form-group">
-                  <label class="sr-only" for="mobileNumber2">Mobile Number</label>
-                  <div class="row">
-                    <div class="col-xs-4 no-padding-right">
-                      <input class="form-control custom-form-control" disabled style="padding-right: 0px" placeholder="Code" ngModel name="code2">
-                    </div>
-                    <div class="col-xs-8 no-padding-left">
-                      <input type="text" class="form-control custom-form-control"
-                             id="mobileNumber2" pattern="[0-9]{9,10}" [disabled]="selectedCountry2 == null" maxlength="10"
-                             placeholder="Mobile Number" ngModel name="mobile2" #mobile2="ngModel" required/>
-                    </div>
-                  </div>
-                  <span class="error-message" *ngIf="!mobile2.valid && mobile2.touched">Invalid Phone Number.</span>
-                </div>
-              </div>
-
-              <div class="col-sm-3">
-                <div class="form-group">
-                  <label class="sr-only" for="adult2">adult</label>
-                  <input type="number" class="form-control custom-form-control" min="0" id="adult2" placeholder="No of Adult"/>
-                </div>
-              </div>
-
-              <div class="col-sm-3">
-                <div class="form-group">
-                  <label class="sr-only" for="children2">children</label>
-                  <input type="number" class="form-control custom-form-control" min="0" id="children2" placeholder="No of Children"/>
-                </div>
-              </div>
-
-              <div class="col-sm-12">
-                <div class="form-group">
-                  <textarea class="form-control custom-form-control" rows="3" placeholder="More Details"></textarea>
-                </div>
-              </div>
-            </div>
-
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-default green-button white-button" data-dismiss="modal">CLOSE</button>
-            <button type="button" class="btn btn-primary green-button">ENQUIRE</button>
-          </div>
-            </form>
-        </div>
-      </div>
-    </div>
-
-    <!--modal ends-->
+<!--upper modal ends-->
 
 <div class="container-fluid package-details-container">
   <div class="row package-details-upper-row">
     <div class="col-md-8 no-padding-left">
       <div class="package-details-slider">
-        <div *ngFor="let sliderImages of sliderImagesList" >
+        <div *ngFor="let sliderImages of sliderImagesList">
           <div class="slider-image" [style.backgroundImage]="'url('+ packageMoreDetails.imagePath+'/'+sliderImages +')'"></div>
         </div>
 
@@ -295,11 +20,14 @@
     <div class="col-md-4 quick-section">
       <div class="heading text-center">
         <h3 class="text-uppercase">{{packageMoreDetails.mainTopic}}</h3>
-        <button class="btn btn-success green-button" data-toggle="modal" data-target="#packageUpperModal">ENQUIRE NOW</button>
+        <button class="btn btn-success green-button" data-toggle="modal" data-target="#homeModal">ENQUIRE NOW</button>
       </div>
 
       <ul class="list-inline">
-        <li *ngFor="let locations of locationCovered"><span><i class="fa fa-map-marker fa-lg"></i></span>{{locations}}</li>
+        <li *ngFor="let locations of locationCovered">
+          <span>
+            <i class="fa fa-map-marker fa-lg"></i>
+          </span>{{locations}}</li>
       </ul>
     </div>
   </div>
@@ -311,9 +39,15 @@
 
       <!-- Nav tabs -->
       <ul class="nav nav-tabs" role="tablist">
-        <li role="presentation" class="active"><a data-target="#itinerary" aria-controls="itinerary" role="tab" data-toggle="tab">Itinerary</a></li>
-        <li role="presentation"><a data-target="#activities" aria-controls="activities" role="tab" data-toggle="tab">Activities</a></li>
-        <li role="presentation"><a data-target="#inclusions" aria-controls="inclusions" role="tab" data-toggle="tab">Inclusions</a></li>
+        <li role="presentation" class="active">
+          <a data-target="#itinerary" aria-controls="itinerary" role="tab" data-toggle="tab">Itinerary</a>
+        </li>
+        <li role="presentation">
+          <a data-target="#activities" aria-controls="activities" role="tab" data-toggle="tab">Activities</a>
+        </li>
+        <li role="presentation">
+          <a data-target="#inclusions" aria-controls="inclusions" role="tab" data-toggle="tab">Inclusions</a>
+        </li>
       </ul>
 
     </div>
@@ -321,31 +55,38 @@
 </div>
 
 <div class="container">
-    <div class="row package-row">
-      <!-- Tab panes -->
-      <div class="tab-content">
-        <div role="tabpanel" class="tab-pane fade in active" id="itinerary">
-          <div class="col-md-6">
-            <div class="day-button-wrapper" *ngFor="let dayObj of dayWiseActivityList">
+  <div class="row package-row">
+    <!-- Tab panes -->
+    <div class="tab-content">
+      <div role="tabpanel" class="tab-pane fade in active" id="itinerary">
+        <div class="col-md-6">
+          <div class="day-button-wrapper" *ngFor="let dayObj of dayWiseActivityList">
 
-              <button class="btn btn-primary" type="button" data-toggle="collapse" [attr.data-target]="'#day'+dayObj.day" aria-expanded="false" [attr.aria-controls]="'day'+dayObj.day">
-                Day<span class="text-right"><i class="fa fa-angle-double-right fa-4x" aria-hidden="true"></i></span>
-              </button>
+            <button class="btn btn-primary" type="button" data-toggle="collapse" [attr.data-target]="'#day'+dayObj.day" aria-expanded="false"
+              [attr.aria-controls]="'day'+dayObj.day">
+              Day
+              <span class="text-right">
+                <i class="fa fa-angle-double-right fa-4x" aria-hidden="true"></i>
+              </span>
+            </button>
 
-              <div class="collapse day-button-collapse" [id]="'day'+dayObj.day">
-                <div class="well">
-                  <ul class="list-unstyled">
-                    <li *ngFor="let activity of dayObj.dailyActivities"><span><i class="fa fa-hand-o-right" aria-hidden="true"></i></span>{{activity}}</li>
-                  </ul>
-                </div>
+            <div class="collapse day-button-collapse" [id]="'day'+dayObj.day">
+              <div class="well">
+                <ul class="list-unstyled">
+                  <li *ngFor="let activity of dayObj.dailyActivities">
+                    <span>
+                      <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+                    </span>{{activity}}</li>
+                </ul>
               </div>
             </div>
           </div>
+        </div>
 
-          <!--3 packages and custom package show-->
-          <div [hidden]="packageItem != 2">
-          <div class="col-md-6" >
-            <div class="package-images"  *ngFor="let p of packageList" [style.backgroundImage]="'url('+ p.imagePath+'/'+p.backgroundImage +')'">
+        <!--3 packages and custom package show-->
+        <div [hidden]="packageItem != 2">
+          <div class="col-md-6">
+            <div class="package-images" *ngFor="let p of packageList" [style.backgroundImage]="'url('+ p.imagePath+'/'+p.backgroundImage +')'">
               <div class="package-text-wrapper text-center">
                 <p class="text-uppercase">{{p.mainTopic}}</p>
                 <p>{{p.subTopic}}</p>
@@ -366,160 +107,165 @@
               <button class="btn btn-success green-button" (click)="onClickLessPackages()">LESS PACKAGES</button>
             </div>
           </div>
-            </div>
-
-          <!--all packages list show-->
-          <div [hidden]="packageItem == 2">
-            <div class="col-md-6" >
-              <div class="package-images"  *ngFor="let p2 of packageList2" [style.backgroundImage]="'url('+ p2.imagePath+'/'+p2.backgroundImage +')'">
-                <div class="package-text-wrapper text-center">
-                  <p class="text-uppercase">{{p2.mainTopic}}</p>
-                  <p>{{p2.subTopic}}</p>
-                </div>
-                <div class="package-button">
-                  <button class="btn btn-success green-button" (click)="viewMoreOnPackage(p2.id)">VIEW MORE</button>
-                </div>
-              </div>
-              <div class="package-images" style="background-color: #0078d7">
-                <div class="package-text-wrapper text-center">
-                  <p class="text-uppercase">Need a customized trip?</p>
-                </div>
-                <div class="package-button">
-                  <button class="btn btn-success green-button" data-toggle="modal" data-target="#packageModal" (click)="loadPackageDetails(p2.id)">ENQUIRE NOW</button>
-                </div>
-              </div>
-              <div class="text-center" style="margin-top: 15px">
-                <button class="btn btn-success green-button" (click)="onClickMorePackages()">MORE PACKAGES</button>
-              </div>
-            </div>
-          </div>
-
         </div>
 
-        <div role="tabpanel" class="tab-pane fade" id="activities">
-          <div class="col-md-6 activity-box">
-            <ul class="list-unstyled">
-              <li *ngFor="let ativities of ativitiesCovered"><span><i aria-hidden="true" class="fa fa-hand-o-right"></i></span>{{ativities}}</li>
-            </ul>
-          </div>
-          <!--3 packages and custom package show-->
-          <div [hidden]="packageItem != 2">
-            <div class="col-md-6" >
-              <div class="package-images"  *ngFor="let p of packageList" [style.backgroundImage]="'url('+ p.imagePath+'/'+p.backgroundImage +')'">
-                <div class="package-text-wrapper text-center">
-                  <p class="text-uppercase">{{p.mainTopic}}</p>
-                  <p>{{p.subTopic}}</p>
-                </div>
-                <div class="package-button">
-                  <button class="btn btn-success green-button" (click)="viewMoreOnPackage(p.id)">VIEW MORE</button>
-                </div>
+        <!--all packages list show-->
+        <div [hidden]="packageItem == 2">
+          <div class="col-md-6">
+            <div class="package-images" *ngFor="let p2 of packageList2" [style.backgroundImage]="'url('+ p2.imagePath+'/'+p2.backgroundImage +')'">
+              <div class="package-text-wrapper text-center">
+                <p class="text-uppercase">{{p2.mainTopic}}</p>
+                <p>{{p2.subTopic}}</p>
               </div>
-              <div class="package-images" style="background-color: #0078d7">
-                <div class="package-text-wrapper text-center">
-                  <p class="text-uppercase">Need a customized trip?</p>
-                </div>
-                <div class="package-button">
-                  <button class="btn btn-success green-button" data-toggle="modal" data-target="#packageModal" (click)="loadPackageDetails(p.id)">ENQUIRE NOW</button>
-                </div>
-              </div>
-              <div class="text-center" style="margin-top: 15px">
-                <button class="btn btn-success green-button" (click)="onClickLessPackages()">LESS PACKAGES</button>
+              <div class="package-button">
+                <button class="btn btn-success green-button" (click)="viewMoreOnPackage(p2.id)">VIEW MORE</button>
               </div>
             </div>
-          </div>
-
-          <!--all packages list show-->
-          <div [hidden]="packageItem == 2">
-            <div class="col-md-6" >
-              <div class="package-images"  *ngFor="let p2 of packageList2" [style.backgroundImage]="'url('+ p2.imagePath+'/'+p2.backgroundImage +')'">
-                <div class="package-text-wrapper text-center">
-                  <p class="text-uppercase">{{p2.mainTopic}}</p>
-                  <p>{{p2.subTopic}}</p>
-                </div>
-                <div class="package-button">
-                  <button class="btn btn-success green-button" (click)="viewMoreOnPackage(p2.id)">VIEW MORE</button>
-                </div>
+            <div class="package-images" style="background-color: #0078d7">
+              <div class="package-text-wrapper text-center">
+                <p class="text-uppercase">Need a customized trip?</p>
               </div>
-              <div class="package-images" style="background-color: #0078d7">
-                <div class="package-text-wrapper text-center">
-                  <p class="text-uppercase">Need a customized trip?</p>
-                </div>
-                <div class="package-button">
-                  <button class="btn btn-success green-button" data-toggle="modal" data-target="#packageModal" (click)="loadPackageDetails(p2.id)">ENQUIRE NOW</button>
-                </div>
+              <div class="package-button">
+                <button class="btn btn-success green-button" data-toggle="modal" data-target="#packageModal" (click)="loadPackageDetails(p2.id)">ENQUIRE NOW</button>
               </div>
-              <div class="text-center" style="margin-top: 15px">
-                <button class="btn btn-success green-button" (click)="onClickMorePackages()">MORE PACKAGES</button>
-              </div>
+            </div>
+            <div class="text-center" style="margin-top: 15px">
+              <button class="btn btn-success green-button" (click)="onClickMorePackages()">MORE PACKAGES</button>
             </div>
           </div>
         </div>
-        <div role="tabpanel" class="tab-pane fade" id="inclusions">
 
-          <div class="col-md-6 inclusion-box">
-            <ul class="list-unstyled">
-              <li *ngFor="let inclusions of inclusionList"><span><i aria-hidden="true" class="fa fa-hand-o-right"></i></span>{{inclusions}}</li>
-            </ul>
-            <p class="text-danger"><b>Driver’s and guide’s tips are not included</b></p>
-          </div>
+      </div>
 
-          <!--3 packages and custom package show-->
-          <div [hidden]="packageItem != 2">
-            <div class="col-md-6" >
-              <div class="package-images"  *ngFor="let p of packageList" [style.backgroundImage]="'url('+ p.imagePath+'/'+p.backgroundImage +')'">
-                <div class="package-text-wrapper text-center">
-                  <p class="text-uppercase">{{p.mainTopic}}</p>
-                  <p>{{p.subTopic}}</p>
-                </div>
-                <div class="package-button">
-                  <button class="btn btn-success green-button" (click)="viewMoreOnPackage(p.id)">VIEW MORE</button>
-                </div>
+      <div role="tabpanel" class="tab-pane fade" id="activities">
+        <div class="col-md-6 activity-box">
+          <ul class="list-unstyled">
+            <li *ngFor="let ativities of ativitiesCovered">
+              <span>
+                <i aria-hidden="true" class="fa fa-hand-o-right"></i>
+              </span>{{ativities}}</li>
+          </ul>
+        </div>
+        <!--3 packages and custom package show-->
+        <div [hidden]="packageItem != 2">
+          <div class="col-md-6">
+            <div class="package-images" *ngFor="let p of packageList" [style.backgroundImage]="'url('+ p.imagePath+'/'+p.backgroundImage +')'">
+              <div class="package-text-wrapper text-center">
+                <p class="text-uppercase">{{p.mainTopic}}</p>
+                <p>{{p.subTopic}}</p>
               </div>
-              <div class="package-images" style="background-color: #0078d7">
-                <div class="package-text-wrapper text-center">
-                  <p class="text-uppercase">Need a customized trip?</p>
-                </div>
-                <div class="package-button">
-                  <button class="btn btn-success green-button" data-toggle="modal" data-target="#packageModal" (click)="loadPackageDetails(p.id)">ENQUIRE NOW</button>
-                </div>
-              </div>
-              <div class="text-center" style="margin-top: 15px">
-                <button class="btn btn-success green-button" (click)="onClickLessPackages()">LESS PACKAGES</button>
+              <div class="package-button">
+                <button class="btn btn-success green-button" (click)="viewMoreOnPackage(p.id)">VIEW MORE</button>
               </div>
             </div>
-          </div>
-
-          <!--all packages list show-->
-          <div [hidden]="packageItem == 2">
-            <div class="col-md-6" >
-              <div class="package-images"  *ngFor="let p2 of packageList2" [style.backgroundImage]="'url('+ p2.imagePath+'/'+p2.backgroundImage +')'">
-                <div class="package-text-wrapper text-center">
-                  <p class="text-uppercase">{{p2.mainTopic}}</p>
-                  <p>{{p2.subTopic}}</p>
-                </div>
-                <div class="package-button">
-                  <button class="btn btn-success green-button" (click)="viewMoreOnPackage(p2.id)">VIEW MORE</button>
-                </div>
+            <div class="package-images" style="background-color: #0078d7">
+              <div class="package-text-wrapper text-center">
+                <p class="text-uppercase">Need a customized trip?</p>
               </div>
-              <div class="package-images" style="background-color: #0078d7">
-                <div class="package-text-wrapper text-center">
-                  <p class="text-uppercase">Need a customized trip?</p>
-                </div>
-                <div class="package-button">
-                  <button class="btn btn-success green-button" data-toggle="modal" data-target="#packageModal" (click)="loadPackageDetails(p2.id)">ENQUIRE NOW</button>
-                </div>
-              </div>
-              <div class="text-center" style="margin-top: 15px">
-                <button class="btn btn-success green-button" (click)="onClickMorePackages()">MORE PACKAGES</button>
+              <div class="package-button">
+                <button class="btn btn-success green-button" data-toggle="modal" data-target="#packageModal" (click)="loadPackageDetails(p.id)">ENQUIRE NOW</button>
               </div>
             </div>
+            <div class="text-center" style="margin-top: 15px">
+              <button class="btn btn-success green-button" (click)="onClickLessPackages()">LESS PACKAGES</button>
+            </div>
           </div>
+        </div>
 
+        <!--all packages list show-->
+        <div [hidden]="packageItem == 2">
+          <div class="col-md-6">
+            <div class="package-images" *ngFor="let p2 of packageList2" [style.backgroundImage]="'url('+ p2.imagePath+'/'+p2.backgroundImage +')'">
+              <div class="package-text-wrapper text-center">
+                <p class="text-uppercase">{{p2.mainTopic}}</p>
+                <p>{{p2.subTopic}}</p>
+              </div>
+              <div class="package-button">
+                <button class="btn btn-success green-button" (click)="viewMoreOnPackage(p2.id)">VIEW MORE</button>
+              </div>
+            </div>
+            <div class="package-images" style="background-color: #0078d7">
+              <div class="package-text-wrapper text-center">
+                <p class="text-uppercase">Need a customized trip?</p>
+              </div>
+              <div class="package-button">
+                <button class="btn btn-success green-button" data-toggle="modal" data-target="#packageModal" (click)="loadPackageDetails(p2.id)">ENQUIRE NOW</button>
+              </div>
+            </div>
+            <div class="text-center" style="margin-top: 15px">
+              <button class="btn btn-success green-button" (click)="onClickMorePackages()">MORE PACKAGES</button>
+            </div>
+          </div>
         </div>
       </div>
+      <div role="tabpanel" class="tab-pane fade" id="inclusions">
+
+        <div class="col-md-6 inclusion-box">
+          <ul class="list-unstyled">
+            <li *ngFor="let inclusions of inclusionList">
+              <span>
+                <i aria-hidden="true" class="fa fa-hand-o-right"></i>
+              </span>{{inclusions}}</li>
+          </ul>
+          <p class="text-danger">
+            <b>Driver’s and guide’s tips are not included</b>
+          </p>
+        </div>
+
+        <!--3 packages and custom package show-->
+        <div [hidden]="packageItem != 2">
+          <div class="col-md-6">
+            <div class="package-images" *ngFor="let p of packageList" [style.backgroundImage]="'url('+ p.imagePath+'/'+p.backgroundImage +')'">
+              <div class="package-text-wrapper text-center">
+                <p class="text-uppercase">{{p.mainTopic}}</p>
+                <p>{{p.subTopic}}</p>
+              </div>
+              <div class="package-button">
+                <button class="btn btn-success green-button" (click)="viewMoreOnPackage(p.id)">VIEW MORE</button>
+              </div>
+            </div>
+            <div class="package-images" style="background-color: #0078d7">
+              <div class="package-text-wrapper text-center">
+                <p class="text-uppercase">Need a customized trip?</p>
+              </div>
+              <div class="package-button">
+                <button class="btn btn-success green-button" data-toggle="modal" data-target="#packageModal" (click)="loadPackageDetails(p.id)">ENQUIRE NOW</button>
+              </div>
+            </div>
+            <div class="text-center" style="margin-top: 15px">
+              <button class="btn btn-success green-button" (click)="onClickLessPackages()">LESS PACKAGES</button>
+            </div>
+          </div>
+        </div>
+
+        <!--all packages list show-->
+        <div [hidden]="packageItem == 2">
+          <div class="col-md-6">
+            <div class="package-images" *ngFor="let p2 of packageList2" [style.backgroundImage]="'url('+ p2.imagePath+'/'+p2.backgroundImage +')'">
+              <div class="package-text-wrapper text-center">
+                <p class="text-uppercase">{{p2.mainTopic}}</p>
+                <p>{{p2.subTopic}}</p>
+              </div>
+              <div class="package-button">
+                <button class="btn btn-success green-button" (click)="viewMoreOnPackage(p2.id)">VIEW MORE</button>
+              </div>
+            </div>
+            <div class="package-images" style="background-color: #0078d7">
+              <div class="package-text-wrapper text-center">
+                <p class="text-uppercase">Need a customized trip?</p>
+              </div>
+              <div class="package-button">
+                <button class="btn btn-success green-button" data-toggle="modal" data-target="#packageModal" (click)="loadPackageDetails(p2.id)">ENQUIRE NOW</button>
+              </div>
+            </div>
+            <div class="text-center" style="margin-top: 15px">
+              <button class="btn btn-success green-button" (click)="onClickMorePackages()">MORE PACKAGES</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
     </div>
+  </div>
 </div>
 <!--my wrapper ends-->
-
-
-

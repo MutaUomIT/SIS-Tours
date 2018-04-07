@@ -8,7 +8,6 @@ import { NgForm } from '@angular/forms';
 import { MailSendingService } from '../../services/mail-sending.service';
 import { MsgPopupService } from '../../services/msg-popup.service';
 import { DatePipe } from '@angular/common';
-// import { WOW } from 'wowjs/dist/wow.min';
 
 declare var jquery: any;
 declare var $: any;
@@ -45,6 +44,11 @@ export class HomeComponent implements OnInit {
   dateArrival: any;
   dateArrival1: any;
   dateArrival2: any;
+  modalConfig : any = {
+    title : "Customized Trip",
+    isDurationWise : true,
+    selectedPackage : null
+  }
 
 
   constructor(private datePipe: DatePipe, private http: HttpClient, private router: Router, private mailSender: MailSendingService, private msgPopup: MsgPopupService) {
