@@ -8,6 +8,7 @@ import { NgForm } from '@angular/forms';
 import { MailSendingService } from '../../services/mail-sending.service';
 import { MsgPopupService } from '../../services/msg-popup.service';
 import { DatePipe } from '@angular/common';
+import { WOW } from 'wowjs/dist/wow.min';
 
 declare var jquery: any;
 declare var $: any;
@@ -316,9 +317,9 @@ export class HomeComponent implements OnInit {
       });
     });
 
-    $(document).ready(function () {
-      wow.init();
-    });
+    $(document).ready(function(){
+      new WOW().init();
+     });
 
 
   }
