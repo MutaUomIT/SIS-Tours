@@ -32,8 +32,8 @@
       "scripts": [
         "../src/javascript/jquery-3.3.1.min.js",
         "../src/javascript/bootstrap.min.js",
-      "../src/javascript/slick.min.js",
-        "../src/javascript/wow.min.js"
+      "../src/javascript/slick.min.js"
+
       ],
       "environmentSource": "environments/environment.ts",
       "environments": {
