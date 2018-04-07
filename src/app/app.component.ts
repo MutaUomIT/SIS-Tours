@@ -1,6 +1,5 @@
 import { Component, ViewChild, ElementRef } from '@angular/core';
 import { MsgPopupService } from './services/msg-popup.service';
-import { MailSendingService } from './services/mail-sending.service';
 declare var jquery: any;
 declare var $: any;
 
@@ -16,27 +15,31 @@ export class AppComponent {
   title = 'app';
   msgObj: any = {};
 
-  constructor(public msgPopup: MsgPopupService,public mailSendingService : MailSendingService) {
+  constructor(public msgPopup: MsgPopupService) {
 
     this.initJqueryFunctions();
 
     this.msgPopup.messagePopupEventEmitter.subscribe((response: any) => {
 
-      if (response.type === 'error') {
-        this.displayMsg(false, response.msg);
-      } else if (response.type === 'success') {
-        this.displayMsg(true, response.msg);
+      switch (response.type) {
+
+        case 'error':
+          this.displayMsg(false, response.msg);
+          break;
+
+        case 'success':
+          this.displayMsg(true, response.msg);
+          break;
+
+        case 'show_modal':
+          this.showPleaseWaitModal();
+          break;
+
+        case 'hide_modal':
+          this.hidePleaseWaitModal();
+          break;
       }
     });
-
-    this.mailSendingService.pleaseWaitModalEvent.subscribe((res:any)=>{
-      if(res === 'show_modal'){
-        this.showPleaseWaitModal();
-      }else if(res === 'hide_modal'){
-        this.hidePleaseWaitModal();
-      }
-    })
-
   }
 
   ngOnInit() {
@@ -69,11 +72,11 @@ export class AppComponent {
 
   }
 
-  showPleaseWaitModal(){
+  showPleaseWaitModal() {
     $(this.pleaseWaitModal.nativeElement).modal('show');
   }
 
-  hidePleaseWaitModal(){
+  hidePleaseWaitModal() {
     $(this.pleaseWaitModal.nativeElement).modal('hide');
   }
 }

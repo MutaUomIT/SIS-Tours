@@ -207,26 +207,6 @@ export class HomeComponent implements OnInit {
           msg: "Please fill Valid Data"
         });
       }
-    } else if (formName === 'modal') {
-      if (this.inquiryFormModal.valid) {
-
-        var inquiryInModal = {
-          duration: this.inquiryFormModal.value.duration,
-          arrivalDate: this.inquiryFormModal.value.arrivalDate2,
-          email: this.inquiryFormModal.value.email2,
-          name: this.inquiryFormModal.value.name2,
-          country: this.inquiryFormModal.value.country2.name,
-          mobile: this.inquiryFormModal.value.country2.code + ' ' + parseInt(this.inquiryFormModal.value.mobile2),
-          message: this.inquiryFormModal.value.message2
-        }
-
-        this.sendInquiryWithCustomizePackages(inquiryInModal);
-      } else {
-        this.msgPopup.broadcastMessagePopupEventEmitter({
-          type: 'error',
-          msg: "Please fill Valid Data"
-        });
-      }
     }
 
   }
