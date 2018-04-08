@@ -85,18 +85,17 @@ export class AppComponent {
 
   loadingOverlayElement(){
 
-    $('.temp').click(function () {
-      $.LoadingOverlay("show");
+    $(document).ready(function () {
+      $('.temp').click(function () {
+        console.log('dddd');
+        $.LoadingOverlay("show");
 
-      setTimeout(function(){
-        $.LoadingOverlay("hide");
-      }, 3000);
-    })
-
-
-
-
-  }
+        setTimeout(function(){
+          $.LoadingOverlay("hide");
+        }, 3000);
+      })
+    });
+    }
 
 
 }
