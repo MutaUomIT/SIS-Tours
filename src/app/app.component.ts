@@ -1,6 +1,6 @@
 import { Component, ViewChild, ElementRef } from '@angular/core';
 import { MsgPopupService } from './services/msg-popup.service';
-
+import { Ng4LoadingSpinnerService } from 'ng4-loading-spinner';
 declare var jquery: any;
 declare var $: any;
 
@@ -16,7 +16,7 @@ export class AppComponent {
   title = 'app';
   msgObj: any = {};
 
-  constructor(public msgPopup: MsgPopupService) {
+  constructor(public msgPopup: MsgPopupService,private spinnerService: Ng4LoadingSpinnerService) {
 
     this.initJqueryFunctions();
 
@@ -46,7 +46,7 @@ export class AppComponent {
   ngOnInit() {
     this.resetMsgObject();
     // this.showPleaseWaitModal();
-    this.loadingOverlayElement();
+    //this.loadingOverlayElement();
   }
 
   initJqueryFunctions() { }
@@ -85,19 +85,20 @@ export class AppComponent {
 
   loadingOverlayElement(){
 
-    $('.temp').click(function () {
-      $.LoadingOverlay("show");
+    // $('.temp').click(function () {
+    //   $.LoadingOverlay("show");
+    //
+    //   setTimeout(function(){
+    //     $.LoadingOverlay("hide");
+    //   }, 3000);
+    // })
 
-      setTimeout(function(){
-        $.LoadingOverlay("hide");
-      }, 3000);
-    })
-
-
-
-
+    this.spinnerService.show();
+    setTimeout(() => {
+      /** spinner ends after 5 seconds */
+      this.spinnerService.hide();
+    }, 5000);
   }
-
 
 }
 

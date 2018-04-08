@@ -19,7 +19,7 @@ import { MsgPopupService } from './services/msg-popup.service';
 import { CommonModule, DatePipe } from '@angular/common';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { SendInquiryComponent } from './views/send-inquiry/send-inquiry.component';
-
+import { Ng4LoadingSpinnerModule } from 'ng4-loading-spinner';
 
 
 @NgModule({
@@ -42,6 +42,7 @@ import { SendInquiryComponent } from './views/send-inquiry/send-inquiry.componen
     HttpClientModule,
     FormsModule,
     NgSelectModule,
+    Ng4LoadingSpinnerModule,
     BsDatepickerModule.forRoot()
   ],
   providers: [
