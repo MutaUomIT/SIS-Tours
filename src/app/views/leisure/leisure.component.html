@@ -47,7 +47,7 @@
 <div class="container">
   <div class="row">
 
-    <div class="col-md-12 lanka-block">
+    <div class="col-md-12 lanka-block" [hidden]="currentPage != 1">
 
       <div class="col-md-6 lanka-image-container no-padding-left-right">
         <div class="lanka-image" style="background-image: url('../assets/images/leisure/1.jpg')"></div>
@@ -71,7 +71,7 @@
 
     </div>
 
-    <div class="col-md-12 lanka-block">
+    <div class="col-md-12 lanka-block" [hidden]="currentPage != 1">
 
       <div class="col-md-6 lanka-image-container no-padding-left-right">
         <div class="lanka-image" style="background-image: url('../assets/images/leisure/2.jpg')"></div>
@@ -95,7 +95,7 @@
 
     </div>
 
-    <div class="col-md-12 lanka-block">
+    <div class="col-md-12 lanka-block" [hidden]="currentPage != 1">
 
       <div class="col-md-6 lanka-image-container no-padding-left-right">
         <div class="lanka-image" style="background-image: url('../assets/images/leisure/3.jpg')"></div>
@@ -121,7 +121,7 @@
     <!-- </div> -->
 
     <!-- <div [hidden]="currentPage != 2"> -->
-    <div class="col-md-12 lanka-block">
+    <div class="col-md-12 lanka-block" [hidden]="currentPage != 2">
 
       <div class="col-md-6 lanka-image-container no-padding-left-right">
         <div class="lanka-image" style="background-image: url('../assets/images/leisure/4.jpg')"></div>
@@ -145,7 +145,7 @@
 
     </div>
 
-    <div class="col-md-12 lanka-block">
+    <div class="col-md-12 lanka-block" [hidden]="currentPage != 2">
 
       <div class="col-md-6 lanka-image-container no-padding-left-right">
         <div class="lanka-image" style="background-image: url('../assets/images/leisure/5.jpg')"></div>
@@ -169,7 +169,7 @@
 
     </div>
 
-    <div class="col-md-12 lanka-block">
+    <div class="col-md-12 lanka-block" [hidden]="currentPage != 2">
 
       <div class="col-md-6 lanka-image-container no-padding-left-right">
         <div class="lanka-image" style="background-image: url('../assets/images/leisure/6.jpg')"></div>
@@ -193,7 +193,9 @@
 
     </div>
 
-    <div class="col-md-12 lanka-block">
+    <!-- <div [hidden]="currentPage != 3"> -->
+
+    <div class="col-md-12 lanka-block" [hidden]="currentPage != 3">
 
       <div class="col-md-6 lanka-image-container no-padding-left-right">
         <div class="lanka-image" style="background-image: url('../assets/images/leisure/7.jpg')"></div>
@@ -218,8 +220,7 @@
     </div>
     <!-- </div> -->
 
-    <!-- <div [hidden]="currentPage != 3"> -->
-    <div class="col-md-12 lanka-block">
+    <div class="col-md-12 lanka-block" [hidden]="currentPage != 3">
 
       <div class="col-md-6 lanka-image-container no-padding-left-right">
         <div class="lanka-image" style="background-image: url('../assets/images/leisure/8.jpg')"></div>
@@ -243,7 +244,7 @@
 
     </div>
 
-    <div class="col-md-12 lanka-block">
+    <div class="col-md-12 lanka-block" [hidden]="currentPage != 3">
 
       <div class="col-md-6 lanka-image-container no-padding-left-right">
         <div class="lanka-image" style="background-image: url('../assets/images/leisure/9.jpg')"></div>
@@ -267,7 +268,7 @@
 
     </div>
 
-    <div class="col-md-12 lanka-block">
+    <div class="col-md-12 lanka-block" [hidden]="currentPage != 3">
 
       <div class="col-md-6 lanka-image-container no-padding-left-right">
         <div class="lanka-image" style="background-image: url('../assets/images/leisure/10.jpg')"></div>
@@ -299,8 +300,8 @@
         <ul class="pager">
           <!--<li class="previous disabled"><a href="#"><span aria-hidden="true">&larr;</span> Older</a></li>-->
           <!--<li class="next"><a href="#">Newer <span aria-hidden="true">&rarr;</span></a></li>-->
-          <li class="previous"><span class="btn"><span aria-hidden="true">&larr;</span> Previous</span></li>
-          <li class="next"><span class="btn">Next <span aria-hidden="true">&rarr;</span></span></li>
+          <li class="previous"><span class="btn" *ngIf="older" (click)="loadPrev()"><span aria-hidden="true">&larr;</span> Previous</span></li>
+          <li class="next"><span class="btn" *ngIf="newer" (click)="loadNext()">Next <span aria-hidden="true">&rarr;</span></span></li>
         </ul>
       </nav>
     </div>

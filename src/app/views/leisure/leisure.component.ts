@@ -9,16 +9,37 @@ declare var $ :any;
 })
 export class LeisureComponent implements OnInit {
 
+  currentPage : number = 1;
+  older : boolean = false;
+  newer : boolean = true;
+
   constructor() { }
 
   ngOnInit() {
-    this.initJqueryFunctions();
     window.scroll(0,0);
     this.imageZoomEffect();
     this.stringLimitationSetter();
   }
 
-  initJqueryFunctions(){}
+  loadPrev(){
+    if(this.currentPage != 1){
+      this.currentPage = this.currentPage - 1;
+      this.newer = true;
+    }
+    if(this.currentPage == 1){
+      this.older = false;
+    }
+  }
+
+  loadNext(){
+    if(this.currentPage != 3){
+      this.currentPage = this.currentPage + 1;
+      this.older = true;
+    }
+    if(this.currentPage == 3){
+      this.newer = false;
+    }
+  }
 
   //image zoom effect
   imageZoomEffect()
