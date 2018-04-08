@@ -76,7 +76,7 @@ body{
 }
 
 .home-headings{
-  font-family: Fertigo Pro Regular, Serif;
+  font-family: Fertigo Pro, sans-serif;
 }
 
 .home-headings-blue{
@@ -368,7 +368,7 @@ body{
 
 .home-slider-row p:nth-child(1){
   color: white;
-  font-family: Fertigo Pro Regular, serif;
+  font-family: Fertigo Pro, sans-serif;
   position: absolute;
   /*font-size: calc(20px + 7vw);*/
   font-size: 100px;
@@ -1156,7 +1156,7 @@ body{
 }
 
 .lanka-banner h1{
-  font-family: Fertigo Pro Regular, Serif;
+  font-family: Fertigo Pro, sans-serif;
   color: white;
   font-size: 80px;
   padding-top: 60px;
@@ -1215,6 +1215,12 @@ body{
   padding-left: 5px;
 }
 
+.lanka-banner .print-button{
+  text-align: right;
+  margin-top: 80px;
+  margin-right: 20px;
+}
+
 /*sri lanka ends*/
 
 /*about us starts*/
@@ -1232,7 +1238,7 @@ body{
 
 .about-us-banner-text h2{
   color: white;
-  font-family: Fertigo Pro Regular, Serif;
+  font-family: Fertigo Pro, sans-serif;
 }
 
 .about-us-banner-text p{
@@ -1359,7 +1365,7 @@ body{
 }
 
 .more-packages-header{
-  font-family: Fertigo Pro Regular, Serif;
+  font-family: Fertigo Pro, sans-serif;
   color: white;
   font-size: 70px;
   padding-top: 15px;
@@ -1375,6 +1381,28 @@ body{
 
 /*more packages ends*/
 
+/*leisure start*/
+
+@media (min-width: 992px) {
+  .things-list ul{
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    column-count: 2;
+  }
+}
+
+.things-list{
+  background-color:#F5F5F5 ;
+  padding: 30px;
+}
+
+@media (max-width: 768px) {
+  .leisure-banner{
+    height: 400px;
+  }
+}
+
+/*leisure ends*/
 .place-card .place-card-large{
   padding: 50px;
 }

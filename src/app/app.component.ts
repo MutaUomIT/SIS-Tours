@@ -1,5 +1,6 @@
 import { Component, ViewChild, ElementRef } from '@angular/core';
 import { MsgPopupService } from './services/msg-popup.service';
+
 declare var jquery: any;
 declare var $: any;
 
@@ -44,6 +45,8 @@ export class AppComponent {
 
   ngOnInit() {
     this.resetMsgObject();
+    // this.showPleaseWaitModal();
+    // this.loadingOverlayElement();
   }
 
   initJqueryFunctions() { }
@@ -79,6 +82,17 @@ export class AppComponent {
   hidePleaseWaitModal() {
     $(this.pleaseWaitModal.nativeElement).modal('hide');
   }
+
+//   loadingOverlayElement(){
+//     $.LoadingOverlay("show");
+//
+// // Hide it after 3 seconds
+//     setTimeout(function(){
+//       $.LoadingOverlay("hide");
+//     }, 3000);
+//   }
+
+
 }
 
 
