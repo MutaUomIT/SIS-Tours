@@ -95,7 +95,7 @@ export class AppComponent {
 
     this.spinnerService.show();
     setTimeout(() => {
-      /** spinner ends after 5 seconds */
+     /** spinner ends after 5 seconds */
       this.spinnerService.hide();
     }, 5000);
   }
