@@ -1081,6 +1081,10 @@ body{
   margin-bottom: 15px;
 }
 
+.arrows i:nth-of-type(2){
+  display: none;
+}
+
 /*package details ends*/
 
 /*footer starts*/

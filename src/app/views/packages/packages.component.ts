@@ -34,7 +34,7 @@ export class PackagesComponent implements OnInit {
   packageItem : number = 1;
   lessPackage : boolean = false;
   morePackage : boolean = true;
-  
+
   modalConfig : any ;
 
   constructor(private datePipe: DatePipe, private route: ActivatedRoute, private router:Router ) {}
@@ -44,6 +44,7 @@ export class PackagesComponent implements OnInit {
     this.packageImageSlider();
     this.getPackageList();
     window.scroll(0,0);
+    this.arrowAnimation();
 
     this.sub = this.route.params.subscribe(params => {
       this.id = +params['id']; // (+) converts string 'id' to a number
@@ -127,6 +128,50 @@ export class PackagesComponent implements OnInit {
     if(this.packageItem != 2){
       this.morePackage = false;
     }
+  }
+
+  // arrow animation
+
+  // arrowAnimation(){
+  //   $(document).ready(function () {
+  //     $('.day-button-wrapper button').click(function () {
+  //       $(this).parent().addClass('active');
+  //
+  //       $('.day-button-wrapper.active button span i:nth-of-type(1)').hide();
+  //       $('.day-button-wrapper.active button span i:nth-of-type(2)').show();
+  //     })
+  //   })
+  //
+  //   $(document).ready(function () {
+  //     $('.day-button-wrapper.active button').click(function () {
+  //       $('.day-button-wrapper.active').removeClass('active');
+  //
+  //       // $('.day-button-wrapper.active button span i:nth-of-type(1)').hide();
+  //       // $('.day-button-wrapper.active button span i:nth-of-type(2)').show();
+  //     })
+  //
+  //   })
+  //
+  // }
+
+  arrowAnimation(){
+    $(document).ready(function () {
+      $('.day-button-wrapper button').click(function () {
+        $(this).find('span i:nth-of-type(1)').hide();
+        $(this).find('span i:nth-of-type(2)').show();
+        $(this).parent().addClass('active');
+
+      })
+
+      $('.day-button-wrapper.active button').click(function () {
+        console.log("dcdcdc");
+        // $(this).parent().removeClass('active');
+        // $(this).find('span i:nth-of-type(1)').hide();
+        // $(this).find('span i:nth-of-type(2)').show();
+
+
+      })
+    })
   }
 
 }
