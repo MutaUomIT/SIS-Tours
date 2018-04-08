@@ -74,21 +74,23 @@ export class AppComponent {
   }
 
   showPleaseWaitModal() {
-    $(this.pleaseWaitModal.nativeElement).modal('show');
+    // $(this.pleaseWaitModal.nativeElement).modal('show');
+    this.spinnerService.show();
   }
 
   hidePleaseWaitModal() {
-    $(this.pleaseWaitModal.nativeElement).modal('hide');
+    // $(this.pleaseWaitModal.nativeElement).modal('hide');
+    this.spinnerService.hide();
   }
 
-  loadingOverlayElement(){
-
-    this.spinnerService.show();
-    setTimeout(() => {
-     /** spinner ends after 5 seconds */
-      this.spinnerService.hide();
-    }, 5000);
-  }
+  // loadingOverlayElement(){
+  //
+  //   this.spinnerService.show();
+  //   setTimeout(() => {
+  //    /** spinner ends after 5 seconds */
+  //     this.spinnerService.hide();
+  //   }, 5000);
+  // }
 
 }
 
