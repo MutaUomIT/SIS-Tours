@@ -46,7 +46,7 @@ export class AppComponent {
   ngOnInit() {
     this.resetMsgObject();
     // this.showPleaseWaitModal();
-    // this.loadingOverlayElement();
+    this.loadingOverlayElement();
   }
 
   initJqueryFunctions() { }
@@ -83,14 +83,20 @@ export class AppComponent {
     $(this.pleaseWaitModal.nativeElement).modal('hide');
   }
 
-//   loadingOverlayElement(){
-//     $.LoadingOverlay("show");
-//
-// // Hide it after 3 seconds
-//     setTimeout(function(){
-//       $.LoadingOverlay("hide");
-//     }, 3000);
-//   }
+  loadingOverlayElement(){
+
+    $('.temp').click(function () {
+      $.LoadingOverlay("show");
+
+      setTimeout(function(){
+        $.LoadingOverlay("hide");
+      }, 3000);
+    })
+
+
+
+
+  }
 
 
 }
