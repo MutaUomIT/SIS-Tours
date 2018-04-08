@@ -45,9 +45,7 @@ export class AppComponent {
 
   ngOnInit() {
     this.resetMsgObject();
-    // this.showPleaseWaitModal();
-    //this.loadingOverlayElement();
-  }
+    }
 
   initJqueryFunctions() { }
 
@@ -84,14 +82,6 @@ export class AppComponent {
   }
 
   loadingOverlayElement(){
-
-    // $('.temp').click(function () {
-    //   $.LoadingOverlay("show");
-    //
-    //   setTimeout(function(){
-    //     $.LoadingOverlay("hide");
-    //   }, 3000);
-    // })
 
     this.spinnerService.show();
     setTimeout(() => {

@@ -1135,6 +1135,10 @@ body{
   margin-bottom: 0;
 }
 
+.bottom-strip span{
+  margin: 10px;
+}
+
 .footer-social-icons{
   padding: 10px;
 }
