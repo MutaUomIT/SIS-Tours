@@ -1347,7 +1347,7 @@ body{
 
 #homeModal, #packageModal, #packageUpperModal, #morePackageUpperModal{
   top: 80px;
-  z-index: 9999;
+  z-index: 9998;
 }
 
 #homeModal .modal-content, #packageModal .modal-content, #packageUpperModal .modal-content, #morePackageUpperModal .modal-content{

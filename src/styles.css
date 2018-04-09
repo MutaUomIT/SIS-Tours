@@ -28,3 +28,10 @@ input.ng-invalid.ng-touched {
   color: red;
 }
 
+.modal-backdrop.in {
+  z-index: 9997!important;
+}
+
+.navbar-container {
+  z-index: 9997!important;
+}
