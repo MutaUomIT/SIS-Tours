@@ -52,12 +52,22 @@ export class PackagesComponent implements OnInit {
 
     this.loadPackageDetails(this.id);
 
-    this.modalConfig =  {
-      title : this.packageMoreDetails.mainTopic +' - ' + this.packageMoreDetails.subTopic ,
-      isDurationWise : false,
-      selectedPackage : this.packageMoreDetails.mainTopic +' - ' + this.packageMoreDetails.subTopic
-    }
+  }
 
+  private loadFormModal(type : string){
+    if(type === 'selected'){
+      this.modalConfig =  {
+        title : this.packageMoreDetails.mainTopic +' - ' + this.packageMoreDetails.subTopic ,
+        isDurationWise : false,
+        selectedPackage : this.packageMoreDetails.mainTopic +' - ' + this.packageMoreDetails.subTopic
+      }
+    }else if(type === 'customize'){
+      this.modalConfig = {
+        title : "Customized Trip",
+        isDurationWise : true,
+        selectedPackage : null
+      }
+    }
   }
 
   // package Details slider

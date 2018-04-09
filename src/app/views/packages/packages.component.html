@@ -20,7 +20,7 @@
     <div class="col-md-4 quick-section">
       <div class="heading text-center">
         <h3 class="text-uppercase">{{packageMoreDetails.mainTopic}}</h3>
-        <button class="btn btn-success green-button" data-toggle="modal" data-target="#homeModal">ENQUIRE NOW</button>
+        <button class="btn btn-success green-button" data-toggle="modal" data-target="#homeModal" (click)="loadFormModal('selected')">ENQUIRE NOW</button>
       </div>
 
       <ul class="list-inline">
@@ -101,7 +101,7 @@
                 <p class="text-uppercase">Need a customized trip?</p>
               </div>
               <div class="package-button">
-                <button class="btn btn-success green-button" data-toggle="modal" data-target="#packageModal" (click)="loadPackageDetails(p.id)">ENQUIRE NOW</button>
+                <button class="btn btn-success green-button" data-toggle="modal" data-target="#homeModal" (click)="loadFormModal('customize')">ENQUIRE NOW</button>
               </div>
             </div>
             <div class="text-center" style="margin-top: 15px">
@@ -127,7 +127,7 @@
                 <p class="text-uppercase">Need a customized trip?</p>
               </div>
               <div class="package-button">
-                <button class="btn btn-success green-button" data-toggle="modal" data-target="#packageModal" (click)="loadPackageDetails(p2.id)">ENQUIRE NOW</button>
+                <button class="btn btn-success green-button" data-toggle="modal" data-target="#homeModal" (click)="loadFormModal('customize')">ENQUIRE NOW</button>
               </div>
             </div>
             <div class="text-center" style="margin-top: 15px">
@@ -164,7 +164,7 @@
                 <p class="text-uppercase">Need a customized trip?</p>
               </div>
               <div class="package-button">
-                <button class="btn btn-success green-button" data-toggle="modal" data-target="#packageModal" (click)="loadPackageDetails(p.id)">ENQUIRE NOW</button>
+                <button class="btn btn-success green-button" data-toggle="modal" data-target="#homeModal" (click)="loadFormModal('customize')">ENQUIRE NOW</button>
               </div>
             </div>
             <div class="text-center" style="margin-top: 15px">
@@ -190,7 +190,7 @@
                 <p class="text-uppercase">Need a customized trip?</p>
               </div>
               <div class="package-button">
-                <button class="btn btn-success green-button" data-toggle="modal" data-target="#packageModal" (click)="loadPackageDetails(p2.id)">ENQUIRE NOW</button>
+                <button class="btn btn-success green-button" data-target="#homeModal" (click)="loadFormModal('customize')">ENQUIRE NOW</button>
               </div>
             </div>
             <div class="text-center" style="margin-top: 15px">
@@ -230,7 +230,7 @@
                 <p class="text-uppercase">Need a customized trip?</p>
               </div>
               <div class="package-button">
-                <button class="btn btn-success green-button" data-toggle="modal" data-target="#packageModal" (click)="loadPackageDetails(p.id)">ENQUIRE NOW</button>
+                <button class="btn btn-success green-button" data-toggle="modal" data-target="#homeModal" (click)="loadFormModal('customize')">ENQUIRE NOW</button>
               </div>
             </div>
             <div class="text-center" style="margin-top: 15px">
@@ -256,7 +256,7 @@
                 <p class="text-uppercase">Need a customized trip?</p>
               </div>
               <div class="package-button">
-                <button class="btn btn-success green-button" data-toggle="modal" data-target="#packageModal" (click)="loadPackageDetails(p2.id)">ENQUIRE NOW</button>
+                <button class="btn btn-success green-button" data-toggle="modal" data-target="#homeModal" (click)="loadFormModal('customize')">ENQUIRE NOW</button>
               </div>
             </div>
             <div class="text-center" style="margin-top: 15px">
