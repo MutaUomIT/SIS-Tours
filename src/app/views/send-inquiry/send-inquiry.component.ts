@@ -23,6 +23,7 @@ export class SendInquiryComponent implements OnInit {
   private _bsValue: Date;
   minDate = new Date();
   dateArrival: any;
+  selectedCountry : any;
 
   constructor(private datePipe: DatePipe, private mailSender: MailSendingService, private msgPopup: MsgPopupService) { }
 

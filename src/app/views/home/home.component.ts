@@ -61,8 +61,12 @@ export class HomeComponent implements OnInit {
         if (tree.fragment) {
           const element = document.querySelector("#" + tree.fragment);
           if (element) {
-            element.scrollIntoView(true);
+            setTimeout(() => {
+              element.scrollIntoView(true);
+            }, 10)
           }
+        }else{
+          window.scroll(0,0);
         }
       }
     });
