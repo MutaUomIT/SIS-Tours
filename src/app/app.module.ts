@@ -8,7 +8,6 @@ import { HomeComponent } from './views/home/home.component';
 import { PackagesComponent } from './views/packages/packages.component';
 import { LeisureComponent } from './views/leisure/leisure.component';
 import { AboutLankaComponent } from './views/about-lanka/about-lanka.component';
-import { TestimonialsComponent } from './views/testimonials/testimonials.component';
 import { AboutSisComponent } from './views/about-sis/about-sis.component';
 import { ContactsComponent } from './views/contacts/contacts.component';
 import { FormsModule } from "@angular/forms";
@@ -29,7 +28,6 @@ import { Ng4LoadingSpinnerModule } from 'ng4-loading-spinner';
     PackagesComponent,
     LeisureComponent,
     AboutLankaComponent,
-    TestimonialsComponent,
     AboutSisComponent,
     ContactsComponent,
     PackageListComponent,

@@ -62,6 +62,7 @@ export class HomeComponent implements OnInit {
           const element = document.querySelector("#" + tree.fragment);
           if (element) {
             setTimeout(() => {
+              this.wowAnimationStart();
               element.scrollIntoView(true);
             }, 10)
           }
@@ -255,6 +256,12 @@ export class HomeComponent implements OnInit {
     this.router.navigate(['/package-list']);
   };
 
+  wowAnimationStart(){
+    $(document).ready(function(){
+      new WOW().init();
+     });
+  }
+
   initJqueryFuctions() {
 
     //testominols slider
@@ -302,10 +309,6 @@ export class HomeComponent implements OnInit {
       });
     });
 
-    $(document).ready(function(){
-      new WOW().init();
-     });
-
-
+    this.wowAnimationStart();
   }
 }
