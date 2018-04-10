@@ -1172,7 +1172,7 @@ body{
   margin-bottom: 0;
 }
 
-.lanka-banner p{
+.lanka-banner>p{
   color: white;
   font-size: 15px;
   letter-spacing: 10px;
@@ -1225,8 +1225,12 @@ body{
 
 .lanka-banner .print-button{
   text-align: right;
-  margin-top: 80px;
+  margin-top: 50px;
   margin-right: 20px;
+}
+
+.print-button p{
+  color: white;
 }
 
 /*sri lanka ends*/

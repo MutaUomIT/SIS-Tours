@@ -57,7 +57,7 @@
 
                   <select class="form-control custom-form-control" [(ngModel)]="defaultPackage" name="package" required>
 
-                    <option value="default" disabled>SELECT A PACKAGE</option>
+                    <option value="default" disabled>Select a Package</option>
                     <option value="{{package.mainTopic}} - {{package.subTopic}}" *ngFor="let package of allPackageList">{{package.mainTopic}} - {{package.subTopic}}</option>
                   </select>
                 </div>
