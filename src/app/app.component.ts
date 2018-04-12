@@ -45,6 +45,7 @@ export class AppComponent {
 
   ngOnInit() {
     this.resetMsgObject();
+    this.collapseFunction();
     }
 
   initJqueryFunctions() { }
@@ -91,6 +92,14 @@ export class AppComponent {
   //     this.spinnerService.hide();
   //   }, 5000);
   // }
+
+  collapseFunction(){
+    $(document).ready(function () {
+      $('.navbar-nav>li>a').on('click', function(){
+        $('.navbar-collapse').collapse('hide');
+      });
+    })
+  }
 
 }
 
