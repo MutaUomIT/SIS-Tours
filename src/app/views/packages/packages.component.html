@@ -8,7 +8,7 @@
 
 <div class="container-fluid package-details-container">
   <div class="row package-details-upper-row">
-    <div class="col-md-8 no-padding-left">
+    <div class="col-md-8 no-padding-left package-slider-div">
       <div class="package-details-slider">
         <div *ngFor="let sliderImages of sliderImagesList">
           <div class="slider-image" [style.backgroundImage]="'url('+ packageMoreDetails.imagePath+'/'+sliderImages +')'"></div>
@@ -67,7 +67,7 @@
               Day
               <span class="text-right arrows">
                 <i class="fa fa-angle-double-right fa-4x" aria-hidden="true"></i>
-                <i class="fa fa-angle-double-down fa-4x" aria-hidden="true"></i>
+
               </span>
             </button>
 

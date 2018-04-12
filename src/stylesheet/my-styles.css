@@ -1085,6 +1085,12 @@ body{
   display: none;
 }
 
+@media (max-width: 992px) {
+  .package-slider-div{
+    padding-right: 0;
+  }
+}
+
 /*package details ends*/
 
 /*footer starts*/
@@ -1133,6 +1139,7 @@ body{
 .bottom-strip{
   background-color: #FFE500;
   padding: 15px;
+  font-size: 12px;
 }
 
 .bottom-strip p{
@@ -1295,6 +1302,12 @@ body{
   }
 }
 
+@media (max-width: 768px) {
+  .about-us-banner{
+    height: 400px;
+  }
+}
+
 /*about us ends*/
 
 /*contact us start*/
@@ -1411,6 +1424,12 @@ body{
 @media (max-width: 768px) {
   .leisure-banner{
     height: 400px;
+  }
+}
+
+@media (max-width: 576px) {
+  .leisure-banner{
+    height: 500px;
   }
 }
 

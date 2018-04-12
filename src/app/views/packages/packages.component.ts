@@ -44,7 +44,7 @@ export class PackagesComponent implements OnInit {
     this.packageImageSlider();
     this.getPackageList();
     window.scroll(0,0);
-    this.arrowAnimation();
+
 
     this.sub = this.route.params.subscribe(params => {
       this.id = +params['id']; // (+) converts string 'id' to a number
@@ -164,25 +164,25 @@ export class PackagesComponent implements OnInit {
   //
   // }
 
-  arrowAnimation(){
-    $(document).ready(function () {
-      $('.day-button-wrapper button').click(function () {
-        $(this).find('span i:nth-of-type(1)').hide();
-        $(this).find('span i:nth-of-type(2)').show();
-        $(this).parent().addClass('active');
-
-      })
-
-      $('.day-button-wrapper.active button').click(function () {
-        console.log("dcdcdc");
-        // $(this).parent().removeClass('active');
-        // $(this).find('span i:nth-of-type(1)').hide();
-        // $(this).find('span i:nth-of-type(2)').show();
-
-
-      })
-    })
-  }
+  // arrowAnimation(){
+  //   $(document).ready(function () {
+  //     $('.day-button-wrapper button').click(function () {
+  //       $(this).find('span i:nth-of-type(1)').hide();
+  //       $(this).find('span i:nth-of-type(2)').show();
+  //       $(this).parent().addClass('active');
+  //
+  //     })
+  //
+  //     $('.day-button-wrapper.active button').click(function () {
+  //       console.log("dcdcdc");
+  //       // $(this).parent().removeClass('active');
+  //       // $(this).find('span i:nth-of-type(1)').hide();
+  //       // $(this).find('span i:nth-of-type(2)').show();
+  //
+  //
+  //     })
+  //   })
+  // }
 
 }
 
