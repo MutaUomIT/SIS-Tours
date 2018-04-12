@@ -53,6 +53,14 @@ export class LeisureComponent implements OnInit {
         $('.lanka-image-container').css("overflow", "hidden");
       });
     });
+
+    $(window).scroll(function () {
+      if($(window).width() <= 576) {
+        $('.lanka-image-container').css("overflow", "hidden");
+        }
+      });
+
+
   }
 
   //string limitation setter

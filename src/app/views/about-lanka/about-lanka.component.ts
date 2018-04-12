@@ -55,6 +55,12 @@ export class AboutLankaComponent implements OnInit {
         $('.lanka-image-container').css("overflow", "hidden");
       });
     });
+
+    $(window).scroll(function () {
+      if($(window).width() <= 576) {
+        $('.lanka-image-container').css("overflow", "hidden");
+      }
+    });
   }
 
   //string limitation setter
@@ -63,7 +69,7 @@ export class AboutLankaComponent implements OnInit {
     $(document).ready(function () {
 
       var x = $('.lanka-block:nth-child(1) .lanka-description .half-text').text().substring(0, 500);
-     
+
 
       var y = $('.lanka-block:nth-child(1) .lanka-description .half-text').text().length;
 
@@ -75,7 +81,7 @@ export class AboutLankaComponent implements OnInit {
       //
 
       var x = $('.lanka-block:nth-child(2) .lanka-description .half-text').text().substring(0, 500);
-      
+
 
       var y = $('.lanka-block:nth-child(2) .lanka-description .half-text').text().length;
 
@@ -87,7 +93,7 @@ export class AboutLankaComponent implements OnInit {
       //
 
       var x = $('.lanka-block:nth-child(3) .lanka-description .half-text').text().substring(0, 500);
-      
+
 
       var y = $('.lanka-block:nth-child(3) .lanka-description .half-text').text().length;
 
@@ -99,7 +105,7 @@ export class AboutLankaComponent implements OnInit {
       //
 
       var x = $('.lanka-block:nth-child(4) .lanka-description .half-text').text().substring(0, 500);
-      
+
 
       var y = $('.lanka-block:nth-child(4) .lanka-description .half-text').text().length;
 
@@ -111,7 +117,7 @@ export class AboutLankaComponent implements OnInit {
       //
 
       var x = $('.lanka-block:nth-child(5) .lanka-description .half-text').text().substring(0, 500);
-     
+
 
       var y = $('.lanka-block:nth-child(5) .lanka-description .half-text').text().length;
 
@@ -123,7 +129,7 @@ export class AboutLankaComponent implements OnInit {
       //
 
       var x = $('.lanka-block:nth-child(6) .lanka-description .half-text').text().substring(0, 500);
-     
+
 
       var y = $('.lanka-block:nth-child(6) .lanka-description .half-text').text().length;
 
@@ -135,11 +141,11 @@ export class AboutLankaComponent implements OnInit {
       //
 
       var x = $('.lanka-block:nth-child(7) .lanka-description .half-text').text().substring(0, 500);
-     
+
       var y = $('.lanka-block:nth-child(7) .lanka-description .half-text').text().length;
 
       if (y > 500) {
-        $('.lanka-block:nth-child(7) .lanka-description .half-text').html(x + '...'); 
+        $('.lanka-block:nth-child(7) .lanka-description .half-text').html(x + '...');
         $('.lanka-block:nth-child(7) .green-button:nth-child(1)').css("display", "inline-block")
       }
 
@@ -157,7 +163,7 @@ export class AboutLankaComponent implements OnInit {
       //
 
       var x = $('.lanka-block:nth-child(9) .lanka-description .half-text').text().substring(0, 500);
-     
+
 
       var y = $('.lanka-block:nth-child(9) .lanka-description .half-text').text().length;
 
@@ -180,7 +186,7 @@ export class AboutLankaComponent implements OnInit {
       //
 
       var x = $('.lanka-block:nth-child(11) .lanka-description .half-text').text().substring(0, 500);
-      
+
 
       var y = $('.lanka-block:nth-child(11) .lanka-description .half-text').text().length;
 
@@ -192,7 +198,7 @@ export class AboutLankaComponent implements OnInit {
       //
 
       var x = $('.lanka-block:nth-child(12) .lanka-description .half-text').text().substring(0, 500);
-     
+
 
       var y = $('.lanka-block:nth-child(12) .lanka-description .half-text').text().length;
 
