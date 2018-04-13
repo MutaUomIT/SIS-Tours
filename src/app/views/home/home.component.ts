@@ -45,7 +45,7 @@ export class HomeComponent implements OnInit {
   dateArrival: any;
   dateArrival1: any;
   dateArrival2: any;
-  
+
   modalConfig : any = {
     title : "Customized Trip",
     isDurationWise : true,
@@ -305,7 +305,7 @@ export class HomeComponent implements OnInit {
         fade: true,
         cssEase: 'linear',
         autoplay: true,
-        autoplaySpeed: 2000,
+        autoplaySpeed: 3000,
       });
     });
 
