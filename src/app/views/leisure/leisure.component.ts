@@ -5,7 +5,7 @@ declare var $ :any;
 @Component({
   selector: 'app-leisure',
   templateUrl: './leisure.component.html',
-  styleUrls: ['./leisure.component.css']
+  styleUrls: []
 })
 export class LeisureComponent implements OnInit {
 

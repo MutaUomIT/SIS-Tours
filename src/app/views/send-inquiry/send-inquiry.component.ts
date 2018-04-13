@@ -8,7 +8,7 @@ import { DatePipe } from '@angular/common';
 @Component({
   selector: 'app-send-inquiry',
   templateUrl: './send-inquiry.component.html',
-  styleUrls: ['./send-inquiry.component.css']
+  styleUrls: []
 })
 export class SendInquiryComponent implements OnInit {
 

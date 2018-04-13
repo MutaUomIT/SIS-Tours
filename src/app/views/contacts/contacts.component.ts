@@ -11,7 +11,7 @@ declare var $: any;
 @Component({
   selector: 'app-contacts',
   templateUrl: './contacts.component.html',
-  styleUrls: ['./contacts.component.css']
+  styleUrls: []
 })
 export class ContactsComponent implements OnInit {
 
