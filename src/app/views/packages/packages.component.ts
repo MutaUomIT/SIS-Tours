@@ -44,6 +44,7 @@ export class PackagesComponent implements OnInit {
     this.packageImageSlider();
     this.getPackageList();
     window.scroll(0,0);
+    this.arrowAnimation();
 
 
     this.sub = this.route.params.subscribe(params => {
@@ -142,27 +143,26 @@ export class PackagesComponent implements OnInit {
 
   // arrow animation
 
-  // arrowAnimation(){
-  //   $(document).ready(function () {
-  //     $('.day-button-wrapper button').click(function () {
-  //       $(this).parent().addClass('active');
-  //
-  //       $('.day-button-wrapper.active button span i:nth-of-type(1)').hide();
-  //       $('.day-button-wrapper.active button span i:nth-of-type(2)').show();
-  //     })
-  //   })
-  //
-  //   $(document).ready(function () {
-  //     $('.day-button-wrapper.active button').click(function () {
-  //       $('.day-button-wrapper.active').removeClass('active');
-  //
-  //       // $('.day-button-wrapper.active button span i:nth-of-type(1)').hide();
-  //       // $('.day-button-wrapper.active button span i:nth-of-type(2)').show();
-  //     })
-  //
-  //   })
-  //
-  // }
+  arrowAnimation(){
+    $(document).ready(function () {
+      $('.day-button-wrapper button').click(function () {
+        $(this).parent().addClass('active');
+
+        $('.day-button-wrapper.active button span i:nth-of-type(1)').hide();
+        $('.day-button-wrapper.active button span i:nth-of-type(2)').show();
+      })
+    })
+
+    $(document).ready(function () {
+      $('.day-button-wrapper.active button').click(function () {
+        $('.day-button-wrapper.active').removeClass('active');
+        $('.day-button-wrapper.active button span i:nth-of-type(2)').hide();
+        $('.day-button-wrapper.active button span i:nth-of-type(1)').show();
+      })
+
+    })
+
+  }
 
   // arrowAnimation(){
   //   $(document).ready(function () {
@@ -174,13 +174,10 @@ export class PackagesComponent implements OnInit {
   //     })
   //
   //     $('.day-button-wrapper.active button').click(function () {
-  //       console.log("dcdcdc");
-  //       // $(this).parent().removeClass('active');
-  //       // $(this).find('span i:nth-of-type(1)').hide();
-  //       // $(this).find('span i:nth-of-type(2)').show();
-  //
-  //
-  //     })
+  //       $(this).parent().removeClass('active');
+  //       $(this).find('span i:nth-of-type(2)').hide();
+  //       $(this).find('span i:nth-of-type(1)').show();
+  //       })
   //   })
   // }
 
