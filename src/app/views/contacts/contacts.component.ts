@@ -50,7 +50,6 @@ export class ContactsComponent implements OnInit {
         msg: "Please fill Valid Data"
       });
     }
-
   }
 
   resetForm() {
@@ -58,10 +57,7 @@ export class ContactsComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.initJqueryFunctions();
     window.scroll(0, 0);
   }
-
-  initJqueryFunctions() { }
 
 }

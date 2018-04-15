@@ -193,8 +193,6 @@
 
     </div>
 
-    <!-- <div [hidden]="currentPage != 3"> -->
-
     <div class="col-md-12 lanka-block" [hidden]="currentPage != 3">
 
       <div class="col-md-6 lanka-image-container no-padding-left-right">
@@ -218,7 +216,6 @@
       </div>
 
     </div>
-    <!-- </div> -->
 
     <div class="col-md-12 lanka-block" [hidden]="currentPage != 3">
 
@@ -292,14 +289,9 @@
 
     </div>
 
-
-    <!-- </div> -->
-
     <div class="col-md-12">
       <nav aria-label="...">
         <ul class="pager">
-          <!--<li class="previous disabled"><a href="#"><span aria-hidden="true">&larr;</span> Older</a></li>-->
-          <!--<li class="next"><a href="#">Newer <span aria-hidden="true">&rarr;</span></a></li>-->
           <li class="previous"><span class="btn" *ngIf="older" (click)="loadPrev()"><span aria-hidden="true">&larr;</span> Previous</span></li>
           <li class="next"><span class="btn" *ngIf="newer" (click)="loadNext()">Next <span aria-hidden="true">&rarr;</span></span></li>
         </ul>

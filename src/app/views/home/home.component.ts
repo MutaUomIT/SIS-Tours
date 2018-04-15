@@ -23,7 +23,6 @@ export class HomeComponent implements OnInit {
 
   @ViewChild('f') inquiryForm: NgForm
   @ViewChild('f2') inquiryFormCustom: NgForm
-  // @ViewChild('f3') inquiryFormModal: NgForm
 
   packageList: any = [];
   allPackageList: any = [];
@@ -71,7 +70,6 @@ export class HomeComponent implements OnInit {
         }
       }
     });
-
   }
 
   ngOnInit() {
@@ -263,7 +261,6 @@ export class HomeComponent implements OnInit {
   }
 
   initJqueryFuctions() {
-
     //testominols slider
     $(document).ready(function () {
       $('.testimonial').slick({

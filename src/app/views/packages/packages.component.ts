@@ -46,13 +46,11 @@ export class PackagesComponent implements OnInit {
     window.scroll(0,0);
     this.arrowAnimation();
 
-
     this.sub = this.route.params.subscribe(params => {
       this.id = +params['id']; // (+) converts string 'id' to a number
     });
 
     this.loadPackageDetails(this.id);
-
   }
 
   private loadFormModal(type : string){
@@ -142,7 +140,6 @@ export class PackagesComponent implements OnInit {
   }
 
   // arrow animation
-
   arrowAnimation(){
     $(document).ready(function () {
       $('.day-button-wrapper button').click(function () {
@@ -163,24 +160,6 @@ export class PackagesComponent implements OnInit {
     })
 
   }
-
-  // arrowAnimation(){
-  //   $(document).ready(function () {
-  //     $('.day-button-wrapper button').click(function () {
-  //       $(this).find('span i:nth-of-type(1)').hide();
-  //       $(this).find('span i:nth-of-type(2)').show();
-  //       $(this).parent().addClass('active');
-  //
-  //     })
-  //
-  //     $('.day-button-wrapper.active button').click(function () {
-  //       $(this).parent().removeClass('active');
-  //       $(this).find('span i:nth-of-type(2)').hide();
-  //       $(this).find('span i:nth-of-type(1)').show();
-  //       })
-  //   })
-  // }
-
 }
 
 

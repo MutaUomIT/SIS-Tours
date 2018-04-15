@@ -22,7 +22,6 @@ export class AboutLankaComponent implements OnInit {
   }
 
   loadPrev(){
-
     if(this.currentPage != 1){
       this.currentPage = this.currentPage - 1;
       this.newer = true;
@@ -30,7 +29,6 @@ export class AboutLankaComponent implements OnInit {
     if(this.currentPage == 1){
       this.older = false;
     }
-
   }
 
   loadNext(){
