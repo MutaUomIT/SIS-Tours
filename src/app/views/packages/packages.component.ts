@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import {CountryList} from "../../configFiles/countryList";
 import { PackageData } from './../../configFiles/packegeDetails';
 import { DailyActivities } from './../../configFiles/DailyActivities';
+import { LankanPlacesDeatails } from './../../configFiles/lankanPlacesDetails'
 import { DatePipe } from '@angular/common';
 import { NgForm } from '@angular/forms';
 
@@ -36,6 +37,7 @@ export class PackagesComponent implements OnInit {
   morePackage : boolean = true;
 
   modalConfig : any ;
+  packagePlacesDeatails: any=[];
 
   constructor(private datePipe: DatePipe, private route: ActivatedRoute, private router:Router ) {}
 
@@ -137,6 +139,80 @@ export class PackagesComponent implements OnInit {
     if(this.packageItem != 2){
       this.morePackage = false;
     }
+  }
+
+  //show package places description
+  onClickviewPackagePlaces(place : string){
+    this.packagePlacesDeatails = LankanPlacesDeatails.placesDetails.filter(function(item){
+      switch(place) {
+        case 'Bentota': {
+          return item.id === 1;
+        }
+        case 'Hikkaduwa': {
+          return item.id === 2;
+        }
+        case 'Mirissa': {
+          return item.id === 3;
+        }
+        case 'Colombo': {
+          return item.id === 4;
+        }
+        case 'Yala': {
+          return item.id === 5;
+        }
+        case 'Kalpitiya': {
+          return item.id === 6;
+        }
+        case 'Wilpattu': {
+          return item.id === 7;
+        }
+        case 'Sigiriya': {
+          return item.id === 8;
+        }
+        case 'Kandy': {
+        return item.id === 9;
+        }
+        case 'Negombo': {
+        return item.id === 10;
+        }
+        case 'Nuwaraeliya': {
+          return item.id === 11;
+        }
+        case 'Ella': {
+          return item.id === 12;
+        }
+        case 'Mahiyangana': {
+          return item.id === 13;
+        }
+        case 'Udawalawa': {
+          return item.id === 14;
+        }
+        case 'Pasikuda': {
+          return item.id === 15;
+        }
+        case 'Trinco': {
+          return item.id === 16;
+        }
+        case 'Nilaveli': {
+          return item.id === 17;
+        }
+        case 'Anuradhapura': {
+          return item.id === 18;
+        }
+        case 'Polonnaruwa': {
+          return item.id === 19;
+        }
+        case 'Habarana': {
+          return item.id === 20;
+        }
+        case 'Thissamaharama': {
+          return item.id === 21;
+        }
+        default: {
+          break;
+        }
+      }
+    });
   }
 
   // arrow animation

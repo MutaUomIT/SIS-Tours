@@ -36,24 +36,21 @@
 <div class="modal fade" id="cityModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" xmlns="http://www.w3.org/1999/html">
   <div class="modal-dialog" role="document">
     <form>
-      <div class="modal-content">
+      <div class="modal-content" *ngFor="let l of packagePlacesDeatails">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
-          <h4 class="modal-title text-uppercase" id="myModalLabel">negombo</h4>
+          <h4 class="modal-title text-uppercase" id="myModalLabel">{{l.place}}</h4>
         </div>
         <div class="modal-body">
 
           <div class="row">
             <div class="col-md-12">
-              <p class="text-center">Negombo is located approximately 38 km north of the commercial capital of Colombo in Sri
-                Lanka It is located at the mouth of the Negombo lagoon. The beach bears most of the major
-                resorts in the Western Coast is Negombo. The wide sandy beaches and the safe sea are the
-                main attractions of Negombo and it is perfectly located within 7 km from the Bandaranaike
-                International Airport in Katunayake, Sri Lanka.</p>
+              <p class="text-center">{{l.description}}</p>
             </div>
           </div>
+          <img [src]="l.imagePath+'/'+l.backgroundImage" width="200px" height="150px">
 
         </div>
         <div class="modal-footer">
@@ -169,16 +166,16 @@
           <!--</div>-->
         <!--</div>-->
 
-
+        <h3>Coverage</h3>
 
         <div [hidden]="packageItem == 2">
         <div class="col-md-6">
-        <div class="package-images" *ngFor="let location2 of locationCovered" [style.backgroundImage]="'url('+ packageMoreDetails.imagePath+'/'+packageMoreDetails.backgroundImage +')'">
+        <div class="package-images" *ngFor="let location2 of locationCovered" [style.backgroundImage]="'url('+ packageMoreDetails.imagePath+'/'+packageMoreDetails.sliderImages[0] +')'">
         <div class="package-text-wrapper text-center">
         <p class="text-uppercase">{{location2}}</p>
         </div>
         <div class="package-button">
-        <button class="btn btn-success green-button" data-toggle="modal" data-target="#cityModal">VIEW MORE</button>
+        <button class="btn btn-success green-button" data-toggle="modal" data-target="#cityModal" (click)="onClickviewPackagePlaces(location2)">READ MORE - {{location2}}</button>
         </div>
         </div>
         </div>
