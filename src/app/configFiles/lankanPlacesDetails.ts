@@ -135,16 +135,16 @@ export class LankanPlacesDeatails {
     {
       "id": 20,
       "place":'Habarana',
-      "imagePath":'',
-      "backgroundImage":"",
-      "description":'xxxxx',
+      "imagePath":'./assets/images/packageImages/7',
+      "backgroundImage":"2.jpg",
+      "description":'Habarana is a popular tourist destination for safari lovers as it is the starting point for safaris in the nearby Habarana jungle and the Minneriya sanctuary which is heavily populated by elephants. Elephant back riding is also an attraction in this small city.',
     },
     {
       "id": 21,
       "place":'Thissamaharama',
-      "imagePath":'',
-      "backgroundImage":"",
-      "description":'xxxxx',
+      "imagePath":'./assets/images/packageImages/6',
+      "backgroundImage":"4.jpg",
+      "description":'Tissamaharama is one of the most pleasant towns in the southern coast. The beautiful man-made tank (reservoir) in Tissa, Tissa Wewa with its remarkable bird life provides the scenic backdrop to the town. Tissa was the sanctuary in the deep south, where Sinhalese patriots fled to rally support against marauding Dravidian invaders from Southern India. Known by the name of Mahagama (great town), it was one of the principal settlements of the southern province of Ruhuna.',
     }
   ]
 }
