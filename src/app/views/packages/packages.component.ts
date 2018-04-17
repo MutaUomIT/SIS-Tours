@@ -55,7 +55,7 @@ export class PackagesComponent implements OnInit {
     this.loadPackageDetails(this.id);
   }
 
-  private loadFormModal(type : string){
+   loadFormModal(type : string){
     if(type === 'selected'){
       this.modalConfig =  {
         title : this.packageMoreDetails.mainTopic +' - ' + this.packageMoreDetails.subTopic ,
