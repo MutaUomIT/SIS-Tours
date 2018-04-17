@@ -170,7 +170,7 @@
 
         <div [hidden]="packageItem == 2">
         <div class="col-md-6">
-        <div class="package-images" *ngFor="let location2 of locationCovered" [style.backgroundImage]="'url('+ packageMoreDetails.imagePath+'/'+packageMoreDetails.sliderImages[0] +')'">
+        <div class="package-images" *ngFor="let location2 of locationCovered; let i = index" [style.backgroundImage]="'url('+ packageMoreDetails.imagePath+'/'+packageMoreDetails.sliderImages[i] +')'">
         <div class="package-text-wrapper text-center">
         <p class="text-uppercase">{{location2}}</p>
         </div>
