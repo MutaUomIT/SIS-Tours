@@ -1362,12 +1362,13 @@ body{
 
 /*modal star*/
 
-#homeModal, #packageModal, #packageUpperModal, #morePackageUpperModal{
+#homeModal, #packageModal, #packageUpperModal, #morePackageUpperModal, #cityModal{
   top: 80px;
   z-index: 9998;
 }
 
-#homeModal .modal-content, #packageModal .modal-content, #packageUpperModal .modal-content, #morePackageUpperModal .modal-content{
+#homeModal .modal-content, #packageModal .modal-content, #packageUpperModal .modal-content, #morePackageUpperModal .modal-content,
+#cityModal .modal-content{
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
   border-radius: 0;
