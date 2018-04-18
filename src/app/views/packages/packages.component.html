@@ -47,10 +47,11 @@
 
           <div class="row">
             <div class="col-md-12">
-              <p class="text-center">{{l.description}}</p>
+              <img [src]="l.imagePath+'/'+l.backgroundImage" width="50%">
+              <p>{{l.description}}</p>
             </div>
           </div>
-          <img [src]="l.imagePath+'/'+l.backgroundImage" width="200px" height="150px">
+
 
         </div>
         <div class="modal-footer">
@@ -166,10 +167,11 @@
           <!--</div>-->
         <!--</div>-->
 
-        <h3>Coverage</h3>
+
 
         <div [hidden]="packageItem == 2">
         <div class="col-md-6">
+          <h3 class="text-center coverage">Coverage</h3>
         <div class="package-images" *ngFor="let location2 of locationCovered; let i = index" [style.backgroundImage]="'url('+ packageMoreDetails.imagePath+'/'+packageMoreDetails.sliderImages[i] +')'">
         <div class="package-text-wrapper text-center">
         <p class="text-uppercase">{{location2}}</p>

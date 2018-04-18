@@ -1085,6 +1085,23 @@ body{
   display: none;
 }
 
+#cityModal img{
+  float: left;
+  margin-right: 15px;
+  margin-bottom: 15px;
+}
+
+.coverage{
+  background-color: #ffe500;
+  margin-top: 20px;
+  margin-bottom: 0;
+  padding: 15px;
+  color: black;
+  text-transform: uppercase;
+}
+
+
+
 @media (max-width: 992px) {
   .package-slider-div{
     padding-right: 0;
