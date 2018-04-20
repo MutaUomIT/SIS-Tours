@@ -4,7 +4,7 @@ export class TestimonialData {
       "id": 1,
       "name":'Mary Hale',
       "country":'England',
-      "city":'London',
+      "city":'London,',
       "feedback":'Fantastic journey around Sri Lanka.  SIS tour operates gave me the best holiday experience in my life. I will recommend my friends and family to travel with SIS Tour operators.',
       "imagePath":'./assets/images/feedbackPic',
       "clientImage":"1.jpg"
@@ -58,7 +58,7 @@ export class TestimonialData {
       "id": 7,
       "name":'Jane Balmford',
       "country":'England',
-      "city":'London',
+      "city":'London,',
       "feedback":'Our Friend recommend us about SIS Tour Operators. They made travelling with our family easier. Comfortable vehicles. Friendly staff. Worth for money we pay. Very caring staff.',
       "imagePath":'./assets/images/feedbackPic',
       "clientImage":"7.jpg"
