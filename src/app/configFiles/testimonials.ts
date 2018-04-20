@@ -3,7 +3,7 @@ export class TestimonialData {
     {
       "id": 1,
       "name":'Mary Hale',
-      "country":'Englandng',
+      "country":'England',
       "city":'London',
       "feedback":'Fantastic journey around Sri Lanka.  SIS tour operates gave me the best holiday experience in my life. I will recommend my friends and family to travel with SIS Tour operators.',
       "imagePath":'./assets/images/feedbackPic',
