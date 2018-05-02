@@ -11,6 +11,7 @@ export class PackageData {
       "imagePath":'./assets/images/packageImages/1',
       "backgroundImage":"package.jpg",
       "activityListId":1,
+      "summary":"Beach Honeymoon tour package, we offer you 5 days of beautiful beach who are the beach lovers. This tour offers you many beautiful beach activities like Jet Skis, Turtle farm, scuba dive, coral reef, whale and dolphin and many more… with Ayurveda spa treatment. This 5 days tour package will explore 4 beautiful destinations.",
       "sliderImages":["1.jpg","2.jpg","3.jpg","4.jpg"]
     },
 
@@ -25,6 +26,7 @@ export class PackageData {
       "imagePath":'./assets/images/packageImages/2',
       "backgroundImage":"package.jpg",
       "activityListId":2,
+      "summary":"6 Days Tour Package We offers you a experiences of beautiful beach areas with many activities. Bentota known as golden sandy beach, Mirissa known as whale and Dolphin, Snorkeling, Hikkaduwa known as coral reef, scuba dive and wildlife experience and many more.",
       "sliderImages":["1.jpg","2.jpg","3.jpg","4.jpg","5.jpg"]
     },
     {
@@ -38,6 +40,7 @@ export class PackageData {
       "imagePath":'./assets/images/packageImages/3',
       "backgroundImage":"package.jpg",
       "activityListId":3,
+      "summary":"6 Days Tour Package We offers you a experiences of beautiful beach areas with many activities. Kalpitiya known as Kitesufring, whale and Dolphin and wildlife experience and many more.",
       "sliderImages":["1.jpg","2.jpg","3.jpg","4.jpg","5.jpg"]
     },
     {
@@ -51,6 +54,7 @@ export class PackageData {
       "imagePath":'./assets/images/packageImages/4',
       "backgroundImage":"package.jpg",
       "activityListId":4,
+      "summary":"Honeymoon tour package, we offer you 7 days of beauty of around the Ceylon (Sri Lanka) with Ayurveda spa treatment and Nightlife in Colombo. This 7 days tour package will explore 4 beautiful destinations.",
       "sliderImages":["1.jpg","2.jpg","3.jpg","4.jpg"]
     },
     {
@@ -64,6 +68,7 @@ export class PackageData {
       "imagePath":'./assets/images/packageImages/5',
       "backgroundImage":"package.jpg",
       "activityListId":5,
+      "summary":"We tail made this package with the places where most of the honeymoon would like to chillout. You will be taking to the most beautiful areas of Sri Lanka. Kandy is known as the kingdom of Buddhist secrete tooth relic. Nuwara Eliya where it is named “Little England” hill side of Sri Lanka. You will find all British type houses and buildings, gardens, waterfalls, tea plantations and many more… This tour offers you the real deal – a perfect blend of scenic nature spots of all terrains, the best cultural experiences you will find, as well as wildlife7 days package will offer you valuable vacation with many activities by covered 5 destinations.",
       "sliderImages":["1.jpg","2.jpg","3.jpg","4.jpg","5.jpg"]
     },
     {
@@ -77,6 +82,7 @@ export class PackageData {
       "imagePath":'./assets/images/packageImages/6',
       "backgroundImage":"package.jpg",
       "activityListId":6,
+      "summary":"We offer you 9 days tour package experience of wildlife in Sri Lanka, and many more attraction activities like whale and dolphin watching, Climbing Lion Rock, lakes. Colombo nightlife and many more. This 9 days tour package will explore 6 beautiful destinations.",
       "sliderImages":["1.jpg","2.jpg","3.jpg","4.jpg","5.jpg","6.jpg"]
     },
     {
@@ -90,6 +96,7 @@ export class PackageData {
       "imagePath":'./assets/images/packageImages/7',
       "backgroundImage":"package.jpg",
       "activityListId":7,
+      "summary":"We offer you 10 Days tour Package “Golden Triangle” with many attraction actives like Elephant Orphanage, experience of Sri Lankan culture and history, wildlife, beautiful beach areas with many more. This 10 days tour package will explore 8 beautiful destinations.",
       "sliderImages":["1.jpg","2.jpg","3.jpg","4.jpg","5.jpg","6.jpg","7.jpg","8.jpg"]
     },
     {
@@ -103,6 +110,7 @@ export class PackageData {
       "imagePath":'./assets/images/packageImages/8',
       "backgroundImage":"package.jpg",
       "activityListId":8,
+      "summary":"Around the Island tour package, we offer you and exiting 11 days of pure and utter bliss visiting, where our mother island exclusive, high recommended area to be visited. This tour offers you the real deal – a perfect blend of scenic nature spots of all terrains, the best cultural experiences you will find, as well as wildlife in all 4 corners of the island. The 11-day tour package will explore over 9 destinations.",
       "sliderImages":["1.jpg","2.jpg","3.jpg","4.jpg","5.jpg","6.jpg","7.jpg","8.jpg","9.jpg"]
     }
   ];
