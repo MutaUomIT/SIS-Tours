@@ -1432,6 +1432,10 @@ body{
   letter-spacing: 10px;
 }
 
+.package-summary{
+  padding: 20px;
+}
+
 /*more packages ends*/
 
 /*leisure start*/
