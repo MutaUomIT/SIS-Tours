@@ -29,6 +29,11 @@ export class SendInquiryComponent implements OnInit {
 
   ngOnInit() {
     this.countryList = CountryList.countryListWithPhoneCode;
+    this.modalConfig = {
+      title : "Customized Trip",
+      isDurationWise : true,
+      selectedPackage : null
+    };
   }
 
   onSubmit() {
